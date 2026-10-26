@@ -1,0 +1,30 @@
+# Binaries and build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Go test binaries
+*.test
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Uploads directory (user-generated media)
+Backend/uploads/
+uploads/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
