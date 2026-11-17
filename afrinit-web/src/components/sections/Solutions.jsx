@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { siteConfig } from "@/content/site";
 
 const iconMap = {
@@ -10,22 +10,35 @@ const iconMap = {
   growth: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
 };
 
-export const Solutions = ({ onNavigate }) => {
-  const [openPanel, setOpenPanel] = useState(null);
+export const Solutions = ({ onNavigate, navParams }) => {
+  const [openPanel, setOpenPanel] = useState(
+    navParams?.serviceIndex !== undefined ? navParams.serviceIndex : 0
+  );
+
+  useEffect(() => {
+    if (navParams?.serviceIndex !== undefined) {
+      setOpenPanel(navParams.serviceIndex);
+      const el = document.getElementById(`service-panel-${navParams.serviceIndex}`);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else if (navParams?.scrollTo === "sectors") {
+      const el = document.getElementById("industry-sectors");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [navParams]);
 
   return (
-    <section className="page-view relative min-h-[calc(100vh-78px)] w-full px-5 py-20 sm:px-8 lg:px-14 lg:py-28">
+    <section className="page-view relative min-h-[calc(100vh-78px)] w-full px-5 py-20 sm:px-8 lg:px-14 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-6xl">
         {/* Section header */}
-        <div className="mb-16">
+        <div className="viewport-animation mb-16">
           <div className="mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
             <span className="h-px w-9 bg-[#9c6849]" />
-            Solutions
+            Solutions & Services
           </div>
-          <h2 className="font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          <h2 className="font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl text-[#231c17]">
             {siteConfig.solutions.title}
           </h2>
-          <p className="mt-6 max-w-2xl text-lg leading-7 text-[#5f5249]">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#5f5249]">
             {siteConfig.solutions.description}
           </p>
         </div>
@@ -35,11 +48,12 @@ export const Solutions = ({ onNavigate }) => {
           {siteConfig.solutions.services.map((service, index) => (
             <div
               key={index}
-              className="solution-panel rounded-2xl border border-[#3d2d22]/15 bg-white/60 shadow-sm overflow-hidden transition-all duration-300"
+              id={`service-panel-${index}`}
+              className={`viewport-animation delay-${((index % 4) + 1) * 75} card-nerd rounded-2xl border border-[#3d2d22]/15 bg-white/70 shadow-sm overflow-hidden scroll-mt-28`}
             >
               <button
                 onClick={() => setOpenPanel(openPanel === index ? null : index)}
-                className="w-full flex items-center gap-5 p-8 text-left"
+                className="w-full flex items-center gap-5 p-8 text-left cursor-pointer"
                 aria-expanded={openPanel === index}
               >
                 <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-[#9c6849]/10 text-[#9c6849]">
@@ -58,7 +72,9 @@ export const Solutions = ({ onNavigate }) => {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display text-xl font-semibold">{service.title}</h3>
+                  <h3 className="font-display text-xl font-semibold text-[#231c17]">
+                    {service.title}
+                  </h3>
                   <p className="mt-1 text-sm text-[#5f5249]">{service.description}</p>
                 </div>
                 <svg
@@ -79,7 +95,7 @@ export const Solutions = ({ onNavigate }) => {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-8 pb-8 pl-[108px] text-sm leading-6 text-[#5f5249]">
+                  <div className="px-8 pb-8 pl-[108px] text-sm leading-relaxed text-[#5f5249]">
                     {service.details}
                   </div>
                 </div>
@@ -88,17 +104,93 @@ export const Solutions = ({ onNavigate }) => {
           ))}
         </div>
 
+        {/* Sectors We Transform */}
+        <div id="industry-sectors" className="mt-28 scroll-mt-28">
+          <div className="viewport-animation mb-12">
+            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+              <span className="h-px w-9 bg-[#9c6849]" />
+              Industry focus
+            </div>
+            <h3 className="font-display text-3xl font-semibold text-[#231c17] sm:text-4xl">
+              Sectors where our software moves the needle
+            </h3>
+            <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
+              We specialize in foundational economic engines across Africa, where high-reliability software directly expands economic opportunity.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {siteConfig.solutions.sectors.map((sector, index) => (
+              <div
+                key={index}
+                className={`viewport-animation delay-${((index % 3) + 1) * 100} card-nerd group rounded-2xl border border-[#3d2d22]/15 bg-white/60 p-7 shadow-sm flex flex-col justify-between hover:bg-white`}
+              >
+                <div>
+                  <span className="inline-block rounded-full bg-[#dcbf77]/25 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#79513a]">
+                    {sector.badge}
+                  </span>
+                  <h4 className="font-display mt-4 text-xl font-semibold text-[#231c17]">
+                    {sector.title}
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-[#5f5249]">
+                    {sector.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Technology Stack & Tooling */}
+        <div className="mt-28">
+          <div className="viewport-animation mb-12">
+            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+              <span className="h-px w-9 bg-[#9c6849]" />
+              Technical competencies
+            </div>
+            <h3 className="font-display text-3xl font-semibold text-[#231c17] sm:text-4xl">
+              Modern tooling chosen for speed and durability
+            </h3>
+            <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
+              Our engineering choices balance cutting-edge productivity with time-tested operational stability in production.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {siteConfig.solutions.techStack.map((stack, index) => (
+              <div
+                key={index}
+                className={`viewport-animation delay-${((index % 3) + 1) * 100} card-nerd rounded-2xl border border-[#3d2d22]/15 bg-[#231c17] p-7 text-white shadow-sm`}
+              >
+                <h4 className="font-display text-lg font-semibold text-[#dcbf77]">
+                  {stack.category}
+                </h4>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {stack.technologies.map((tech, techIdx) => (
+                    <span
+                      key={techIdx}
+                      className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-medium text-[#d7c4ae] transition-transform duration-200 hover:scale-105"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA */}
-        <div className="mt-16 text-center">
+        <div className="viewport-animation mt-24 text-center">
           <p className="text-lg text-[#5f5249]">
-            Interested in learning how we can help your organization?
+            Have technical requirements or need an architectural evaluation?
           </p>
           <button
             onClick={() => onNavigate && onNavigate("contact")}
-            className="group mt-6 inline-flex items-center gap-3 rounded-full bg-[#9c6849] px-8 py-4 text-sm font-semibold text-white transition hover:bg-[#825238]"
+            className="group mt-6 inline-flex items-center gap-3 rounded-full bg-[#9c6849] px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-[#9c6849]/20 transition-all hover:bg-[#825238] hover:shadow-xl cursor-pointer"
           >
-            Start a conversation
-            <span className="transition group-hover:translate-x-1">
+            Start a technical consultation
+            <span className="transition-transform duration-300 group-hover:translate-x-1.5">
               <svg
                 className="h-4 w-4"
                 fill="none"
