@@ -296,92 +296,141 @@ export const siteConfig = {
   },
 
   projects: {
-    title: "Our work",
-    description: "Selected projects that demonstrate our commitment to building technology for African progress.",
+    title: "Our work & case studies",
+    description:
+      "Explore selected production platforms that demonstrate how Afrinit designs, builds, and scales digital infrastructure across the continent.",
     items: [
       {
         title: "National Health Data Platform",
         category: "Healthcare",
-        description: "A unified health data system connecting clinics across 6 countries, enabling real-time disease tracking and resource allocation.",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["React", "Node.js", "PostgreSQL"],
+        description:
+          "A unified health records and epidemiological data system connecting 420+ clinics across 6 countries, enabling real-time outbreak detection and essential drug resource allocation.",
+        image:
+          "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["React", "Go", "PostgreSQL", "Docker"],
+        metric: "420+ Clinics Connected",
+        status: "Live in Production",
       },
       {
         title: "AgriConnect Marketplace",
         category: "Agriculture",
-        description: "Digital marketplace connecting smallholder farmers directly with buyers, reducing post-harvest losses by 40%.",
-        image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["React Native", "Firebase", "Stripe"],
+        description:
+          "Digital B2B commodity trading platform linking over 85,000 smallholder farmers directly to urban bulk buyers, cutting post-harvest storage losses by 40% and shortening payout cycles.",
+        image:
+          "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["React Native", "Node.js", "M-Pesa Daraja", "PostGIS"],
+        metric: "40% Loss Reduction",
+        status: "Live in Production",
       },
       {
         title: "EduLearn LMS",
         category: "Education",
-        description: "Learning management system serving 50,000+ students across East Africa with offline-first capabilities.",
-        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["Vue.js", "Python", "AWS"],
+        description:
+          "Offline-first mobile and desktop learning management system serving 50,000+ secondary students and vocational trainees in regions with intermittent electrical and internet access.",
+        image:
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["React", "Python FastAPI", "SQLite Sync", "AWS"],
+        metric: "50,000+ Active Students",
+        status: "Live in Production",
       },
       {
-        title: "FinTrack Mobile Banking",
+        title: "FinTrack Mobile Banking & Float Engine",
         category: "FinTech",
-        description: "Mobile banking application enabling unbanked populations to access financial services via basic phones.",
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["Flutter", "Go", "MongoDB"],
+        description:
+          "Next-generation mobile banking and agent float distribution application enabling unbanked rural merchants to offer financial services over low-cost Android and USSD channels.",
+        image:
+          "https://images.unsplash.com/photo-1563013544-824ae1b704d3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["Flutter", "Go (Fiber)", "Redis", "Kafka"],
+        metric: "$12M+ Monthly Volume",
+        status: "Live in Production",
       },
       {
         title: "CityPulse Smart City Dashboard",
         category: "Government",
-        description: "Real-time urban monitoring dashboard for Lagos city planning, integrating IoT sensors and citizen feedback.",
-        image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["React", "D3.js", "Kafka"],
+        description:
+          "Real-time municipal operations cockpit for metropolitan transit authorities, aggregating environmental sensors, vehicular telemetry, and citizen road hazard reports.",
+        image:
+          "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["React", "D3.js", "Apache Kafka", "PostgreSQL"],
+        metric: "1.8M Citizens Covered",
+        status: "Live in Production",
       },
       {
-        title: "TradeBridge Cross-Border Payments",
+        title: "TradeBridge Cross-Border Clearing",
         category: "FinTech",
-        description: "Cross-border payment infrastructure enabling seamless transactions between 12 African economies.",
-        image: "https://images.unsplash.com/photo-1533313056863-c593ba5a1792?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["TypeScript", "Rust", "gRPC"],
+        description:
+          "Multi-currency settlement and liquidity engine facilitating instant, compliant bilateral trade payments between commercial bank accounts across 12 African sovereign currencies.",
+        image:
+          "https://images.unsplash.com/photo-1533313056863-c593ba5a1792?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["TypeScript", "Go", "gRPC", "Docker"],
+        metric: "12 Currencies Cleared",
+        status: "Live in Production",
       },
       {
-        title: "WaterWatch Monitoring System",
-        category: "Environment",
-        description: "IoT-based water quality monitoring system deployed across 200+ water points in rural communities.",
-        image: "https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["Python", "MQTT", "InfluxDB"],
+        title: "WaterWatch Rural IoT Monitoring",
+        category: "Energy & Environment",
+        description:
+          "Solar-powered IoT sensor network monitoring borehole flow rates, pump motor health, and microbiological water quality across 200+ community water distribution points.",
+        image:
+          "https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["Python", "MQTT", "InfluxDB", "Grafana"],
+        metric: "200+ Active Boreholes",
+        status: "Live in Production",
       },
       {
-        title: "TalentHub Recruitment Platform",
-        category: "HR Tech",
-        description: "AI-powered recruitment platform connecting African tech talent with global opportunities.",
-        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["Next.js", "TensorFlow", "PostgreSQL"],
+        title: "TalentHub Continental Recruitment Engine",
+        category: "HR & Accessibility",
+        description:
+          "Automated technical assessment and verified talent matching engine connecting over 15,000 vetted software engineers and product designers with high-growth African startups and global firms.",
+        image:
+          "https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["React", "Node.js", "PostgreSQL", "Elasticsearch"],
+        metric: "15,000+ Vetted Engineers",
+        status: "Live in Production",
       },
       {
-        title: "SolarGrid Energy Management",
-        category: "Energy",
-        description: "Solar energy distribution management system optimizing power allocation across micro-grids.",
-        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["React", "Go", "TimescaleDB"],
+        title: "SolarGrid Pay-As-You-Go Energy Manager",
+        category: "Energy & Environment",
+        description:
+          "Telemetry and automated token generation platform managing pay-as-you-go micro-solar installations for 30,000 off-grid rural households and agricultural cold storage units.",
+        image:
+          "https://images.unsplash.com/photo-1509391366360-2e959784a276?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["React", "Go", "TimescaleDB", "M-Pesa API"],
+        metric: "30,000 Homes Powered",
+        status: "Live in Production",
       },
       {
-        title: "MedSupply Chain Tracker",
+        title: "MedSupply Anti-Counterfeit Verification",
         category: "Healthcare",
-        description: "Blockchain-based pharmaceutical supply chain tracking preventing counterfeit medications.",
-        image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["Solidity", "React", "IPFS"],
+        description:
+          "Cryptographically verified pharmaceutical serialization platform enabling pharmacists and patients to authenticate medications via simple smartphone scan or free SMS shortcode.",
+        image:
+          "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["React Native", "Go", "PostgreSQL", "SMS Gateway"],
+        metric: "4.5M Units Authenticated",
+        status: "Live in Production",
       },
       {
-        title: "VoiceFirst Accessibility Suite",
-        category: "Accessibility",
-        description: "Voice-enabled interface suite for low-literacy users, supporting 15 African languages.",
-        image: "https://images.unsplash.com/photo-1589903308904-1010c2294adc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["Python", "TensorFlow", "WebRTC"],
+        title: "VoiceFirst Multilingual Speech Interface",
+        category: "HR & Accessibility",
+        description:
+          "A localized speech recognition engine supporting Swahili, Yoruba, Hausa, Igbo, and Amharic, allowing non-literate citizens to conduct financial and administrative tasks seamlessly.",
+        image:
+          "https://images.unsplash.com/photo-1589903308904-1010c2294adc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["Python", "PyTorch", "WebRTC", "FastAPI"],
+        metric: "5 Languages Supported",
+        status: "Live in Production",
       },
       {
-        title: "MarketPulse Analytics",
-        category: "Commerce",
-        description: "Real-time market analytics platform for informal traders, providing pricing insights and demand forecasts.",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
-        tags: ["React", "Python", "Redis"],
+        title: "MarketPulse Informal Trade Analytics",
+        category: "Agriculture",
+        description:
+          "Predictive agricultural price intelligence and logistics aggregation platform used by wholesale market cooperatives across East and West Africa to balance seasonal supply shocks.",
+        image:
+          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=800",
+        tags: ["React", "Python", "Redis", "Tailwind CSS"],
+        metric: "180+ Market Hubs",
+        status: "Live in Production",
       },
     ],
     perPage: 6,
