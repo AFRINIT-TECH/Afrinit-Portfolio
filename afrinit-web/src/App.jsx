@@ -15,6 +15,7 @@ const PAGE_COMPONENTS = {
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
+  const [navParams, setNavParams] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
   // Handle browser back/forward
@@ -22,8 +23,36 @@ function App() {
     history.replaceState({ page: "home" }, "", "/");
   }, []);
 
-  const navigateTo = (page) => {
-    if (page === currentPage || isAnimating) return;
+  // Initialize viewport scroll animations inspired by nerds.company
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-viewport");
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+      );
+
+      const elements = document.querySelectorAll(".viewport-animation");
+      elements.forEach((el) => observer.observe(el));
+
+      return () => observer.disconnect();
+    }, 60);
+
+    return () => clearTimeout(timeout);
+  }, [currentPage]);
+
+  const navigateTo = (page, params = null) => {
+    setNavParams(params);
+    if (page === currentPage) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (isAnimating) return;
     setIsAnimating(true);
     setTimeout(() => {
       setCurrentPage(page);
@@ -45,7 +74,7 @@ function App() {
               isAnimating ? "opacity-0" : "opacity-100"
             }`}
           >
-            <PageComponent onNavigate={navigateTo} />
+            <PageComponent onNavigate={navigateTo} navParams={navParams} />
           </div>
         </main>
       </div>
