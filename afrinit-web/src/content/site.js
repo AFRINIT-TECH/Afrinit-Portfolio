@@ -297,13 +297,13 @@ export const siteConfig = {
 
   capabilities: {
     title: "Our Disciplines & Capabilities",
-    subtitle: "Diensten & Expertise",
+    subtitle: "Services & Capabilities",
     description:
       "Multidisciplinary engineering and design teams that take projects from inception to continuous scaling.",
     groups: [
       {
         name: "Research & Strategy",
-        dutchName: "Onderzoek",
+        badge: "Discovery & Strategy",
         description: "Deep domain exploration, technical audits, and user journey discovery.",
         items: [
           { name: "IT Consultancy", desc: "Architecture roadmap & technology advisory" },
@@ -316,7 +316,7 @@ export const siteConfig = {
       },
       {
         name: "Design & Prototyping",
-        dutchName: "Design",
+        badge: "UI/UX & Sprints",
         description: "Intuitive product design systems and interactive design sprints.",
         items: [
           { name: "UI Design", desc: "Brand-aligned design systems & micro-interactions" },
@@ -329,14 +329,14 @@ export const siteConfig = {
       },
       {
         name: "Engineering & Evolution",
-        dutchName: "Development",
+        badge: "Software Engineering",
         description: "Bespoke software development, API integrations, and continuous scaling.",
         items: [
           { name: "Bespoke Software", desc: "Custom platforms built for high volume & resilience" },
           { name: "Web Development", desc: "Fast, accessible, and search-optimized web apps" },
           { name: "App Development", desc: "Native iOS & Android, and cross-platform apps" },
           { name: "API & Integrations", desc: "African payment rails, ERPs, and legacy links" },
-          { name: "Continuous Evolution", desc: "Roadmap delivery, doorontwikkeling & scaling" },
+          { name: "Continuous Evolution", desc: "Roadmap delivery, continuous iteration & scaling" },
           { name: "Cloud & DevSecOps", desc: "Kubernetes, automated CI/CD & 99.99% uptime" },
         ],
       },
