@@ -3,19 +3,6 @@ import { siteConfig } from "@/content/site";
 
 export const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [selectedService, setSelectedService] = useState("Bespoke Software");
-  const [selectedBudget, setSelectedBudget] = useState("$25k - $75k");
-
-  const services = [
-    "Bespoke Software",
-    "Mobile Applications",
-    "Cloud & DevOps",
-    "UX/UI Design",
-    "APIs & Integrations",
-    "Continuous Scaling",
-  ];
-
-  const budgetRanges = ["< $25k", "$25k - $75k", "$75k - $150k", "$150k +"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +43,7 @@ export const Contact = () => {
                   Thank you for reaching out!
                 </h2>
                 <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#5f5249]">
-                  We have received your request for <strong>{selectedService}</strong> ({selectedBudget}). One of our senior solutions architects will contact you within 24 hours.
+                  We have received your message. One of our senior solutions architects will contact you within 24 hours.
                 </p>
                 <button
                   type="button"
@@ -68,52 +55,6 @@ export const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-                {/* Service Selector Pills */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#79513a] mb-3">
-                    Service Needed • Project Focus *
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {services.map((service) => (
-                      <button
-                        key={service}
-                        type="button"
-                        onClick={() => setSelectedService(service)}
-                        className={`rounded-full px-4 py-2 text-xs font-semibold transition-all cursor-pointer ${
-                          selectedService === service
-                            ? "bg-[#231c17] text-white shadow-xs scale-105"
-                            : "border border-[#3d2d22]/15 bg-[#f5efe4]/60 text-[#5f5249] hover:bg-[#d7c4ae]/40 hover:text-[#231c17]"
-                        }`}
-                      >
-                        {service}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Budget Range Pills */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#79513a] mb-3">
-                    Estimated Budget *
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {budgetRanges.map((b) => (
-                      <button
-                        key={b}
-                        type="button"
-                        onClick={() => setSelectedBudget(b)}
-                        className={`rounded-full px-4 py-2 text-xs font-semibold transition-all cursor-pointer ${
-                          selectedBudget === b
-                            ? "bg-[#9c6849] text-white shadow-xs scale-105"
-                            : "border border-[#3d2d22]/15 bg-[#f5efe4]/60 text-[#5f5249] hover:bg-[#d7c4ae]/40 hover:text-[#231c17]"
-                        }`}
-                      >
-                        {b}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Text Inputs */}
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
