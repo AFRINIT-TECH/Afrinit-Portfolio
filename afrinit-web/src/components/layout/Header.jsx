@@ -43,7 +43,7 @@ export const Header = ({ currentPage, onNavigate }) => {
           aria-label="Main Navigation"
           className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#231c17]"
         >
-          {/* Over ons / About */}
+          {/* About us */}
           <button
             onClick={() => {
               closeDropdown();
@@ -177,7 +177,7 @@ export const Header = ({ currentPage, onNavigate }) => {
             )}
           </div>
 
-          {/* Diensten (Capabilities Dropdown matching nerds.company) */}
+          {/* Capabilities Dropdown (Research, Design, Development) */}
           <div
             className="relative py-3"
             onMouseEnter={() => setActiveDropdown("capabilities")}
@@ -222,7 +222,7 @@ export const Header = ({ currentPage, onNavigate }) => {
                             {group.name}
                           </p>
                           <span className="text-[10px] text-[#5f5249]/70 italic">
-                            {group.dutchName}
+                            {group.badge}
                           </span>
                         </div>
                         <ul className="space-y-1">
