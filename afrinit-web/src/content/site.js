@@ -55,26 +55,26 @@ export const siteConfig = {
   corePillars: [
     {
       title: "Software Development",
-      subheading: "Aan de slag met de juiste maatwerk oplossing",
+      subheading: "Architecting the right bespoke software solution for your operational goals",
       description:
         "We design and engineer bespoke web, mobile, and cloud platforms from zero to production. Tailored precisely to your operational workflow, user behavior, and African infrastructure realities.",
-      badge: "Maatwerk software",
+      badge: "Custom Software",
       page: "solutions",
     },
     {
       title: "Continuous Scaling & Evolution",
-      subheading: "Vanuit een roadmap verder bouwen aan jouw doelen",
+      subheading: "Executing roadmaps to continuously scale your software alongside business growth",
       description:
         "Software is never 'finished.' We partner on an agile roadmap—continuously shipping high-impact features, optimizing performance, upgrading infrastructure, and hardening security.",
-      badge: "Doorontwikkeling",
+      badge: "Continuous Evolution",
       page: "solutions",
     },
     {
       title: "Integrations & African Rails",
-      subheading: "We laten systemen met elkaar communiceren",
+      subheading: "Connecting distributed systems, core banking engines, and regional payment rails",
       description:
         "We make complex systems talk to each other. Connecting modern web apps with legacy core databases, ERPs, M-Pesa Daraja 2.0, bank switches, USSD gateways, and third-party APIs.",
-      badge: "Koppelingen & API's",
+      badge: "Integrations & APIs",
       page: "solutions",
     },
   ],
