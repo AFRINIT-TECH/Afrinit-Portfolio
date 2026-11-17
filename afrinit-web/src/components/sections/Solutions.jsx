@@ -104,6 +104,59 @@ export const Solutions = ({ onNavigate, navParams }) => {
           ))}
         </div>
 
+        {/* Disciplines & Capabilities (Nerds-style Onderzoek, Design, Development) */}
+        {siteConfig.capabilities && (
+          <div className="mt-28">
+            <div className="viewport-animation mb-12">
+              <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+                <span className="h-px w-9 bg-[#9c6849]" />
+                Disciplines & Services
+              </div>
+              <h3 className="font-display text-3xl font-semibold text-[#231c17] sm:text-4xl">
+                {siteConfig.capabilities.title}
+              </h3>
+              <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
+                {siteConfig.capabilities.description}
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
+              {siteConfig.capabilities.groups.map((group, gIdx) => (
+                <div
+                  key={gIdx}
+                  className={`viewport-animation delay-${(gIdx + 1) * 150} card-nerd rounded-3xl border border-[#3d2d22]/15 bg-white/80 p-8 shadow-sm flex flex-col justify-between`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between pb-4 border-b border-[#3d2d22]/10 mb-6">
+                      <h4 className="font-display text-xl font-bold text-[#231c17]">
+                        {group.name}
+                      </h4>
+                      <span className="text-xs font-semibold uppercase text-[#9c6849]">
+                        {group.dutchName}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[#5f5249] mb-6">
+                      {group.description}
+                    </p>
+                    <ul className="space-y-3.5">
+                      {group.items.map((item, iIdx) => (
+                        <li key={iIdx} className="group/item">
+                          <p className="font-display text-sm font-bold text-[#231c17] group-hover/item:text-[#9c6849] transition-colors">
+                            {item.name}
+                          </p>
+                          <p className="text-xs text-[#5f5249]/80 mt-0.5">
+                            {item.desc}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Sectors We Transform */}
         <div id="industry-sectors" className="mt-28 scroll-mt-28">
           <div className="viewport-animation mb-12">

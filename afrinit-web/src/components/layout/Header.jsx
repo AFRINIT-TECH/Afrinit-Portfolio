@@ -4,29 +4,34 @@ import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 
 export const Header = ({ currentPage, onNavigate }) => {
-  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const [activeDropdown, setActiveDropdown] = useState(null); // 'solutions' | 'capabilities' | null
+  const headerRef = useRef(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setSolutionsDropdownOpen(false);
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setActiveDropdown(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const closeDropdown = () => setActiveDropdown(null);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[#3d2d22]/15 bg-[#f5efe4]/95 backdrop-blur-md">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 border-b border-[#3d2d22]/15 bg-[#f5efe4]/95 backdrop-blur-md transition-all"
+    >
       <div className="flex h-[78px] w-full items-center justify-between px-5 sm:px-8 lg:px-14">
         {/* Brand Logo */}
         <button
           className="flex items-center cursor-pointer transition-opacity hover:opacity-85"
           aria-label="Afrinit home"
           onClick={() => {
-            setSolutionsDropdownOpen(false);
+            closeDropdown();
             onNavigate("home");
           }}
         >
@@ -38,10 +43,10 @@ export const Header = ({ currentPage, onNavigate }) => {
           aria-label="Main Navigation"
           className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#231c17]"
         >
-          {/* About */}
+          {/* Over ons / About */}
           <button
             onClick={() => {
-              setSolutionsDropdownOpen(false);
+              closeDropdown();
               onNavigate("about");
             }}
             className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
@@ -53,30 +58,29 @@ export const Header = ({ currentPage, onNavigate }) => {
             About us
           </button>
 
-          {/* Solutions with Dropdown */}
+          {/* Wat we doen (Solutions & Sectors Dropdown) */}
           <div
-            className="relative py-2"
-            ref={dropdownRef}
-            onMouseEnter={() => setSolutionsDropdownOpen(true)}
-            onMouseLeave={() => setSolutionsDropdownOpen(false)}
+            className="relative py-3"
+            onMouseEnter={() => setActiveDropdown("solutions")}
+            onMouseLeave={() => setActiveDropdown(null)}
           >
             <button
               type="button"
               onClick={(e) => {
                 e.stopPropagation();
-                setSolutionsDropdownOpen((prev) => !prev);
+                setActiveDropdown((prev) => (prev === "solutions" ? null : "solutions"));
               }}
               className={`inline-flex items-center gap-1.5 cursor-pointer py-1 transition-colors hover:text-[#9c6849] ${
-                currentPage === "solutions"
+                currentPage === "solutions" || activeDropdown === "solutions"
                   ? "text-[#9c6849] font-bold"
                   : "text-[#5f5249]"
               }`}
-              aria-expanded={solutionsDropdownOpen}
+              aria-expanded={activeDropdown === "solutions"}
             >
               What we do
               <svg
                 className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                  solutionsDropdownOpen ? "rotate-180" : ""
+                  activeDropdown === "solutions" ? "rotate-180 text-[#9c6849]" : ""
                 }`}
                 fill="none"
                 viewBox="0 0 24 24"
@@ -87,53 +91,65 @@ export const Header = ({ currentPage, onNavigate }) => {
               </svg>
             </button>
 
-            {/* Dropdown Menu (Nerds-style) with seamless top padding to prevent mouse leave gap */}
-            {solutionsDropdownOpen && (
-              <div className="absolute left-1/2 top-full -translate-x-1/2 pt-2 z-50">
-                <div className="w-[520px] rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4] p-6 shadow-2xl backdrop-blur-xl">
+            {/* Megamenu: What We Do */}
+            {activeDropdown === "solutions" && (
+              <div className="absolute left-1/2 top-full -translate-x-1/2 pt-1 z-50">
+                <div className="w-[560px] rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4] p-6 shadow-2xl backdrop-blur-xl">
                   <div className="grid gap-6 sm:grid-cols-2">
+                    {/* Left: Software Solutions */}
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a] mb-3">
-                        Software Services
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a] mb-3 flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#9c6849]" />
+                        Software Solutions
                       </p>
-                      <ul className="space-y-1.5">
+                      <ul className="space-y-1">
                         {siteConfig.solutions.services.slice(0, 4).map((s, idx) => (
                           <li key={idx}>
                             <button
                               type="button"
                               onClick={(e) => {
                                 e.stopPropagation();
-                                setSolutionsDropdownOpen(false);
+                                closeDropdown();
                                 onNavigate("solutions", { serviceIndex: idx });
                               }}
-                              className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 hover:text-[#9c6849] transition-colors block cursor-pointer"
+                              className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 hover:text-[#9c6849] transition-colors block cursor-pointer group"
                             >
-                              <p className="text-xs font-bold text-[#231c17]">{s.title}</p>
-                              <p className="text-[11px] text-[#5f5249] line-clamp-1 mt-0.5">{s.description}</p>
+                              <p className="text-xs font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+                                {s.title}
+                              </p>
+                              <p className="text-[11px] text-[#5f5249] line-clamp-1 mt-0.5">
+                                {s.description}
+                              </p>
                             </button>
                           </li>
                         ))}
                       </ul>
                     </div>
 
+                    {/* Right: Industry Sectors / Branches */}
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a] mb-3">
-                        Sectors & Rails
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a] mb-3 flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#9c6849]" />
+                        Branches & Sectors
                       </p>
-                      <ul className="space-y-1.5">
+                      <ul className="space-y-1">
                         {siteConfig.solutions.sectors.slice(0, 4).map((sec, idx) => (
                           <li key={idx}>
                             <button
                               type="button"
                               onClick={(e) => {
                                 e.stopPropagation();
-                                setSolutionsDropdownOpen(false);
+                                closeDropdown();
                                 onNavigate("solutions", { scrollTo: "sectors" });
                               }}
-                              className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 hover:text-[#9c6849] transition-colors block cursor-pointer"
+                              className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 transition-colors block cursor-pointer group"
                             >
-                              <p className="text-xs font-bold text-[#231c17]">{sec.title}</p>
-                              <span className="text-[10px] text-[#79513a] font-semibold">{sec.badge}</span>
+                              <p className="text-xs font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+                                {sec.title}
+                              </p>
+                              <span className="inline-block mt-0.5 text-[10px] text-[#79513a] font-semibold bg-[#9c6849]/10 px-2 py-0.5 rounded-full">
+                                {sec.badge}
+                              </span>
                             </button>
                           </li>
                         ))}
@@ -142,17 +158,18 @@ export const Header = ({ currentPage, onNavigate }) => {
                   </div>
 
                   <div className="mt-5 pt-4 border-t border-[#3d2d22]/10 flex items-center justify-between text-xs">
-                    <span className="text-[#5f5249]">Looking for our full capabilities?</span>
+                    <span className="text-[#5f5249]">Looking for all practice areas?</span>
                     <button
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
-                        setSolutionsDropdownOpen(false);
+                        closeDropdown();
                         onNavigate("solutions");
                       }}
-                      className="font-bold text-[#9c6849] hover:underline cursor-pointer"
+                      className="font-bold text-[#9c6849] hover:underline cursor-pointer flex items-center gap-1.5 group"
                     >
-                      All solutions & capabilities →
+                      All solutions & sectors
+                      <span className="transition-transform group-hover:translate-x-1">→</span>
                     </button>
                   </div>
                 </div>
@@ -160,10 +177,104 @@ export const Header = ({ currentPage, onNavigate }) => {
             )}
           </div>
 
-          {/* Work / Cases */}
+          {/* Diensten (Capabilities Dropdown matching nerds.company) */}
+          <div
+            className="relative py-3"
+            onMouseEnter={() => setActiveDropdown("capabilities")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveDropdown((prev) => (prev === "capabilities" ? null : "capabilities"));
+              }}
+              className={`inline-flex items-center gap-1.5 cursor-pointer py-1 transition-colors hover:text-[#9c6849] ${
+                activeDropdown === "capabilities"
+                  ? "text-[#9c6849] font-bold"
+                  : "text-[#5f5249]"
+              }`}
+              aria-expanded={activeDropdown === "capabilities"}
+            >
+              Capabilities
+              <svg
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                  activeDropdown === "capabilities" ? "rotate-180 text-[#9c6849]" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Megamenu: Capabilities (3 columns) */}
+            {activeDropdown === "capabilities" && (
+              <div className="absolute left-1/2 top-full -translate-x-1/2 pt-1 z-50">
+                <div className="w-[680px] rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4] p-6 shadow-2xl backdrop-blur-xl">
+                  <div className="grid gap-6 sm:grid-cols-3">
+                    {siteConfig.capabilities.groups.map((group, gIdx) => (
+                      <div key={gIdx}>
+                        <div className="mb-3">
+                          <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a]">
+                            {group.name}
+                          </p>
+                          <span className="text-[10px] text-[#5f5249]/70 italic">
+                            {group.dutchName}
+                          </span>
+                        </div>
+                        <ul className="space-y-1">
+                          {group.items.slice(0, 4).map((item, iIdx) => (
+                            <li key={iIdx}>
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  closeDropdown();
+                                  onNavigate("solutions", { scrollTo: "techStack" });
+                                }}
+                                className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 transition-colors block cursor-pointer group"
+                              >
+                                <p className="text-xs font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+                                  {item.name}
+                                </p>
+                                <p className="text-[10px] text-[#5f5249] line-clamp-1 mt-0.5">
+                                  {item.desc}
+                                </p>
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-5 pt-4 border-t border-[#3d2d22]/10 flex items-center justify-between text-xs">
+                    <span className="text-[#5f5249]">End-to-end digital craft from discovery to launch</span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        closeDropdown();
+                        onNavigate("about");
+                      }}
+                      className="font-bold text-[#9c6849] hover:underline cursor-pointer flex items-center gap-1.5 group"
+                    >
+                      Our delivery approach
+                      <span className="transition-transform group-hover:translate-x-1">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Cases (Projects) */}
           <button
             onClick={() => {
-              setSolutionsDropdownOpen(false);
+              closeDropdown();
               onNavigate("projects");
             }}
             className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
@@ -178,7 +289,7 @@ export const Header = ({ currentPage, onNavigate }) => {
           {/* Impact */}
           <button
             onClick={() => {
-              setSolutionsDropdownOpen(false);
+              closeDropdown();
               onNavigate("impact");
             }}
             className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
@@ -193,7 +304,7 @@ export const Header = ({ currentPage, onNavigate }) => {
           {/* People & Culture */}
           <button
             onClick={() => {
-              setSolutionsDropdownOpen(false);
+              closeDropdown();
               onNavigate("people");
             }}
             className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
@@ -208,7 +319,7 @@ export const Header = ({ currentPage, onNavigate }) => {
           {/* FAQ */}
           <button
             onClick={() => {
-              setSolutionsDropdownOpen(false);
+              closeDropdown();
               onNavigate("faq");
             }}
             className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
@@ -225,13 +336,13 @@ export const Header = ({ currentPage, onNavigate }) => {
         <div className="flex items-center gap-3">
           <button
             onClick={() => {
-              setSolutionsDropdownOpen(false);
+              closeDropdown();
               onNavigate("contact");
             }}
-            className="group m-0 hidden items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition sm:flex bg-[#231c17] hover:bg-[#9c6849] cursor-pointer"
+            className="group m-0 hidden items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition sm:flex bg-[#231c17] hover:bg-[#9c6849] cursor-pointer shadow-sm hover:shadow-md"
           >
             {siteConfig.navigation.cta.label}
-            <span className="transition-transform group-hover:translate-x-1">
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
               <svg
                 aria-hidden="true"
                 className="h-4 w-4"

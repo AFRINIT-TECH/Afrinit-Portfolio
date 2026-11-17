@@ -295,6 +295,54 @@ export const siteConfig = {
     ],
   },
 
+  capabilities: {
+    title: "Our Disciplines & Capabilities",
+    subtitle: "Diensten & Expertise",
+    description:
+      "Multidisciplinary engineering and design teams that take projects from inception to continuous scaling.",
+    groups: [
+      {
+        name: "Research & Strategy",
+        dutchName: "Onderzoek",
+        description: "Deep domain exploration, technical audits, and user journey discovery.",
+        items: [
+          { name: "IT Consultancy", desc: "Architecture roadmap & technology advisory" },
+          { name: "UX Design", desc: "User research, wireframing & interaction flows" },
+          { name: "Customer Journeys", desc: "Service blueprinting & multi-channel mapping" },
+          { name: "Data Analyses", desc: "Metrics, funnel optimization & business insights" },
+          { name: "Design Research", desc: "User validation & ethnographic testing" },
+          { name: "UX Audits", desc: "Accessibility & usability benchmark evaluation" },
+        ],
+      },
+      {
+        name: "Design & Prototyping",
+        dutchName: "Design",
+        description: "Intuitive product design systems and interactive design sprints.",
+        items: [
+          { name: "UI Design", desc: "Brand-aligned design systems & micro-interactions" },
+          { name: "Design Sprints", desc: "From problem statement to tested prototype in 5 days" },
+          { name: "Interactive Prototyping", desc: "High-fidelity clickable user experiences" },
+          { name: "User Testing", desc: "Rapid feedback loops with target audiences" },
+          { name: "Design Systems", desc: "Tokens, reusable components & style guidelines" },
+          { name: "Creative Direction", desc: "Brand expression tailored for global reach" },
+        ],
+      },
+      {
+        name: "Engineering & Evolution",
+        dutchName: "Development",
+        description: "Bespoke software development, API integrations, and continuous scaling.",
+        items: [
+          { name: "Bespoke Software", desc: "Custom platforms built for high volume & resilience" },
+          { name: "Web Development", desc: "Fast, accessible, and search-optimized web apps" },
+          { name: "App Development", desc: "Native iOS & Android, and cross-platform apps" },
+          { name: "API & Integrations", desc: "African payment rails, ERPs, and legacy links" },
+          { name: "Continuous Evolution", desc: "Roadmap delivery, doorontwikkeling & scaling" },
+          { name: "Cloud & DevSecOps", desc: "Kubernetes, automated CI/CD & 99.99% uptime" },
+        ],
+      },
+    ],
+  },
+
   projects: {
     title: "Our work & case studies",
     description:
