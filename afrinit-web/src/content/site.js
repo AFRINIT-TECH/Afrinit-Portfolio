@@ -13,8 +13,10 @@ export const siteConfig = {
     links: [
       { label: "About", page: "about" },
       { label: "Solutions", page: "solutions" },
+      { label: "Work", page: "projects" },
       { label: "Impact", page: "impact" },
-      { label: "People & Work", page: "people" },
+      { label: "People & Culture", page: "people" },
+      { label: "FAQ", page: "faq" },
     ],
     cta: {
       label: "Partner with us",
@@ -24,17 +26,17 @@ export const siteConfig = {
 
   hero: {
     eyebrow: "Technology for African progress",
-    titleLine1: "Built in Africa.",
-    titleLine2: "Built for more.",
+    titleLine1: "Tailor-made software",
+    titleLine2: "100% powered by Afrinit",
     paragraph:
-      "We design and develop software for companies and organizations, grow talent, and back bold ideas—turning Africa's digital potential into progress that reaches everyone.",
+      "Our people use their engineering and design superpowers to deliver high-reliability software for businesses, financial institutions, and public organizations across Africa. Just a trustworthy partnership built for continental progress.",
     primaryCta: {
-      label: "Explore what we do",
-      page: "solutions",
+      label: "Check our work",
+      page: "projects",
     },
     secondaryCta: {
-      label: "Our impact",
-      page: "impact",
+      label: "Get in touch",
+      page: "contact",
     },
     image: {
       src: "https://images.unsplash.com/photo-1573164574511-73c773193279?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=1200",
@@ -48,6 +50,58 @@ export const siteConfig = {
       year: "2030",
       description: "One million digital opportunities created",
     },
+  },
+
+  corePillars: [
+    {
+      title: "Software Development",
+      subheading: "Aan de slag met de juiste maatwerk oplossing",
+      description:
+        "We design and engineer bespoke web, mobile, and cloud platforms from zero to production. Tailored precisely to your operational workflow, user behavior, and African infrastructure realities.",
+      badge: "Maatwerk software",
+      page: "solutions",
+    },
+    {
+      title: "Continuous Scaling & Evolution",
+      subheading: "Vanuit een roadmap verder bouwen aan jouw doelen",
+      description:
+        "Software is never 'finished.' We partner on an agile roadmap—continuously shipping high-impact features, optimizing performance, upgrading infrastructure, and hardening security.",
+      badge: "Doorontwikkeling",
+      page: "solutions",
+    },
+    {
+      title: "Integrations & African Rails",
+      subheading: "We laten systemen met elkaar communiceren",
+      description:
+        "We make complex systems talk to each other. Connecting modern web apps with legacy core databases, ERPs, M-Pesa Daraja 2.0, bank switches, USSD gateways, and third-party APIs.",
+      badge: "Koppelingen & API's",
+      page: "solutions",
+    },
+  ],
+
+  partnerLogos: [
+    { name: "HealthBridge Africa", sector: "Healthcare" },
+    { name: "AgriConnect B2B", sector: "Agriculture" },
+    { name: "EduLearn Pan-Africa", sector: "EdTech" },
+    { name: "FinTrack Banking", sector: "FinTech" },
+    { name: "TradeBridge Clearing", sector: "Cross-Border" },
+    { name: "CityPulse Transit", sector: "Smart City" },
+    { name: "SolarGrid PAYG", sector: "Clean Energy" },
+    { name: "MedSupply Verified", sector: "Pharma" },
+    { name: "WaterWatch IoT", sector: "Environment" },
+  ],
+
+  howWeWorkStatement: {
+    heading: "How we work",
+    quote:
+      "How do we work? There is no one-size-fits-all formula. It depends entirely on your market reality, connectivity constraints, and growth goals. We look together at your goals and chart the fastest, safest path to production.",
+    cta: "About us & our approach",
+  },
+
+  preFooterCta: {
+    eyebrow: "Ready to build something extraordinary?",
+    heading: "Curious how we can help your organization?",
+    buttonText: "Hell yeah! Let's talk",
   },
 
   about: {
@@ -73,18 +127,54 @@ export const siteConfig = {
     ],
   },
 
-  contact: {
-    title: "Partner with us",
+  solutions: {
+    title: "What we do",
     description:
-      "Ready to build something meaningful? Let's talk about how we can work together to drive progress.",
-    email: "hello@afrinit.africa",
-    emailLabel: "hello@afrinit.africa",
-    formFields: [
-      { name: "name", label: "Your name", type: "text", placeholder: "Enter your name" },
-      { name: "email", label: "Email address", type: "email", placeholder: "you@example.com" },
-      { name: "message", label: "Message", type: "textarea", placeholder: "Tell us about your project..." },
+      "From custom software to digital transformation, we offer end-to-end solutions that help organizations scale and thrive.",
+    services: [
+      {
+        title: "Custom Software Development",
+        description:
+          "Tailored applications built for your unique challenges — from concept to deployment and beyond.",
+        icon: "code",
+        details: "Our engineering teams work alongside your organization to understand your unique challenges and build software that fits perfectly. From initial discovery through deployment and ongoing support, we deliver solutions that scale with your growth.",
+      },
+      {
+        title: "Digital Transformation",
+        description:
+          "Modernize legacy systems, automate workflows, and unlock data-driven decision making.",
+        icon: "transform",
+        details: "We help organizations navigate the journey from legacy systems to modern, cloud-native architectures. Our approach combines process optimization with technology implementation to ensure lasting transformation.",
+      },
+      {
+        title: "Cloud & Infrastructure",
+        description:
+          "Scalable, secure cloud architectures designed for performance and reliability.",
+        icon: "cloud",
+        details: "From cloud migration to infrastructure-as-code, we design and implement cloud solutions that are secure, scalable, and cost-effective. We work with AWS, GCP, and Azure to find the right fit for your needs.",
+      },
+      {
+        title: "Product Design",
+        description:
+          "User-centered design that bridges aesthetics with functionality for real-world impact.",
+        icon: "design",
+        details: "Our design process puts users at the center. Through research, prototyping, and testing, we create interfaces that are intuitive, accessible, and beautiful — designed for the African context and beyond.",
+      },
+      {
+        title: "AI & Data Solutions",
+        description:
+          "Leverage machine learning and analytics to extract insights and automate intelligence.",
+        icon: "ai",
+        details: "From predictive analytics to natural language processing, we build AI solutions that solve real problems. Our data science team works with your data to uncover insights and automate decisions.",
+      },
+      {
+        title: "Capacity Building",
+        description:
+          "Training and mentorship programs that grow technical talent across organizations.",
+        icon: "growth",
+        details: "We believe in growing talent from within. Our training programs, mentorship initiatives, and knowledge transfer processes ensure your team is equipped to maintain and evolve the solutions we build together.",
+      },
     ],
-    submitLabel: "Send message",
   },
 
   projects: {
@@ -177,56 +267,6 @@ export const siteConfig = {
       },
     ],
     perPage: 6,
-  },
-
-  solutions: {
-    title: "What we do",
-    description:
-      "From custom software to digital transformation, we offer end-to-end solutions that help organizations scale and thrive.",
-    services: [
-      {
-        title: "Custom Software Development",
-        description:
-          "Tailored applications built for your unique challenges — from concept to deployment and beyond.",
-        icon: "code",
-        details: "Our engineering teams work alongside your organization to understand your unique challenges and build software that fits perfectly. From initial discovery through deployment and ongoing support, we deliver solutions that scale with your growth.",
-      },
-      {
-        title: "Digital Transformation",
-        description:
-          "Modernize legacy systems, automate workflows, and unlock data-driven decision making.",
-        icon: "transform",
-        details: "We help organizations navigate the journey from legacy systems to modern, cloud-native architectures. Our approach combines process optimization with technology implementation to ensure lasting transformation.",
-      },
-      {
-        title: "Cloud & Infrastructure",
-        description:
-          "Scalable, secure cloud architectures designed for performance and reliability.",
-        icon: "cloud",
-        details: "From cloud migration to infrastructure-as-code, we design and implement cloud solutions that are secure, scalable, and cost-effective. We work with AWS, GCP, and Azure to find the right fit for your needs.",
-      },
-      {
-        title: "Product Design",
-        description:
-          "User-centered design that bridges aesthetics with functionality for real-world impact.",
-        icon: "design",
-        details: "Our design process puts users at the center. Through research, prototyping, and testing, we create interfaces that are intuitive, accessible, and beautiful — designed for the African context and beyond.",
-      },
-      {
-        title: "AI & Data Solutions",
-        description:
-          "Leverage machine learning and analytics to extract insights and automate intelligence.",
-        icon: "ai",
-        details: "From predictive analytics to natural language processing, we build AI solutions that solve real problems. Our data science team works with your data to uncover insights and automate decisions.",
-      },
-      {
-        title: "Capacity Building",
-        description:
-          "Training and mentorship programs that grow technical talent across organizations.",
-        icon: "growth",
-        details: "We believe in growing talent from within. Our training programs, mentorship initiatives, and knowledge transfer processes ensure your team is equipped to maintain and evolve the solutions we build together.",
-      },
-    ],
   },
 
   impact: {
@@ -341,6 +381,20 @@ export const siteConfig = {
         answer: "Absolutely. We frequently embed within existing teams, augmenting your capabilities with our expertise. Our flexible engagement models adapt to your workflow and preferences.",
       },
     ],
+  },
+
+  contact: {
+    title: "Partner with us",
+    description:
+      "Ready to build something meaningful? Let's talk about how we can work together to drive progress.",
+    email: "hello@afrinit.africa",
+    emailLabel: "hello@afrinit.africa",
+    formFields: [
+      { name: "name", label: "Your name", type: "text", placeholder: "Enter your name" },
+      { name: "email", label: "Email address", type: "email", placeholder: "you@example.com" },
+      { name: "message", label: "Message", type: "textarea", placeholder: "Tell us about your project..." },
+    ],
+    submitLabel: "Send message",
   },
 
   footer: {
