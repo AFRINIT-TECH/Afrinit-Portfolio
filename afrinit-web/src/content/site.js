@@ -505,55 +505,97 @@ export const siteConfig = {
   },
 
   people: {
-    title: "People & Work",
+    title: "People, culture & leadership",
     description:
-      "Our team is the heart of everything we do. We foster a culture of curiosity, collaboration, and continuous growth.",
+      "We believe remarkable software is built by people who feel deeply invested in their craft. We are an inclusive, remote-first team distributed across 10 African tech ecosystems.",
     values: [
       {
-        title: "Collaboration",
+        title: "Radical Technical Ownership",
         description:
-          "We work together — across borders, disciplines, and time zones — to build better solutions.",
+          "We take full accountability for our code quality, architectural robustness, and delivery timelines. When something breaks, we fix it and publish post-mortems.",
       },
       {
-        title: "Innovation",
+        title: "Built with Local Empathy",
         description:
-          "We challenge the status quo and explore new ways to solve old problems.",
+          "We design for real people navigating patchy networks, limited data bundles, and diverse languages. We never build Ivory Tower software.",
       },
       {
-        title: "Inclusion",
+        title: "Inclusion & Continental Unity",
         description:
-          "We believe diverse perspectives create stronger products and a stronger company.",
+          "Our strength lies in geographic and cognitive diversity—bringing together perspectives from East, West, North, and Southern Africa to solve shared challenges.",
       },
       {
-        title: "Growth",
+        title: "Continuous Apprenticeship",
         description:
-          "We invest in our people's development because their growth is our growth.",
+          "Every senior engineer mentors junior teammates. We run weekly architecture tear-downs, write internal technical memos, and sponsor open-source contributions.",
       },
     ],
     team: [
       {
         name: "Amina Diallo",
-        role: "Founder & CEO",
-        bio: "15 years building technology for emerging markets.",
+        role: "Founder & Chief Executive Officer",
+        bio: "15+ years engineering digital products across emerging markets; formerly principal systems lead at international fintech initiatives.",
         image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=400",
       },
       {
         name: "Chidi Okonkwo",
-        role: "CTO",
-        bio: "Former Google engineer passionate about African tech.",
+        role: "Chief Technology Officer",
+        bio: "Former Google cloud systems engineer; distributed systems architect passionate about high-throughput Go services and fault tolerance.",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=400",
       },
       {
         name: "Zawadi Mwangi",
-        role: "Head of Design",
-        bio: "Designing for accessibility and impact across Africa.",
+        role: "Head of Product & Design",
+        bio: "Award-winning product designer dedicated to low-bandwidth UX, accessibility patterns, and multi-lingual design systems.",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=400",
       },
       {
         name: "Kofi Mensah",
         role: "Head of Engineering",
-        bio: "Building scalable systems for millions of users.",
+        bio: "12 years managing engineering teams; specialist in high-reliability mobile applications and microservice orchestration.",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=400",
+      },
+      {
+        name: "Dr. Tariq Al-Mansoor",
+        role: "Lead AI & Data Scientist",
+        bio: "PhD in Natural Language Processing; architect of Afrinit's speech recognition engines for indigenous African languages.",
+        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=400",
+      },
+      {
+        name: "Nia Adebayo",
+        role: "VP of Partnerships & Capacity",
+        bio: "Former tech policy advisor and developer ecosystem leader; coordinates university fellowships and enterprise client alliances.",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=400",
+      },
+      {
+        name: "David Kiprop",
+        role: "Principal Cloud & Security Architect",
+        bio: "DevSecOps expert specializing in Terraform, zero-trust cloud architectures, and financial security compliance (PCI-DSS & ISO 27001).",
+        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=400",
+      },
+      {
+        name: "Blessing Eze",
+        role: "Staff Mobile Systems Engineer",
+        bio: "Flutter and React Native core contributor; pioneer of offline-first mobile synchronization protocols in low-bandwidth rural environments.",
+        image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=400",
+      },
+    ],
+    cultureBenefits: [
+      {
+        title: "Work From Anywhere in Africa",
+        description: "Full remote-first flexibility with home office stipends and memberships to premier regional coworking hubs.",
+      },
+      {
+        title: "Continuous Learning Budget",
+        description: "Annual individual budgets for books, conference tickets, specialized certifications, and hardware upgrades.",
+      },
+      {
+        title: "Open Source Fridays",
+        description: "Dedicated time during work hours to contribute to open-source tools, African data sets, and developer libraries.",
+      },
+      {
+        title: "Comprehensive Health & Wellness",
+        description: "Pan-African private health coverage including mental wellness support, parental leave, and gym subsidies.",
       },
     ],
   },
