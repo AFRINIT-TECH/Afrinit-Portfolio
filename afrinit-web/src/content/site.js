@@ -437,30 +437,69 @@ export const siteConfig = {
   },
 
   impact: {
-    title: "Our impact",
+    title: "Our continental impact",
     description:
-      "We measure success not just in code shipped, but in lives touched and systems transformed across Africa.",
+      "We quantify success not merely in lines of code deployed, but in economic efficiency created, livelihoods empowered, and institutions modernized across the continent.",
     stats: [
-      { value: "14", label: "Countries reached" },
-      { value: "50+", label: "Projects delivered" },
-      { value: "200+", label: "Talent trained" },
-      { value: "1M+", label: "Lives impacted by 2030" },
+      { value: "14", label: "Countries with active systems" },
+      { value: "50+", label: "Mission-critical platforms delivered" },
+      { value: "1,200+", label: "Engineers mentored & certified" },
+      { value: "1M+", label: "Projected lives reached by 2030" },
+    ],
+    milestones: [
+      {
+        year: "2024",
+        title: "Foundation & Regional Expansion",
+        description:
+          "Established our engineering headquarters with permanent hubs in Nairobi, Lagos, and Accra, deploying the initial wave of fintech and agritech infrastructure.",
+      },
+      {
+        year: "2025",
+        title: "Public Sector & Health Tech Scale",
+        description:
+          "Launched the National Health Data Platform and expanded our capacity building program to partner with 8 leading pan-African universities.",
+      },
+      {
+        year: "2026",
+        title: "Cross-Border Settlement & AI Studio",
+        description:
+          "Engineered multi-currency settlement rails and localized speech recognition suites supporting indigenous African languages.",
+      },
+      {
+        year: "2030",
+        title: "The Million-Opportunity Horizon",
+        description:
+          "On track to facilitate one million direct and indirect economic opportunities for African youth through digital products, training, and open tooling.",
+      },
     ],
     testimonials: [
       {
-        quote: "Afrinit didn't just build us a platform — they transformed how we operate across the continent.",
+        quote:
+          "Afrinit didn't just build us a healthcare data platform—they spent time in rural clinics to understand power outages and intermittent connectivity. The resulting software has delivered 99.98% uptime in conditions where every other tool failed.",
         author: "Dr. Amara Osei",
-        role: "CEO, HealthBridge Africa",
+        role: "Chief Executive Officer, HealthBridge Africa",
+        location: "Accra, Ghana",
       },
       {
-        quote: "Their understanding of the African market is unmatched. Every solution feels built for us.",
+        quote:
+          "Their understanding of African payment rails and farmer cash flows is extraordinary. Integrating M-Pesa automated float balancing with our offline mobile app cut our agricultural loan default rate by 31%.",
         author: "Kwame Asante",
-        role: "CTO, AgriConnect",
+        role: "Chief Technology Officer, AgriConnect",
+        location: "Nairobi, Kenya",
       },
       {
-        quote: "The capacity building program grew our engineering team from 5 to 50 in two years.",
+        quote:
+          "The engineering capacity building academy run by Afrinit transformed our internal staff. Our software team evolved from struggling with basic maintenance to shipping production microservices independently in less than six months.",
         author: "Fatima Ndiaye",
-        role: "Director of Tech, EduLearn",
+        role: "Director of Digital Systems, EduLearn West Africa",
+        location: "Dakar, Senegal",
+      },
+      {
+        quote:
+          "Afrinit represents the absolute highest standard of engineering rigor on this continent. Their architectural foresight saved us hundreds of thousands in cloud infrastructure costs during our Series A expansion.",
+        author: "Tunde Balogun",
+        role: "Head of Infrastructure, TradeBridge Technologies",
+        location: "Lagos, Nigeria",
       },
     ],
   },
