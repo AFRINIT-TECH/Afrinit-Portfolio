@@ -107,22 +107,70 @@ export const siteConfig = {
   about: {
     title: "Who we are",
     description:
-      "Afrinit is a technology company rooted in Africa, building software that serves the continent and the world. We combine local insight with global standards to deliver products that last.",
+      "Afrinit is an engineering-first technology company headquartered in Nairobi, Lagos, and Accra. We build durable, secure digital infrastructure that accounts for African connectivity realities, diverse payment rails, and high-growth consumer needs.",
     points: [
       {
-        title: "Local insight, global standards",
+        title: "Local insight, global engineering bars",
         description:
-          "We understand the African market deeply, and we build to the highest international quality bars.",
+          "We understand the nuances of intermittent connectivity, USSD and mobile money payment flows, and diverse device ecosystems—while engineering to the most stringent international reliability and security benchmarks.",
       },
       {
-        title: "Talent-first approach",
+        title: "Talent-first continental engine",
         description:
-          "We invest in people — growing engineers, designers, and leaders who shape Africa's digital future.",
+          "We invest heavily in African engineering talent through our internal apprenticeship programs, technical masterclasses, and hands-on production mentoring that shape Africa's next generation of senior builders.",
       },
       {
-        title: "Long-term partnerships",
+        title: "Long-term partnership & ownership",
         description:
-          "We don't just deliver projects; we build relationships that drive sustained progress.",
+          "We don't drop black-box code and leave. We deliver clean, fully documented repositories, train internal engineering teams, and partner strategically to ensure lasting operational sovereignty.",
+      },
+    ],
+    pillars: [
+      {
+        title: "Built for Connectivity Realities",
+        description:
+          "Our web and mobile architectures employ smart caching, offline-first sync (SQLite/WatermelonDB), and lightweight payloads that run smoothly on 3G and patchy cellular networks.",
+      },
+      {
+        title: "Senior Hands-On Attention",
+        description:
+          "Direct collaboration with principal engineers and product strategists from day one. No junior hand-off roulette; your vision is guided by veterans.",
+      },
+      {
+        title: "African Financial Rails Ready",
+        description:
+          "Native integrations with M-Pesa (Daraja 2.0), Flutterwave, Paystack, bank switches, and mobile network operator USSD gateways are built into our architectural DNA.",
+      },
+      {
+        title: "Zero Vendor Lock-In",
+        description:
+          "Clean code, comprehensive automated tests, Dockerized containers, and Terraform-managed cloud setups ensure your organization owns every single asset completely.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Discovery & Context Architecture",
+        description:
+          "We unpack your business objectives, operational bottlenecks, regulatory landscape, and user environments—producing actionable technical specifications and architecture blueprints before a single line of code is written.",
+      },
+      {
+        step: "02",
+        title: "Human-Centric Prototyping",
+        description:
+          "We construct clickable, high-fidelity prototypes in Figma and validate them through live usability testing with target end-users across different literacy levels and device formats.",
+      },
+      {
+        step: "03",
+        title: "Agile Engineering & Continuous Testing",
+        description:
+          "We build in rapid two-week sprint cycles with live demo environments. Automated unit and end-to-end tests, strict linting, and continuous security scanning ensure predictable code quality.",
+      },
+      {
+        step: "04",
+        title: "Deployment, Knowledge Transfer & Scaling",
+        description:
+          "We deploy using modern CI/CD pipelines to hardened cloud infrastructure, provide runbooks, conduct comprehensive training sessions for your technical staff, and provide continuous SLA monitoring.",
       },
     ],
   },
