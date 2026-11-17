@@ -1,120 +1,394 @@
 import { siteConfig } from "@/content/site";
 
 export const Hero = ({ onNavigate }) => {
+  // Top 4 featured projects for the success stories section
+  const featuredProjects = siteConfig.projects.items.slice(0, 4);
+
   return (
-    <section className="page-view relative grid min-h-[calc(100vh-78px)] w-full items-center gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-14 lg:py-20">
-      {/* Left Column */}
-      <div className="relative z-10">
-        <div className="mb-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-          <span className="h-px w-9 bg-[#9c6849]" />
-          {siteConfig.hero.eyebrow}
-        </div>
+    <div className="page-view w-full overflow-hidden">
+      {/* 1. Flagship Hero Section */}
+      <section className="relative grid min-h-[calc(100vh-78px)] w-full items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:px-14 lg:py-20">
+        {/* Left Column */}
+        <div className="relative z-10">
+          <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+            <span className="h-px w-9 bg-[#9c6849]" />
+            {siteConfig.hero.eyebrow}
+          </div>
 
-        <h1 className="font-display max-w-[780px] text-[clamp(3.5rem,7vw,7.7rem)] font-medium leading-[0.87] tracking-[-0.065em]">
-          {siteConfig.hero.titleLine1}
-          <span className="mt-2 block text-[#9c6849]">
-            {siteConfig.hero.titleLine2}
-          </span>
-        </h1>
-
-        <p className="mt-8 max-w-lg text-base leading-7 text-[#5f5249] sm:text-lg">
-          {siteConfig.hero.paragraph}
-        </p>
-
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <button
-            onClick={() => onNavigate && onNavigate("solutions")}
-            className="group flex items-center gap-5 rounded-full bg-[#9c6849] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#825238]"
-          >
-            {siteConfig.hero.primaryCta.label}
-            <span className="transition group-hover:translate-x-1">
-              <svg
-                aria-hidden="true"
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 12h14m-5-5 5 5-5 5"
-                />
-              </svg>
+          <h1 className="viewport-animation delay-100 font-display max-w-[820px] text-[clamp(2.75rem,6.5vw,6.5rem)] font-extrabold leading-[0.92] tracking-[-0.05em] text-[#231c17]">
+            {siteConfig.hero.titleLine1}
+            <span className="mt-2 block text-[#9c6849]">
+              {siteConfig.hero.titleLine2}
             </span>
-          </button>
-          <button
-            onClick={() => onNavigate && onNavigate("impact")}
-            className="flex items-center gap-3 px-3 py-4 text-sm font-semibold transition hover:text-[#9c6849]"
-          >
-            {siteConfig.hero.secondaryCta.label}
-            <svg
-              aria-hidden="true"
-              className="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
+          </h1>
+
+          <p className="viewport-animation delay-200 mt-8 max-w-xl text-base leading-relaxed text-[#5f5249] sm:text-lg">
+            {siteConfig.hero.paragraph}
+          </p>
+
+          <div className="viewport-animation delay-300 mt-10 flex flex-wrap items-center gap-4">
+            <button
+              onClick={() => onNavigate && onNavigate("projects")}
+              className="group inline-flex items-center gap-4 rounded-full bg-[#9c6849] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#9c6849]/20 transition-all hover:bg-[#825238] hover:shadow-xl cursor-pointer"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M7 17 17 7M7 7h10v10"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* Right Column: Image */}
-      <div className="relative mx-auto w-full max-w-[610px] lg:mr-0">
-        <div className="absolute -left-4 top-[9%] hidden h-24 w-24 rounded-full border border-[#9c6849]/50 sm:block lg:-left-12" />
-
-        <div className="relative ml-auto aspect-[4/5] w-[88%] overflow-hidden rounded-[2px] bg-[#d7c4ae]">
-          <img
-            src={siteConfig.hero.image.src}
-            alt={siteConfig.hero.image.alt}
-            className="h-full w-full object-cover grayscale-[15%] transition duration-700 hover:scale-[1.025]"
-            loading="eager"
-          />
-          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-[#231c17] p-5 text-white sm:p-7">
-            <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#d7c4ae]">
-                {siteConfig.hero.stats.label}
-              </p>
-              <p className="font-display mt-1 text-3xl">
-                {siteConfig.hero.stats.value}
-              </p>
-            </div>
-            <span className="grid h-11 w-11 place-items-center rounded-full border border-white/30">
-              <svg
-                aria-hidden="true"
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M7 17 17 7M7 7h10v10"
-                />
-              </svg>
-            </span>
+              {siteConfig.hero.primaryCta.label}
+              <span className="transition-transform duration-300 group-hover:translate-x-1.5">
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </button>
+            <button
+              onClick={() => onNavigate && onNavigate("contact")}
+              className="group inline-flex items-center gap-3 rounded-full border border-[#3d2d22]/20 bg-white/70 px-7 py-4 text-sm font-semibold text-[#231c17] transition hover:bg-white hover:text-[#9c6849] cursor-pointer"
+            >
+              {siteConfig.hero.secondaryCta.label}
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </span>
+            </button>
           </div>
         </div>
 
-        <div className="absolute -bottom-7 left-0 w-40 bg-[#dcbf77] p-5 sm:w-48 sm:p-6">
-          <p className="font-display text-4xl font-semibold tracking-tight">
-            {siteConfig.hero.goal.year}
-          </p>
-          <p className="mt-2 text-xs font-semibold leading-5">
-            {siteConfig.hero.goal.description}
-          </p>
+        {/* Right Column: Hero Visual Image with Badges */}
+        <div className="relative mx-auto w-full max-w-[580px] lg:mr-0">
+          <div className="absolute -left-6 top-[8%] hidden h-28 w-28 rounded-full border border-[#9c6849]/30 sm:block lg:-left-10" />
+
+          <div className="viewport-animation delay-200 relative ml-auto aspect-[4/5] w-[90%] overflow-hidden rounded-2xl bg-[#d7c4ae] shadow-2xl">
+            <img
+              src={siteConfig.hero.image.src}
+              alt={siteConfig.hero.image.alt}
+              className="h-full w-full object-cover grayscale-[10%] transition-transform duration-700 ease-out hover:scale-105"
+              loading="eager"
+            />
+            {/* Bottom Dark Overlay Tag */}
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-[#231c17] via-[#231c17]/85 to-transparent p-6 text-white sm:p-7">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#d7c4ae]">
+                  {siteConfig.hero.stats.label}
+                </p>
+                <p className="font-display mt-1 text-3xl font-bold text-white">
+                  {siteConfig.hero.stats.value}
+                </p>
+              </div>
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-white/30 text-white">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          {/* Yellow/Gold Goal Tag */}
+          <div className="viewport-animation delay-400 absolute -bottom-6 left-0 rounded-xl bg-[#dcbf77] p-5 shadow-xl sm:w-52 sm:p-6 text-[#231c17] animate-float">
+            <p className="font-display text-4xl font-extrabold tracking-tight">
+              {siteConfig.hero.goal.year}
+            </p>
+            <p className="mt-1 text-xs font-semibold leading-relaxed">
+              {siteConfig.hero.goal.description}
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* 2. Core Pillars ("Maatwerk software oplossingen") */}
+      <section className="relative w-full border-t border-[#3d2d22]/10 bg-white/40 px-5 py-24 sm:px-8 lg:px-14">
+        <div className="mx-auto max-w-6xl">
+          <div className="viewport-animation mb-14">
+            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+              <span className="h-px w-9 bg-[#9c6849]" />
+              Core Competencies
+            </div>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-[#231c17] sm:text-5xl">
+              Tailor-made software solutions
+            </h2>
+            <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
+              Every organization has unique operational hurdles. We build custom software that solves your exact operational challenges without bloated overhead.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {siteConfig.corePillars.map((pillar, idx) => (
+              <div
+                key={idx}
+                className={`viewport-animation delay-${(idx + 1) * 100} card-nerd group relative rounded-2xl border border-[#3d2d22]/15 bg-white/80 p-8 shadow-sm flex flex-col justify-between`}
+              >
+                <div>
+                  <span className="inline-block rounded-full bg-[#9c6849]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#9c6849]">
+                    {pillar.badge}
+                  </span>
+                  <h3 className="font-display mt-5 text-2xl font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-2 text-xs font-semibold italic text-[#79513a]">
+                    {pillar.subheading}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-[#5f5249]">
+                    {pillar.description}
+                  </p>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-[#3d2d22]/10">
+                  <button
+                    onClick={() => onNavigate && onNavigate(pillar.page)}
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9c6849] transition-colors group-hover:text-[#231c17] cursor-pointer"
+                  >
+                    Learn more
+                    <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Featured Success Stories ("Onze succesverhalen") */}
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
+        <div className="mx-auto max-w-6xl">
+          <div className="viewport-animation mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+                <span className="h-px w-9 bg-[#9c6849]" />
+                Selected Case Studies
+              </div>
+              <h2 className="font-display text-3xl font-bold tracking-tight text-[#231c17] sm:text-5xl">
+                Our success stories
+              </h2>
+              <p className="mt-4 max-w-xl text-base text-[#5f5249]">
+                Our engineers love technical depth, but what matters is the outcome. Nothing shows that better than a selection of our work across the continent.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate && onNavigate("projects")}
+              className="group inline-flex items-center gap-3 rounded-full border border-[#3d2d22]/20 bg-white/80 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-[#231c17] transition hover:bg-[#231c17] hover:text-white cursor-pointer"
+            >
+              Check all our work
+              <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+            </button>
+          </div>
+
+          {/* 2x2 Grid of Featured Case Studies */}
+          <div className="grid gap-8 md:grid-cols-2">
+            {featuredProjects.map((project, idx) => (
+              <div
+                key={idx}
+                className={`viewport-animation delay-${((idx % 2) + 1) * 150} card-nerd group relative overflow-hidden rounded-2xl border border-[#3d2d22]/15 bg-white/80 shadow-sm flex flex-col justify-between`}
+              >
+                <div>
+                  <div className="relative aspect-[16/10] overflow-hidden bg-[#d7c4ae]">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    {project.metric && (
+                      <div className="absolute bottom-4 left-4 rounded-lg bg-[#231c17]/90 px-3.5 py-1.5 text-xs font-bold text-[#dcbf77] backdrop-blur-sm shadow-md">
+                        {project.metric}
+                      </div>
+                    )}
+                    <div className="absolute top-4 right-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#231c17] backdrop-blur-sm shadow-xs">
+                      {project.category}
+                    </div>
+                  </div>
+
+                  <div className="p-7">
+                    <h3 className="font-display text-2xl font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-[#5f5249]">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-7 pb-7 pt-2">
+                  <div className="flex flex-wrap gap-2 border-t border-[#3d2d22]/10 pt-4">
+                    {project.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="rounded-md bg-[#d7c4ae]/30 px-2.5 py-1 text-[11px] font-semibold text-[#5f5249]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. "How We Work" Philosophical Statement Block */}
+      <section className="relative w-full px-5 py-12 sm:px-8 lg:px-14">
+        <div className="viewport-animation mx-auto max-w-6xl rounded-3xl bg-[#231c17] p-10 sm:p-16 text-white shadow-2xl relative overflow-hidden">
+          <div className="absolute -right-12 -top-12 h-64 w-64 rounded-full bg-[#9c6849]/15 blur-2xl" />
+
+          <div className="relative z-10 max-w-3xl">
+            <span className="inline-block rounded-full bg-[#dcbf77]/20 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#dcbf77]">
+              {siteConfig.howWeWorkStatement.heading}
+            </span>
+            <blockquote className="font-display mt-6 text-2xl sm:text-3xl lg:text-4xl font-medium leading-snug text-white">
+              "{siteConfig.howWeWorkStatement.quote}"
+            </blockquote>
+
+            <div className="mt-10">
+              <button
+                onClick={() => onNavigate && onNavigate("about")}
+                className="group inline-flex items-center gap-3 rounded-full bg-[#dcbf77] px-8 py-4 text-sm font-semibold text-[#231c17] transition-all hover:bg-white cursor-pointer"
+              >
+                {siteConfig.howWeWorkStatement.cta}
+                <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Partner Reviews ("Ervaringen van anderen") */}
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
+        <div className="mx-auto max-w-6xl">
+          <div className="viewport-animation mb-14">
+            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+              <span className="h-px w-9 bg-[#9c6849]" />
+              Partner Reviews
+            </div>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-[#231c17] sm:text-5xl">
+              What others say
+            </h2>
+            <p className="mt-4 max-w-xl text-base text-[#5f5249]">
+              Great that we are enthusiastic, but how do our partners experience it? Reviews aren't just for consumer products—they matter for your mission-critical software partner.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {siteConfig.impact.testimonials.map((t, idx) => (
+              <div
+                key={idx}
+                className={`viewport-animation delay-${((idx % 2) + 1) * 150} card-nerd rounded-2xl border border-[#3d2d22]/15 bg-white/70 p-8 shadow-sm flex flex-col justify-between`}
+              >
+                <div>
+                  <svg
+                    className="h-8 w-8 text-[#9c6849]/30 mb-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                  <p className="text-base leading-relaxed text-[#231c17]">
+                    "{t.quote}"
+                  </p>
+                </div>
+                <div className="mt-8 pt-4 border-t border-[#3d2d22]/10 flex items-center justify-between">
+                  <div>
+                    <p className="font-display text-base font-bold text-[#231c17]">
+                      {t.author}
+                    </p>
+                    <p className="text-xs text-[#5f5249]">{t.role}</p>
+                  </div>
+                  {t.location && (
+                    <span className="rounded-full bg-[#d7c4ae]/30 px-3 py-1 text-xs font-semibold text-[#79513a]">
+                      {t.location}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. "Tools We Love Working With" ("Waar we graag mee werken") */}
+      <section className="relative w-full border-t border-[#3d2d22]/10 bg-white/40 px-5 py-20 sm:px-8 lg:px-14">
+        <div className="mx-auto max-w-6xl">
+          <div className="viewport-animation mb-12 text-center">
+            <div className="mb-3 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+              <span className="h-px w-9 bg-[#9c6849]" />
+              Engineering Tooling
+              <span className="h-px w-9 bg-[#9c6849]" />
+            </div>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-[#231c17] sm:text-4xl">
+              Tools we love working with
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-sm text-[#5f5249]">
+              Modern, high-performance languages and frameworks chosen for speed, reliability, and security.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {siteConfig.solutions.techStack.map((stack, idx) => (
+              <div
+                key={idx}
+                className={`viewport-animation delay-${(idx + 1) * 100} card-nerd rounded-2xl border border-[#3d2d22]/15 bg-white/80 p-6 shadow-sm`}
+              >
+                <h3 className="font-display text-base font-bold text-[#9c6849]">
+                  {stack.category}
+                </h3>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {stack.technologies.map((t, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="rounded-lg bg-[#231c17] px-3 py-1 text-xs font-semibold text-[#d7c4ae] transition-transform duration-200 hover:scale-105"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Signature Pre-Footer CTA Banner ("Curious how we can help you? Hell yeah!") */}
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden">
+        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
+        <div className="viewport-animation mx-auto max-w-6xl text-center relative z-10">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
+            {siteConfig.preFooterCta.eyebrow}
+          </p>
+          <h2 className="font-display mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl text-white">
+            {siteConfig.preFooterCta.heading}
+          </h2>
+          <div className="mt-10">
+            <button
+              onClick={() => onNavigate && onNavigate("contact")}
+              className="group inline-flex items-center gap-4 rounded-full bg-[#dcbf77] px-10 py-5 text-base font-bold text-[#231c17] shadow-xl transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer"
+            >
+              {siteConfig.preFooterCta.buttonText}
+              <span className="transition-transform duration-300 group-hover:translate-x-2">
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
