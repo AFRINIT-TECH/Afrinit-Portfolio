@@ -176,51 +176,121 @@ export const siteConfig = {
   },
 
   solutions: {
-    title: "What we do",
+    title: "What we build & solve",
     description:
-      "From custom software to digital transformation, we offer end-to-end solutions that help organizations scale and thrive.",
+      "From bespoke fintech platforms to decentralized public sector systems, we deliver end-to-end digital solutions that help organizations modernize, scale, and thrive across Africa.",
     services: [
       {
-        title: "Custom Software Development",
+        title: "Custom Software Engineering",
         description:
-          "Tailored applications built for your unique challenges — from concept to deployment and beyond.",
+          "Tailored enterprise platforms, customer portals, and internal workflows built with resilient web and mobile architectures.",
         icon: "code",
-        details: "Our engineering teams work alongside your organization to understand your unique challenges and build software that fits perfectly. From initial discovery through deployment and ongoing support, we deliver solutions that scale with your growth.",
+        details:
+          "Our engineering teams work alongside your organization to understand your unique business logic and build software that fits perfectly. From initial discovery through high-concurrency deployment and ongoing operational support, we deliver solutions engineered to scale smoothly as user volume surges.",
       },
       {
-        title: "Digital Transformation",
+        title: "Enterprise Digital Transformation",
         description:
-          "Modernize legacy systems, automate workflows, and unlock data-driven decision making.",
+          "Modernize legacy core systems, eliminate manual paperwork, and establish automated data pipelines.",
         icon: "transform",
-        details: "We help organizations navigate the journey from legacy systems to modern, cloud-native architectures. Our approach combines process optimization with technology implementation to ensure lasting transformation.",
+        details:
+          "We help financial institutions, healthcare providers, and logistics firms transition away from fragmented spreadsheets and brittle legacy mainframes to cloud-native microservices, automated ledger systems, and auditable operational workflows.",
       },
       {
-        title: "Cloud & Infrastructure",
+        title: "Cloud & Resilient Infrastructure",
         description:
-          "Scalable, secure cloud architectures designed for performance and reliability.",
+          "Scalable, highly available cloud deployments on AWS, GCP, and Azure with automated failover and cost optimization.",
         icon: "cloud",
-        details: "From cloud migration to infrastructure-as-code, we design and implement cloud solutions that are secure, scalable, and cost-effective. We work with AWS, GCP, and Azure to find the right fit for your needs.",
+        details:
+          "From multi-region cloud migrations to infrastructure-as-code with Terraform and Kubernetes, we design environments that withstand traffic spikes, comply with local data sovereignty mandates, and keep latency low across African internet exchange points.",
       },
       {
-        title: "Product Design",
+        title: "Product Design & Design Systems",
         description:
-          "User-centered design that bridges aesthetics with functionality for real-world impact.",
+          "Accessible, user-centered design that bridges cultural nuance with international UX standards.",
         icon: "design",
-        details: "Our design process puts users at the center. Through research, prototyping, and testing, we create interfaces that are intuitive, accessible, and beautiful — designed for the African context and beyond.",
+        details:
+          "Our design studio conducts ethnographic user research, accessibility audits, and design system creation. We design interfaces that are culturally intuitive, optimized for low-end Android smartphones, and fully accessible in multilingual contexts.",
       },
       {
-        title: "AI & Data Solutions",
+        title: "AI, Predictive Analytics & Data Engineering",
         description:
-          "Leverage machine learning and analytics to extract insights and automate intelligence.",
+          "Turn unstructured operational data into real-time forecasting, credit scoring, and automated decision engines.",
         icon: "ai",
-        details: "From predictive analytics to natural language processing, we build AI solutions that solve real problems. Our data science team works with your data to uncover insights and automate decisions.",
+        details:
+          "We design production data lakes and train machine learning models for fraud prevention, agricultural yield prediction, alternative credit scoring for unbanked populations, and voice-assisted customer service in indigenous African languages.",
       },
       {
-        title: "Capacity Building",
+        title: "Engineering Capacity & Institutional Training",
         description:
-          "Training and mentorship programs that grow technical talent across organizations.",
+          "Intensive technical bootcamps, architectural mentorship, and DevOps upskilling for internal engineering teams.",
         icon: "growth",
-        details: "We believe in growing talent from within. Our training programs, mentorship initiatives, and knowledge transfer processes ensure your team is equipped to maintain and evolve the solutions we build together.",
+        details:
+          "Technology thrives only when organizations can independently sustain it. Our capacity building programs include hands-on pair programming, secure coding workshops, and architecture reviews that level up your internal development teams permanently.",
+      },
+    ],
+    sectors: [
+      {
+        title: "FinTech & Financial Inclusion",
+        description:
+          "Digital wallets, agent banking networks, agency float management, cross-border remittances, and automated micro-lending algorithms.",
+        badge: "Banking & Payments",
+      },
+      {
+        title: "HealthTech & Public Health",
+        description:
+          "Unified patient health registries, cold-chain pharmaceutical tracking, laboratory information systems, and rural tele-health portals.",
+        badge: "Healthcare",
+      },
+      {
+        title: "AgriTech & Food Security",
+        description:
+          "Smallholder aggregation marketplaces, satellite weather index insurance tools, and supply chain tracing from farm gate to export hub.",
+        badge: "Agriculture",
+      },
+      {
+        title: "EdTech & Digital Literacy",
+        description:
+          "Offline-capable learning management systems, interactive curriculum delivery, and verifiable digital credentialing platforms.",
+        badge: "Education",
+      },
+      {
+        title: "Clean Energy & Smart Utilities",
+        description:
+          "Pay-as-you-go (PAYG) solar IoT telemetry, rural micro-grid energy distribution monitors, and smart water point management dashboards.",
+        badge: "Energy & Utilities",
+      },
+      {
+        title: "GovTech & Civic Infrastructure",
+        description:
+          "Automated municipal revenue collection, digital land record registries, and real-time urban telemetry dashboards for metropolitan councils.",
+        badge: "Public Sector",
+      },
+    ],
+    techStack: [
+      {
+        category: "Web & Frontend",
+        technologies: ["React 19", "Vite", "Next.js", "Tailwind CSS v4", "TypeScript", "Vue.js"],
+      },
+      {
+        category: "Mobile & Offline-First",
+        technologies: ["Flutter", "React Native", "SQLite", "WatermelonDB", "Background Sync", "USSD Gateway"],
+      },
+      {
+        category: "Backend & Distributed Systems",
+        technologies: ["Go (Fiber/Gin)", "Node.js / Express", "Python (FastAPI)", "Rust", "gRPC", "GraphQL"],
+      },
+      {
+        category: "Data & Event Streaming",
+        technologies: ["PostgreSQL", "TimescaleDB", "Redis", "Apache Kafka", "InfluxDB", "Elasticsearch"],
+      },
+      {
+        category: "African Rails & Integrations",
+        technologies: ["M-Pesa Daraja API", "Paystack", "Flutterwave", "Africa's Talking", "Interswitch", "NIBSS"],
+      },
+      {
+        category: "Cloud & DevSecOps",
+        technologies: ["Docker", "Kubernetes", "AWS & GCP", "Terraform", "GitHub Actions CI/CD", "Prometheus & Grafana"],
       },
     ],
   },
