@@ -360,30 +360,74 @@ export const Solutions = ({ onNavigate, navParams }) => {
         </div>
       </section>
 
-
-      {/* Consultation CTA */}
-      <section className="relative w-full px-5 py-20 sm:px-8 lg:px-14">
-        <div className="viewport-animation mx-auto max-w-4xl text-center">
-          <p className="text-lg text-[#5f5249]">
-            Have technical requirements or need an architectural evaluation?
-          </p>
-          <button
-            onClick={() => onNavigate && onNavigate("contact")}
-            className="group mt-6 inline-flex items-center gap-3 rounded-full bg-[#9c6849] px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-[#9c6849]/20 transition-all hover:bg-[#825238] hover:shadow-xl cursor-pointer"
-          >
-            Start a technical consultation
-            <span className="transition-transform duration-300 group-hover:translate-x-1.5">
-              <svg
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-5-5 5 5-5 5" />
-              </svg>
+      {/* 7. Solutions In-Page FAQ */}
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
+        <div className="mx-auto max-w-4xl">
+          <div className="viewport-animation mb-12 text-center">
+            <span className="inline-block rounded-full bg-[#9c6849]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#9c6849]">
+              Frequently Asked Questions
             </span>
-          </button>
+            <h2 className="font-display mt-3 text-3xl sm:text-4xl font-extrabold text-[#231c17]">
+              Questions about custom software delivery
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {solutionFaqs.map((faq, idx) => (
+              <div
+                key={idx}
+                className="viewport-animation card-nerd rounded-2xl border border-[#3d2d22]/15 bg-white/80 p-6 shadow-sm overflow-hidden"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  className="w-full flex items-center justify-between gap-4 text-left font-display font-bold text-base sm:text-lg text-[#231c17] cursor-pointer"
+                >
+                  {faq.q}
+                  <span className={`text-[#9c6849] transition-transform duration-200 ${openFaq === idx ? "rotate-180" : ""}`}>
+                    ▼
+                  </span>
+                </button>
+                {openFaq === idx && (
+                  <p className="mt-4 pt-4 border-t border-[#3d2d22]/10 text-sm leading-relaxed text-[#5f5249]">
+                    {faq.a}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Signature Pre-Footer CTA */}
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden">
+        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
+        <div className="viewport-animation mx-auto max-w-6xl text-center relative z-10">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
+            {siteConfig.preFooterCta.eyebrow}
+          </p>
+          <h2 className="font-display mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl text-white">
+            {siteConfig.preFooterCta.heading}
+          </h2>
+          <div className="mt-10">
+            <button
+              onClick={() => onNavigate && onNavigate("contact")}
+              className="group inline-flex items-center gap-4 rounded-full bg-[#dcbf77] px-10 py-5 text-base font-bold text-[#231c17] shadow-xl transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer"
+            >
+              {siteConfig.preFooterCta.buttonText}
+              <span className="transition-transform duration-300 group-hover:translate-x-2">
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
       </section>
     </div>
