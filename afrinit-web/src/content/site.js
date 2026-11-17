@@ -602,31 +602,48 @@ export const siteConfig = {
 
   faq: {
     title: "Frequently asked questions",
-    description: "Everything you need to know about working with Afrinit.",
+    description:
+      "Clear answers to common questions about our capabilities, engagement models, and delivery methodology.",
     questions: [
       {
-        question: "What regions do you operate in?",
-        answer: "We operate across 14 African countries, with our main offices in Lagos, Nairobi, and Accra. Our remote-first culture allows us to serve clients across the continent and beyond.",
+        question: "What geographical markets and countries do you operate in?",
+        answer:
+          "We operate across 14 African nations, with physical engineering and client delivery hubs located in Nairobi (Kenya), Lagos (Nigeria), and Accra (Ghana). Our distributed teams routinely execute projects across East, West, Southern, and North Africa as well as for international diaspora organizations.",
       },
       {
-        question: "How long does a typical project take?",
-        answer: "Project timelines vary based on scope and complexity. A typical custom software project ranges from 3-6 months from discovery to launch. We provide detailed timelines during our initial consultation.",
+        question: "How long does a typical custom software project take?",
+        answer:
+          "A production-ready MVP typically takes between 8 and 14 weeks from initial kickoff to launch. Complex enterprise transformations and multi-country platforms usually span 4 to 9 months in staged milestone releases. We deliver working demo builds every two weeks so you see constant momentum.",
       },
       {
-        question: "Do you offer ongoing support?",
-        answer: "Yes. Every project includes a post-launch support period. We offer flexible maintenance and support packages to ensure your solution continues to perform optimally.",
+        question: "How do your applications handle low-bandwidth and patchy internet?",
+        answer:
+          "We engineer with an offline-first mindset from the start. We utilize local client databases (such as SQLite and WatermelonDB), compress asset payloads aggressively, implement background sync queues, and optimize for 3G cellular speeds. Where appropriate, we also integrate USSD and SMS fallbacks.",
       },
       {
-        question: "What is your approach to capacity building?",
-        answer: "We believe in knowledge transfer as a core part of every engagement. Our capacity building programs include hands-on training, mentorship, and documentation to ensure your team can maintain and evolve solutions.",
+        question: "Do we own the intellectual property and code you develop?",
+        answer:
+          "Yes, 100%. You retain full, unencumbered ownership of all source code, architecture designs, Docker configurations, databases, and assets. Everything is delivered in clean, documented Git repositories with comprehensive documentation and zero vendor lock-in.",
       },
       {
-        question: "How do you handle data privacy and security?",
-        answer: "Security is built into every layer of our development process. We follow international best practices, including GDPR compliance, end-to-end encryption, and regular security audits.",
+        question: "What payment rails and telecommunications gateways can you integrate?",
+        answer:
+          "We have extensive production experience integrating M-Pesa (Safaricom Daraja API), MTN Mobile Money, Airtel Money, Paystack, Flutterwave, Interswitch, and direct bank switches (NIBSS, EFT), alongside telecom SMS and USSD gateways via Africa's Talking.",
       },
       {
-        question: "Can you work with our existing team?",
-        answer: "Absolutely. We frequently embed within existing teams, augmenting your capabilities with our expertise. Our flexible engagement models adapt to your workflow and preferences.",
+        question: "Do you offer post-launch support and SLA guarantees?",
+        answer:
+          "Yes. Every build includes an initial 60-day warranty and stabilization period. Beyond launch, we offer flexible Managed Engineering and DevOps SLA retainers with 24/7 incident response, security patching, database optimization, and continuous feature evolution.",
+      },
+      {
+        question: "Can Afrinit embed with or train our existing internal team?",
+        answer:
+          "Absolutely. Many of our most successful client engagements involve augmented engineering, where our staff engineers pair program with your developers, establish modern CI/CD pipelines, and conduct architecture review sessions that permanently elevate internal capabilities.",
+      },
+      {
+        question: "How do you protect data privacy and ensure regulatory compliance?",
+        answer:
+          "We adhere strictly to international and continental data protection frameworks (such as Nigeria's NDPR, Kenya's Data Protection Act, and GDPR). We enforce end-to-end encryption in transit (TLS 1.3) and at rest (AES-256), conduct automated vulnerability scans, and implement strict role-based access control.",
       },
     ],
   },
