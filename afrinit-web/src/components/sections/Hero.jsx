@@ -121,7 +121,7 @@ export const Hero = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 2. Core Pillars ("Maatwerk software oplossingen") */}
+      {/* 2. Core Pillars (Custom Software Solutions) */}
       <section className="relative w-full border-t border-[#3d2d22]/10 bg-white/40 px-5 py-24 sm:px-8 lg:px-14">
         <div className="mx-auto max-w-6xl">
           <div className="viewport-animation mb-14">
@@ -175,7 +175,7 @@ export const Hero = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 3. Infinite Logo Marquee Ticker ("Merken waar we impact voor maken") */}
+      {/* 3. Infinite Logo Marquee Ticker (Brands We Engineer For) */}
       <section className="relative w-full border-y border-[#3d2d22]/10 bg-[#f5efe4] py-14 overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-14 mb-8 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#79513a]">
@@ -203,7 +203,7 @@ export const Hero = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 4. Featured Success Stories ("Onze succesverhalen") */}
+      {/* 4. Featured Success Stories */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
         <div className="mx-auto max-w-6xl">
           <div className="viewport-animation mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -312,7 +312,7 @@ export const Hero = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 6. Partner Reviews ("Ervaringen van anderen" - Interactive Swiper Slider) */}
+      {/* 6. Partner Reviews (Interactive Swiper Slider) */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
         <div className="mx-auto max-w-6xl">
           <div className="viewport-animation mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
@@ -391,7 +391,7 @@ export const Hero = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 7. Tools We Love Working With ("Waar we graag mee werken") */}
+      {/* 7. Tools We Love Working With */}
       <section className="relative w-full border-t border-[#3d2d22]/10 bg-white/40 px-5 py-20 sm:px-8 lg:px-14">
         <div className="mx-auto max-w-6xl">
           <div className="viewport-animation mb-12 text-center">
