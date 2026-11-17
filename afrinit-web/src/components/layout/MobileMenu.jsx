@@ -66,7 +66,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed inset-0 top-[78px] z-40 bg-[#f5efe4] flex flex-col p-6"
+          className="fixed inset-0 top-[78px] z-40 bg-[#f5efe4] flex flex-col p-6 overflow-y-auto"
         >
           <nav className="flex flex-col space-y-2">
             {siteConfig.navigation.links.map((link) => (
