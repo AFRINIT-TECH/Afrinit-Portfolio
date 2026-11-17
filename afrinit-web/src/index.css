@@ -16,11 +16,62 @@
   --font-body: "DM Sans", sans-serif;
 }
 
+:root {
+  --transition-short: 200ms;
+  --transition-medium: 400ms;
+  --transition-long: 650ms;
+  --transition-extra-long: 1200ms;
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+  --ease-spring: cubic-bezier(0.4, 1.85, 0.64, 1);
+}
+
+/* Nerds & Company Viewport Scroll Entrance Animations */
+.viewport-animation {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0);
+  transition: transform var(--transition-long) var(--ease-out-cubic),
+              opacity var(--transition-long) var(--ease-in-out-sine);
+  will-change: transform, opacity;
+}
+
+.viewport-animation.in-viewport {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+
+/* Micro-interaction hovers inspired by Nerds & Company */
+.hover-nudge {
+  transition: transform var(--transition-short) var(--ease-out-cubic);
+}
+.hover-nudge:hover {
+  transform: translate3d(6px, 0, 0);
+}
+
+.card-nerd {
+  transition: transform var(--transition-medium) var(--ease-out-cubic),
+              box-shadow var(--transition-medium) var(--ease-out-cubic),
+              border-color var(--transition-short) ease;
+}
+.card-nerd:hover {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 20px 40px -15px rgba(35, 28, 23, 0.12);
+}
+
 /* Page view entrance animation */
 @keyframes panel-in {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -29,7 +80,7 @@
 }
 
 .page-view {
-  animation: 0.36s both panel-in;
+  animation: 0.4s var(--ease-out-cubic) both panel-in;
 }
 
 .solution-panel {
@@ -43,11 +94,24 @@
 /* FAQ accordion */
 .faq-answer {
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease;
+  transition: grid-template-rows 0.35s var(--ease-out-cubic);
 }
 
 .faq-answer.is-open {
   grid-template-rows: 1fr;
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float-subtle 4s ease-in-out infinite;
 }
 
 @keyframes fadeIn {
