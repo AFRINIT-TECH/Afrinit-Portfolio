@@ -6,7 +6,6 @@ const iconMap = {
   transform: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
   cloud: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
   design: "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-1.657 1.657a2 2 0 01-2.828 0l-2.829-2.828a2 2 0 010-2.828z",
-  ai: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
   growth: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
 };
 
@@ -32,20 +31,20 @@ export const Solutions = ({ onNavigate, navParams }) => {
 
   const solutionFaqs = [
     {
-      q: "What is the advantage of tailor-made software over off-the-shelf software?",
-      a: "Off-the-shelf software forces your operations into a rigid, generic template and charges escalating per-seat monthly licenses. Tailor-made software matches your exact workflows, integrates directly with your existing infrastructure, and gives you 100% intellectual property (IP) ownership with zero ongoing license costs.",
+      q: "What is the advantage of custom software over off-the-shelf tools?",
+      a: "Off-the-shelf tools often force your team into rigid templates with recurring per-seat fees. Custom software is engineered around your exact workflows, integrates with your databases, and gives you 100% intellectual property ownership with zero license lock-in.",
     },
     {
-      q: "How fast can an initial version or MVP launch?",
-      a: "Thanks to our modular agile architecture and sprint methodologies, we typically deliver a tested, production-ready Minimum Viable Product (MVP) within 6 to 10 weeks. From there, we continuously release new capabilities in bi-weekly sprints.",
+      q: "How does the development process work?",
+      a: "We work directly with you in iterative development cycles. We start with scoping and interactive wireframes, build out functionality in milestones with regular demos, test thoroughly, and deploy to your preferred cloud environment.",
     },
     {
-      q: "Do you provide continuous evolution and SLA support after launch?",
-      a: "Yes, continuous scaling and proactive maintenance are core to our work. We provide dedicated engineering pods with guaranteed response times, 24/7 automated telemetry, and 99.98% uptime SLAs.",
+      q: "Do you offer ongoing support after launch?",
+      a: "Yes. Software needs regular maintenance and care. We provide ongoing support for system updates, performance optimizations, bug fixes, and feature expansions.",
     },
     {
-      q: "Can you integrate with regional payment rails, telco APIs, and banking switches?",
-      a: "Absolutely. We specialize in deep integrations with African payment rails including M-Pesa Daraja, Paystack, Flutterwave, Africa's Talking, Interswitch, and national banking clearinghouses.",
+      q: "Do we own the code you build?",
+      a: "Yes, 100%. You retain full, unencumbered ownership of all source code, architecture designs, configurations, and data models.",
     },
   ];
 
@@ -56,18 +55,18 @@ export const Solutions = ({ onNavigate, navParams }) => {
         <div className="mx-auto max-w-6xl">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
             <span className="h-px w-9 bg-[#9c6849]" />
-            Software Solutions • Practice Areas
+            What We Do • Software Services
           </div>
-          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl text-[#231c17] max-w-5xl">
-            Tailor-made software solutions engineered to scale without limits.
+          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-[#231c17] max-w-5xl">
+            Software solutions built for clarity, speed, and reliability.
           </h1>
           <p className="viewport-animation delay-200 mt-8 max-w-3xl text-lg sm:text-xl leading-relaxed text-[#5f5249]">
-            {siteConfig.solutions.description} Whether building high-volume fintech rails, decentralizing public records, or modernizing legacy infrastructure, we deliver end-to-end reliability.
+            {siteConfig.solutions.description}
           </p>
         </div>
       </section>
 
-      {/* 2. Signature Comparison: Off-The-Shelf vs Custom Software */}
+      {/* 2. Custom Software vs Off-The-Shelf */}
       <section className="relative w-full px-5 py-12 sm:px-8 lg:px-14">
         <div className="viewport-animation mx-auto max-w-6xl rounded-3xl border border-[#3d2d22]/15 bg-white/80 p-8 sm:p-14 shadow-lg">
           <div className="mb-10 text-center">
@@ -75,70 +74,70 @@ export const Solutions = ({ onNavigate, navParams }) => {
               The Strategic Choice
             </span>
             <h2 className="font-display mt-4 text-3xl font-extrabold text-[#231c17] sm:text-4xl">
-              Off-The-Shelf Software vs. Tailor-Made Software
+              Off-The-Shelf Tools vs. Custom Software
             </h2>
             <p className="mt-3 max-w-xl mx-auto text-sm text-[#5f5249]">
-              Why high-growth organizations choose custom tailor-made software over generic off-the-shelf subscriptions.
+              Why teams choose custom software built specifically around their operations.
             </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Off-the-shelf box */}
+            {/* Off-the-shelf */}
             <div className="rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4]/60 p-8 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-[#3d2d22]/10">
                   <h3 className="font-display text-xl font-bold text-[#5f5249]">
-                    Off-The-Shelf SaaS
+                    Off-The-Shelf Subscriptions
                   </h3>
                   <span className="text-xs font-bold text-red-500 uppercase">Generic</span>
                 </div>
                 <ul className="mt-6 space-y-3.5 text-xs sm:text-sm text-[#5f5249]">
                   <li className="flex items-start gap-2.5">
                     <span className="text-red-500 font-bold">✕</span>
-                    Recurring per-seat subscription fees that balloon with scale
+                    Recurring per-seat monthly license fees that grow over time
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-red-500 font-bold">✕</span>
-                    Rigid workflows that force your teams into generic boxes
+                    Rigid interfaces that force your workflows into someone else's mold
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-red-500 font-bold">✕</span>
-                    Limited or brittle integrations with regional payment gateways
+                    Limited control over data storage and custom integrations
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-red-500 font-bold">✕</span>
-                    Data hosted on overseas multi-tenant clouds outside your control
+                    Zero code ownership or ability to customize core logic
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Afrinit Tailor-made box */}
+            {/* Afrinit Custom Software */}
             <div className="rounded-2xl border-2 border-[#9c6849] bg-[#231c17] p-8 text-white shadow-xl flex flex-col justify-between relative overflow-hidden">
               <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-[#dcbf77]/10 blur-xl" />
               <div className="relative z-10">
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <h3 className="font-display text-xl font-bold text-[#dcbf77]">
-                    Afrinit Tailor-Made Software
+                    Afrinit Custom Software
                   </h3>
                   <span className="text-xs font-bold text-emerald-400 uppercase">100% Tailored</span>
                 </div>
                 <ul className="mt-6 space-y-3.5 text-xs sm:text-sm text-[#d7c4ae]">
                   <li className="flex items-start gap-2.5">
                     <span className="text-emerald-400 font-bold">✓</span>
-                    100% full intellectual property ownership with zero license lock-in
+                    100% intellectual property ownership with zero ongoing license fees
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-emerald-400 font-bold">✓</span>
-                    Engineered to match your exact business logic and compliance needs
+                    Engineered to match your exact operational logic and user needs
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-emerald-400 font-bold">✓</span>
-                    Deep native integrations with M-Pesa, Paystack, banks & ERPs
+                    Flexible integrations with your databases, tools, and third-party APIs
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-emerald-400 font-bold">✓</span>
-                    Sovereign data hosting on dedicated, highly available cloud infra
+                    Direct co-founder collaboration throughout design and delivery
                   </li>
                 </ul>
               </div>
@@ -147,7 +146,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
         </div>
       </section>
 
-      {/* 3. Expandable Solutions & Practice Panels */}
+      {/* 3. Services Practice Panels */}
       <section className="relative w-full px-5 py-20 sm:px-8 lg:px-14">
         <div className="mx-auto max-w-6xl">
           <div className="viewport-animation mb-14">
@@ -156,10 +155,10 @@ export const Solutions = ({ onNavigate, navParams }) => {
               Core Capabilities
             </div>
             <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-[#231c17]">
-              Our software practice areas
+              Our service areas
             </h2>
             <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
-              Explore our core technical specializations. Click each panel to inspect architectural scope and deliverables.
+              Explore our core technical specializations. Click each panel to inspect scope and deliverables.
             </p>
           </div>
 
@@ -262,8 +261,8 @@ export const Solutions = ({ onNavigate, navParams }) => {
                     </p>
                     <ul className="space-y-4">
                       {group.items.map((item, iIdx) => (
-                        <li key={iIdx} className="group/item">
-                          <p className="font-display text-sm font-bold text-[#231c17] group-hover/item:text-[#9c6849] transition-colors">
+                        <li key={iIdx}>
+                          <p className="font-display text-sm font-bold text-[#231c17]">
                             {item.name}
                           </p>
                           <p className="text-xs text-[#5f5249]/80 mt-0.5">
@@ -280,27 +279,27 @@ export const Solutions = ({ onNavigate, navParams }) => {
         </section>
       )}
 
-      {/* 5. Sectors & Branches */}
+      {/* 5. Practice Focus Areas */}
       <section id="industry-sectors" className="relative w-full px-5 py-24 sm:px-8 lg:px-14 scroll-mt-28">
         <div className="mx-auto max-w-6xl">
           <div className="viewport-animation mb-14">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />
-              Industry focus • Practice Verticals
+              Focus Areas
             </div>
             <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-[#231c17]">
-              Sectors where our software moves the needle
+              Sectors where custom software helps
             </h2>
             <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
-              We specialize in foundational economic engines across Africa, where high-reliability software directly expands economic opportunity.
+              We build tools for businesses and organizations looking to simplify operations and serve customers better.
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {siteConfig.solutions.sectors.map((sector, index) => (
               <div
                 key={index}
-                className={`viewport-animation delay-${((index % 3) + 1) * 100} card-nerd group rounded-3xl border border-[#3d2d22]/15 bg-white/70 p-8 shadow-sm flex flex-col justify-between hover:bg-white`}
+                className={`viewport-animation delay-${((index % 4) + 1) * 100} card-nerd group rounded-3xl border border-[#3d2d22]/15 bg-white/70 p-8 shadow-sm flex flex-col justify-between hover:bg-white`}
               >
                 <div>
                   <span className="inline-block rounded-full bg-[#dcbf77]/25 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#79513a]">
@@ -328,18 +327,18 @@ export const Solutions = ({ onNavigate, navParams }) => {
               Technical competencies
             </div>
             <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-[#231c17]">
-              Tools we love working with
+              Tools we work with
             </h2>
             <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
-              Modern languages, resilient cloud databases, and high-performance protocols chosen for speed and durability.
+              Modern, proven languages, relational databases, and maintainable web stacks.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {siteConfig.solutions.techStack.map((stack, index) => (
               <div
                 key={index}
-                className={`viewport-animation delay-${((index % 3) + 1) * 100} card-nerd rounded-3xl border border-[#3d2d22]/15 bg-[#231c17] p-8 text-white shadow-sm`}
+                className={`viewport-animation delay-${((index % 4) + 1) * 100} card-nerd rounded-3xl border border-[#3d2d22]/15 bg-[#231c17] p-8 text-white shadow-sm`}
               >
                 <h3 className="font-display text-lg font-bold text-[#dcbf77]">
                   {stack.category}
@@ -348,7 +347,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
                   {stack.technologies.map((tech, techIdx) => (
                     <span
                       key={techIdx}
-                      className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-medium text-[#d7c4ae] transition-transform duration-200 hover:scale-105"
+                      className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-medium text-[#d7c4ae]"
                     >
                       {tech}
                     </span>
@@ -399,7 +398,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
         </div>
       </section>
 
-      {/* 8. Signature Pre-Footer CTA */}
+      {/* 8. Pre-Footer CTA */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden">
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
         <div className="viewport-animation mx-auto max-w-6xl text-center relative z-10">
@@ -433,3 +432,5 @@ export const Solutions = ({ onNavigate, navParams }) => {
     </div>
   );
 };
+
+export default Solutions;

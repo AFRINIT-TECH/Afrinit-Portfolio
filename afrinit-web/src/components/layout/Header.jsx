@@ -4,7 +4,7 @@ import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 
 export const Header = ({ currentPage, onNavigate }) => {
-  const [activeDropdown, setActiveDropdown] = useState(null); // 'solutions' | 'capabilities' | null
+  const [activeDropdown, setActiveDropdown] = useState(null); // 'solutions' | null
   const headerRef = useRef(null);
 
   // Close dropdown when clicking outside
@@ -41,7 +41,7 @@ export const Header = ({ currentPage, onNavigate }) => {
         {/* Desktop Navigation */}
         <nav
           aria-label="Main Navigation"
-          className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#231c17]"
+          className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-[#231c17]"
         >
           {/* About us */}
           <button
@@ -55,10 +55,10 @@ export const Header = ({ currentPage, onNavigate }) => {
                 : "text-[#5f5249]"
             }`}
           >
-            About us
+            About
           </button>
 
-          {/* Wat we doen (Solutions & Sectors Dropdown) */}
+          {/* What we do (Solutions Dropdown) */}
           <div
             className="relative py-3"
             onMouseEnter={() => setActiveDropdown("solutions")}
@@ -77,7 +77,7 @@ export const Header = ({ currentPage, onNavigate }) => {
               }`}
               aria-expanded={activeDropdown === "solutions"}
             >
-              What we do
+              What We Do
               <svg
                 className={`h-3.5 w-3.5 transition-transform duration-200 ${
                   activeDropdown === "solutions" ? "rotate-180 text-[#9c6849]" : ""
@@ -96,14 +96,14 @@ export const Header = ({ currentPage, onNavigate }) => {
               <div className="absolute left-1/2 top-full -translate-x-1/2 pt-1 z-50">
                 <div className="w-[560px] rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4] p-6 shadow-2xl backdrop-blur-xl">
                   <div className="grid gap-6 sm:grid-cols-2">
-                    {/* Left: Software Solutions */}
+                    {/* Left: Software Services */}
                     <div>
                       <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a] mb-3 flex items-center gap-2">
                         <span className="h-1.5 w-1.5 rounded-full bg-[#9c6849]" />
-                        Software Solutions
+                        Services
                       </p>
                       <ul className="space-y-1">
-                        {siteConfig.solutions.services.slice(0, 4).map((s, idx) => (
+                        {siteConfig.solutions.services.map((s, idx) => (
                           <li key={idx}>
                             <button
                               type="button"
@@ -112,7 +112,7 @@ export const Header = ({ currentPage, onNavigate }) => {
                                 closeDropdown();
                                 onNavigate("solutions", { serviceIndex: idx });
                               }}
-                              className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 hover:text-[#9c6849] transition-colors block cursor-pointer group"
+                              className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 transition-colors block cursor-pointer group"
                             >
                               <p className="text-xs font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
                                 {s.title}
@@ -126,14 +126,14 @@ export const Header = ({ currentPage, onNavigate }) => {
                       </ul>
                     </div>
 
-                    {/* Right: Industry Sectors / Branches */}
+                    {/* Right: Practice Focus / Sectors */}
                     <div>
                       <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a] mb-3 flex items-center gap-2">
                         <span className="h-1.5 w-1.5 rounded-full bg-[#9c6849]" />
-                        Branches & Sectors
+                        Focus Areas
                       </p>
                       <ul className="space-y-1">
-                        {siteConfig.solutions.sectors.slice(0, 4).map((sec, idx) => (
+                        {siteConfig.solutions.sectors.map((sec, idx) => (
                           <li key={idx}>
                             <button
                               type="button"
@@ -177,101 +177,7 @@ export const Header = ({ currentPage, onNavigate }) => {
             )}
           </div>
 
-          {/* Capabilities Dropdown (Research, Design, Development) */}
-          <div
-            className="relative py-3"
-            onMouseEnter={() => setActiveDropdown("capabilities")}
-            onMouseLeave={() => setActiveDropdown(null)}
-          >
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                setActiveDropdown((prev) => (prev === "capabilities" ? null : "capabilities"));
-              }}
-              className={`inline-flex items-center gap-1.5 cursor-pointer py-1 transition-colors hover:text-[#9c6849] ${
-                activeDropdown === "capabilities"
-                  ? "text-[#9c6849] font-bold"
-                  : "text-[#5f5249]"
-              }`}
-              aria-expanded={activeDropdown === "capabilities"}
-            >
-              Capabilities
-              <svg
-                className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                  activeDropdown === "capabilities" ? "rotate-180 text-[#9c6849]" : ""
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2.5"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {/* Megamenu: Capabilities (3 columns) */}
-            {activeDropdown === "capabilities" && (
-              <div className="absolute left-1/2 top-full -translate-x-1/2 pt-1 z-50">
-                <div className="w-[680px] rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4] p-6 shadow-2xl backdrop-blur-xl">
-                  <div className="grid gap-6 sm:grid-cols-3">
-                    {siteConfig.capabilities.groups.map((group, gIdx) => (
-                      <div key={gIdx}>
-                        <div className="mb-3">
-                          <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a]">
-                            {group.name}
-                          </p>
-                          <span className="text-[10px] text-[#5f5249]/70 italic">
-                            {group.badge}
-                          </span>
-                        </div>
-                        <ul className="space-y-1">
-                          {group.items.slice(0, 4).map((item, iIdx) => (
-                            <li key={iIdx}>
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  closeDropdown();
-                                  onNavigate("solutions", { scrollTo: "techStack" });
-                                }}
-                                className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 transition-colors block cursor-pointer group"
-                              >
-                                <p className="text-xs font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
-                                  {item.name}
-                                </p>
-                                <p className="text-[10px] text-[#5f5249] line-clamp-1 mt-0.5">
-                                  {item.desc}
-                                </p>
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-5 pt-4 border-t border-[#3d2d22]/10 flex items-center justify-between text-xs">
-                    <span className="text-[#5f5249]">End-to-end digital craft from discovery to launch</span>
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        closeDropdown();
-                        onNavigate("about");
-                      }}
-                      className="font-bold text-[#9c6849] hover:underline cursor-pointer flex items-center gap-1.5 group"
-                    >
-                      Our delivery approach
-                      <span className="transition-transform group-hover:translate-x-1">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Cases (Projects) */}
+          {/* Work (Projects) */}
           <button
             onClick={() => {
               closeDropdown();
@@ -283,7 +189,7 @@ export const Header = ({ currentPage, onNavigate }) => {
                 : "text-[#5f5249]"
             }`}
           >
-            Cases
+            Work
           </button>
 
           {/* Impact */}
@@ -301,19 +207,34 @@ export const Header = ({ currentPage, onNavigate }) => {
             Impact
           </button>
 
-          {/* People & Culture */}
+          {/* Our Team */}
           <button
             onClick={() => {
               closeDropdown();
-              onNavigate("people");
+              onNavigate("team");
             }}
             className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
-              currentPage === "people"
+              currentPage === "team"
                 ? "text-[#9c6849] font-bold"
                 : "text-[#5f5249]"
             }`}
           >
-            People
+            Our Team
+          </button>
+
+          {/* Archives */}
+          <button
+            onClick={() => {
+              closeDropdown();
+              onNavigate("archives");
+            }}
+            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+              currentPage === "archives"
+                ? "text-[#9c6849] font-bold"
+                : "text-[#5f5249]"
+            }`}
+          >
+            Archives
           </button>
 
           {/* FAQ */}
@@ -365,3 +286,5 @@ export const Header = ({ currentPage, onNavigate }) => {
     </header>
   );
 };
+
+export default Header;

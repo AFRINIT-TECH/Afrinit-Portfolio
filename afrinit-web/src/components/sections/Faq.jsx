@@ -6,7 +6,7 @@ export const Faq = ({ onNavigate }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "General & Process", "Architecture & IP", "Support & SLAs"];
+  const categories = ["All", "About Afrinit", "Services & IP", "Collaboration"];
 
   // Filter questions based on search and category
   const filteredQuestions = useMemo(() => {
@@ -17,9 +17,9 @@ export const Faq = ({ onNavigate }) => {
 
       if (!matchesSearch) return false;
       if (selectedCategory === "All") return true;
-      if (selectedCategory === "General & Process") return idx % 3 === 0;
-      if (selectedCategory === "Architecture & IP") return idx % 3 === 1;
-      return idx % 3 === 2;
+      if (selectedCategory === "About Afrinit") return idx < 3;
+      if (selectedCategory === "Services & IP") return idx === 1 || idx === 3;
+      return idx >= 4;
     });
   }, [searchQuery, selectedCategory]);
 
@@ -34,19 +34,19 @@ export const Faq = ({ onNavigate }) => {
             <span className="h-px w-9 bg-[#9c6849]" />
           </div>
           <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-[#231c17]">
-            Frequently Asked Questions
+            {siteConfig.faq.title}
           </h1>
           <p className="viewport-animation delay-200 mt-6 max-w-2xl mx-auto text-lg leading-relaxed text-[#5f5249]">
-            Everything you need to know about our tailor-made software process, IP ownership, project delivery, and SLAs.
+            {siteConfig.faq.description}
           </p>
 
-          {/* Interactive Search Bar */}
+          {/* Search Bar */}
           <div className="viewport-animation delay-300 mt-10 max-w-xl mx-auto relative">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by keyword (e.g., intellectual property, timeline, pricing)..."
+              placeholder="Search by keyword (e.g., code ownership, services, team)..."
               className="w-full rounded-full border border-[#3d2d22]/20 bg-white/90 px-6 py-4 pl-12 text-sm text-[#231c17] placeholder:text-[#5f5249]/50 shadow-sm transition-all focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
             />
             <svg
@@ -154,23 +154,23 @@ export const Faq = ({ onNavigate }) => {
           <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[#dcbf77]/10 blur-2xl" />
           <div className="relative z-10 text-center">
             <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
-              Still have a specific question about your software initiative?
+              Have a specific question about your project?
             </h3>
             <p className="mx-auto mt-3 max-w-lg text-sm text-[#d7c4ae]">
-              Our engineering directors and architects are available to review specs, answer technical queries, or discuss timelines.
+              Reach out to our co-founders directly to discuss requirements, feasibility, or timelines.
             </p>
             <button
               onClick={() => onNavigate && onNavigate("contact")}
               className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#dcbf77] px-8 py-4 text-sm font-bold text-[#231c17] shadow-lg transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer"
             >
-              Ask our engineers directly
+              Get in touch
               <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
             </button>
           </div>
         </div>
       </section>
 
-      {/* 4. Signature Pre-Footer CTA */}
+      {/* 4. Pre-Footer CTA */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden border-t border-white/10">
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
         <div className="viewport-animation mx-auto max-w-6xl text-center relative z-10">
@@ -204,3 +204,5 @@ export const Faq = ({ onNavigate }) => {
     </div>
   );
 };
+
+export default Faq;

@@ -3,7 +3,7 @@ import { siteConfig } from "@/content/site";
 
 export const MobileMenu = ({ currentPage, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [openAccordion, setOpenAccordion] = useState(null); // 'solutions' | 'capabilities' | null
+  const [openAccordion, setOpenAccordion] = useState(null); // 'solutions' | null
   const triggerRef = useRef(null);
   const menuRef = useRef(null);
 
@@ -75,7 +75,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
           className="fixed inset-0 top-[78px] z-40 bg-[#f5efe4] flex flex-col p-6 overflow-y-auto"
         >
           <nav className="flex flex-col space-y-2">
-            {/* About us */}
+            {/* About */}
             <button
               onClick={() => {
                 onNavigate("about");
@@ -87,7 +87,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                   : "text-[#231c17] hover:bg-[#d7c4ae]/20"
               }`}
             >
-              About us
+              About
             </button>
 
             {/* What we do (Collapsible) */}
@@ -97,7 +97,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 onClick={() => toggleAccordion("solutions")}
                 className="flex items-center justify-between w-full min-h-[50px] px-4 py-3 text-lg font-semibold text-[#231c17] text-left cursor-pointer"
               >
-                What we do
+                What We Do
                 <svg
                   className={`h-4 w-4 transition-transform duration-200 ${
                     openAccordion === "solutions" ? "rotate-180 text-[#9c6849]" : ""
@@ -114,7 +114,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
               {openAccordion === "solutions" && (
                 <div className="px-4 pb-4 pt-1 space-y-2 border-t border-[#3d2d22]/10 bg-white/60">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-[#79513a] pt-2">
-                    Solutions
+                    Services
                   </p>
                   {siteConfig.solutions.services.map((s, idx) => (
                     <button
@@ -129,7 +129,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                     </button>
                   ))}
                   <p className="text-[10px] font-bold uppercase tracking-wider text-[#79513a] pt-3">
-                    Sectors
+                    Focus Areas
                   </p>
                   {siteConfig.solutions.sectors.map((sec, idx) => (
                     <button
@@ -147,55 +147,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
               )}
             </div>
 
-            {/* Capabilities (Collapsible) */}
-            <div className="rounded-xl border border-[#3d2d22]/10 bg-white/40 overflow-hidden">
-              <button
-                type="button"
-                onClick={() => toggleAccordion("capabilities")}
-                className="flex items-center justify-between w-full min-h-[50px] px-4 py-3 text-lg font-semibold text-[#231c17] text-left cursor-pointer"
-              >
-                Capabilities
-                <svg
-                  className={`h-4 w-4 transition-transform duration-200 ${
-                    openAccordion === "capabilities" ? "rotate-180 text-[#9c6849]" : ""
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {openAccordion === "capabilities" && (
-                <div className="px-4 pb-4 pt-1 space-y-3 border-t border-[#3d2d22]/10 bg-white/60">
-                  {siteConfig.capabilities.groups.map((group, idx) => (
-                    <div key={idx} className="pt-2">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-[#79513a]">
-                        {group.name}
-                      </p>
-                      <div className="mt-1 space-y-1">
-                        {group.items.slice(0, 3).map((item, iIdx) => (
-                          <button
-                            key={iIdx}
-                            onClick={() => {
-                              onNavigate("about");
-                              closeMenu();
-                            }}
-                            className="block w-full text-left py-1 text-xs text-[#5f5249] hover:text-[#9c6849]"
-                          >
-                            – {item.name}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Cases */}
+            {/* Work */}
             <button
               onClick={() => {
                 onNavigate("projects");
@@ -207,7 +159,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                   : "text-[#231c17] hover:bg-[#d7c4ae]/20"
               }`}
             >
-              Cases
+              Work
             </button>
 
             {/* Impact */}
@@ -225,19 +177,34 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
               Impact
             </button>
 
-            {/* People */}
+            {/* Our Team */}
             <button
               onClick={() => {
-                onNavigate("people");
+                onNavigate("team");
                 closeMenu();
               }}
               className={`flex items-center min-h-[50px] px-4 py-3 text-lg font-semibold rounded-xl transition-all text-left cursor-pointer ${
-                currentPage === "people"
+                currentPage === "team"
                   ? "text-[#9c6849] bg-[#d7c4ae]/30"
                   : "text-[#231c17] hover:bg-[#d7c4ae]/20"
               }`}
             >
-              People
+              Our Team
+            </button>
+
+            {/* Archives */}
+            <button
+              onClick={() => {
+                onNavigate("archives");
+                closeMenu();
+              }}
+              className={`flex items-center min-h-[50px] px-4 py-3 text-lg font-semibold rounded-xl transition-all text-left cursor-pointer ${
+                currentPage === "archives"
+                  ? "text-[#9c6849] bg-[#d7c4ae]/30"
+                  : "text-[#231c17] hover:bg-[#d7c4ae]/20"
+              }`}
+            >
+              Archives
             </button>
 
             {/* FAQ */}
@@ -268,8 +235,10 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
             </button>
 
             <div className="mt-6 text-center text-xs text-[#5f5249]">
-              <p className="font-semibold text-[#231c17]">{siteConfig.contact.email}</p>
-              <p className="mt-1">Nairobi • Lagos • Accra</p>
+              {siteConfig.contact.email ? (
+                <p className="font-semibold text-[#231c17]">{siteConfig.contact.email}</p>
+              ) : null}
+              <p className="mt-1">Nairobi • Kisumu • Remote</p>
             </div>
           </div>
         </div>
@@ -277,3 +246,5 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
     </div>
   );
 };
+
+export default MobileMenu;

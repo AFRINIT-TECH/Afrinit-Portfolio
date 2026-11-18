@@ -11,7 +11,7 @@ export const Footer = ({ onNavigate }) => {
               Want to share your project goals with us?
             </h3>
             <p className="mt-2 text-sm text-[#d7c4ae]">
-              Let's explore how our engineering and design team can help you build solutions that scale.
+              Let's explore how our team can help you build dependable software.
             </p>
           </div>
           <button
@@ -43,21 +43,24 @@ export const Footer = ({ onNavigate }) => {
                 {siteConfig.footer.tagline}
               </p>
               <p className="mt-3 text-xs leading-relaxed text-[#d7c4ae]/70">
-                Designing and engineering tailor-made software, growing technical talent, and expanding digital possibilities across the African continent.
+                A software team founded by five co-founders based in Nairobi and Kisumu, Kenya, building custom web applications and business systems.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-white/10">
-              <p className="text-[11px] uppercase tracking-wider text-[#d7c4ae]/60 mb-1">
-                Direct Contact
-              </p>
-              <a
-                href={`mailto:${siteConfig.footer.email}`}
-                className="text-sm font-bold text-[#dcbf77] hover:underline"
-              >
-                {siteConfig.footer.email}
-              </a>
-            </div>
+            {/* Email block - hidden when empty */}
+            {siteConfig.footer.email ? (
+              <div className="mt-6 pt-4 border-t border-white/10">
+                <p className="text-[11px] uppercase tracking-wider text-[#d7c4ae]/60 mb-1">
+                  Direct Contact
+                </p>
+                <a
+                  href={`mailto:${siteConfig.footer.email}`}
+                  className="text-sm font-bold text-[#dcbf77] hover:underline"
+                >
+                  {siteConfig.footer.email}
+                </a>
+              </div>
+            ) : null}
           </div>
 
           {/* Navigation Links Column */}
@@ -82,7 +85,7 @@ export const Footer = ({ onNavigate }) => {
           {/* Solutions & Practice Areas */}
           <div>
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[#dcbf77]">
-              Capabilities
+              Services
             </h4>
             <ul className="mt-4 space-y-2.5 text-xs text-[#d7c4ae]/80">
               {siteConfig.footer.servicesList.map((service, idx) => (
@@ -101,41 +104,44 @@ export const Footer = ({ onNavigate }) => {
           {/* Regional Hubs & Social */}
           <div>
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[#dcbf77]">
-              Regional Hubs
+              Locations
             </h4>
-            <div className="mt-4 space-y-3.5 text-xs text-[#d7c4ae]/80">
+            <div className="mt-4 space-y-3 text-xs text-[#d7c4ae]/80">
               <div>
                 <p className="font-semibold text-white">Nairobi, Kenya</p>
-                <p className="text-[11px] text-[#d7c4ae]/60">The Mirage Towers, Chiromo Rd, Westlands</p>
+                <p className="text-[11px] text-[#d7c4ae]/60">Nairobi team hub</p>
               </div>
               <div>
-                <p className="font-semibold text-white">Lagos, Nigeria</p>
-                <p className="text-[11px] text-[#d7c4ae]/60">Heritage Place, Lugard Ave, Ikoyi</p>
+                <p className="font-semibold text-white">Kisumu, Kenya</p>
+                <p className="text-[11px] text-[#d7c4ae]/60">Kisumu team hub</p>
               </div>
               <div>
-                <p className="font-semibold text-white">Accra, Ghana</p>
-                <p className="text-[11px] text-[#d7c4ae]/60">One Airport Square, Airport City</p>
+                <p className="font-semibold text-white">Remote</p>
+                <p className="text-[11px] text-[#d7c4ae]/60">Worldwide collaboration</p>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-white/10">
-              <h5 className="text-[11px] font-bold uppercase tracking-wider text-[#dcbf77] mb-2.5">
-                Let's get social
-              </h5>
-              <div className="flex flex-wrap gap-2">
-                {siteConfig.footer.socialLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-white/15 px-3 py-1 text-[11px] text-[#d7c4ae] transition hover:bg-white hover:text-[#231c17]"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+            {/* Social Links (GitHub only until real accounts exist) */}
+            {siteConfig.footer.socialLinks && siteConfig.footer.socialLinks.length > 0 && (
+              <div className="mt-6 pt-4 border-t border-white/10">
+                <h5 className="text-[11px] font-bold uppercase tracking-wider text-[#dcbf77] mb-2.5">
+                  Follow Us
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  {siteConfig.footer.socialLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-white/15 px-3 py-1 text-[11px] text-[#d7c4ae] transition hover:bg-white hover:text-[#231c17]"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
@@ -149,7 +155,7 @@ export const Footer = ({ onNavigate }) => {
               onClick={() => onNavigate && onNavigate("about")}
               className="hover:text-white transition cursor-pointer"
             >
-              Privacy & Data Policy
+              About Afrinit
             </button>
             <button
               onClick={() => {
@@ -165,3 +171,5 @@ export const Footer = ({ onNavigate }) => {
     </footer>
   );
 };
+
+export default Footer;

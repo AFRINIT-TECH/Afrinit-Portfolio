@@ -1,29 +1,64 @@
 import { useState, useEffect } from "react";
 import { Header, Footer } from "@/components/layout";
-import { Hero, About, Solutions, Impact, People, Contact, Projects, Faq } from "@/components/sections";
+import {
+  Hero,
+  About,
+  Solutions,
+  Impact,
+  Team,
+  Archives,
+  Contact,
+  Projects,
+  Faq,
+} from "@/components/sections";
 
 const PAGE_COMPONENTS = {
   home: Hero,
   about: About,
   solutions: Solutions,
   impact: Impact,
-  people: People,
+  team: Team,
+  archives: Archives,
   contact: Contact,
   projects: Projects,
   faq: Faq,
+  // Backwards compatibility alias
+  people: Team,
+};
+
+const getInitialPage = () => {
+  if (typeof window === "undefined") return "home";
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
+  if (!path) return "home";
+  if (path === "people") return "team";
+  if (PAGE_COMPONENTS[path]) return path;
+  return "home";
 };
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState(getInitialPage);
   const [navParams, setNavParams] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Handle browser back/forward
+  // Handle browser back/forward and initial URL sync
   useEffect(() => {
-    history.replaceState({ page: "home" }, "", "/");
+    const initial = getInitialPage();
+    history.replaceState(
+      { page: initial },
+      "",
+      "/" + (initial === "home" ? "" : initial)
+    );
+
+    const handlePopState = (event) => {
+      const targetPage = event.state?.page || getInitialPage();
+      setCurrentPage(targetPage === "people" ? "team" : targetPage);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  // Initialize viewport scroll animations inspired by nerds.company
+  // Initialize viewport scroll animations
   useEffect(() => {
     const timeout = setTimeout(() => {
       const observer = new IntersectionObserver(
@@ -47,16 +82,22 @@ function App() {
   }, [currentPage]);
 
   const navigateTo = (page, params = null) => {
+    // Normalise any legacy "people" call to "team"
+    const targetPage = page === "people" ? "team" : page;
     setNavParams(params);
-    if (page === currentPage) {
+    if (targetPage === currentPage) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     if (isAnimating) return;
     setIsAnimating(true);
     setTimeout(() => {
-      setCurrentPage(page);
-      history.pushState({ page }, "", "/" + (page === "home" ? "" : page));
+      setCurrentPage(targetPage);
+      history.pushState(
+        { page: targetPage },
+        "",
+        "/" + (targetPage === "home" ? "" : targetPage)
+      );
       window.scrollTo(0, 0);
       setIsAnimating(false);
     }, 200);

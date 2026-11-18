@@ -9,6 +9,9 @@ export const Contact = () => {
     setFormSubmitted(true);
   };
 
+  const hasEmail = Boolean(siteConfig.contact.email && siteConfig.contact.email.trim());
+  const hubs = siteConfig.contact.hubs || [];
+
   return (
     <div className="page-view w-full overflow-hidden">
       {/* 1. Contact Hero */}
@@ -18,19 +21,19 @@ export const Contact = () => {
             <span className="h-px w-9 bg-[#9c6849]" />
             Contact • Get In Touch
           </div>
-          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl text-[#231c17] max-w-5xl">
-            How can we help your team build?
+          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-[#231c17] max-w-5xl">
+            {siteConfig.contact.title}
           </h1>
           <p className="viewport-animation delay-200 mt-8 max-w-3xl text-lg sm:text-xl leading-relaxed text-[#5f5249]">
-            {siteConfig.contact.description} Share your goals, architectural challenge, or timeline with us. We will get back to you with technical feedback and an initial scoping estimate within 24 hours.
+            {siteConfig.contact.description}
           </p>
         </div>
       </section>
 
-      {/* 2. Main Contact Form & Direct Hub Info Grid */}
+      {/* 2. Main Contact Form & Direct Info Grid */}
       <section className="relative w-full px-5 py-8 sm:px-8 lg:px-14">
         <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-[1.3fr_1fr] items-start">
-          {/* Left: Interactive Project Request Form */}
+          {/* Left: Project Request Form */}
           <div className="viewport-animation rounded-3xl border border-[#3d2d22]/15 bg-white/90 p-8 sm:p-12 shadow-sm">
             {formSubmitted ? (
               <div className="py-16 text-center">
@@ -43,7 +46,7 @@ export const Contact = () => {
                   Thank you for reaching out!
                 </h2>
                 <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#5f5249]">
-                  We have received your message. One of our senior solutions architects will contact you within 24 hours.
+                  We have received your message. Our team will review your inquiry and get back to you promptly.
                 </p>
                 <button
                   type="button"
@@ -54,7 +57,7 @@ export const Contact = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                 {/* Text Inputs */}
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
@@ -66,62 +69,48 @@ export const Contact = () => {
                       id="name"
                       name="name"
                       required
-                      placeholder="e.g. Samuel Adebayo"
+                      placeholder="e.g. Jane Doe"
                       className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="mb-2 block text-xs font-bold text-[#231c17]">
-                      Work Email *
+                      Email Address *
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       required
-                      placeholder="samuel@enterprise.africa"
-                      className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="org" className="mb-2 block text-xs font-bold text-[#231c17]">
-                      Company / Organization
-                    </label>
-                    <input
-                      type="text"
-                      id="org"
-                      name="org"
-                      placeholder="e.g. Apex Health Systems"
-                      className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="mb-2 block text-xs font-bold text-[#231c17]">
-                      Phone Number (Optional)
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      placeholder="+254 700 000 000"
+                      placeholder="jane@company.com"
                       className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
                     />
                   </div>
                 </div>
 
                 <div>
+                  <label htmlFor="org" className="mb-2 block text-xs font-bold text-[#231c17]">
+                    Company / Organization
+                  </label>
+                  <input
+                    type="text"
+                    id="org"
+                    name="org"
+                    placeholder="e.g. Acme Ltd"
+                    className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
+                  />
+                </div>
+
+                <div>
                   <label htmlFor="message" className="mb-2 block text-xs font-bold text-[#231c17]">
-                    Project Scope • What are you building? *
+                    Project Scope • What are you looking to build? *
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     required
                     rows="4"
-                    placeholder="Tell us about your project goals, key requirements, or existing tech stack..."
+                    placeholder="Tell us about your project goals, key requirements, or timeline..."
                     className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white p-5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
                   />
                 </div>
@@ -130,7 +119,7 @@ export const Contact = () => {
                   type="submit"
                   className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#231c17] px-8 py-5 text-base font-bold text-white transition-all duration-300 hover:bg-[#9c6849] cursor-pointer shadow-lg hover:shadow-xl self-start"
                 >
-                  Submit Project Request →
+                  {siteConfig.contact.submitLabel || "Send inquiry"} →
                 </button>
               </form>
             )}
@@ -144,85 +133,79 @@ export const Contact = () => {
                 Direct Contact
               </span>
               <h2 className="font-display mt-5 text-2xl sm:text-3xl font-extrabold text-white">
-                Afrinit Engineering Labs
+                Afrinit Software Team
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-[#d7c4ae]/80">
-                Whether you want to discuss enterprise architecture, book a discovery sprint, or explore strategic partnerships, our team is ready to talk.
+                Founded by five co-founders based in Nairobi and Kisumu, Kenya, and open to remote work.
               </p>
 
               <div className="mt-8 rounded-2xl bg-white/10 p-5 border border-white/10">
                 <p className="text-[11px] font-bold uppercase tracking-widest text-[#dcbf77]">
-                  Response Guarantee
+                  Response Time
                 </p>
                 <p className="mt-1 text-xs text-[#d7c4ae]">
                   {siteConfig.contact.responseTime}
                 </p>
               </div>
 
-              <div className="mt-8 space-y-6">
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-[#d7c4ae]/60">
-                    Email Inquiries
-                  </p>
-                  <a
-                    href={`mailto:${siteConfig.contact.email}`}
-                    className="mt-1 block text-lg font-bold text-[#dcbf77] hover:underline"
-                  >
-                    {siteConfig.contact.email}
-                  </a>
+              {/* Email block - hidden while empty */}
+              {hasEmail && (
+                <div className="mt-8 space-y-6">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-[#d7c4ae]/60">
+                      Email Inquiries
+                    </p>
+                    <a
+                      href={`mailto:${siteConfig.contact.email}`}
+                      className="mt-1 block text-lg font-bold text-[#dcbf77] hover:underline"
+                    >
+                      {siteConfig.contact.email}
+                    </a>
+                  </div>
                 </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-[#d7c4ae]/60">
-                    Direct Phone Line
-                  </p>
-                  <a
-                    href={`tel:${siteConfig.contact.hubs[0]?.phone || "+254207903820"}`}
-                    className="mt-1 block text-base font-bold text-white hover:text-[#dcbf77]"
-                  >
-                    {siteConfig.contact.hubs[0]?.phone || "+254 (0) 20 790 3820"}
-                  </a>
-                </div>
-              </div>
+              )}
             </div>
 
-            <div className="mt-10 pt-6 border-t border-white/10 relative z-10">
-              <p className="text-xs uppercase tracking-wider text-[#d7c4ae]/60 mb-3">
-                Let's get social
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {siteConfig.footer.socialLinks.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-white/20 px-3.5 py-1 text-xs text-[#d7c4ae] hover:bg-white hover:text-[#231c17] transition"
-                  >
-                    {s.label}
-                  </a>
-                ))}
+            {/* Social Links (GitHub only) */}
+            {siteConfig.footer.socialLinks && siteConfig.footer.socialLinks.length > 0 && (
+              <div className="mt-10 pt-6 border-t border-white/10 relative z-10">
+                <p className="text-xs uppercase tracking-wider text-[#d7c4ae]/60 mb-3">
+                  Connect with us
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {siteConfig.footer.socialLinks.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-white/20 px-3.5 py-1 text-xs text-[#d7c4ae] hover:bg-white hover:text-[#231c17] transition"
+                    >
+                      {s.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* 3. Regional Hubs Cards (Nairobi, Lagos, Accra, Kigali) */}
+      {/* 3. Three Simple Cards: Nairobi, Kisumu, Remote (NO addresses or phone numbers) */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40 mt-16">
         <div className="mx-auto max-w-6xl">
           <div className="viewport-animation mb-12">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />
-              Regional Offices
+              Our Locations
             </div>
             <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl text-[#231c17]">
-              Visit our hubs across the continent
+              Where we are based
             </h2>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {siteConfig.contact.hubs.map((hub, index) => (
+          <div className="grid gap-6 sm:grid-cols-3">
+            {hubs.map((hub, index) => (
               <div
                 key={index}
                 className={`viewport-animation delay-${(index + 1) * 100} card-nerd rounded-3xl border border-[#3d2d22]/15 bg-white/90 p-8 shadow-sm flex flex-col justify-between`}
@@ -235,17 +218,8 @@ export const Contact = () => {
                     {hub.city}
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-[#5f5249]">
-                    {hub.address}
+                    {hub.description}
                   </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-[#3d2d22]/10 space-y-1.5 text-xs font-medium">
-                  <div>
-                    <a href={`mailto:${hub.email}`} className="text-[#9c6849] font-bold hover:underline">
-                      {hub.email}
-                    </a>
-                  </div>
-                  <div className="text-[#5f5249]">{hub.phone}</div>
                 </div>
               </div>
             ))}
@@ -255,3 +229,5 @@ export const Contact = () => {
     </div>
   );
 };
+
+export default Contact;
