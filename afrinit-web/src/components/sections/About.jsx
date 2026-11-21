@@ -1,5 +1,6 @@
 import { siteConfig } from "@/content/site";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { FounderCarousel } from "@/components/ui/FounderCarousel";
 
 const toSlug = (name) =>
   name
@@ -15,7 +16,7 @@ export const About = ({ onNavigate }) => {
     <div className="page-view w-full overflow-hidden">
       {/* 1. About Hero Section */}
       <section className="relative min-h-[45vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
             <span className="h-px w-9 bg-[#9c6849]" />
             About us • Our Team
@@ -31,7 +32,7 @@ export const About = ({ onNavigate }) => {
 
       {/* 2. Workspace / Team Image Slot (16:9 ratio, public/about/workspace.jpg) */}
       <section className="relative w-full px-5 py-8 sm:px-8 lg:px-14">
-        <div className="viewport-animation mx-auto max-w-6xl">
+        <div className="viewport-animation w-full">
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-[#3d2d22]/15 bg-[#231c17] shadow-xl">
             {image?.src ? (
               <img
@@ -54,7 +55,7 @@ export const About = ({ onNavigate }) => {
 
       {/* 3. Three Core Strengths */}
       <section className="relative w-full px-5 py-20 sm:px-8 lg:px-14">
-        <div className="mx-auto max-w-6xl grid gap-8 md:grid-cols-3">
+        <div className="w-full grid gap-8 md:grid-cols-3">
           {points.map((pt, idx) => (
             <div
               key={idx}
@@ -78,7 +79,7 @@ export const About = ({ onNavigate }) => {
 
       {/* 4. Methodology & Process Stages */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-14">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />
@@ -120,7 +121,7 @@ export const About = ({ onNavigate }) => {
 
       {/* 5. Core Engineering Principles */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-14">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />
@@ -157,9 +158,9 @@ export const About = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 6. Compact Team Preview (5 Co-Founders, avatars square, "Meet everyone" -> Our Team) */}
+      {/* 6. Co-Founders One Card Carousel */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-14 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
               <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
@@ -182,48 +183,15 @@ export const About = ({ onNavigate }) => {
             </button>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-            {teamMembers.map((member, idx) => {
-              const slug = toSlug(member.name);
-              return (
-                <div
-                  key={idx}
-                  onClick={() => onNavigate && onNavigate("team")}
-                  className="card-nerd group rounded-2xl border border-[#3d2d22]/15 bg-white/80 p-4 shadow-sm hover:shadow-md cursor-pointer flex flex-col items-center text-center"
-                >
-                  <div className="relative aspect-square w-full max-w-[140px] overflow-hidden rounded-xl bg-[#d7c4ae]/20 mb-4">
-                    {member.image ? (
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <ImagePlaceholder
-                        label={member.name}
-                        hint={`1:1, add at public/team/${slug}.jpg`}
-                        aspect="aspect-square"
-                        className="h-full w-full rounded-none border-0"
-                      />
-                    )}
-                  </div>
-                  <h3 className="font-display text-sm font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
-                    {member.name}
-                  </h3>
-                  <span className="mt-1 inline-block rounded-full bg-[#9c6849]/10 px-2.5 py-0.5 text-[10px] font-semibold text-[#9c6849]">
-                    {member.role || "Co-founder"}
-                  </span>
-                </div>
-              );
-            })}
+          <div className="viewport-animation delay-100">
+            <FounderCarousel members={teamMembers} onNavigate={onNavigate} isPreview={true} />
           </div>
         </div>
       </section>
 
       {/* 7. Mission & Vision */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
-        <div className="viewport-animation mx-auto max-w-6xl rounded-3xl bg-[#231c17] p-10 text-white sm:p-16 shadow-2xl relative overflow-hidden">
+        <div className="viewport-animation w-full rounded-3xl bg-[#231c17] p-10 text-white sm:p-16 shadow-2xl relative overflow-hidden">
           <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#9c6849]/15 blur-3xl" />
           <div className="relative z-10 grid gap-12 lg:grid-cols-2">
             <div>
@@ -257,7 +225,7 @@ export const About = ({ onNavigate }) => {
       {/* 8. Pre-Footer CTA */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden border-t border-white/10">
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation mx-auto max-w-6xl text-center relative z-10">
+        <div className="viewport-animation w-full text-center relative z-10">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
             {siteConfig.preFooterCta.eyebrow}
           </p>

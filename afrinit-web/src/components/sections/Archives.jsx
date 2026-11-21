@@ -149,7 +149,7 @@ export const Archives = ({ onNavigate }) => {
     <div className="page-view w-full overflow-hidden">
       {/* 1. Header & Highlight Stat */}
       <section className="relative min-h-[40vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
             <span className="h-px w-9 bg-[#9c6849]" />
             Running Record • Archives
@@ -180,7 +180,7 @@ export const Archives = ({ onNavigate }) => {
 
       {/* 2. Filter Tabs (All, Events, Products, Milestones with counts) */}
       <section className="relative w-full px-5 pb-8 sm:px-8 lg:px-14">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation flex flex-wrap items-center gap-3 border-b border-[#3d2d22]/15 pb-6">
             {Object.keys(TYPE_CONFIG).map((tabKey) => {
               const tab = TYPE_CONFIG[tabKey];
@@ -214,7 +214,7 @@ export const Archives = ({ onNavigate }) => {
 
       {/* 3. Archives Entries Grouped by Year (Newest First) */}
       <section className="relative w-full px-5 py-8 sm:px-8 lg:px-14 min-h-[40vh]">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           {/* Empty state if no items for this tab */}
           {filteredItems.length === 0 ? (
             <div className="viewport-animation rounded-3xl border border-dashed border-[#3d2d22]/20 bg-white/50 p-16 text-center">

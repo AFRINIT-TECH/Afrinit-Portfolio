@@ -173,7 +173,7 @@ export const Faq = ({ onNavigate }) => {
       {/* 4. Pre-Footer CTA */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden border-t border-white/10">
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation mx-auto max-w-6xl text-center relative z-10">
+        <div className="viewport-animation w-full text-center relative z-10">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
             {siteConfig.preFooterCta.eyebrow}
           </p>

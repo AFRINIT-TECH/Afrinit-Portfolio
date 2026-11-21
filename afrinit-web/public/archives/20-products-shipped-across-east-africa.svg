@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="abg_20-pro" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e241c"/>
+      <stop offset="100%" stop-color="#110e0c"/>
+    </linearGradient>
+    <pattern id="agrid_20-pro" width="35" height="35" patternUnits="userSpaceOnUse">
+      <path d="M 35 0 L 0 0 0 35" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#abg_20-pro)"/>
+  <rect width="800" height="450" fill="url(#agrid_20-pro)"/>
+  <circle cx="620" cy="180" r="130" fill="#dcbf77" opacity="0.12" filter="blur(30px)"/>
+  
+  <g transform="translate(50, 260)">
+    <rect x="0" y="0" width="180" height="32" rx="16" fill="rgba(0,0,0,0.5)" stroke="#dcbf77" stroke-width="1.5"/>
+    <text x="16" y="21" font-family="monospace" font-size="12" font-weight="bold" fill="#dcbf77" letter-spacing="2">20+ SHIPPED</text>
+    <text x="0" y="72" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Milestone: Over 20 software products deployed</text>
+  </g>
+</svg>

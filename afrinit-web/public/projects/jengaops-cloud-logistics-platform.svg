@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b18"/>
+      <stop offset="100%" stop-color="#2e241c"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- Glow effect -->
+  <circle cx="530" cy="200" r="160" fill="#dcbf77" opacity="0.15" filter="blur(40px)"/>
+  
+  <!-- Technical Graphic -->
+  <rect x="440" y="110" width="280" height="180" rx="16" fill="none" stroke="#dcbf77" stroke-width="4" stroke-dasharray="8 8"/><circle cx="480" cy="200" r="24" fill="#9c6849"/><line x1="504" y1="200" x2="640" y2="200" stroke="#dcbf77" stroke-width="4"/><circle cx="660" cy="200" r="16" fill="#dcbf77"/>
+  
+  <!-- Info Overlay -->
+  <g transform="translate(50, 340)">
+    <rect x="-10" y="-26" width="280" height="28" rx="6" fill="rgba(0,0,0,0.4)"/>
+    <text x="0" y="-8" font-family="monospace" font-size="13" font-weight="bold" fill="#dcbf77" letter-spacing="2">SUPPLY CHAIN & DISPATCH</text>
+    <text x="0" y="32" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">JengaOps Logistics</text>
+  </g>
+</svg>

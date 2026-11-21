@@ -41,7 +41,7 @@ export const Header = ({ currentPage, onNavigate }) => {
         {/* Desktop Navigation */}
         <nav
           aria-label="Main Navigation"
-          className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-[#231c17]"
+          className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-[#231c17]"
         >
           {/* About us */}
           <button

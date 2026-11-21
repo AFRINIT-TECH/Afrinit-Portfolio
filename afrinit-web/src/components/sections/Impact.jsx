@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { siteConfig } from "@/content/site";
 
 export const Impact = ({ onNavigate }) => {
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const stats = siteConfig.impact?.stats || [
     { value: "20+", label: "Products shipped by our team" },
     { value: "5", label: "Co-founders" },
@@ -19,7 +21,7 @@ export const Impact = ({ onNavigate }) => {
     <div className="page-view w-full overflow-hidden">
       {/* 1. Impact Hero */}
       <section className="relative min-h-[45vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
             <span className="h-px w-9 bg-[#9c6849]" />
             Impact & Milestones
@@ -35,7 +37,7 @@ export const Impact = ({ onNavigate }) => {
 
       {/* 2. Stats Grid (True figures only) */}
       <section className="relative w-full px-5 py-8 sm:px-8 lg:px-14">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="grid gap-6 sm:grid-cols-3">
             {stats.map((stat, index) => (
               <div
@@ -63,7 +65,7 @@ export const Impact = ({ onNavigate }) => {
       {/* 3. Milestone Timeline Drawn from Archives Data */}
       {milestones.length > 0 && (
         <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40 mt-16">
-          <div className="mx-auto max-w-6xl">
+          <div className="w-full">
             <div className="viewport-animation mb-14 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
                 <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
@@ -125,11 +127,84 @@ export const Impact = ({ onNavigate }) => {
         </section>
       )}
 
-      {/* 4. Testimonials (Hidden until real testimonials exist) */}
+      {/* 4. Testimonials */}
       {testimonials.length > 0 && (
         <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40">
-          <div className="mx-auto max-w-6xl">
-            {/* Real testimonials will render here */}
+          <div className="w-full">
+            <div className="viewport-animation mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+              <div>
+                <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+                  <span className="h-px w-9 bg-[#9c6849]" />
+                  Client Feedback • Testimonials
+                </div>
+                <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-[#231c17]">
+                  What partners say about working with us
+                </h2>
+                <p className="mt-4 max-w-xl text-base text-[#5f5249]">
+                  Direct feedback from the teams and organizations deploying our custom software systems.
+                </p>
+              </div>
+
+              {testimonials.length > 1 && (
+                <div className="flex items-center gap-3 self-start sm:self-auto">
+                  <button
+                    onClick={() =>
+                      setActiveTestimonial((prev) =>
+                        prev === 0 ? testimonials.length - 1 : prev - 1
+                      )
+                    }
+                    aria-label="Previous testimonial"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-[#3d2d22]/20 bg-white text-[#231c17] transition hover:bg-[#231c17] hover:text-white cursor-pointer shadow-xs active:scale-95"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={() =>
+                      setActiveTestimonial((prev) =>
+                        (prev + 1) % testimonials.length
+                      )
+                    }
+                    aria-label="Next testimonial"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-[#3d2d22]/20 bg-white text-[#231c17] transition hover:bg-[#231c17] hover:text-white cursor-pointer shadow-xs active:scale-95"
+                  >
+                    →
+                  </button>
+                </div>
+              )}
+            </div>
+
+            <div className="viewport-animation rounded-3xl border border-[#3d2d22]/15 bg-white/90 p-8 sm:p-12 shadow-sm relative overflow-hidden transition-all duration-300">
+              <svg
+                className="h-10 w-10 text-[#9c6849]/25 mb-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+
+              <blockquote className="font-display text-xl sm:text-2xl font-medium leading-relaxed text-[#231c17]">
+                "{testimonials[activeTestimonial].quote}"
+              </blockquote>
+
+              <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#3d2d22]/10 pt-6">
+                <div>
+                  <p className="font-display text-base font-bold text-[#231c17]">
+                    {testimonials[activeTestimonial].author}
+                  </p>
+                  <p className="text-xs text-[#5f5249]">
+                    {testimonials[activeTestimonial].role},{" "}
+                    <span className="font-semibold text-[#79513a]">
+                      {testimonials[activeTestimonial].organization}
+                    </span>
+                  </p>
+                </div>
+                {testimonials[activeTestimonial].metric && (
+                  <div className="rounded-full bg-[#dcbf77]/30 px-3.5 py-1 text-xs font-bold text-[#9c6849]">
+                    {testimonials[activeTestimonial].metric}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </section>
       )}
@@ -137,7 +212,7 @@ export const Impact = ({ onNavigate }) => {
       {/* 5. Pre-Footer CTA */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden mt-16">
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation mx-auto max-w-6xl text-center relative z-10">
+        <div className="viewport-animation w-full text-center relative z-10">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
             {siteConfig.preFooterCta.eyebrow}
           </p>

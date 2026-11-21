@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="abg_nairob" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#262016"/>
+      <stop offset="100%" stop-color="#110e0c"/>
+    </linearGradient>
+    <pattern id="agrid_nairob" width="35" height="35" patternUnits="userSpaceOnUse">
+      <path d="M 35 0 L 0 0 0 35" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#abg_nairob)"/>
+  <rect width="800" height="450" fill="url(#agrid_nairob)"/>
+  <circle cx="620" cy="180" r="130" fill="#f59e0b" opacity="0.12" filter="blur(30px)"/>
+  
+  <g transform="translate(50, 260)">
+    <rect x="0" y="0" width="180" height="32" rx="16" fill="rgba(0,0,0,0.5)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="16" y="21" font-family="monospace" font-size="12" font-weight="bold" fill="#f59e0b" letter-spacing="2">TECH SUMMIT</text>
+    <text x="0" y="72" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">Event: Nairobi Tech Week & Engineering Panel</text>
+  </g>
+</svg>

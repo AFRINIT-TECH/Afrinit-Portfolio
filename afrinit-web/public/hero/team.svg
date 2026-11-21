@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="hbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1814"/>
+      <stop offset="40%" stop-color="#2e241c"/>
+      <stop offset="100%" stop-color="#120f0c"/>
+    </linearGradient>
+    <radialGradient id="hlamp" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#dcbf77" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#120f0c" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="hgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(220,191,119,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="1000" fill="url(#hbg)"/>
+  <rect width="800" height="1000" fill="url(#hlamp)"/>
+  <rect width="800" height="1000" fill="url(#hgrid)"/>
+  
+  <!-- Abstract architectural geometric layers -->
+  <g transform="translate(80, 100)">
+    <!-- Top badge -->
+    <rect x="0" y="0" width="280" height="36" rx="18" fill="rgba(220,191,119,0.12)" stroke="#dcbf77" stroke-width="1.5"/>
+    <circle cx="18" cy="18" r="5" fill="#dcbf77"/>
+    <text x="32" y="22" font-family="monospace" font-size="12" font-weight="bold" fill="#dcbf77" letter-spacing="1.5">AFRINIT SOFTWARE STUDIO</text>
+    
+    <!-- Code Window Card -->
+    <rect x="0" y="60" width="640" height="380" rx="24" fill="#16120f" stroke="rgba(220,191,119,0.2)" stroke-width="2"/>
+    <circle cx="35" cy="90" r="6" fill="#ef4444"/>
+    <circle cx="55" cy="90" r="6" fill="#f59e0b"/>
+    <circle cx="75" cy="90" r="6" fill="#10b981"/>
+    <text x="110" y="94" font-family="monospace" font-size="12" fill="#d7c4ae" opacity="0.6">main.go — afrinit-platform/engine</text>
+    <line x1="0" y1="115" x2="640" y2="115" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    
+    <!-- Terminal Lines -->
+    <g transform="translate(35, 155)" font-family="monospace" font-size="14">
+      <text y="0" fill="#9c6849"><tspan fill="#c084fc">package</tspan> main</text>
+      <text y="26" fill="#dcbf77"><tspan fill="#c084fc">type</tspan> Studio <tspan fill="#c084fc">struct</tspan> &#123;</text>
+      <text y="52" fill="#d7c4ae">&nbsp;&nbsp;CoFounders &nbsp;int &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tspan fill="#52c41a">// 5 builders</tspan></text>
+      <text y="78" fill="#d7c4ae">&nbsp;&nbsp;Locations &nbsp;&nbsp;&nbsp;[]string <tspan fill="#52c41a">// Nairobi, Kisumu</tspan></text>
+      <text y="104" fill="#d7c4ae">&nbsp;&nbsp;Products &nbsp;&nbsp;&nbsp;&nbsp;string &nbsp;&nbsp;<tspan fill="#52c41a">// 20+ shipped</tspan></text>
+      <text y="130" fill="#d7c4ae">&nbsp;&nbsp;CodeOwnership string &nbsp;<tspan fill="#52c41a">// 100% client IP</tspan></text>
+      <text y="156" fill="#dcbf77">&#125;</text>
+      <text y="190" fill="#38bdf8">func <tspan fill="#f59e0b">DeployDependableSoftware</tspan>() &#123;</text>
+      <text y="216" fill="#52c41a">&nbsp;&nbsp;log.Println("Building modern systems that scale")</text>
+      <text y="242" fill="#38bdf8">&#125;</text>
+    </g>
+    
+    <!-- Floating Metrics Pod 1 -->
+    <g transform="translate(340, 480)">
+      <rect width="300" height="140" rx="20" fill="#241d17" stroke="#9c6849" stroke-width="1.5" filter="drop-shadow(0 15px 30px rgba(0,0,0,0.5))"/>
+      <text x="25" y="45" font-family="system-ui, sans-serif" font-size="36" font-weight="900" fill="#dcbf77">20+</text>
+      <text x="25" y="75" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Products Shipped</text>
+      <text x="25" y="100" font-family="system-ui, sans-serif" font-size="12" fill="#d7c4ae" opacity="0.7">Web apps, APIs &amp; cloud systems</text>
+    </g>
+
+    <!-- Floating Metrics Pod 2 -->
+    <g transform="translate(20, 560)">
+      <rect width="280" height="130" rx="20" fill="#1a1512" stroke="#dcbf77" stroke-width="1.5" opacity="0.95"/>
+      <text x="25" y="45" font-family="system-ui, sans-serif" font-size="36" font-weight="900" fill="#ffffff">5</text>
+      <text x="65" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#dcbf77">Co-founders</text>
+      <text x="25" y="75" font-family="system-ui, sans-serif" font-size="13" font-weight="semibold" fill="#d7c4ae">Nairobi &amp; Kisumu, Kenya</text>
+      <text x="25" y="100" font-family="system-ui, sans-serif" font-size="11" fill="#9c6849" font-weight="bold">Direct Collaboration</text>
+    </g>
+    
+    <!-- Connectivity Badge -->
+    <g transform="translate(80, 730)">
+      <rect width="480" height="50" rx="16" fill="rgba(0,0,0,0.6)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <circle cx="30" cy="25" r="6" fill="#10b981"/>
+      <text x="48" y="30" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#d7c4ae">Offline-First • Cloud Ready • Complete IP Ownership</text>
+    </g>
+  </g>
+</svg>

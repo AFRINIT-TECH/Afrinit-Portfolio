@@ -64,7 +64,7 @@ export const Projects = ({ onNavigate }) => {
 
   return (
     <section className="page-view relative min-h-[calc(100vh-78px)] w-full px-5 py-20 sm:px-8 lg:px-14 lg:py-28 overflow-hidden">
-      <div className="mx-auto max-w-6xl">
+      <div className="w-full">
         {/* Section header */}
         <div className="viewport-animation mb-12">
           <div className="mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">

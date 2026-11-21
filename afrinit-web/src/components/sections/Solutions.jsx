@@ -52,7 +52,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
     <div className="page-view w-full overflow-hidden">
       {/* 1. Header Section */}
       <section className="relative min-h-[45vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
             <span className="h-px w-9 bg-[#9c6849]" />
             What We Do • Software Services
@@ -68,7 +68,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
 
       {/* 2. Custom Software vs Off-The-Shelf */}
       <section className="relative w-full px-5 py-12 sm:px-8 lg:px-14">
-        <div className="viewport-animation mx-auto max-w-6xl rounded-3xl border border-[#3d2d22]/15 bg-white/80 p-8 sm:p-14 shadow-lg">
+        <div className="viewport-animation w-full rounded-3xl border border-[#3d2d22]/15 bg-white/80 p-8 sm:p-14 shadow-lg">
           <div className="mb-10 text-center">
             <span className="inline-block rounded-full bg-[#9c6849]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#9c6849]">
               The Strategic Choice
@@ -148,7 +148,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
 
       {/* 3. Services Practice Panels */}
       <section className="relative w-full px-5 py-20 sm:px-8 lg:px-14">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-14">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />
@@ -227,7 +227,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
       {/* 4. Disciplines: Research, Design, Development */}
       {siteConfig.capabilities && (
         <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40">
-          <div className="mx-auto max-w-6xl">
+          <div className="w-full">
             <div className="viewport-animation mb-14">
               <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
                 <span className="h-px w-9 bg-[#9c6849]" />
@@ -281,7 +281,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
 
       {/* 5. Practice Focus Areas */}
       <section id="industry-sectors" className="relative w-full px-5 py-24 sm:px-8 lg:px-14 scroll-mt-28">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-14">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />
@@ -320,7 +320,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
 
       {/* 6. Technical Tooling */}
       <section id="tech-stack-section" className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40 scroll-mt-28">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-14">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />
@@ -401,7 +401,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
       {/* 8. Pre-Footer CTA */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden">
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation mx-auto max-w-6xl text-center relative z-10">
+        <div className="viewport-animation w-full text-center relative z-10">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
             {siteConfig.preFooterCta.eyebrow}
           </p>

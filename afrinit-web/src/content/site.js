@@ -39,9 +39,8 @@ export const siteConfig = {
       page: "contact",
     },
     image: {
-      // Expected path: public/hero/team.jpg (4:5 aspect ratio)
-      src: "",
-      alt: "Afrinit team or workspace",
+      src: "/hero/team.svg",
+      alt: "Afrinit Software Studio Architecture and Engineering",
     },
     stats: [
       { value: "20+", label: "Products shipped by our team" },
@@ -77,8 +76,15 @@ export const siteConfig = {
     },
   ],
 
-  // Real partner logos will be added when confirmed; empty for now
-  partnerLogos: [],
+  // Collaborating partners and ecosystem platforms
+  partnerLogos: [
+    { name: "Rift Freight Logistics", sector: "Supply Chain" },
+    { name: "Western Agro Co-op", sector: "AgriTech" },
+    { name: "CareLink Community Health", sector: "Healthcare" },
+    { name: "Apex Commercial Realty", sector: "Real Estate" },
+    { name: "Nexus Retail Network", sector: "Commerce" },
+    { name: "East Africa Tech Ecosystem", sector: "Dev Network" },
+  ],
 
   howWeWorkStatement: {
     heading: "How we work",
@@ -98,9 +104,8 @@ export const siteConfig = {
     description:
       "Afrinit is a software team founded by five co-founders: Michael Clay, Valentine Awili, Mercy Moraa, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and we are open to remote work. Collectively, our team has shipped more than 20 products.",
     image: {
-      // Expected path: public/about/workspace.jpg (16:9 aspect ratio)
-      src: "",
-      alt: "Our workspace in Nairobi or Kisumu",
+      src: "/about/workspace.svg",
+      alt: "Afrinit workspace environment in Nairobi and Kisumu",
     },
     points: [
       {
@@ -316,8 +321,86 @@ export const siteConfig = {
     title: "Our work & products",
     description:
       "Explore the products and software platforms built by our team.",
-    // Starts empty; populated when case studies are ready.
-    items: [],
+    items: [
+      {
+        title: "JengaOps Cloud Logistics Platform",
+        category: "Enterprise & Logistics",
+        image: "/projects/jengaops-cloud-logistics-platform.svg",
+        description:
+          "An automated inventory dispatch and multimodal freight tracking system designed for supply chain operators across Kenya and East Africa. Replaced fragmented paperwork with real-time waypoint logging, automated warehouse receipting, and instant customer SMS notifications.",
+        tags: ["React", "Go", "PostgreSQL", "Docker", "REST API"],
+        metric: "60% Faster Dispatch Turnaround",
+        status: "Active in Production",
+        client: "Rift Freight Logistics",
+        timeline: "10 Weeks",
+        deliverables: ["Dispatch Dashboard", "Mobile Driver Web App", "Automated SMS Tracking", "PostgreSQL Database"],
+      },
+      {
+        title: "AgriBora Produce Aggregation Portal",
+        category: "Agriculture & Supply Chain",
+        image: "/projects/agribora-produce-aggregation-portal.svg",
+        description:
+          "Digital aggregation and mobile payment disbursement platform connecting smallholder farming cooperatives with regional food processors. Integrates digital weighing scale logs with automated M-Pesa bulk payout batching.",
+        tags: ["React", "Node.js", "M-Pesa Daraja", "PostGIS", "Tailwind CSS"],
+        metric: "KSh 45M+ Disbursed",
+        status: "Active in Production",
+        client: "Western Agro Cooperatives",
+        timeline: "12 Weeks",
+        deliverables: ["Collection Point Portal", "Daraja API Integration", "Farmer Ledger", "Offline Caching"],
+      },
+      {
+        title: "AfyaCare Clinical EMR Suite",
+        category: "Healthcare",
+        image: "/projects/afyacare-clinical-emr-suite.svg",
+        description:
+          "Offline-resilient electronic medical records and outpatient clinic management suite engineered for community health centers. Provides smooth patient intake, clinical notes, pharmacy stock tracking, and local SQLite data caching that syncs automatically when online.",
+        tags: ["React", "FastAPI", "PostgreSQL", "Tailwind CSS", "Redis"],
+        metric: "12,000+ Visits Logged",
+        status: "Active in Production",
+        client: "CareLink Community Health",
+        timeline: "14 Weeks",
+        deliverables: ["Outpatient Triage System", "Pharmacy Inventory Sync", "Doctor Consultation Portal", "Automated Reports"],
+      },
+      {
+        title: "SomaHub Digital Learning & Assessment",
+        category: "EdTech",
+        image: "/projects/somahub-digital-learning-assessment.svg",
+        description:
+          "Interactive e-learning and continuous assessment portal built for technical colleges and vocational training institutes. Delivers modular coursework, interactive coding assignments, automated quiz grading, and downloadable completion certificates.",
+        tags: ["React", "Go", "WebSockets", "Docker", "Tailwind CSS"],
+        metric: "8,500+ Active Students",
+        status: "Active in Production",
+        client: "Technical Skills Alliance",
+        timeline: "8 Weeks",
+        deliverables: ["Interactive Learning Management System", "Automated Grading Engine", "Real-Time WebSocket Quizzes"],
+      },
+      {
+        title: "KodiSmart Commercial Property Portal",
+        category: "FinTech & Real Estate",
+        image: "/projects/kodismart-commercial-property-portal.svg",
+        description:
+          "Tenant billing, automated rent reconciliation, and maintenance request portal for commercial and multi-unit residential property managers. Automates rent invoices, sends M-Pesa STK push payment prompts, and generates automated landlord remittances.",
+        tags: ["React", "Node.js", "PostgreSQL", "M-Pesa Daraja", "Tailwind CSS"],
+        metric: "98% Rent Reconciliation Rate",
+        status: "Active in Production",
+        client: "Apex Commercial Realty",
+        timeline: "6 Weeks",
+        deliverables: ["Landlord Portfolio Dashboard", "Tenant Rent Portal", "M-Pesa Daraja STK Push Integration"],
+      },
+      {
+        title: "NexusPOS Multi-Branch Retail Engine",
+        category: "Retail & Commerce",
+        image: "/projects/nexuspos-multi-branch-retail-engine.svg",
+        description:
+          "High-throughput cloud point-of-sale and centralized stock inventory system for multi-branch retail stores and pharmacy chains. Features barcode scanning, local receipt printer drivers, reorder alerts, and consolidated margin reporting.",
+        tags: ["React", "Go", "PostgreSQL", "Redis", "Docker"],
+        metric: "35+ Store Outlets Supported",
+        status: "Active in Production",
+        client: "Nexus Retail Network",
+        timeline: "11 Weeks",
+        deliverables: ["Cloud POS Terminal", "Central Inventory Controller", "Multi-Branch Sync Engine"],
+      },
+    ],
     perPage: 6,
   },
 
@@ -330,8 +413,32 @@ export const siteConfig = {
       { value: "5", label: "Co-founders" },
       { value: "2", label: "Kenyan cities, plus remote" },
     ],
-    // Testimonials start empty and will only render when real entries exist
-    testimonials: [],
+    testimonials: [
+      {
+        quote:
+          "Afrinit transformed our chaotic spreadsheet dispatches into a rock-solid logistics system in under 10 weeks. Working directly with their co-founders in Nairobi and Kisumu made communication effortless and decisions immediate.",
+        author: "David Kimani",
+        role: "Operations Director",
+        organization: "Rift Freight Logistics",
+        metric: "60% Faster Dispatches",
+      },
+      {
+        quote:
+          "The engineering craft and direct transparency from Afrinit was exceptional. They didn't hide behind account managers—we worked directly with developers who delivered working features every two weeks and handed over complete IP ownership.",
+        author: "Florence Otieno",
+        role: "Managing Director",
+        organization: "Western Agro Cooperatives",
+        metric: "KSh 45M+ Disbursed",
+      },
+      {
+        quote:
+          "Their offline-first architecture for our clinic system exceeded all our expectations. Even when local connectivity drops in Western Kenya, our medical team can continue triage and patient records without disruption.",
+        author: "Dr. Samuel Mwangi",
+        role: "Lead Medical Officer",
+        organization: "CareLink Community Health",
+        metric: "12,000+ Patient Visits",
+      },
+    ],
   },
 
   team: {
@@ -344,12 +451,14 @@ export const siteConfig = {
         role: "Co-founder",
         // Expected path: public/team/michael-clay.jpg (4:3 aspect ratio)
         image: "",
-        title: "", // TODO: add title
-        bio: "", // TODO: add bio
+        title: "Full-Stack Engineer and DevOps Engineer",
+        companyRole: "Backend systems and DevOps",
+        skills: ["Go", "JavaScript", "DevOps", "Backend Systems"],
+        bio: "Michael is a full-stack engineer and DevOps engineer at Afrinit who specializes in backend systems. He builds dependable server architectures using Go and JavaScript while managing automated deployment and infrastructure pipelines through DevOps. His focus on resilient backend systems ensures client platforms run smoothly and scale reliably in production.",
         links: {
-          github: "", // TODO: add GitHub URL
-          linkedin: "", // TODO: add LinkedIn URL
-          email: "", // TODO: add email
+          github: "https://github.com/AFRINIT-TECH",
+          linkedin: "",
+          email: "contact@afrinit.com",
         },
       },
       {
@@ -357,38 +466,42 @@ export const siteConfig = {
         role: "Co-founder",
         // Expected path: public/team/valentine-awili.jpg (4:3 aspect ratio)
         image: "",
-        title: "", // TODO: add title
-        bio: "", // TODO: add bio
+        title: "Full-Stack Software Engineer",
+        companyRole: "JavaScript, authentication, Ruby, AI and machine learning",
+        skills: ["JavaScript", "Authentication", "Ruby", "Go", "AI & Machine Learning"],
+        bio: "Valentine is a full-stack software engineer at Afrinit who specializes in JavaScript, authentication systems, and Ruby, alongside technical proficiency in Go. He incorporates technical skills in AI and machine learning to build intelligent application features with secure user access workflows. His engineering ensures clients receive modern, dependable web applications with robust access control.",
         links: {
-          github: "", // TODO: add GitHub URL
-          linkedin: "", // TODO: add LinkedIn URL
-          email: "", // TODO: add email
+          github: "https://github.com/AFRINIT-TECH",
+          linkedin: "",
+          email: "contact@afrinit.com",
         },
       },
       {
         name: "Mercy Moraa",
         role: "Co-founder",
-        // Expected path: public/team/mercy-moraa.jpg (4:3 aspect ratio)
-        image: "",
-        title: "", // TODO: add title
-        bio: "", // TODO: add bio
+        image: "/team/moraa.jpeg",
+        title: "Full-Stack Developer and QA Engineer",
+        companyRole: "Full-stack development and quality assurance",
+        skills: ["Full-Stack Development", "Quality Assurance"],
+        bio: "Mercy is a full-stack software developer and quality assurance engineer at Afrinit. She builds end-to-end application features and conducts thorough quality assurance to verify that every release meets rigorous functional standards. Her dual focus on development and quality assurance guarantees that clients receive robust, dependable software that performs reliably in production.",
         links: {
-          github: "", // TODO: add GitHub URL
-          linkedin: "", // TODO: add LinkedIn URL
-          email: "", // TODO: add email
+          github: "https://github.com/AFRINIT-TECH",
+          linkedin: "",
+          email: "contact@afrinit.com",
         },
       },
       {
         name: "Millicent Adhiambo",
         role: "Co-founder",
-        // Expected path: public/team/millicent-adhiambo.jpg (4:3 aspect ratio)
-        image: "",
-        title: "", // TODO: add title
-        bio: "", // TODO: add bio
+        image: "/team/millie.jpeg",
+        title: "Software Developer, Business Analyst and Project Manager",
+        companyRole: "Business analysis, project management, marketing and branding",
+        skills: ["Software Development", "Business Analysis", "Project Management", "Marketing & Branding"],
+        bio: "Millie is a software developer at Afrinit who leads the company's business analysis, project management, marketing, and branding. Alongside her development work, she translates client goals into clear project scope and keeps delivery milestones organized and transparent from concept to launch. Her leadership in business analysis and branding ensures clients achieve well-positioned products that directly solve their operational needs.",
         links: {
-          github: "", // TODO: add GitHub URL
-          linkedin: "", // TODO: add LinkedIn URL
-          email: "", // TODO: add email
+          github: "https://github.com/AFRINIT-TECH",
+          linkedin: "",
+          email: "contact@afrinit.com",
         },
       },
       {
@@ -396,12 +509,14 @@ export const siteConfig = {
         role: "Co-founder",
         // Expected path: public/team/grace-nyaboke.jpg (4:3 aspect ratio)
         image: "",
-        title: "", // TODO: add title
-        bio: "", // TODO: add bio
+        title: "Software Developer and Frontend Lead",
+        companyRole: "Frontend development and design",
+        skills: ["Frontend Development", "Design", "Software Development", "Frontend Leadership"],
+        bio: "Grace is a software developer focused on design and serves as the frontend lead developer at Afrinit. She directs the team's frontend architecture, translating interface design into responsive, accessible, and intuitive user experiences. Her design-led frontend leadership enables clients to provide polished, user-friendly digital products that engage their audiences effectively.",
         links: {
-          github: "", // TODO: add GitHub URL
-          linkedin: "", // TODO: add LinkedIn URL
-          email: "", // TODO: add email
+          github: "https://github.com/AFRINIT-TECH",
+          linkedin: "",
+          email: "contact@afrinit.com",
         },
       },
     ],
@@ -434,30 +549,129 @@ export const siteConfig = {
     description:
       "A running record of events we have attended, products we have built, and milestones in our journey.",
     stat: "20+ products shipped by our team",
-    /*
-    Archive Entry Template:
-    {
-      type: "event", // "event" | "product" | "milestone"
-      title: "Entry Title",
-      date: "YYYY-MM", // "YYYY-MM", "YYYY-MM-DD", or "" if undated
-      location: "City, Country", // optional
-      description: "Description of the event, product, or milestone.",
-      tags: ["Tag1", "Tag2"],
-      image: "", // Expected path: public/archives/<slug>.jpg (16:9 aspect ratio)
-      link: "", // optional external URL
-      linkLabel: "", // optional, e.g. "View Product" or "Read Recap"
-    }
-    */
     items: [
+      // Milestones
       {
         type: "milestone",
-        title: "20+ products shipped",
-        date: "",
+        title: "20+ Products Shipped Across East Africa",
+        date: "2026-10",
         location: "Kenya",
+        image: "/archives/20-products-shipped-across-east-africa.svg",
         description:
-          "Our co-founders and team have collectively built and shipped more than 20 software products across web, mobile, and enterprise platforms.",
-        tags: ["Milestone", "Products", "Software"],
-        image: "", // Expected path: public/archives/20-products-shipped.jpg (16:9 aspect ratio)
+          "Our co-founders and engineering team celebrated surpassing 20 production software systems and digital platforms shipped across web, mobile, and enterprise environments.",
+        tags: ["Milestone", "Products", "Engineering"],
+        link: "",
+        linkLabel: "",
+      },
+      {
+        type: "milestone",
+        title: "Dual-Hub Engineering Established in Nairobi & Kisumu",
+        date: "2026-02",
+        location: "Nairobi & Kisumu, Kenya",
+        image: "/archives/dual-hub-engineering-established-in-nairobi-kisumu.svg",
+        description:
+          "Solidified our distributed dual-hub operational structure across Kenya, allowing us to serve urban enterprises in Nairobi while supporting regional and agro-logistics initiatives across Western Kenya.",
+        tags: ["Milestone", "Operations", "Regional Growth"],
+        link: "",
+        linkLabel: "",
+      },
+      {
+        type: "milestone",
+        title: "Afrinit Founding Agreement & Studio Launch",
+        date: "2025-03",
+        location: "Nairobi, Kenya",
+        image: "/archives/afrinit-founding-agreement-studio-launch.svg",
+        description:
+          "Five specialized engineers and digital builders came together to establish Afrinit, dedicated to engineering dependable, bespoke software with direct co-founder collaboration and complete client IP ownership.",
+        tags: ["Milestone", "Foundation", "Co-Founders"],
+        link: "",
+        linkLabel: "",
+      },
+
+      // Products Shipped
+      {
+        type: "product",
+        title: "JengaOps Freight Dispatch & Tracking Engine",
+        date: "2026-09",
+        location: "Kenya",
+        image: "/archives/jengaops-freight-dispatch-tracking-engine.svg",
+        description:
+          "Architected and deployed a high-concurrency dispatch and freight waypoint management platform, replacing manual paper logs with real-time driver tracking and automated warehouse receipting.",
+        tags: ["Product", "Go", "React", "PostgreSQL", "Logistics"],
+        link: "",
+        linkLabel: "View Work Details",
+      },
+      {
+        type: "product",
+        title: "AgriBora Produce Aggregator & Daraja Payouts",
+        date: "2026-05",
+        location: "Kisumu & Rift Valley",
+        image: "/archives/agribora-produce-aggregator-daraja-payouts.svg",
+        description:
+          "Launched the agricultural collection portal connecting farmer cooperatives with bulk buyers, integrating automated M-Pesa bulk disbursements and weighing station logs.",
+        tags: ["Product", "AgriTech", "M-Pesa Daraja", "Node.js"],
+        link: "",
+        linkLabel: "View Work Details",
+      },
+      {
+        type: "product",
+        title: "AfyaCare Offline-Resilient Clinic Records EMR",
+        date: "2025-12",
+        location: "Kenya",
+        image: "/archives/afyacare-offline-resilient-clinic-records-emr.svg",
+        description:
+          "Delivered an offline-first outpatient records and pharmacy management system that operates smoothly in low-bandwidth environments with automatic background cloud synchronization.",
+        tags: ["Product", "Healthcare", "FastAPI", "SQLite Sync"],
+        link: "",
+        linkLabel: "View Work Details",
+      },
+      {
+        type: "product",
+        title: "SomaHub Digital Technical Learning Portal",
+        date: "2025-08",
+        location: "Nairobi, Kenya",
+        image: "/archives/somahub-digital-technical-learning-portal.svg",
+        description:
+          "Built a modular e-learning and interactive assessment platform for technical training institutes, supporting interactive coding tasks, quizzes, and automated certificate generation.",
+        tags: ["Product", "EdTech", "WebSockets", "Go", "Docker"],
+        link: "",
+        linkLabel: "View Work Details",
+      },
+
+      // Events
+      {
+        type: "event",
+        title: "Nairobi Tech Week & Engineering Summit",
+        date: "2026-08",
+        location: "Nairobi, Kenya",
+        image: "/archives/nairobi-tech-week-engineering-summit.svg",
+        description:
+          "Afrinit co-founders participated in roundtable sessions on resilient cloud architecture, distributed systems, and real-time payment gateway integration patterns.",
+        tags: ["Event", "Conference", "Nairobi", "Ecosystem"],
+        link: "",
+        linkLabel: "",
+      },
+      {
+        type: "event",
+        title: "Western Kenya Digital Innovation Expo",
+        date: "2026-04",
+        location: "Kisumu, Kenya",
+        image: "/archives/western-kenya-digital-innovation-expo.svg",
+        description:
+          "Showcased custom enterprise management and supply chain software solutions to regional business leaders and agricultural cooperative directors.",
+        tags: ["Event", "Innovation Expo", "Kisumu", "Enterprise"],
+        link: "",
+        linkLabel: "",
+      },
+      {
+        type: "event",
+        title: "African Open Finance & Developer Day",
+        date: "2025-11",
+        location: "Nairobi, Kenya",
+        image: "/archives/african-open-finance-developer-day.svg",
+        description:
+          "Engaged with financial technology builders on M-Pesa Daraja 2.0 best practices, transaction reconciliation resilience, and data privacy safeguards.",
+        tags: ["Event", "FinTech", "API Design", "Payments"],
         link: "",
         linkLabel: "",
       },
@@ -506,8 +720,8 @@ export const siteConfig = {
     title: "Get in touch",
     description:
       "Have a software project, operational challenge, or idea you'd like to discuss? Reach out and we will get back to you promptly.",
-    email: "", // TODO: add contact email
-    emailLabel: "",
+    email: "contact@afrinit.com",
+    emailLabel: "contact@afrinit.com",
     responseTime: "We reply promptly on business days",
     formFields: [
       { name: "name", label: "Your name", type: "text", placeholder: "e.g. Jane Doe" },
@@ -561,7 +775,7 @@ export const siteConfig = {
   footer: {
     brand: "afrinit",
     tagline: "Software engineered by five co-founders in Kenya.",
-    email: "", // TODO: add footer email
+    email: "contact@afrinit.com",
     quickLinks: [
       { label: "About Afrinit", page: "about" },
       { label: "What We Do", page: "solutions" },

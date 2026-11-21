@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#262016"/>
+      <stop offset="100%" stop-color="#3d311e"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- Glow effect -->
+  <circle cx="530" cy="200" r="160" fill="#f59e0b" opacity="0.15" filter="blur(40px)"/>
+  
+  <!-- Technical Graphic -->
+  <polygon points="530,110 630,180 430,180" fill="#f59e0b" opacity="0.8"/><rect x="450" y="180" width="160" height="90" fill="none" stroke="#f59e0b" stroke-width="5"/><rect x="510" y="210" width="40" height="60" fill="#f59e0b"/>
+  
+  <!-- Info Overlay -->
+  <g transform="translate(50, 340)">
+    <rect x="-10" y="-26" width="280" height="28" rx="6" fill="rgba(0,0,0,0.4)"/>
+    <text x="0" y="-8" font-family="monospace" font-size="13" font-weight="bold" fill="#f59e0b" letter-spacing="2">FINTECH & LEASE RECONCILIATION</text>
+    <text x="0" y="32" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#ffffff">KodiSmart Property Portal</text>
+  </g>
+</svg>

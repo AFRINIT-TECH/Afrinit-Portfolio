@@ -163,6 +163,24 @@
   animation: 0.42s both panel-in;
 }
 
+/* 10-second auto-slide progress animation */
+@keyframes progress-10s {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.timer-progress-10s {
+  animation: progress-10s 10s linear forwards;
+}
+
+.timer-paused {
+  animation-play-state: paused;
+}
+
 /* FAQ accordion */
 .faq-answer {
   grid-template-rows: 0fr;

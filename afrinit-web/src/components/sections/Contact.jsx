@@ -16,7 +16,7 @@ export const Contact = () => {
     <div className="page-view w-full overflow-hidden">
       {/* 1. Contact Hero */}
       <section className="relative min-h-[45vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
             <span className="h-px w-9 bg-[#9c6849]" />
             Contact • Get In Touch
@@ -32,7 +32,7 @@ export const Contact = () => {
 
       {/* 2. Main Contact Form & Direct Info Grid */}
       <section className="relative w-full px-5 py-8 sm:px-8 lg:px-14">
-        <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-[1.3fr_1fr] items-start">
+        <div className="w-full grid gap-12 lg:grid-cols-[1.3fr_1fr] items-start">
           {/* Left: Project Request Form */}
           <div className="viewport-animation rounded-3xl border border-[#3d2d22]/15 bg-white/90 p-8 sm:p-12 shadow-sm">
             {formSubmitted ? (
@@ -193,7 +193,7 @@ export const Contact = () => {
 
       {/* 3. Three Simple Cards: Nairobi, Kisumu, Remote (NO addresses or phone numbers) */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40 mt-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-12">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />

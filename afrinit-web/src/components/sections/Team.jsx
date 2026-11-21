@@ -1,5 +1,6 @@
 import { siteConfig } from "@/content/site";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { FounderCarousel } from "@/components/ui/FounderCarousel";
 
 // Helper to generate a slug from a name
 const toSlug = (name) =>
@@ -15,7 +16,7 @@ export const Team = ({ onNavigate }) => {
     <div className="page-view w-full overflow-hidden">
       {/* 1. Header */}
       <section className="relative min-h-[40vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
             <span className="h-px w-9 bg-[#9c6849]" />
             Our Team • Co-Founders
@@ -23,119 +24,22 @@ export const Team = ({ onNavigate }) => {
           <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-[#231c17] max-w-4xl">
             {title}
           </h1>
-          <p className="viewport-animation delay-200 mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-[#5f5249]">
+          <p className="viewport-animation delay-200 mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed text-[#5f5249]">
             {description}
           </p>
         </div>
       </section>
 
-      {/* 2. Co-Founders Responsive Grid (1 col phone, 2 cols tablet, 3 cols desktop) */}
+      {/* 2. Co-Founders One Card Carousel */}
       <section className="relative w-full px-5 py-8 sm:px-8 lg:px-14">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {members.map((member, index) => {
-              const slug = toSlug(member.name);
-              const hasLinks =
-                member.links &&
-                (Boolean(member.links.github) ||
-                  Boolean(member.links.linkedin) ||
-                  Boolean(member.links.email));
-
-              return (
-                <div
-                  key={member.name || index}
-                  className={`viewport-animation delay-${((index % 3) + 1) * 100} card-nerd group rounded-3xl border border-[#3d2d22]/15 bg-white/90 overflow-hidden shadow-sm flex flex-col justify-between`}
-                >
-                  <div>
-                    {/* Photo Area: 4:3 ratio */}
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#d7c4ae]/20">
-                      {member.image ? (
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <ImagePlaceholder
-                          label={`Photo of ${member.name}`}
-                          hint={`4:3, add at public/team/${slug}.jpg`}
-                          aspect="aspect-[4/3]"
-                          className="h-full w-full rounded-none border-0 border-b border-[#3d2d22]/10"
-                        />
-                      )}
-                    </div>
-
-                    {/* Member Details */}
-                    <div className="p-7">
-                      <div className="flex items-center justify-between gap-3 flex-wrap">
-                        <span className="inline-block rounded-full bg-[#9c6849]/15 px-3 py-1 text-xs font-semibold text-[#9c6849]">
-                          {member.role || "Co-founder"}
-                        </span>
-                        {member.title && (
-                          <span className="text-xs font-medium text-[#79513a]">
-                            {member.title}
-                          </span>
-                        )}
-                      </div>
-
-                      <h3 className="font-display mt-3 text-2xl font-bold text-[#231c17]">
-                        {member.name}
-                      </h3>
-
-                      {member.bio && (
-                        <p className="mt-3 text-sm leading-relaxed text-[#5f5249]">
-                          {member.bio}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Optional Links */}
-                  {hasLinks && (
-                    <div className="px-7 pb-7 pt-2">
-                      <div className="flex items-center gap-3 border-t border-[#3d2d22]/10 pt-4">
-                        {member.links.github && (
-                          <a
-                            href={member.links.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full bg-[#f5efe4] px-3 py-1 text-xs font-semibold text-[#231c17] hover:bg-[#231c17] hover:text-white transition"
-                          >
-                            GitHub
-                          </a>
-                        )}
-                        {member.links.linkedin && (
-                          <a
-                            href={member.links.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full bg-[#f5efe4] px-3 py-1 text-xs font-semibold text-[#231c17] hover:bg-[#231c17] hover:text-white transition"
-                          >
-                            LinkedIn
-                          </a>
-                        )}
-                        {member.links.email && (
-                          <a
-                            href={`mailto:${member.links.email}`}
-                            className="rounded-full bg-[#f5efe4] px-3 py-1 text-xs font-semibold text-[#231c17] hover:bg-[#231c17] hover:text-white transition"
-                          >
-                            Email
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+        <div className="w-full">
+          <FounderCarousel members={members} onNavigate={onNavigate} isPreview={false} />
         </div>
       </section>
 
       {/* 3. Values Section: "How we work together" */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40 mt-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="w-full">
           <div className="viewport-animation mb-12">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
               <span className="h-px w-9 bg-[#9c6849]" />
@@ -146,7 +50,7 @@ export const Team = ({ onNavigate }) => {
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value, index) => (
               <div
                 key={index}
@@ -172,7 +76,7 @@ export const Team = ({ onNavigate }) => {
       {/* 4. Closing CTA Section */}
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden">
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation mx-auto max-w-4xl text-center relative z-10">
+        <div className="viewport-animation w-full text-center relative z-10">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
             Work with us
           </p>

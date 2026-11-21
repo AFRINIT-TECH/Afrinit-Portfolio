@@ -1,11 +1,12 @@
 import { siteConfig } from "@/content/site";
+import { Logo } from "./Logo";
 
 export const Footer = ({ onNavigate }) => {
   return (
     <footer className="w-full bg-[#231c17] text-white border-t border-[#3d2d22]">
       {/* Top Pre-Footer Callout in Footer */}
       <div className="border-b border-white/10 px-5 py-12 sm:px-8 lg:px-14">
-        <div className="mx-auto max-w-6xl flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div className="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
               Want to share your project goals with us?
@@ -25,7 +26,7 @@ export const Footer = ({ onNavigate }) => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:px-14">
+      <div className="w-full px-5 py-16 sm:px-8 lg:px-14">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="flex flex-col justify-between">
@@ -35,9 +36,7 @@ export const Footer = ({ onNavigate }) => {
                 onClick={() => onNavigate && onNavigate("home")}
                 aria-label="Afrinit Home"
               >
-                <span className="font-display text-2xl font-extrabold tracking-tight text-white group-hover:text-[#dcbf77] transition-colors">
-                  afrinit<span className="text-[#dcbf77]">.</span>
-                </span>
+                <Logo variant="white" />
               </button>
               <p className="mt-4 text-xs font-bold uppercase tracking-widest text-[#dcbf77]">
                 {siteConfig.footer.tagline}
@@ -148,7 +147,7 @@ export const Footer = ({ onNavigate }) => {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10 bg-[#1b1511] px-5 py-6 sm:px-8 lg:px-14">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-xs text-white/50 sm:flex-row">
+        <div className="flex w-full flex-col items-center justify-between gap-4 text-xs text-white/50 sm:flex-row">
           <p>{siteConfig.footer.copyright}</p>
           <div className="flex items-center gap-6">
             <button
