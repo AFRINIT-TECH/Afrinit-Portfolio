@@ -13,6 +13,7 @@ export const siteConfig = {
       { label: "About", page: "about" },
       { label: "What We Do", page: "solutions" },
       { label: "Work", page: "projects" },
+      { label: "Partners", page: "partners" },
       { label: "Impact", page: "impact" },
       { label: "Our Team", page: "team" },
       { label: "Archives", page: "archives" },
@@ -20,7 +21,7 @@ export const siteConfig = {
     ],
     cta: {
       label: "Partner with us",
-      page: "contact",
+      page: "partners",
     },
   },
 
@@ -35,8 +36,8 @@ export const siteConfig = {
       page: "projects",
     },
     secondaryCta: {
-      label: "Get in touch",
-      page: "contact",
+      label: "Explore partnerships",
+      page: "partners",
     },
     image: {
       src: "/hero/team.svg",
@@ -56,7 +57,8 @@ export const siteConfig = {
       description:
         "We build bespoke web applications from requirements to deployment. Designed to fit your operational processes, user expectations, and infrastructure realities.",
       badge: "Web Applications",
-      page: "solutions",
+      page: "projects",
+      cta: "Explore web projects",
     },
     {
       title: "Business & Management Systems",
@@ -65,6 +67,8 @@ export const siteConfig = {
         "We develop management platforms that consolidate data, eliminate manual paperwork, and provide clear operational visibility.",
       badge: "Business Systems",
       page: "solutions",
+      cta: "Explore business systems",
+      navParams: { serviceIndex: 1 },
     },
     {
       title: "Backend, APIs & Maintenance",
@@ -72,7 +76,8 @@ export const siteConfig = {
       description:
         "We architect robust APIs and data layers, connect third-party services, and maintain your platforms so they stay fast, secure, and dependable.",
       badge: "APIs & Support",
-      page: "solutions",
+      page: "partners",
+      cta: "Explore tech partnerships",
     },
   ],
 
@@ -780,6 +785,7 @@ export const siteConfig = {
       { label: "About Afrinit", page: "about" },
       { label: "What We Do", page: "solutions" },
       { label: "Work", page: "projects" },
+      { label: "Partners", page: "partners" },
       { label: "Impact", page: "impact" },
       { label: "Our Team", page: "team" },
       { label: "Archives", page: "archives" },
