@@ -33,6 +33,9 @@ All notable changes to the Afrinit Portfolio project.
 - **Contact**: Form and info panel
 - **Projects**: Card grid with pagination (6 projects per page)
 - **FAQ**: Accordion with smooth expand/collapse animation
+- **Partners**: Dedicated partnership page with interactive track selector, qualification matrix, and partnership inquiry form
+- **Mobile Menu Refinements**: Keyboard navigation (Escape key), click/touch outside dismissal, and animated dropdown transitions
+- **Centralized Pre-Footer CTA**: Consolidated pre-footer callout inside global Footer to eliminate duplicate sections across individual pages
 
 ### Added — Company Logo
 
