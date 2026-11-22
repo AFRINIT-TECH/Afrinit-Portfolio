@@ -57,33 +57,33 @@ export const Solutions = ({ onNavigate, navParams }) => {
             <span className="h-px w-9 bg-[#9c6849]" />
             What We Do • Software Services
           </div>
-          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-[#231c17] max-w-5xl">
+          <h1 className="viewport-animation delay-100 font-display text-3xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl text-[#231c17] max-w-5xl break-words">
             Software solutions built for clarity, speed, and reliability.
           </h1>
-          <p className="viewport-animation delay-200 mt-8 max-w-3xl text-lg sm:text-xl leading-relaxed text-[#5f5249]">
+          <p className="viewport-animation delay-200 mt-6 sm:mt-8 max-w-3xl text-base sm:text-xl leading-relaxed text-[#5f5249]">
             {siteConfig.solutions.description}
           </p>
         </div>
       </section>
 
       {/* 2. Custom Software vs Off-The-Shelf */}
-      <section className="relative w-full px-5 py-12 sm:px-8 lg:px-14">
-        <div className="viewport-animation w-full rounded-3xl border border-[#3d2d22]/15 bg-white/80 p-8 sm:p-14 shadow-lg">
-          <div className="mb-10 text-center">
+      <section className="relative w-full px-5 py-8 sm:py-12 sm:px-8 lg:px-14">
+        <div className="viewport-animation w-full rounded-3xl border border-[#3d2d22]/15 bg-white/80 p-6 sm:p-12 shadow-lg">
+          <div className="mb-8 sm:mb-10 text-center">
             <span className="inline-block rounded-full bg-[#9c6849]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#9c6849]">
               The Strategic Choice
             </span>
-            <h2 className="font-display mt-4 text-3xl font-extrabold text-[#231c17] sm:text-4xl">
+            <h2 className="font-display mt-4 text-2xl sm:text-4xl font-extrabold text-[#231c17] break-words">
               Off-The-Shelf Tools vs. Custom Software
             </h2>
-            <p className="mt-3 max-w-xl mx-auto text-sm text-[#5f5249]">
+            <p className="mt-3 max-w-xl mx-auto text-xs sm:text-sm text-[#5f5249]">
               Why teams choose custom software built specifically around their operations.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             {/* Off-the-shelf */}
-            <div className="rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4]/60 p-8 flex flex-col justify-between">
+            <div className="rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4]/60 p-5 sm:p-8 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-[#3d2d22]/10">
                   <h3 className="font-display text-xl font-bold text-[#5f5249]">
@@ -171,12 +171,12 @@ export const Solutions = ({ onNavigate, navParams }) => {
               >
                 <button
                   onClick={() => setOpenPanel(openPanel === index ? null : index)}
-                  className="w-full flex items-center gap-5 p-8 text-left cursor-pointer"
+                  className="w-full flex items-start sm:items-center gap-4 sm:gap-5 p-5 sm:p-8 text-left cursor-pointer"
                   aria-expanded={openPanel === index}
                 >
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#9c6849]/15 text-[#9c6849]">
+                  <div className="flex h-11 w-11 sm:h-14 sm:w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#9c6849]/15 text-[#9c6849]">
                     <svg
-                      className="h-7 w-7"
+                      className="h-6 w-6 sm:h-7 sm:w-7"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -190,13 +190,13 @@ export const Solutions = ({ onNavigate, navParams }) => {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-display text-xl font-bold text-[#231c17]">
+                    <h3 className="font-display text-lg sm:text-xl font-bold text-[#231c17]">
                       {service.title}
                     </h3>
                     <p className="mt-1 text-xs sm:text-sm text-[#5f5249]">{service.description}</p>
                   </div>
                   <svg
-                    className={`h-5 w-5 flex-shrink-0 text-[#9c6849] transition-transform duration-300 ${
+                    className={`h-5 w-5 flex-shrink-0 text-[#9c6849] transition-transform duration-300 mt-1 sm:mt-0 ${
                       openPanel === index ? "rotate-180" : ""
                     }`}
                     fill="none"
@@ -213,8 +213,53 @@ export const Solutions = ({ onNavigate, navParams }) => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-8 pb-8 pl-[90px] text-sm leading-relaxed text-[#5f5249] border-t border-[#3d2d22]/10 pt-4">
-                      {service.details}
+                    <div className="px-5 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pl-[90px] text-sm leading-relaxed text-[#5f5249] border-t border-[#3d2d22]/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <p className="max-w-2xl">{service.details}</p>
+                      {index === 0 && (
+                        <button
+                          type="button"
+                          onClick={() => onNavigate && onNavigate("projects")}
+                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                        >
+                          View web projects →
+                        </button>
+                      )}
+                      {index === 1 && (
+                        <button
+                          type="button"
+                          onClick={() => onNavigate && onNavigate("impact")}
+                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                        >
+                          View operational impact →
+                        </button>
+                      )}
+                      {index === 2 && (
+                        <button
+                          type="button"
+                          onClick={() => onNavigate && onNavigate("partners")}
+                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                        >
+                          Explore tech partnerships →
+                        </button>
+                      )}
+                      {index === 3 && (
+                        <button
+                          type="button"
+                          onClick={() => onNavigate && onNavigate("projects")}
+                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                        >
+                          View designed platforms →
+                        </button>
+                      )}
+                      {index === 4 && (
+                        <button
+                          type="button"
+                          onClick={() => onNavigate && onNavigate("team")}
+                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                        >
+                          Meet our engineers →
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -394,38 +439,6 @@ export const Solutions = ({ onNavigate, navParams }) => {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. Pre-Footer CTA */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden">
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation w-full text-center relative z-10">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
-            {siteConfig.preFooterCta.eyebrow}
-          </p>
-          <h2 className="font-display mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl text-white">
-            {siteConfig.preFooterCta.heading}
-          </h2>
-          <div className="mt-10">
-            <button
-              onClick={() => onNavigate && onNavigate("contact")}
-              className="group inline-flex items-center gap-4 rounded-full bg-[#dcbf77] px-10 py-5 text-base font-bold text-[#231c17] shadow-xl transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer"
-            >
-              {siteConfig.preFooterCta.buttonText}
-              <span className="transition-transform duration-300 group-hover:translate-x-2">
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </span>
-            </button>
           </div>
         </div>
       </section>
