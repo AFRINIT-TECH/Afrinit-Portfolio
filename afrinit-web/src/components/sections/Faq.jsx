@@ -47,7 +47,7 @@ export const Faq = ({ onNavigate }) => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by keyword (e.g., code ownership, services, team)..."
-              className="w-full rounded-full border border-[#3d2d22]/20 bg-white/90 px-6 py-4 pl-12 text-sm text-[#231c17] placeholder:text-[#5f5249]/50 shadow-sm transition-all focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
+              className="w-full rounded-full border border-[#3d2d22]/20 bg-white/90 px-6 py-4 pl-12 text-base sm:text-sm text-[#231c17] placeholder:text-[#5f5249]/50 shadow-sm transition-all focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
             />
             <svg
               className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#9c6849]"
@@ -97,13 +97,13 @@ export const Faq = ({ onNavigate }) => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-7 sm:p-8 text-left cursor-pointer"
+                className="w-full flex items-center justify-between p-5 sm:p-8 text-left cursor-pointer"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-display text-lg sm:text-xl font-bold text-[#231c17] pr-6">
+                <span className="font-display text-base sm:text-xl font-bold text-[#231c17] pr-4 sm:pr-6">
                   {item.question}
                 </span>
-                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#9c6849]/15 text-[#9c6849]">
+                <span className="flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#9c6849]/15 text-[#9c6849]">
                   <svg
                     className={`h-4 w-4 transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
@@ -123,7 +123,7 @@ export const Faq = ({ onNavigate }) => {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-7 sm:px-8 pb-8 text-sm leading-relaxed text-[#5f5249] border-t border-[#3d2d22]/10 pt-4">
+                  <div className="px-5 sm:px-8 pb-6 sm:pb-8 text-sm leading-relaxed text-[#5f5249] border-t border-[#3d2d22]/10 pt-4">
                     {item.answer}
                   </div>
                 </div>
@@ -145,60 +145,6 @@ export const Faq = ({ onNavigate }) => {
               </button>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* 3. Direct Contact Card */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
-        <div className="viewport-animation mx-auto max-w-4xl rounded-3xl bg-[#231c17] p-10 text-white sm:p-14 shadow-2xl relative overflow-hidden">
-          <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[#dcbf77]/10 blur-2xl" />
-          <div className="relative z-10 text-center">
-            <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
-              Have a specific question about your project?
-            </h3>
-            <p className="mx-auto mt-3 max-w-lg text-sm text-[#d7c4ae]">
-              Reach out to our co-founders directly to discuss requirements, feasibility, or timelines.
-            </p>
-            <button
-              onClick={() => onNavigate && onNavigate("contact")}
-              className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#dcbf77] px-8 py-4 text-sm font-bold text-[#231c17] shadow-lg transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer"
-            >
-              Get in touch
-              <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Pre-Footer CTA */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden border-t border-white/10">
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation w-full text-center relative z-10">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
-            {siteConfig.preFooterCta.eyebrow}
-          </p>
-          <h2 className="font-display mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl text-white">
-            {siteConfig.preFooterCta.heading}
-          </h2>
-          <div className="mt-10">
-            <button
-              onClick={() => onNavigate && onNavigate("contact")}
-              className="group inline-flex items-center gap-4 rounded-full bg-[#dcbf77] px-10 py-5 text-base font-bold text-[#231c17] shadow-xl transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer"
-            >
-              {siteConfig.preFooterCta.buttonText}
-              <span className="transition-transform duration-300 group-hover:translate-x-2">
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </span>
-            </button>
-          </div>
         </div>
       </section>
     </div>
