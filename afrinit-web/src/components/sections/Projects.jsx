@@ -181,12 +181,6 @@ export const Projects = ({ onNavigate }) => {
                           className="h-full w-full rounded-none border-0"
                         />
                       )}
-                      {project.status && (
-                        <div className="absolute top-3 right-3 flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-0.5 text-[11px] font-semibold text-[#231c17] backdrop-blur-sm shadow-xs">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                          {project.status}
-                        </div>
-                      )}
                     </div>
                     <div className="p-7">
                       {project.category && (
@@ -339,10 +333,7 @@ export const Projects = ({ onNavigate }) => {
               </div>
             )}
 
-            <div className="mt-8 pt-6 border-t border-[#3d2d22]/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div className="text-xs font-semibold text-emerald-600">
-                {activeModalProject.status || "Completed"}
-              </div>
+            <div className="mt-8 pt-6 border-t border-[#3d2d22]/15 flex items-center justify-end gap-4">
               <button
                 onClick={() => {
                   setActiveModalProject(null);
