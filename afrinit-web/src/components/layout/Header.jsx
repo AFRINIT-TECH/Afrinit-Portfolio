@@ -192,6 +192,21 @@ export const Header = ({ currentPage, onNavigate }) => {
             Work
           </button>
 
+          {/* Partners */}
+          <button
+            onClick={() => {
+              closeDropdown();
+              onNavigate("partners");
+            }}
+            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+              currentPage === "partners"
+                ? "text-[#9c6849] font-bold"
+                : "text-[#5f5249]"
+            }`}
+          >
+            Partners
+          </button>
+
           {/* Impact */}
           <button
             onClick={() => {
@@ -258,7 +273,7 @@ export const Header = ({ currentPage, onNavigate }) => {
           <button
             onClick={() => {
               closeDropdown();
-              onNavigate("contact");
+              onNavigate(siteConfig.navigation.cta.page || "partners");
             }}
             className="group m-0 hidden items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition sm:flex bg-[#231c17] hover:bg-[#9c6849] cursor-pointer shadow-sm hover:shadow-md"
           >
