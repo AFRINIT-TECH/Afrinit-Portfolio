@@ -25,35 +25,35 @@ export const Hero = ({ onNavigate }) => {
             {siteConfig.hero.eyebrow}
           </div>
 
-          <h1 className="viewport-animation delay-100 font-display text-[clamp(2.5rem,6vw,5.5rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[#231c17]">
+          <h1 className="viewport-animation delay-100 font-display text-[clamp(2.1rem,6vw,5.5rem)] font-extrabold leading-[0.96] tracking-[-0.04em] text-[#231c17] break-words">
             {siteConfig.hero.titleLine1}
             <span className="mt-2 block text-[#9c6849]">
               {siteConfig.hero.titleLine2}
             </span>
           </h1>
 
-          <p className="viewport-animation delay-200 mt-8 max-w-2xl text-base leading-relaxed text-[#5f5249] sm:text-lg">
+          <p className="viewport-animation delay-200 mt-6 sm:mt-8 max-w-2xl text-base leading-relaxed text-[#5f5249] sm:text-lg">
             {siteConfig.hero.paragraph}
           </p>
 
           {/* Key Facts Row */}
-          <div className="viewport-animation delay-300 mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 border-y border-[#3d2d22]/15 py-6">
+          <div className="viewport-animation delay-300 mt-8 grid grid-cols-3 gap-2 sm:gap-4 border-y border-[#3d2d22]/15 py-5 sm:py-6">
             {siteConfig.hero.stats.map((stat, idx) => (
               <div key={idx}>
-                <p className="font-display text-2xl sm:text-3xl font-extrabold text-[#231c17]">
+                <p className="font-display text-xl sm:text-3xl font-extrabold text-[#231c17]">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-xs font-semibold text-[#79513a]">
+                <p className="mt-1 text-[11px] sm:text-xs font-semibold text-[#79513a] leading-tight">
                   {stat.label}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="viewport-animation delay-400 mt-10 flex flex-wrap items-center gap-4">
+          <div className="viewport-animation delay-400 mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <button
               onClick={() => onNavigate && onNavigate("projects")}
-              className="group inline-flex items-center gap-4 rounded-full bg-[#9c6849] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-[#9c6849]/20 transition-all hover:bg-[#825238] hover:shadow-xl cursor-pointer"
+              className="group inline-flex items-center justify-center gap-3 sm:gap-4 rounded-full bg-[#9c6849] px-6 sm:px-7 py-3.5 sm:py-4 text-sm font-semibold text-white shadow-lg shadow-[#9c6849]/20 transition-all hover:bg-[#825238] hover:shadow-xl cursor-pointer"
             >
               {siteConfig.hero.primaryCta.label}
               <span className="transition-transform duration-300 group-hover:translate-x-1.5">
@@ -69,8 +69,8 @@ export const Hero = ({ onNavigate }) => {
               </span>
             </button>
             <button
-              onClick={() => onNavigate && onNavigate("contact")}
-              className="group inline-flex items-center gap-3 rounded-full border border-[#3d2d22]/20 bg-white/70 px-7 py-4 text-sm font-semibold text-[#231c17] transition hover:bg-white hover:text-[#9c6849] cursor-pointer"
+              onClick={() => onNavigate && onNavigate(siteConfig.hero.secondaryCta.page || "partners")}
+              className="group inline-flex items-center justify-center gap-3 rounded-full border border-[#3d2d22]/20 bg-white/70 px-6 sm:px-7 py-3.5 sm:py-4 text-sm font-semibold text-[#231c17] transition hover:bg-white hover:text-[#9c6849] cursor-pointer"
             >
               {siteConfig.hero.secondaryCta.label}
               <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -149,10 +149,10 @@ export const Hero = ({ onNavigate }) => {
 
                 <div className="mt-8 pt-4 border-t border-[#3d2d22]/10">
                   <button
-                    onClick={() => onNavigate && onNavigate(pillar.page)}
+                    onClick={() => onNavigate && onNavigate(pillar.page, pillar.navParams)}
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9c6849] transition-colors group-hover:text-[#231c17] cursor-pointer"
                   >
-                    Learn more
+                    {pillar.cta || "Learn more"}
                     <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -244,11 +244,18 @@ export const Hero = ({ onNavigate }) => {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {archiveEntries.map((entry, idx) => {
-              const slug = toSlug(entry.title);
+              // Direct each card to its specific relevant page
+              const cardRoute =
+                idx === 0
+                  ? { page: "projects", action: "View shipped products" }
+                  : idx === 1
+                  ? { page: "about", action: "About our dual hubs" }
+                  : { page: "team", action: "Meet our co-founders" };
+
               return (
                 <div
                   key={idx}
-                  onClick={() => onNavigate && onNavigate("archives")}
+                  onClick={() => onNavigate && onNavigate(cardRoute.page)}
                   className="card-nerd group rounded-2xl border border-[#3d2d22]/15 bg-white/90 p-6 shadow-sm hover:shadow-md cursor-pointer flex flex-col justify-between"
                 >
                   <div>
@@ -271,7 +278,7 @@ export const Hero = ({ onNavigate }) => {
                   </div>
 
                   <div className="mt-4 pt-3 border-t border-[#3d2d22]/10 flex items-center justify-between text-xs font-semibold text-[#9c6849]">
-                    <span>Read entry</span>
+                    <span>{cardRoute.action}</span>
                     <span className="transition-transform group-hover:translate-x-1">→</span>
                   </div>
                 </div>
@@ -354,38 +361,6 @@ export const Hero = ({ onNavigate }) => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. Pre-Footer CTA Banner */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden">
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation w-full text-center relative z-10">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
-            {siteConfig.preFooterCta.eyebrow}
-          </p>
-          <h2 className="font-display mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl text-white">
-            {siteConfig.preFooterCta.heading}
-          </h2>
-          <div className="mt-10">
-            <button
-              onClick={() => onNavigate && onNavigate("contact")}
-              className="group inline-flex items-center gap-4 rounded-full bg-[#dcbf77] px-10 py-5 text-base font-bold text-[#231c17] shadow-xl transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer"
-            >
-              {siteConfig.preFooterCta.buttonText}
-              <span className="transition-transform duration-300 group-hover:translate-x-2">
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </span>
-            </button>
           </div>
         </div>
       </section>
