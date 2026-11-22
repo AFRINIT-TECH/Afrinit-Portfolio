@@ -119,7 +119,7 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
       </div>
 
       {/* 2. Floating Avatar Bar: 5 circular interactive portraits */}
-      <div className="mb-10 flex items-center justify-center gap-3 sm:gap-6 flex-wrap px-2">
+      <div className="mb-8 flex items-center justify-center gap-2 sm:gap-6 flex-wrap px-1 sm:px-2">
         {members.map((m, idx) => {
           const isActive = idx === activeIndex;
           return (
@@ -127,15 +127,15 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
               key={idx}
               type="button"
               onClick={() => changeSlide(idx)}
-              className={`group flex flex-col items-center gap-2 cursor-pointer transition-all duration-300 focus:outline-none ${
+              className={`group flex flex-col items-center gap-1.5 sm:gap-2 cursor-pointer transition-all duration-300 focus:outline-none ${
                 isActive ? "scale-105" : "opacity-75 hover:opacity-100 hover:scale-102"
               }`}
             >
               {/* Circular Avatar */}
               <div
-                className={`relative h-14 w-14 sm:h-20 sm:w-20 rounded-full overflow-hidden transition-all duration-300 ${
+                className={`relative h-12 w-12 sm:h-20 sm:w-20 rounded-full overflow-hidden transition-all duration-300 ${
                   isActive
-                    ? "ring-4 ring-[#dcbf77] ring-offset-2 ring-offset-[#f5efe4] shadow-xl"
+                    ? "ring-3 sm:ring-4 ring-[#dcbf77] ring-offset-2 ring-offset-[#f5efe4] shadow-xl"
                     : "border-2 border-[#3d2d22]/20 hover:border-[#9c6849]/60 shadow-sm"
                 }`}
               >
@@ -143,7 +143,7 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
                   <img
                     src={m.image}
                     alt={m.name}
-                    className="h-full w-full object-cover object-top"
+                    className="h-full w-full object-cover object-[center_20%]"
                     loading="lazy"
                   />
                 ) : (
@@ -159,7 +159,7 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
               {/* Founder Name & Dot underneath avatar */}
               <div className="flex flex-col items-center">
                 <span
-                  className={`text-xs sm:text-sm font-semibold max-w-[80px] sm:max-w-[100px] truncate text-center transition-colors ${
+                  className={`text-[11px] sm:text-sm font-semibold max-w-[64px] sm:max-w-[100px] truncate text-center transition-colors ${
                     isActive
                       ? "text-[#231c17] font-bold"
                       : "text-[#5f5249] group-hover:text-[#231c17]"
@@ -178,7 +178,7 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
 
       {/* 3. Showcase Card Underneath: Full Profile Details */}
       <div
-        className={`card-nerd relative w-full rounded-3xl border border-[#3d2d22]/15 bg-white/95 p-6 sm:p-10 shadow-2xl transition-all duration-300 overflow-hidden ${
+        className={`card-nerd relative w-full rounded-3xl border border-[#3d2d22]/15 bg-white/95 p-5 sm:p-10 shadow-2xl transition-all duration-300 overflow-hidden ${
           isFading ? "opacity-30 translate-y-2" : "opacity-100 translate-y-0"
         }`}
       >
@@ -196,33 +196,25 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
           <div className="md:col-span-5 w-full">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-[#231c17]/5 border border-[#3d2d22]/10 shadow-inner flex items-center justify-center">
               {currentMember.image ? (
-                <>
-                  {/* Ambient blurred backdrop */}
-                  <img
-                    src={currentMember.image}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 h-full w-full object-cover blur-2xl opacity-40 scale-125 pointer-events-none select-none"
-                  />
-                  {/* Crisp uncropped foreground image showing full face */}
+                <div className="relative h-full w-full overflow-hidden">
                   <img
                     src={currentMember.image}
                     alt={currentMember.name}
-                    className="relative z-10 h-full w-full object-contain p-2 drop-shadow-sm select-none"
+                    className="h-full w-full object-cover object-[center_20%] select-none transition-transform duration-700 ease-out hover:scale-105"
                     loading="lazy"
                   />
-                </>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#231c17]/30 via-transparent to-transparent pointer-events-none" />
+                </div>
               ) : (
                 <ImagePlaceholder
                   label={`Photo of ${currentMember.name}`}
                   hint={`public/team/${slug}.jpg`}
-                  aspect="aspect-[4/5]"
                   className="h-full w-full rounded-none border-0"
                 />
               )}
 
               {/* Corner badge */}
-              <div className="absolute top-3 right-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#231c17] backdrop-blur-sm shadow-sm">
+              <div className="absolute top-3 right-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#231c17] backdrop-blur-sm shadow-sm z-10">
                 0{activeIndex + 1} / 0{total}
               </div>
             </div>
@@ -359,10 +351,10 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
                 ) : (
                   <button
                     type="button"
-                    onClick={() => onNavigate && onNavigate("contact")}
+                    onClick={() => onNavigate && onNavigate("team")}
                     className="text-xs font-bold text-[#79513a] hover:text-[#231c17] transition-colors inline-flex items-center gap-1.5 cursor-pointer"
                   >
-                    Connect with {currentMember.name.split(" ")[0]}
+                    View {currentMember.name.split(" ")[0]}’s full profile
                     <span>→</span>
                   </button>
                 )}
