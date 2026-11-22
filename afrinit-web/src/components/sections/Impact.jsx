@@ -208,38 +208,6 @@ export const Impact = ({ onNavigate }) => {
           </div>
         </section>
       )}
-
-      {/* 5. Pre-Footer CTA */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden mt-16">
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation w-full text-center relative z-10">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
-            {siteConfig.preFooterCta.eyebrow}
-          </p>
-          <h2 className="font-display mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl text-white">
-            {siteConfig.preFooterCta.heading}
-          </h2>
-          <div className="mt-10">
-            <button
-              onClick={() => onNavigate && onNavigate("contact")}
-              className="group inline-flex items-center gap-4 rounded-full bg-[#dcbf77] px-10 py-5 text-base font-bold text-[#231c17] shadow-xl transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer"
-            >
-              {siteConfig.preFooterCta.buttonText}
-              <span className="transition-transform duration-300 group-hover:translate-x-2">
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
