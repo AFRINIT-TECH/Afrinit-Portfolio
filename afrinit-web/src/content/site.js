@@ -107,7 +107,7 @@ export const siteConfig = {
   about: {
     title: "Who we are",
     description:
-      "Afrinit is a software team founded by five co-founders: Michael Clay, Valentine Awili, Mercy Moraa, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and we are open to remote work. Collectively, our team has shipped more than 20 products.",
+      "Afrinit is a software team founded by five co-founders: Michael Clay, Mercy Moraa, Valentine Awili, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and we are open to remote work. Collectively, our team has shipped more than 20 products.",
     image: {
       src: "/about/workspace.svg",
       alt: "Afrinit workspace environment in Nairobi and Kisumu",
@@ -467,6 +467,20 @@ export const siteConfig = {
         },
       },
       {
+        name: "Mercy Moraa",
+        role: "Co-founder",
+        image: "/team/moraa.jpeg",
+        title: "Full-Stack Developer and QA Engineer",
+        companyRole: "Full-stack development and quality assurance",
+        skills: ["Full-Stack Development", "Quality Assurance"],
+        bio: "Mercy is a full-stack software developer and quality assurance engineer at Afrinit. She builds end-to-end application features and conducts thorough quality assurance to verify that every release meets rigorous functional standards. Her dual focus on development and quality assurance guarantees that clients receive robust, dependable software that performs reliably in production.",
+        links: {
+          github: "https://github.com/AFRINIT-TECH",
+          linkedin: "",
+          email: "contact@afrinit.com",
+        },
+      },
+      {
         name: "Valentine Awili",
         role: "Co-founder",
         // Expected path: public/team/valentine-awili.jpg (4:3 aspect ratio)
@@ -475,20 +489,6 @@ export const siteConfig = {
         companyRole: "JavaScript, authentication, Ruby, AI and machine learning",
         skills: ["JavaScript", "Authentication", "Ruby", "Go", "AI & Machine Learning"],
         bio: "Valentine is a full-stack software engineer at Afrinit who specializes in JavaScript, authentication systems, and Ruby, alongside technical proficiency in Go. He incorporates technical skills in AI and machine learning to build intelligent application features with secure user access workflows. His engineering ensures clients receive modern, dependable web applications with robust access control.",
-        links: {
-          github: "https://github.com/AFRINIT-TECH",
-          linkedin: "",
-          email: "contact@afrinit.com",
-        },
-      },
-      {
-        name: "Mercy Moraa",
-        role: "Co-founder",
-        image: "/team/moraa.jpeg",
-        title: "Full-Stack Developer and QA Engineer",
-        companyRole: "Full-stack development and quality assurance",
-        skills: ["Full-Stack Development", "Quality Assurance"],
-        bio: "Mercy is a full-stack software developer and quality assurance engineer at Afrinit. She builds end-to-end application features and conducts thorough quality assurance to verify that every release meets rigorous functional standards. Her dual focus on development and quality assurance guarantees that clients receive robust, dependable software that performs reliably in production.",
         links: {
           github: "https://github.com/AFRINIT-TECH",
           linkedin: "",
@@ -691,7 +691,7 @@ export const siteConfig = {
       {
         question: "Who is Afrinit?",
         answer:
-          "Afrinit is a software team founded by five co-founders: Michael Clay, Valentine Awili, Mercy Moraa, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and are open to remote work.",
+          "Afrinit is a software team founded by five co-founders: Michael Clay, Mercy Moraa, Valentine Awili, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and are open to remote work.",
       },
       {
         question: "What kinds of software do you build?",
