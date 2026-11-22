@@ -255,31 +255,6 @@ export const Archives = ({ onNavigate }) => {
           )}
         </div>
       </section>
-
-      {/* 4. Pre-Footer Banner */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 bg-[#231c17] text-white overflow-hidden mt-20">
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-        <div className="viewport-animation mx-auto max-w-4xl text-center relative z-10">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#dcbf77]">
-            Work with us
-          </p>
-          <h2 className="font-display mt-4 text-3xl font-extrabold tracking-tight sm:text-5xl text-white">
-            Have a project to add to our journey?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-[#d7c4ae]">
-            We build and ship software alongside our partners. Reach out to discuss what we can build together.
-          </p>
-          <div className="mt-8">
-            <button
-              onClick={() => onNavigate && onNavigate("contact")}
-              className="group inline-flex items-center gap-3 rounded-full bg-[#dcbf77] px-8 py-4 text-sm font-bold text-[#231c17] transition hover:bg-white cursor-pointer shadow-lg"
-            >
-              Get in touch
-              <span className="transition-transform group-hover:translate-x-1.5">→</span>
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
