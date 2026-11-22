@@ -32,17 +32,17 @@ export const Contact = () => {
 
       {/* 2. Main Contact Form & Direct Info Grid */}
       <section className="relative w-full px-5 py-8 sm:px-8 lg:px-14">
-        <div className="w-full grid gap-12 lg:grid-cols-[1.3fr_1fr] items-start">
+        <div className="w-full grid gap-8 sm:gap-12 lg:grid-cols-[1.3fr_1fr] items-start">
           {/* Left: Project Request Form */}
-          <div className="viewport-animation rounded-3xl border border-[#3d2d22]/15 bg-white/90 p-8 sm:p-12 shadow-sm">
+          <div className="viewport-animation rounded-3xl border border-[#3d2d22]/15 bg-white/90 p-6 sm:p-12 shadow-sm">
             {formSubmitted ? (
-              <div className="py-16 text-center">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-6 shadow-sm">
-                  <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <div className="py-12 sm:py-16 text-center">
+                <div className="mx-auto flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-6 shadow-sm">
+                  <svg className="h-8 w-8 sm:h-10 sm:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h2 className="font-display text-3xl font-extrabold text-[#231c17]">
+                <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#231c17]">
                   Thank you for reaching out!
                 </h2>
                 <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#5f5249]">
@@ -57,9 +57,9 @@ export const Contact = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5 sm:gap-6">
                 {/* Text Inputs */}
-                <div className="grid gap-6 sm:grid-cols-2">
+                <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="mb-2 block text-xs font-bold text-[#231c17]">
                       Full Name *
@@ -70,7 +70,7 @@ export const Contact = () => {
                       name="name"
                       required
                       placeholder="e.g. Jane Doe"
-                      className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
+                      className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-base sm:text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
                     />
                   </div>
                   <div>
@@ -83,7 +83,7 @@ export const Contact = () => {
                       name="email"
                       required
                       placeholder="jane@company.com"
-                      className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
+                      className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-base sm:text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
                     />
                   </div>
                 </div>
@@ -97,7 +97,7 @@ export const Contact = () => {
                     id="org"
                     name="org"
                     placeholder="e.g. Acme Ltd"
-                    className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
+                    className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white px-5 py-3.5 text-base sm:text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
                   />
                 </div>
 
@@ -111,13 +111,13 @@ export const Contact = () => {
                     required
                     rows="4"
                     placeholder="Tell us about your project goals, key requirements, or timeline..."
-                    className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white p-5 text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
+                    className="w-full rounded-2xl border border-[#3d2d22]/20 bg-white p-5 text-base sm:text-sm text-[#231c17] placeholder:text-[#5f5249]/40 focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#231c17] px-8 py-5 text-base font-bold text-white transition-all duration-300 hover:bg-[#9c6849] cursor-pointer shadow-lg hover:shadow-xl self-start"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#231c17] px-8 py-4 sm:py-5 text-sm sm:text-base font-bold text-white transition-all duration-300 hover:bg-[#9c6849] cursor-pointer shadow-lg hover:shadow-xl w-full sm:w-auto self-stretch sm:self-start"
                 >
                   {siteConfig.contact.submitLabel || "Send inquiry"} →
                 </button>
@@ -126,7 +126,7 @@ export const Contact = () => {
           </div>
 
           {/* Right: Direct Information Panel */}
-          <div className="viewport-animation delay-100 flex flex-col justify-between rounded-3xl bg-[#231c17] p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+          <div className="viewport-animation delay-100 flex flex-col justify-between rounded-3xl bg-[#231c17] p-6 sm:p-12 text-white shadow-2xl relative overflow-hidden">
             <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-[#dcbf77]/10 blur-3xl" />
             <div className="relative z-10">
               <span className="inline-block rounded-full bg-[#dcbf77]/20 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#dcbf77]">
