@@ -140,16 +140,16 @@ export const Projects = ({ onNavigate }) => {
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <button
-                onClick={() => onNavigate && onNavigate("team")}
+                onClick={() => setActiveCategory("All")}
                 className="rounded-full bg-[#9c6849] px-6 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer"
               >
-                Meet our team
+                View all projects
               </button>
               <button
-                onClick={() => onNavigate && onNavigate("contact")}
+                onClick={() => onNavigate && onNavigate("team")}
                 className="rounded-full border border-[#3d2d22]/20 bg-white px-6 py-2.5 text-xs font-bold text-[#231c17] hover:bg-[#231c17] hover:text-white transition cursor-pointer"
               >
-                Get in touch
+                Meet our team
               </button>
             </div>
           </div>
@@ -265,26 +265,6 @@ export const Projects = ({ onNavigate }) => {
             </button>
           </div>
         )}
-
-        {/* CTA section */}
-        <div className="viewport-animation mt-24 rounded-3xl bg-[#231c17] p-10 text-center text-white sm:p-16 shadow-2xl relative overflow-hidden">
-          <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-[#dcbf77]/10 blur-3xl" />
-          <h3 className="font-display text-2xl font-bold sm:text-4xl text-white relative z-10">
-            Have a project in mind?
-          </h3>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[#d7c4ae] relative z-10">
-            Work directly with our co-founders to build and ship software tailored to your operational needs.
-          </p>
-          <button
-            onClick={() => onNavigate && onNavigate("contact")}
-            className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#dcbf77] px-8 py-4 text-sm font-bold text-[#231c17] shadow-lg transition-all duration-300 hover:bg-white hover:scale-105 cursor-pointer relative z-10"
-          >
-            Discuss your project with us
-            <span className="transition-transform duration-300 group-hover:translate-x-1.5">
-              →
-            </span>
-          </button>
-        </div>
       </div>
 
       {/* Interactive Project Modal */}
@@ -294,12 +274,12 @@ export const Projects = ({ onNavigate }) => {
           onClick={() => setActiveModalProject(null)}
         >
           <div
-            className="relative w-full max-w-3xl rounded-3xl border border-[#3d2d22]/20 bg-[#f5efe4] p-6 sm:p-10 shadow-2xl overflow-y-auto max-h-[90vh] text-[#231c17]"
+            className="relative w-full max-w-3xl rounded-3xl border border-[#3d2d22]/20 bg-[#f5efe4] p-5 sm:p-10 shadow-2xl overflow-y-auto max-h-[90vh] text-[#231c17]"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setActiveModalProject(null)}
-              className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 border border-[#3d2d22]/15 text-[#231c17] hover:bg-[#231c17] hover:text-white transition cursor-pointer"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-white/80 border border-[#3d2d22]/15 text-[#231c17] hover:bg-[#231c17] hover:text-white transition cursor-pointer"
               aria-label="Close modal"
             >
               ✕
@@ -311,7 +291,7 @@ export const Projects = ({ onNavigate }) => {
               </span>
             )}
 
-            <h3 className="font-display mt-3 text-3xl sm:text-4xl font-extrabold text-[#231c17]">
+            <h3 className="font-display mt-3 pr-12 text-2xl sm:text-4xl font-extrabold text-[#231c17]">
               {activeModalProject.title}
             </h3>
 
@@ -359,7 +339,7 @@ export const Projects = ({ onNavigate }) => {
               </div>
             )}
 
-            <div className="mt-10 pt-6 border-t border-[#3d2d22]/15 flex flex-wrap items-center justify-between gap-4">
+            <div className="mt-8 pt-6 border-t border-[#3d2d22]/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="text-xs font-semibold text-emerald-600">
                 {activeModalProject.status || "Completed"}
               </div>
@@ -368,7 +348,7 @@ export const Projects = ({ onNavigate }) => {
                   setActiveModalProject(null);
                   onNavigate && onNavigate("contact");
                 }}
-                className="group inline-flex items-center gap-2.5 rounded-full bg-[#9c6849] px-6 py-3 text-xs font-bold text-white transition hover:bg-[#825238] cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#9c6849] px-6 py-3 text-xs font-bold text-white transition hover:bg-[#825238] cursor-pointer w-full sm:w-auto"
               >
                 Discuss a similar project
                 <span className="transition-transform group-hover:translate-x-1">→</span>
