@@ -132,3 +132,26 @@ Expected response:
 ```json
 {"database":"connected","status":"healthy"}
 ```
+
+---
+
+### Step 6: Run the Frontend Web Application
+Navigate into the `afrinit-web/` directory and start the Vite development server:
+
+```bash
+cd afrinit-web
+npm run dev
+```
+
+The frontend will be accessible at `http://localhost:5173`.
+Available SPA pages and interactive sections:
+- **Hero (`hero`)**: High-impact introduction, operational stats, strategic pillars, and archived milestones.
+- **Solutions (`solutions`)**: Practice areas, off-the-shelf vs custom software comparison, and expandable service accordions.
+- **Work (`projects`)**: Shipped software portfolio, project filter tabs, and case study overviews.
+- **Partners (`partners`)**: Strategic collaboration tracks (Enterprise Co-Build, Agency White-Label, Tech Integration) and inquiry form.
+- **Impact (`impact`)**: Key performance metrics, client milestones, and measurable outcomes.
+- **Team (`team`)**: Dual-hub engineering culture and interactive founder showcase.
+- **Archives (`archives`)**: Historical milestones and agency documentation.
+- **FAQ (`faq`)**: Dynamic FAQ accordion with real-time keyword search.
+- **Contact (`contact`)**: Direct consultation and engineering request form.
+
