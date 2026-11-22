@@ -1,29 +1,31 @@
 import { siteConfig } from "@/content/site";
 import { Logo } from "./Logo";
 
-export const Footer = ({ onNavigate }) => {
+export const Footer = ({ onNavigate, currentPage }) => {
   return (
     <footer className="w-full bg-[#231c17] text-white border-t border-[#3d2d22]">
-      {/* Top Pre-Footer Callout in Footer */}
-      <div className="border-b border-white/10 px-5 py-12 sm:px-8 lg:px-14">
-        <div className="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
-              Want to share your project goals with us?
-            </h3>
-            <p className="mt-2 text-sm text-[#d7c4ae]">
-              Let's explore how our team can help you build dependable software.
-            </p>
+      {/* Top Pre-Footer Callout in Footer (shown on all pages except contact itself) */}
+      {currentPage !== "contact" && (
+        <div className="border-b border-white/10 px-5 py-12 sm:px-8 lg:px-14">
+          <div className="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                Want to share your project goals with us?
+              </h3>
+              <p className="mt-2 text-sm text-[#d7c4ae]">
+                Let's explore how our team can help you build dependable software.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate && onNavigate("contact")}
+              className="group inline-flex items-center gap-3 rounded-full bg-[#dcbf77] px-8 py-4 text-sm font-bold text-[#231c17] transition hover:bg-white cursor-pointer self-start md:self-auto"
+            >
+              Get in touch
+              <span className="transition group-hover:translate-x-1">→</span>
+            </button>
           </div>
-          <button
-            onClick={() => onNavigate && onNavigate("contact")}
-            className="group inline-flex items-center gap-3 rounded-full bg-[#dcbf77] px-8 py-4 text-sm font-bold text-[#231c17] transition hover:bg-white cursor-pointer self-start md:self-auto"
-          >
-            Get in touch
-            <span className="transition group-hover:translate-x-1">→</span>
-          </button>
         </div>
-      </div>
+      )}
 
       {/* Main Footer Content */}
       <div className="w-full px-5 py-16 sm:px-8 lg:px-14">
@@ -90,7 +92,7 @@ export const Footer = ({ onNavigate }) => {
               {siteConfig.footer.servicesList.map((service, idx) => (
                 <li key={idx}>
                   <button
-                    onClick={() => onNavigate && onNavigate("solutions")}
+                    onClick={() => onNavigate && onNavigate("solutions", { serviceIndex: idx })}
                     className="hover:text-white transition-colors cursor-pointer text-left"
                   >
                     {service}
@@ -151,10 +153,16 @@ export const Footer = ({ onNavigate }) => {
           <p>{siteConfig.footer.copyright}</p>
           <div className="flex items-center gap-6">
             <button
-              onClick={() => onNavigate && onNavigate("about")}
+              onClick={() => onNavigate && onNavigate("partners")}
               className="hover:text-white transition cursor-pointer"
             >
-              About Afrinit
+              Partnerships
+            </button>
+            <button
+              onClick={() => onNavigate && onNavigate("archives")}
+              className="hover:text-white transition cursor-pointer"
+            >
+              Archives
             </button>
             <button
               onClick={() => {
