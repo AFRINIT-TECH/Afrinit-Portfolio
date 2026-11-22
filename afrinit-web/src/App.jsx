@@ -10,6 +10,7 @@ import {
   Contact,
   Projects,
   Faq,
+  Partners,
 } from "@/components/sections";
 
 const PAGE_COMPONENTS = {
@@ -22,6 +23,7 @@ const PAGE_COMPONENTS = {
   contact: Contact,
   projects: Projects,
   faq: Faq,
+  partners: Partners,
   // Backwards compatibility alias
   people: Team,
 };
@@ -119,7 +121,7 @@ function App() {
           </div>
         </main>
       </div>
-      <Footer onNavigate={navigateTo} />
+      <Footer onNavigate={navigateTo} currentPage={currentPage} />
     </div>
   );
 }
