@@ -7,3 +7,4 @@ export * from "./Archives";
 export * from "./Contact";
 export * from "./Projects";
 export * from "./Faq";
+export * from "./Partners";
