@@ -1,4 +1,10 @@
 export const siteConfig = {
+  maintenanceBanner: {
+    enabled: true,
+    badge: "Under Maintenance",
+    message:
+      "Platform is currently under maintenance — Please do not mind the placeholders while updates are underway",
+  },
   meta: {
     name: "Afrinit",
     title: "Afrinit | Software Team",
