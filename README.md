@@ -144,6 +144,7 @@ npm run dev
 ```
 
 The frontend will be accessible at `http://localhost:5173`.
+- Includes a configurable top-of-screen **Maintenance Marquee Banner** (`siteConfig.maintenanceBanner`) that continuously scrolls right-to-left.
 Available SPA pages and interactive sections:
 - **Hero (`hero`)**: High-impact introduction, operational stats, strategic pillars, and archived milestones.
 - **Solutions (`solutions`)**: Practice areas, off-the-shelf vs custom software comparison, and expandable service accordions.
