@@ -1,6 +1,14 @@
+import { siteConfig } from "@/content/site";
+
 export const MaintenanceBanner = () => {
+  const { maintenanceBanner } = siteConfig;
+  if (!maintenanceBanner?.enabled) return null;
+
   const message =
+    maintenanceBanner.message ||
     "Platform is currently under maintenance — Please do not mind the placeholders while updates are underway";
+  const badge = maintenanceBanner.badge || "Under Maintenance";
+
   const items = Array(8).fill(message);
 
   return (
@@ -10,7 +18,7 @@ export const MaintenanceBanner = () => {
           {items.map((text, idx) => (
             <div key={idx} className="flex items-center gap-3 shrink-0">
               <span className="inline-flex items-center rounded-full bg-[#dcbf77]/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#dcbf77] border border-[#dcbf77]/30">
-                Under Maintenance
+                {badge}
               </span>
               <span className="text-[#f5efe4] font-medium text-xs sm:text-[13px]">
                 {text}
