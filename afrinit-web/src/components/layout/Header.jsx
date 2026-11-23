@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { siteConfig } from "@/content/site";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
+import { MaintenanceBanner } from "./MaintenanceBanner";
 
 export const Header = ({ currentPage, onNavigate }) => {
   const [activeDropdown, setActiveDropdown] = useState(null); // 'solutions' | null
