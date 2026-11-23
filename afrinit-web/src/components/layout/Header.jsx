@@ -26,6 +26,7 @@ export const Header = ({ currentPage, onNavigate }) => {
       ref={headerRef}
       className="sticky top-0 z-50 border-b border-[#3d2d22]/15 bg-[#f5efe4]/95 backdrop-blur-md transition-all"
     >
+      <MaintenanceBanner />
       <div className="flex h-[78px] w-full items-center justify-between px-5 sm:px-8 lg:px-14">
         {/* Brand Logo */}
         <button
