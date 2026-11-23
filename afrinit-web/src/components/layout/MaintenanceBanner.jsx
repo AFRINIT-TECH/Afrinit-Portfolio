@@ -12,7 +12,11 @@ export const MaintenanceBanner = () => {
   const items = Array(8).fill(message);
 
   return (
-    <aside className="relative w-full overflow-hidden bg-[#231c17] text-white py-2 sm:py-2.5 border-b border-[#dcbf77]/30 select-none z-50">
+    <aside
+      role="region"
+      aria-label="Maintenance Announcement"
+      className="relative w-full overflow-hidden bg-[#231c17] text-white py-2 sm:py-2.5 border-b border-[#dcbf77]/30 select-none z-50"
+    >
       <div className="flex w-full overflow-hidden">
         <div className="infinite-wrapper flex items-center gap-8 whitespace-nowrap text-xs font-medium tracking-wide">
           {items.map((text, idx) => (
@@ -23,6 +27,7 @@ export const MaintenanceBanner = () => {
               <span className="text-[#f5efe4] font-medium text-xs sm:text-[13px]">
                 {text}
               </span>
+              <span className="text-[#dcbf77]/50 text-xs ml-3">—</span>
             </div>
           ))}
         </div>
