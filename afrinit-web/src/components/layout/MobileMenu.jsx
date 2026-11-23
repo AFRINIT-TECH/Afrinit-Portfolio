@@ -92,7 +92,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
         <>
           {/* Subtle dismissible backdrop overlay */}
           <div
-            className="fixed inset-0 top-[78px] z-40 bg-[#231c17]/25 backdrop-blur-xs transition-opacity animate-fadeIn"
+            className="fixed inset-0 z-40 bg-[#231c17]/25 backdrop-blur-xs transition-opacity animate-fadeIn"
             onClick={closeMenu}
             aria-hidden="true"
           />
