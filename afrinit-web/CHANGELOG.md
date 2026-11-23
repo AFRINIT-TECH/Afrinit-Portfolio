@@ -36,6 +36,7 @@ All notable changes to the Afrinit Portfolio project.
 - **Partners**: Dedicated partnership page with interactive track selector, qualification matrix, and partnership inquiry form
 - **Mobile Menu Refinements**: Keyboard navigation (Escape key), click/touch outside dismissal, and animated dropdown transitions
 - **Centralized Pre-Footer CTA**: Consolidated pre-footer callout inside global Footer to eliminate duplicate sections across individual pages
+- **Maintenance Announcement Marquee**: Continuous right-to-left ticker alerting visitors that the platform is under maintenance and placeholders are temporary
 
 ### Added — Company Logo
 
