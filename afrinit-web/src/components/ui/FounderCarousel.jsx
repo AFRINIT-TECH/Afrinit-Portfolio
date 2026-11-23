@@ -156,7 +156,7 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
                 )}
               </div>
 
-              {/* Founder Name & Dot underneath avatar */}
+              {/* Founder Name underneath avatar */}
               <div className="flex flex-col items-center">
                 <span
                   className={`text-[11px] sm:text-sm font-semibold max-w-[64px] sm:max-w-[100px] truncate text-center transition-colors ${
@@ -167,9 +167,6 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
                 >
                   {m.name.split(" ")[0]}
                 </span>
-                {isActive && (
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#dcbf77]" />
-                )}
               </div>
             </button>
           );
