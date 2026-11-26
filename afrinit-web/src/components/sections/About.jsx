@@ -78,7 +78,7 @@ export const About = ({ onNavigate }) => {
       </section>
 
       {/* 4. Methodology & Process Stages */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-[#f7f7f7]">
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-white">
         <div className="w-full">
           <div className="viewport-animation mb-14">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
@@ -159,7 +159,7 @@ export const About = ({ onNavigate }) => {
       </section>
 
       {/* 6. Co-Founders One Card Carousel */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-[#f7f7f7]">
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-white">
         <div className="w-full">
           <div className="viewport-animation mb-14 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
