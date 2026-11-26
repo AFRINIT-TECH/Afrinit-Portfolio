@@ -24,14 +24,14 @@ export const Header = ({ currentPage, onNavigate }) => {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-md transition-all"
+      className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-md transition-all"
     >
       <MaintenanceBanner />
       <div className="flex h-[78px] w-full items-center justify-between px-5 sm:px-8 lg:px-14">
         {/* Brand Logo */}
         <button
           className="flex items-center cursor-pointer transition-opacity hover:opacity-85"
-          aria-label="Afrinit home"
+          aria-label="Azzmar home"
           onClick={() => {
             closeDropdown();
             onNavigate("home");
