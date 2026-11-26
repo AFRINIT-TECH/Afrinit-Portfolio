@@ -14,6 +14,17 @@ CREATE TABLE IF NOT EXISTS admins (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+-- 1a. Opaque admin session tokens are stored as hashes, never as raw cookies.
+CREATE TABLE IF NOT EXISTS admin_sessions (
+    token_hash CHAR(64) PRIMARY KEY,
+    admin_id UUID NOT NULL REFERENCES admins(id) ON DELETE CASCADE,
+    expires_at TIMESTAMPTZ NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_admin_sessions_admin_id ON admin_sessions (admin_id);
+CREATE INDEX IF NOT EXISTS idx_admin_sessions_expires_at ON admin_sessions (expires_at);
+
 -- 2. Gallery Items Table
 -- Dynamic photos managed by admin for the portfolio gallery.
 -- NOTE: Stores the relative asset path / CDN URL (NOT raw binary data) to prevent DB bloat.
