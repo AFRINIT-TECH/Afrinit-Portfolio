@@ -492,9 +492,9 @@ export const siteConfig = {
         // Expected path: public/team/valentine-awili.jpg (4:3 aspect ratio)
         image: "",
         title: "Full-Stack Software Engineer",
-        companyRole: "JavaScript, authentication, Ruby, AI and machine learning",
-        skills: ["JavaScript", "Authentication", "Ruby", "Go", "AI & Machine Learning"],
-        bio: "Valentine is a full-stack software engineer at Azzmar who specializes in JavaScript, authentication systems, and Ruby, alongside technical proficiency in Go. He incorporates technical skills in AI and machine learning to build intelligent application features with secure user access workflows. His engineering ensures clients receive modern, dependable web applications with robust access control.",
+        companyRole: "JavaScript, authentication, Ruby, and Go",
+        skills: ["JavaScript", "Authentication", "Ruby", "Go"],
+        bio: "Valentine is a full-stack software engineer at Azzmar specializing in JavaScript, authentication systems, and Ruby, with technical proficiency in Go. He builds secure, dependable web applications and user-access workflows that give clients robust access control.",
         links: {
           github: "https://github.com/AFRINIT-TECH",
           linkedin: "",
