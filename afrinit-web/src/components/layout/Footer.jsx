@@ -36,7 +36,7 @@ export const Footer = ({ onNavigate, currentPage }) => {
               <button
                 className="flex items-center text-white cursor-pointer group"
                 onClick={() => onNavigate && onNavigate("home")}
-                aria-label="Afrinit Home"
+                aria-label="Azzmar Home"
               >
                 <Logo variant="white" />
               </button>
