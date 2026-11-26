@@ -5,15 +5,15 @@ export const Logo = ({ className = "", showWordmark = true, variant = "default" 
 
   return (
     <div
-      className={`group inline-flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9c6849] rounded-xl select-none ${className}`}
+      className={`group inline-flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d001a] rounded-xl select-none ${className}`}
       aria-label="Afrinit"
     >
       {/* Logo Mark Container with refined border & shadow */}
       <div
         className={`relative flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border transition-all duration-300 group-hover:scale-105 ${
           isWhite
-            ? "border-white/20 bg-[#2b221c] shadow-md shadow-black/20 group-hover:border-[#dcbf77]/60"
-            : "border-[#3d2d22]/20 bg-[#ebdcc9] shadow-sm group-hover:border-[#9c6849]/50 group-hover:shadow-md"
+            ? "border-white/20 bg-black shadow-md shadow-black/40 group-hover:border-[#6d001a]"
+            : "border-black/15 bg-white shadow-sm group-hover:border-[#6d001a]/60 group-hover:shadow-md"
         }`}
       >
         <img
@@ -29,15 +29,15 @@ export const Logo = ({ className = "", showWordmark = true, variant = "default" 
           <span
             className={`font-display text-2xl font-extrabold tracking-tight leading-none transition-colors ${
               isWhite
-                ? "text-white group-hover:text-[#dcbf77]"
-                : "text-[#231c17] group-hover:text-[#9c6849]"
+                ? "text-white group-hover:text-white/85"
+                : "text-black group-hover:text-[#6d001a]"
             }`}
           >
-            afrinit<span className={isWhite ? "text-[#dcbf77]" : "text-[#9c6849]"}>.</span>
+            afrinit<span className={isWhite ? "text-[#b3002b]" : "text-[#6d001a]"}>.</span>
           </span>
           <span
             className={`text-[9.5px] font-bold uppercase tracking-[0.22em] mt-1 transition-colors ${
-              isWhite ? "text-[#d7c4ae]/70" : "text-[#79513a]"
+              isWhite ? "text-white/60" : "text-[#6d001a]"
             }`}
           >
             Software Studio
