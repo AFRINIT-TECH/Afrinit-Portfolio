@@ -156,3 +156,13 @@ Available SPA pages and interactive sections:
 - **FAQ (`faq`)**: Dynamic FAQ accordion with real-time keyword search.
 - **Contact (`contact`)**: Direct consultation and engineering request form.
 
+---
+
+## Cookie Preferences and Admin Sessions
+
+- Public pages show a cookie-preference prompt. Accepting stores the first-party `azzmar_preferences` cookie; rejecting stores only the choice in browser local storage. No analytics or advertising cookies are enabled.
+- The `/admin` page has a separate session-cookie consent prompt. Accepting allows admin sign-in; rejecting blocks it and attempts to revoke an existing admin session. Admin sessions use an HttpOnly, browser-session cookie and expire server-side after 12 hours.
+- Admin sign-in uses existing rows in the `admins` table. There is no default account or public account-creation flow. Provision an administrator through a trusted process with a bcrypt password hash in `password_hash`; never store a plaintext password.
+- The backend exposes `POST /api/auth/login`, `GET /api/auth/session`, `POST /api/auth/logout`, and the protected `GET /api/admin/dashboard` endpoint. The frontend uses the Vite `/api` proxy in development.
+- Configure `FRONTEND_ORIGIN` to the exact frontend origin. In production, serve the backend over HTTPS and set `SESSION_COOKIE_SECURE=true`; `SESSION_COOKIE_SAME_SITE` defaults to `Lax`. `SameSite=None` requires `SESSION_COOKIE_SECURE=true`.
+
