@@ -108,10 +108,10 @@ function App() {
   const PageComponent = PAGE_COMPONENTS[currentPage] || Hero;
 
   return (
-    <div className="min-h-screen bg-[#f5efe4] font-body text-[#231c17] antialiased flex flex-col selection:bg-[#9c6849] selection:text-white">
+    <div className="min-h-screen bg-white font-body text-black antialiased flex flex-col selection:bg-[#6d001a] selection:text-white">
       <Header currentPage={currentPage} onNavigate={navigateTo} />
       <div className="flex-1">
-        <main className="overflow-hidden bg-[#f5efe4] text-[#231c17]">
+        <main className="overflow-hidden bg-white text-black">
           <div
             className={`page-view transition-opacity duration-200 ${
               isAnimating ? "opacity-0" : "opacity-100"
