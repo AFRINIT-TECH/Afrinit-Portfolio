@@ -133,7 +133,7 @@ export const Contact = () => {
                 Direct Contact
               </span>
               <h2 className="font-display mt-5 text-2xl sm:text-3xl font-extrabold text-white">
-                Afrinit Software Team
+                Azzmar Software Team
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
                 Founded by five co-founders based in Nairobi and Kisumu, Kenya, and open to remote work.
