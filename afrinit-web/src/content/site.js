@@ -329,90 +329,51 @@ export const siteConfig = {
   },
 
   projects: {
-    title: "Our work & products",
+    title: "Projects",
     description:
       "Explore the products and software platforms built by our team.",
     items: [
       {
-        title: "JengaOps Cloud Logistics Platform",
-        category: "Enterprise & Logistics",
-        image: "/projects/jengaops-cloud-logistics-platform.svg",
+        title: "Siwolo Law Advocates Website",
+        category: "Legal & Professional Services",
+        image: "/projects/siwolo-law-advocates.jpg",
         description:
-          "An automated inventory dispatch and multimodal freight tracking system designed for supply chain operators across Kenya and East Africa. Replaced fragmented paperwork with real-time waypoint logging, automated warehouse receipting, and instant customer SMS notifications.",
-        tags: ["React", "Go", "PostgreSQL", "Docker", "REST API"],
-        metric: "60% Faster Dispatch Turnaround",
-        status: "Active in Production",
-        client: "Rift Freight Logistics",
-        timeline: "10 Weeks",
-        deliverables: ["Dispatch Dashboard", "Mobile Driver Web App", "Automated SMS Tracking", "PostgreSQL Database"],
+          "Helps clients book appointments and allows the customer to know all about the law firm before actually booking an appointment and being a client.",
+        link: "https://www.siwoloadvocates.com/",
       },
       {
-        title: "AgriBora Produce Aggregation Portal",
+        title: "Afrishop",
+        category: "E-Commerce & Retail",
+        image: "/projects/afrishop.svg",
+        description:
+          "An e-commerce website for an electricals and electronics shop that allows customers to get quotations via WhatsApp and track their quotations on the app and even via WhatsApp too.",
+        link: "https://afrishop-kxku.onrender.com/",
+      },
+      {
+        title: "Linda Safeguarding App",
+        category: "Safeguarding & Workplace Safety",
+        image: "/projects/linda.png",
+        description:
+          "A safeguarding app where you can anonymously report safeguarding issues in your organisation to your admin and it can then be acted upon. You can also follow up on your report and get a valid response. Safeguarding is a very important issue in the workplace and everywhere all around the world.",
+        link: "https://linda-app.onrender.com",
+      },
+      {
+        title: "AgriBora Aggregation Portal",
         category: "Agriculture & Supply Chain",
         image: "/projects/agribora-produce-aggregation-portal.svg",
         description:
-          "Digital aggregation and mobile payment disbursement platform connecting smallholder farming cooperatives with regional food processors. Integrates digital weighing scale logs with automated M-Pesa bulk payout batching.",
-        tags: ["React", "Node.js", "M-Pesa Daraja", "PostGIS", "Tailwind CSS"],
-        metric: "KSh 45M+ Disbursed",
-        status: "Active in Production",
-        client: "Western Agro Cooperatives",
-        timeline: "12 Weeks",
-        deliverables: ["Collection Point Portal", "Daraja API Integration", "Farmer Ledger", "Offline Caching"],
+          "Digital aggregation and mobile payment disbursement platform connecting smallholder farming cooperatives with regional food processors.",
+        link: "",
       },
       {
         title: "AfyaCare Clinical EMR Suite",
-        category: "Healthcare",
+        category: "Healthcare & Operations",
         image: "/projects/afyacare-clinical-emr-suite.svg",
         description:
-          "Offline-resilient electronic medical records and outpatient clinic management suite engineered for community health centers. Provides smooth patient intake, clinical notes, pharmacy stock tracking, and local SQLite data caching that syncs automatically when online.",
-        tags: ["React", "FastAPI", "PostgreSQL", "Tailwind CSS", "Redis"],
-        metric: "12,000+ Visits Logged",
-        status: "Active in Production",
-        client: "CareLink Community Health",
-        timeline: "14 Weeks",
-        deliverables: ["Outpatient Triage System", "Pharmacy Inventory Sync", "Doctor Consultation Portal", "Automated Reports"],
-      },
-      {
-        title: "SomaHub Digital Learning & Assessment",
-        category: "EdTech",
-        image: "/projects/somahub-digital-learning-assessment.svg",
-        description:
-          "Interactive e-learning and continuous assessment portal built for technical colleges and vocational training institutes. Delivers modular coursework, interactive coding assignments, automated quiz grading, and downloadable completion certificates.",
-        tags: ["React", "Go", "WebSockets", "Docker", "Tailwind CSS"],
-        metric: "8,500+ Active Students",
-        status: "Active in Production",
-        client: "Technical Skills Alliance",
-        timeline: "8 Weeks",
-        deliverables: ["Interactive Learning Management System", "Automated Grading Engine", "Real-Time WebSocket Quizzes"],
-      },
-      {
-        title: "KodiSmart Commercial Property Portal",
-        category: "FinTech & Real Estate",
-        image: "/projects/kodismart-commercial-property-portal.svg",
-        description:
-          "Tenant billing, automated rent reconciliation, and maintenance request portal for commercial and multi-unit residential property managers. Automates rent invoices, sends M-Pesa STK push payment prompts, and generates automated landlord remittances.",
-        tags: ["React", "Node.js", "PostgreSQL", "M-Pesa Daraja", "Tailwind CSS"],
-        metric: "98% Rent Reconciliation Rate",
-        status: "Active in Production",
-        client: "Apex Commercial Realty",
-        timeline: "6 Weeks",
-        deliverables: ["Landlord Portfolio Dashboard", "Tenant Rent Portal", "M-Pesa Daraja STK Push Integration"],
-      },
-      {
-        title: "NexusPOS Multi-Branch Retail Engine",
-        category: "Retail & Commerce",
-        image: "/projects/nexuspos-multi-branch-retail-engine.svg",
-        description:
-          "High-throughput cloud point-of-sale and centralized stock inventory system for multi-branch retail stores and pharmacy chains. Features barcode scanning, local receipt printer drivers, reorder alerts, and consolidated margin reporting.",
-        tags: ["React", "Go", "PostgreSQL", "Redis", "Docker"],
-        metric: "35+ Store Outlets Supported",
-        status: "Active in Production",
-        client: "Nexus Retail Network",
-        timeline: "11 Weeks",
-        deliverables: ["Cloud POS Terminal", "Central Inventory Controller", "Multi-Branch Sync Engine"],
+          "Offline-resilient electronic medical records and outpatient clinic management suite engineered for community health centers.",
+        link: "",
       },
     ],
-    perPage: 6,
   },
 
   impact: {
