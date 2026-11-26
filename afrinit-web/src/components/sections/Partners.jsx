@@ -264,7 +264,7 @@ export const Partners = ({ onNavigate }) => {
       </section>
 
       {/* 4. Why Partner With Azzmar (Accent Band) */}
-      <section className="relative w-full bg-[#f5f5f5] border-y border-black/10 px-5 py-16 sm:px-8 sm:py-24 lg:px-14 lg:py-32 text-black">
+      <section className="relative w-full bg-white border-y border-black/10 px-5 py-16 sm:px-8 sm:py-24 lg:px-14 lg:py-32 text-black">
         <div className="mx-auto grid max-w-[1330px] gap-12 lg:gap-14 lg:grid-cols-[0.75fr_1.25fr] items-center">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
