@@ -6,7 +6,7 @@ export const Faq = ({ onNavigate }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "About Afrinit", "Services & IP", "Collaboration"];
+  const categories = ["All", "About Azzmar", "Services & IP", "Collaboration"];
 
   // Filter questions based on search and category
   const filteredQuestions = useMemo(() => {
@@ -17,7 +17,7 @@ export const Faq = ({ onNavigate }) => {
 
       if (!matchesSearch) return false;
       if (selectedCategory === "All") return true;
-      if (selectedCategory === "About Afrinit") return idx < 3;
+      if (selectedCategory === "About Azzmar") return idx < 3;
       if (selectedCategory === "Services & IP") return idx === 1 || idx === 3;
       return idx >= 4;
     });
