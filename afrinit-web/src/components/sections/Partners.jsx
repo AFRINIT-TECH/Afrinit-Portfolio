@@ -98,30 +98,30 @@ export const Partners = ({ onNavigate }) => {
   };
 
   return (
-    <div className="page-view w-full overflow-hidden bg-[#f5efe4] text-[#231c17]">
-      {/* 1. Hero Section (Inspired by Figma layout) */}
-      <section className="relative min-h-[640px] lg:min-h-[820px] w-full border-b border-[#3d2d22]/15 px-5 pt-12 pb-16 sm:px-8 lg:px-14 lg:pt-16 lg:pb-24">
+    <div className="page-view w-full overflow-hidden bg-white text-black">
+      {/* 1. Hero Section */}
+      <section className="relative min-h-[640px] lg:min-h-[820px] w-full border-b border-black/10 px-5 pt-12 pb-16 sm:px-8 lg:px-14 lg:pt-16 lg:pb-24">
         <div className="mx-auto grid max-w-[1440px] lg:min-h-[740px] lg:grid-cols-[56%_44%] gap-12 lg:gap-8 items-center">
           {/* Left Column: Editorial Headline & Narrative */}
           <div className="relative z-10 flex flex-col justify-center">
             {/* Eyebrow with decorative rule line */}
-            <div className="viewport-animation mb-6 sm:mb-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-              <span className="h-px w-8 bg-[#9c6849]" />
+            <div className="viewport-animation mb-6 sm:mb-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
+              <span className="h-px w-8 bg-[#6d001a]" />
               Better, together • Partnerships
             </div>
 
             {/* Giant Editorial Heading */}
-            <h1 className="viewport-animation delay-100 font-display text-[clamp(2.3rem,6.5vw,6.5rem)] font-extrabold leading-[0.92] tracking-[-0.05em] text-[#231c17] break-words">
-              Let’s build <br />
+            <h1 className="viewport-animation delay-100 font-display text-[clamp(2.3rem,6.5vw,6.5rem)] font-extrabold leading-[0.92] tracking-[-0.05em] text-black break-words">
+              Let's build <br />
               something{" "}
-              <span className="italic font-normal text-[#9c6849]">
+              <span className="italic font-normal text-[#6d001a]">
                 that matters.
               </span>
             </h1>
 
             {/* Narrative & Action Link */}
             <div className="viewport-animation delay-200 mt-8 sm:mt-10 flex flex-col gap-6 sm:gap-8 md:flex-row md:items-end md:justify-between lg:pr-10">
-              <p className="max-w-[480px] text-base sm:text-lg leading-relaxed text-[#5f5249]">
+              <p className="max-w-[480px] text-base sm:text-lg leading-relaxed text-[#454545]">
                 We partner with ambitious enterprises, pioneering founders, and
                 purpose-led organizations across Africa to engineer digital
                 platforms that move industry, institutions, and communities
@@ -131,7 +131,7 @@ export const Partners = ({ onNavigate }) => {
               <a
                 href="#tracks"
                 aria-label="Explore partnership opportunities"
-                className="group inline-flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border border-[#3d2d22]/30 bg-white/80 text-[#231c17] shadow-sm transition-all duration-300 hover:bg-[#231c17] hover:text-[#f5efe4] hover:scale-105 self-start md:self-auto"
+                className="group inline-flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border border-black/20 bg-white text-black shadow-sm transition-all duration-300 hover:bg-black hover:text-white hover:scale-105 self-start md:self-auto"
               >
                 <svg
                   className="size-5 transition-transform duration-300 group-hover:translate-y-1"
@@ -151,11 +151,11 @@ export const Partners = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Right Column: Signature Arch Placeholder & Visual (Using existing workspace graphic) */}
+          {/* Right Column: Signature Arch Placeholder & Visual */}
           <div className="viewport-animation delay-300 relative w-full flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[360px] sm:max-w-[460px] lg:max-w-[520px] aspect-[4/5] mx-auto">
-              {/* Arch frame matching Figma's rounded-t-[280px] */}
-              <div className="absolute inset-0 overflow-hidden rounded-t-[160px] sm:rounded-t-[240px] rounded-b-2xl bg-[#dcbf77]/30 border border-[#3d2d22]/15 shadow-2xl">
+              {/* Arch frame */}
+              <div className="absolute inset-0 overflow-hidden rounded-t-[160px] sm:rounded-t-[240px] rounded-b-2xl bg-[#6d001a]/10 border border-black/10 shadow-2xl">
                 {/* Visual using existing SVG asset */}
                 <img
                   src="/hero/team.svg"
@@ -164,11 +164,11 @@ export const Partners = ({ onNavigate }) => {
                   loading="eager"
                 />
                 {/* Ambient tint overlay */}
-                <div className="absolute inset-0 bg-[#231c17]/15 mix-blend-multiply pointer-events-none" />
+                <div className="absolute inset-0 bg-black/10 mix-blend-multiply pointer-events-none" />
               </div>
 
               {/* Floating Pill Badge */}
-              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 rounded-full bg-[#f5efe4] px-3.5 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] sm:tracking-[0.18em] text-[#231c17] shadow-lg border border-[#3d2d22]/15">
+              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 rounded-full bg-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] sm:tracking-[0.18em] text-black shadow-lg border border-black/10">
                 Studio Co-Founders • 20+ Products Shipped
               </div>
             </div>
@@ -177,13 +177,13 @@ export const Partners = ({ onNavigate }) => {
       </section>
 
       {/* 2. Marquee Ticker Band */}
-      <section className="relative w-full bg-[#231c17] py-5 text-[#f5efe4] border-b border-[#3d2d22] overflow-hidden">
+      <section className="relative w-full bg-black py-5 text-white border-b border-black overflow-hidden">
         <div className="infinite-slider flex w-full">
-          <div className="infinite-wrapper flex items-center gap-10 text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] text-[#d7c4ae]">
+          <div className="infinite-wrapper flex items-center gap-10 text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] text-white/70">
             {tickerItems.concat(tickerItems).map((item, index) => (
               <div key={index} className="flex items-center gap-10 shrink-0">
                 <span>{item}</span>
-                <span className="text-[#dcbf77]">✦</span>
+                <span className="text-white/40">✦</span>
               </div>
             ))}
           </div>
@@ -196,17 +196,17 @@ export const Partners = ({ onNavigate }) => {
           {/* Section Header */}
           <div className="mb-12 sm:mb-16 grid gap-8 lg:grid-cols-2 lg:items-end">
             <div>
-              <p className="viewport-animation text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+              <p className="viewport-animation text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
                 Ways to work together
               </p>
-              <h2 className="viewport-animation delay-100 font-display mt-5 max-w-2xl text-[clamp(2.2rem,5vw,5rem)] font-extrabold leading-[0.95] tracking-tight text-[#231c17] break-words">
+              <h2 className="viewport-animation delay-100 font-display mt-5 max-w-2xl text-[clamp(2.2rem,5vw,5rem)] font-extrabold leading-[0.95] tracking-tight text-black break-words">
                 Partnership, without the{" "}
-                <span className="italic font-normal text-[#9c6849]">
+                <span className="italic font-normal text-[#6d001a]">
                   playbook.
                 </span>
               </h2>
             </div>
-            <p className="viewport-animation delay-200 max-w-md text-base leading-relaxed text-[#5f5249] lg:ml-auto">
+            <p className="viewport-animation delay-200 max-w-md text-base leading-relaxed text-[#454545] lg:ml-auto">
               The best initiatives rarely fit neatly into a rigid box. We stay
               curious, build collaboratively, and tailor every partnership around
               a shared thesis and measurable real-world outcomes.
@@ -214,28 +214,28 @@ export const Partners = ({ onNavigate }) => {
           </div>
 
           {/* Tracks Table */}
-          <div className="border-t border-[#3d2d22]/20">
+          <div className="border-t border-black/15">
             {tracks.map((track) => (
               <div
                 key={track.number}
-                className="group grid gap-5 border-b border-[#3d2d22]/20 py-8 transition-colors duration-200 hover:bg-[#e9e3d5]/70 md:grid-cols-[60px_1.1fr_1.4fr_auto] md:items-center md:px-6"
+                className="group grid gap-5 border-b border-black/15 py-8 transition-colors duration-200 hover:bg-[#f5f5f5] md:grid-cols-[60px_1.1fr_1.4fr_auto] md:items-center md:px-6"
               >
-                <span className="text-xs font-bold tracking-[0.14em] text-[#79513a]">
+                <span className="text-xs font-bold tracking-[0.14em] text-[#6d001a]">
                   {track.number}
                 </span>
 
                 <div>
-                  <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+                  <h3 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-black group-hover:text-[#6d001a] transition-colors">
                     {track.title}
                   </h3>
                   <div className="mt-2 flex flex-wrap items-center gap-2">
-                    <span className="inline-block text-[11px] font-semibold text-[#79513a] uppercase tracking-wider bg-[#9c6849]/10 px-2.5 py-0.5 rounded-full">
+                    <span className="inline-block text-[11px] font-semibold text-[#6d001a] uppercase tracking-wider bg-[#6d001a]/10 px-2.5 py-0.5 rounded-full">
                       {track.tag}
                     </span>
                     <button
                       type="button"
                       onClick={() => onNavigate && onNavigate(track.page)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#9c6849] hover:text-[#231c17] transition-colors cursor-pointer ml-1"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#6d001a] hover:text-black transition-colors cursor-pointer ml-1"
                     >
                       {track.pageLabel}
                       <span>→</span>
@@ -243,7 +243,7 @@ export const Partners = ({ onNavigate }) => {
                   </div>
                 </div>
 
-                <p className="max-w-xl text-sm leading-relaxed text-[#5f5249]">
+                <p className="max-w-xl text-sm leading-relaxed text-[#454545]">
                   {track.description}
                 </p>
 
@@ -251,7 +251,7 @@ export const Partners = ({ onNavigate }) => {
                   <button
                     type="button"
                     onClick={() => handleSelectTrack(track.title)}
-                    className="inline-flex items-center gap-2 rounded-full border border-[#3d2d22]/30 px-4 py-2 text-xs font-bold text-[#231c17] transition-all duration-300 hover:bg-[#231c17] hover:text-[#f5efe4] cursor-pointer shadow-xs"
+                    className="inline-flex items-center gap-2 rounded-full border border-black/20 px-4 py-2 text-xs font-bold text-black transition-all duration-300 hover:bg-black hover:text-white cursor-pointer shadow-xs"
                   >
                     <span>Inquire for track</span>
                     <span className="transition-transform group-hover:translate-x-0.5">↓</span>
@@ -263,29 +263,29 @@ export const Partners = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 4. Why Partner With Afrinit (Warm Accent Band) */}
-      <section className="relative w-full bg-[#dcbf77]/25 border-y border-[#dcbf77]/40 px-5 py-16 sm:px-8 sm:py-24 lg:px-14 lg:py-32 text-[#231c17]">
+      {/* 4. Why Partner With Afrinit (Accent Band) */}
+      <section className="relative w-full bg-[#f5f5f5] border-y border-black/10 px-5 py-16 sm:px-8 sm:py-24 lg:px-14 lg:py-32 text-black">
         <div className="mx-auto grid max-w-[1330px] gap-12 lg:gap-14 lg:grid-cols-[0.75fr_1.25fr] items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
               Why Afrinit
             </p>
-            <p className="mt-6 max-w-sm text-sm sm:text-base leading-relaxed text-[#5f5249]">
+            <p className="mt-6 max-w-sm text-sm sm:text-base leading-relaxed text-[#454545]">
               We are an independent, founder-led software studio founded by five
               co-founders across Nairobi and Kisumu. That means direct access to
               senior engineers, honest communication, and the agility to adapt
               as your technology needs evolve.
             </p>
-            <div className="mt-8 flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-[#79513a]">
+            <div className="mt-8 flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-[#6d001a]">
               <div>
-                <span className="block text-2xl font-black text-[#231c17]">
+                <span className="block text-2xl font-black text-black">
                   5
                 </span>
                 Co-Founders
               </div>
-              <div className="h-8 w-px bg-[#3d2d22]/20" />
+              <div className="h-8 w-px bg-black/15" />
               <div>
-                <span className="block text-2xl font-black text-[#231c17]">
+                <span className="block text-2xl font-black text-black">
                   20+
                 </span>
                 Shipped Systems
@@ -293,23 +293,23 @@ export const Partners = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="border-l-0 lg:border-l border-[#3d2d22]/20 lg:pl-12">
-            <blockquote className="font-display text-[clamp(1.5rem,3.5vw,3.2rem)] font-extrabold leading-[1.08] tracking-tight text-[#231c17]">
-              “Afrinit didn’t just write code—they understood our operational
+          <div className="border-l-0 lg:border-l border-black/15 lg:pl-12">
+            <blockquote className="font-display text-[clamp(1.5rem,3.5vw,3.2rem)] font-extrabold leading-[1.08] tracking-tight text-black">
+              "Afrinit didn't just write code—they understood our operational
               realities on the ground and engineered software our team relies on
-              every single day.”
+              every single day."
             </blockquote>
 
             <div className="mt-8 sm:mt-10 flex items-center gap-4">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-full border border-[#3d2d22]/30 bg-white font-display text-base font-bold text-[#9c6849] shadow-xs">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-full border border-black/20 bg-white font-display text-base font-bold text-[#6d001a] shadow-xs">
                 EA
               </div>
               <div>
-                <span className="block text-xs font-bold uppercase tracking-wider text-[#231c17]">
-                  East African Logistics & Enterprise Partner
+                <span className="block text-xs font-bold uppercase tracking-wider text-black">
+                  East African Logistics &amp; Enterprise Partner
                 </span>
-                <span className="text-xs text-[#5f5249]">
-                  Platform Co-Creation & Daraja Integration
+                <span className="text-xs text-[#454545]">
+                  Platform Co-Creation &amp; Daraja Integration
                 </span>
               </div>
             </div>
@@ -322,35 +322,35 @@ export const Partners = ({ onNavigate }) => {
         <div className="mx-auto max-w-[1440px]">
           <div className="mb-12 sm:mb-16 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
                 How it works
               </p>
-              <h2 className="font-display mt-5 text-[clamp(2.2rem,4.5vw,4.8rem)] font-extrabold leading-[0.95] tracking-tight text-[#231c17] break-words">
+              <h2 className="font-display mt-5 text-[clamp(2.2rem,4.5vw,4.8rem)] font-extrabold leading-[0.95] tracking-tight text-black break-words">
                 Simple by{" "}
-                <span className="italic font-normal text-[#9c6849]">
+                <span className="italic font-normal text-[#6d001a]">
                   design.
                 </span>
               </h2>
             </div>
-            <p className="max-w-md text-base leading-relaxed text-[#5f5249] lg:ml-auto">
+            <p className="max-w-md text-base leading-relaxed text-[#454545] lg:ml-auto">
               We eliminate administrative friction. Direct engineering alignment,
               transparent sprints, and reliable delivery from kickoff to launch.
             </p>
           </div>
 
-          <div className="border-t border-[#3d2d22]/20">
+          <div className="border-t border-black/15">
             {steps.map((step) => (
               <div
                 key={step.number}
-                className="grid gap-3 sm:gap-4 border-b border-[#3d2d22]/20 py-8 sm:py-10 md:grid-cols-[80px_1fr_1.5fr] md:items-start"
+                className="grid gap-3 sm:gap-4 border-b border-black/15 py-8 sm:py-10 md:grid-cols-[80px_1fr_1.5fr] md:items-start"
               >
-                <span className="font-display text-sm font-bold text-[#9c6849]">
+                <span className="font-display text-sm font-bold text-[#6d001a]">
                   {step.number}
                 </span>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-[#231c17]">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-black">
                   {step.title}
                 </h3>
-                <p className="text-sm sm:text-base leading-relaxed text-[#5f5249]">
+                <p className="text-sm sm:text-base leading-relaxed text-[#454545]">
                   {step.description}
                 </p>
               </div>
@@ -359,13 +359,13 @@ export const Partners = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 6. Partner Inquiry Section ("Let's talk • Have an idea in mind?") */}
+      {/* 6. Partner Inquiry Section */}
       <section
         id="partner-inquiry"
         className="relative w-full px-5 pb-20 sm:px-8 sm:pb-24 lg:px-14"
       >
-        <div className="mx-auto max-w-[1330px] rounded-3xl bg-[#231c17] p-6 sm:p-12 lg:p-20 text-white border border-[#3d2d22] relative overflow-hidden shadow-2xl">
-          {/* Subtle decorative circles inspired by Figma design */}
+        <div className="mx-auto max-w-[1330px] rounded-3xl bg-black p-6 sm:p-12 lg:p-20 text-white border border-black/20 relative overflow-hidden shadow-2xl">
+          {/* Subtle decorative circles */}
           <div
             aria-hidden="true"
             className="absolute -right-24 -top-24 size-[440px] rounded-full border border-white/5 pointer-events-none"
@@ -378,29 +378,29 @@ export const Partners = ({ onNavigate }) => {
           <div className="relative z-10 grid gap-10 lg:gap-14 lg:grid-cols-[0.9fr_1.1fr] items-start">
             {/* Left Column: Inquiry Header */}
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#dcbf77]">
-                Let’s talk
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/70">
+                Let's talk
               </p>
               <h2 className="font-display mt-5 text-[clamp(2.2rem,5vw,5.5rem)] font-extrabold leading-[0.92] tracking-tight text-white break-words">
                 Have an idea in{" "}
-                <span className="italic font-normal text-[#dcbf77]">
+                <span className="italic font-normal text-[#6d001a]">
                   mind?
                 </span>
               </h2>
-              <p className="mt-6 sm:mt-8 max-w-sm text-sm sm:text-base leading-relaxed text-[#d7c4ae]/80">
-                Tell us where you’d like to go. We’ll bring an open mind, deep
+              <p className="mt-6 sm:mt-8 max-w-sm text-sm sm:text-base leading-relaxed text-white/70">
+                Tell us where you'd like to go. We'll bring an open mind, deep
                 engineering expertise, and a fresh perspective on African
                 technology delivery.
               </p>
 
-              <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 space-y-4 text-xs text-[#d7c4ae]/70">
+              <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 space-y-4 text-xs text-white/60">
                 <div className="flex items-center gap-3">
-                  <span className="size-2 rounded-full bg-[#dcbf77]" />
+                  <span className="size-2 rounded-full bg-[#6d001a]" />
                   <span>Direct founder attention on every partnership</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="size-2 rounded-full bg-[#dcbf77]" />
-                  <span>Based in Nairobi & Kisumu, open to remote worldwide</span>
+                  <span className="size-2 rounded-full bg-[#6d001a]" />
+                  <span>Based in Nairobi &amp; Kisumu, open to remote worldwide</span>
                 </div>
               </div>
             </div>
@@ -409,7 +409,7 @@ export const Partners = ({ onNavigate }) => {
             <div className="bg-white/5 p-5 sm:p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
               {formSubmitted ? (
                 <div className="py-12 text-center">
-                  <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-[#dcbf77]/20 text-[#dcbf77] mb-6">
+                  <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-[#6d001a]/30 text-white mb-6">
                     <svg
                       className="size-8"
                       fill="none"
@@ -427,7 +427,7 @@ export const Partners = ({ onNavigate }) => {
                   <h3 className="font-display text-2xl font-bold text-white">
                     Inquiry Received
                   </h3>
-                  <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[#d7c4ae]">
+                  <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-white/70">
                     Thank you, {formData.name || "partner"}! Our co-founders will
                     review your proposal and reach out within 1 business day.
                   </p>
@@ -443,7 +443,7 @@ export const Partners = ({ onNavigate }) => {
                         message: "",
                       });
                     }}
-                    className="mt-8 rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-xs font-semibold text-white hover:bg-white hover:text-[#231c17] transition cursor-pointer"
+                    className="mt-8 rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-xs font-semibold text-white hover:bg-white hover:text-black transition cursor-pointer"
                   >
                     Send another inquiry
                   </button>
@@ -452,7 +452,7 @@ export const Partners = ({ onNavigate }) => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#d7c4ae]/80 mb-2">
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-2">
                         Your name *
                       </label>
                       <input
@@ -463,12 +463,12 @@ export const Partners = ({ onNavigate }) => {
                           setFormData({ ...formData, name: e.target.value })
                         }
                         placeholder="Jane Doe"
-                        className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-[#dcbf77] focus:outline-none focus:ring-1 focus:ring-[#dcbf77] transition"
+                        className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-[#6d001a] focus:outline-none focus:ring-1 focus:ring-[#6d001a] transition"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#d7c4ae]/80 mb-2">
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-2">
                         Work email *
                       </label>
                       <input
@@ -479,14 +479,14 @@ export const Partners = ({ onNavigate }) => {
                           setFormData({ ...formData, email: e.target.value })
                         }
                         placeholder="jane@company.com"
-                        className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-[#dcbf77] focus:outline-none focus:ring-1 focus:ring-[#dcbf77] transition"
+                        className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-[#6d001a] focus:outline-none focus:ring-1 focus:ring-[#6d001a] transition"
                       />
                     </div>
                   </div>
 
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#d7c4ae]/80 mb-2">
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-2">
                         Company / Organization
                       </label>
                       <input
@@ -499,13 +499,13 @@ export const Partners = ({ onNavigate }) => {
                           })
                         }
                         placeholder="Acme Ventures"
-                        className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-[#dcbf77] focus:outline-none focus:ring-1 focus:ring-[#dcbf77] transition"
+                        className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-[#6d001a] focus:outline-none focus:ring-1 focus:ring-[#6d001a] transition"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#d7c4ae]/80 mb-2">
-                        I’m interested in
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-2">
+                        I'm interested in
                       </label>
                       <select
                         value={formData.track || selectedTrack}
@@ -513,7 +513,7 @@ export const Partners = ({ onNavigate }) => {
                           setSelectedTrack(e.target.value);
                           setFormData({ ...formData, track: e.target.value });
                         }}
-                        className="w-full rounded-xl border border-white/15 bg-[#231c17] px-4 py-3 text-base sm:text-sm text-white focus:border-[#dcbf77] focus:outline-none focus:ring-1 focus:ring-[#dcbf77] transition"
+                        className="w-full rounded-xl border border-white/15 bg-black px-4 py-3 text-base sm:text-sm text-white focus:border-[#6d001a] focus:outline-none focus:ring-1 focus:ring-[#6d001a] transition"
                       >
                         <option value="">Select a partnership track</option>
                         {tracks.map((t) => (
@@ -522,7 +522,7 @@ export const Partners = ({ onNavigate }) => {
                           </option>
                         ))}
                         <option value="Custom Technical Advisory">
-                          Technical Advisory & Due Diligence
+                          Technical Advisory &amp; Due Diligence
                         </option>
                         <option value="Other Collaboration">
                           Something else
@@ -532,7 +532,7 @@ export const Partners = ({ onNavigate }) => {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#d7c4ae]/80 mb-2">
+                    <label className="block text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-2">
                       Tell us a little about your idea *
                     </label>
                     <textarea
@@ -543,19 +543,19 @@ export const Partners = ({ onNavigate }) => {
                         setFormData({ ...formData, message: e.target.value })
                       }
                       placeholder="Share what you are building, your audience, and what collaboration looks like..."
-                      className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-[#dcbf77] focus:outline-none focus:ring-1 focus:ring-[#dcbf77] transition resize-none"
+                      className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-base sm:text-sm text-white placeholder-white/30 focus:border-[#6d001a] focus:outline-none focus:ring-1 focus:ring-[#6d001a] transition resize-none"
                     />
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
-                    <p className="text-[11px] leading-relaxed text-[#d7c4ae]/60 max-w-xs">
-                      By submitting, you agree to our privacy standards. We’ll
+                    <p className="text-[11px] leading-relaxed text-white/50 max-w-xs">
+                      By submitting, you agree to our privacy standards. We'll
                       only use your details to respond.
                     </p>
 
                     <button
                       type="submit"
-                      className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#dcbf77] px-8 py-3.5 text-xs font-bold text-[#231c17] transition-all hover:bg-white hover:scale-102 cursor-pointer shadow-md w-full sm:w-auto shrink-0"
+                      className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#6d001a] px-8 py-3.5 text-xs font-bold text-white transition-all hover:bg-white hover:text-black hover:scale-102 cursor-pointer shadow-md w-full sm:w-auto shrink-0"
                     >
                       Send inquiry
                       <span className="transition-transform group-hover:translate-x-1">
