@@ -111,7 +111,7 @@ export const Hero = ({ onNavigate }) => {
       </section>
 
       {/* 2. Core Pillars */}
-      <section className="relative w-full border-t border-black/10 bg-[#f7f7f7] px-5 py-24 sm:px-8 lg:px-14">
+      <section className="relative w-full border-t border-black/10 bg-white px-5 py-24 sm:px-8 lg:px-14">
         <div className="w-full">
           <div className="viewport-animation mb-14">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
@@ -221,7 +221,7 @@ export const Hero = ({ onNavigate }) => {
       </section>
 
       {/* 5. "From the Archives" Strip */}
-      <section className="relative w-full border-t border-black/10 bg-[#f7f7f7] px-5 py-20 sm:px-8 lg:px-14">
+      <section className="relative w-full border-t border-black/10 bg-white px-5 py-20 sm:px-8 lg:px-14">
         <div className="w-full">
           <div className="viewport-animation mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
@@ -323,7 +323,7 @@ export const Hero = ({ onNavigate }) => {
       )}
 
       {/* 8. Tools We Work With */}
-      <section className="relative w-full border-t border-black/10 bg-[#f7f7f7] px-5 py-20 sm:px-8 lg:px-14">
+      <section className="relative w-full border-t border-black/10 bg-white px-5 py-20 sm:px-8 lg:px-14">
         <div className="w-full">
           <div className="viewport-animation mb-12 text-center">
             <div className="mb-3 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
