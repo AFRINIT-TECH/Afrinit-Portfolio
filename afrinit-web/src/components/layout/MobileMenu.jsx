@@ -67,8 +67,8 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
         aria-label={isOpen ? "Close menu" : "Open menu"}
         className={`grid h-11 w-11 place-items-center rounded-full border transition-all cursor-pointer ${
           isOpen
-            ? "border-[#9c6849] bg-[#9c6849] text-white shadow-md scale-102"
-            : "border-[#3d2d22]/20 text-[#231c17] bg-white/60 hover:bg-white hover:border-[#9c6849]"
+            ? "border-[#6d001a] bg-[#6d001a] text-white shadow-md scale-102"
+            : "border-black/15 text-black bg-white hover:bg-white hover:border-[#6d001a]"
         }`}
       >
         <span className="relative h-4 w-5">
@@ -92,7 +92,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
         <>
           {/* Subtle dismissible backdrop overlay */}
           <div
-            className="fixed inset-0 z-40 bg-[#231c17]/25 backdrop-blur-xs transition-opacity animate-fadeIn"
+            className="fixed inset-0 z-40 bg-black/30 backdrop-blur-xs transition-opacity animate-fadeIn"
             onClick={closeMenu}
             aria-hidden="true"
           />
@@ -102,7 +102,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
             ref={menuRef}
             role="menu"
             aria-label="Mobile navigation dropdown"
-            className="absolute right-0 top-[calc(100%+10px)] z-50 w-[min(380px,calc(100vw-32px))] max-h-[calc(100vh-100px)] overflow-y-auto rounded-3xl border border-[#3d2d22]/15 bg-[#f5efe4]/98 p-4 shadow-2xl backdrop-blur-xl animate-dropdown overscroll-contain text-[#231c17]"
+            className="absolute right-0 top-[calc(100%+10px)] z-50 w-[min(380px,calc(100vw-32px))] max-h-[calc(100vh-100px)] overflow-y-auto rounded-3xl border border-black/12 bg-white p-4 shadow-2xl backdrop-blur-xl animate-dropdown overscroll-contain text-black"
           >
             <nav className="flex flex-col space-y-1">
               {/* About */}
@@ -113,24 +113,24 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 }}
                 className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
                   currentPage === "about"
-                    ? "text-[#9c6849] bg-[#d7c4ae]/30 font-bold"
-                    : "text-[#231c17] hover:bg-[#d7c4ae]/20"
+                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
+                    : "text-black hover:bg-black/[0.04]"
                 }`}
               >
                 About
               </button>
 
               {/* What we do (Collapsible Accordion) */}
-              <div className="rounded-xl border border-[#3d2d22]/10 bg-white/50 overflow-hidden">
+              <div className="rounded-xl border border-black/10 bg-[#f7f7f7] overflow-hidden">
                 <button
                   type="button"
                   onClick={() => toggleAccordion("solutions")}
-                  className="flex items-center justify-between w-full min-h-[42px] px-3.5 py-2 text-sm font-semibold text-[#231c17] text-left cursor-pointer"
+                  className="flex items-center justify-between w-full min-h-[42px] px-3.5 py-2 text-sm font-semibold text-black text-left cursor-pointer"
                 >
                   <span>What We Do</span>
                   <svg
                     className={`h-4 w-4 transition-transform duration-200 ${
-                      openAccordion === "solutions" ? "rotate-180 text-[#9c6849]" : ""
+                      openAccordion === "solutions" ? "rotate-180 text-[#6d001a]" : ""
                     }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -142,8 +142,8 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 </button>
 
                 {openAccordion === "solutions" && (
-                  <div className="px-3.5 pb-3 pt-1 space-y-1.5 border-t border-[#3d2d22]/10 bg-white/70">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#79513a] pt-1">
+                  <div className="px-3.5 pb-3 pt-1 space-y-1.5 border-t border-black/10 bg-white">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#6d001a] pt-1">
                       Services
                     </p>
                     {siteConfig.solutions.services.map((s, idx) => (
@@ -153,12 +153,12 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                           onNavigate("solutions", { serviceIndex: idx });
                           closeMenu();
                         }}
-                        className="block w-full text-left py-1 text-xs text-[#5f5249] hover:text-[#9c6849] transition-colors"
+                        className="block w-full text-left py-1 text-xs text-[#454545] hover:text-[#6d001a] transition-colors"
                       >
                         • {s.title}
                       </button>
                     ))}
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#79513a] pt-2">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#6d001a] pt-2">
                       Focus Areas
                     </p>
                     {siteConfig.solutions.sectors.map((sec, idx) => (
@@ -168,7 +168,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                           onNavigate("solutions", { scrollTo: "sectors" });
                           closeMenu();
                         }}
-                        className="block w-full text-left py-1 text-xs text-[#5f5249] hover:text-[#9c6849] transition-colors"
+                        className="block w-full text-left py-1 text-xs text-[#454545] hover:text-[#6d001a] transition-colors"
                       >
                         • {sec.title}
                       </button>
@@ -185,8 +185,8 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 }}
                 className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
                   currentPage === "projects"
-                    ? "text-[#9c6849] bg-[#d7c4ae]/30 font-bold"
-                    : "text-[#231c17] hover:bg-[#d7c4ae]/20"
+                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
+                    : "text-black hover:bg-black/[0.04]"
                 }`}
               >
                 Work
@@ -200,8 +200,8 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 }}
                 className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
                   currentPage === "partners"
-                    ? "text-[#9c6849] bg-[#d7c4ae]/30 font-bold"
-                    : "text-[#231c17] hover:bg-[#d7c4ae]/20"
+                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
+                    : "text-black hover:bg-black/[0.04]"
                 }`}
               >
                 Partners
@@ -215,8 +215,8 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 }}
                 className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
                   currentPage === "impact"
-                    ? "text-[#9c6849] bg-[#d7c4ae]/30 font-bold"
-                    : "text-[#231c17] hover:bg-[#d7c4ae]/20"
+                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
+                    : "text-black hover:bg-black/[0.04]"
                 }`}
               >
                 Impact
@@ -230,8 +230,8 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 }}
                 className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
                   currentPage === "team"
-                    ? "text-[#9c6849] bg-[#d7c4ae]/30 font-bold"
-                    : "text-[#231c17] hover:bg-[#d7c4ae]/20"
+                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
+                    : "text-black hover:bg-black/[0.04]"
                 }`}
               >
                 Our Team
@@ -245,8 +245,8 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 }}
                 className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
                   currentPage === "archives"
-                    ? "text-[#9c6849] bg-[#d7c4ae]/30 font-bold"
-                    : "text-[#231c17] hover:bg-[#d7c4ae]/20"
+                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
+                    : "text-black hover:bg-black/[0.04]"
                 }`}
               >
                 Archives
@@ -260,8 +260,8 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 }}
                 className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
                   currentPage === "faq"
-                    ? "text-[#9c6849] bg-[#d7c4ae]/30 font-bold"
-                    : "text-[#231c17] hover:bg-[#d7c4ae]/20"
+                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
+                    : "text-black hover:bg-black/[0.04]"
                 }`}
               >
                 FAQ
@@ -269,20 +269,20 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
             </nav>
 
             {/* Bottom Actions */}
-            <div className="mt-4 pt-3.5 border-t border-[#3d2d22]/10 space-y-2.5">
+            <div className="mt-4 pt-3.5 border-t border-black/10 space-y-2.5">
               <button
                 onClick={() => {
                   onNavigate(siteConfig.navigation.cta.page || "partners");
                   closeMenu();
                 }}
-                className="flex items-center justify-center min-h-[46px] w-full rounded-full bg-[#231c17] text-white font-semibold text-xs uppercase tracking-wider transition-all hover:bg-[#9c6849] text-center px-4 py-2.5 cursor-pointer shadow-md"
+                className="flex items-center justify-center min-h-[46px] w-full rounded-full bg-black text-white font-semibold text-xs uppercase tracking-wider transition-all hover:bg-[#6d001a] text-center px-4 py-2.5 cursor-pointer shadow-md"
               >
                 Partner with us →
               </button>
 
-              <div className="text-center text-[11px] text-[#5f5249]">
+              <div className="text-center text-[11px] text-[#525252]">
                 {siteConfig.contact.email ? (
-                  <p className="font-semibold text-[#231c17]">{siteConfig.contact.email}</p>
+                  <p className="font-semibold text-black">{siteConfig.contact.email}</p>
                 ) : null}
                 <p className="mt-0.5">Nairobi • Kisumu • Remote</p>
               </div>
