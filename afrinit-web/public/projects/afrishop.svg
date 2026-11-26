@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="AFRISHOP logo — black mark on white">
+  <title>AFRISHOP logo — black mark on white</title>
+  <rect width="640" height="420" fill="#FFFFFF"/>
+  <g fill="none" stroke="#050505" stroke-width="17" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Cart handle and upper frame -->
+    <path d="M105 78 H176 Q192 78 200 94 L252 194"/>
+    <!-- Integrated A / cart basket -->
+    <path d="M190 305 L310 118 L430 305"/>
+    <path d="M260 250 H360"/>
+    <!-- S-shaped right side of the monogram -->
+    <path d="M505 118 H388 Q342 118 342 158 Q342 196 388 196 H458 Q504 196 504 236 Q504 276 458 276 H390"/>
+    <!-- Cart base -->
+    <path d="M190 305 H465 Q488 305 501 287 L516 266"/>
+    <!-- Speed lines -->
+    <path d="M78 218 H171"/>
+    <path d="M62 244 H159"/>
+    <path d="M92 270 H151"/>
+  </g>
+  <!-- Wheels -->
+  <g fill="#050505">
+    <circle cx="235" cy="350" r="22"/>
+    <circle cx="445" cy="350" r="22"/>
+  </g>
+</svg>
