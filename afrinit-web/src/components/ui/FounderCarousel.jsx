@@ -358,7 +358,7 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
               </div>
 
               <span className="text-xs uppercase font-bold tracking-wider text-black/50">
-                Afrinit Co-Founder
+                Azzmar Co-Founder
               </span>
             </div>
           </div>
