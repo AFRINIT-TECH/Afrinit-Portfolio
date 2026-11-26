@@ -112,13 +112,13 @@ export const Solutions = ({ onNavigate, navParams }) => {
               </div>
             </div>
 
-            {/* Afrinit Custom Software */}
+            {/* Azzmar Custom Software */}
             <div className="rounded-2xl border-2 border-[#6d001a] bg-black p-8 text-white shadow-xl flex flex-col justify-between relative overflow-hidden">
               <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-[#6d001a]/15 blur-xl" />
               <div className="relative z-10">
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <h3 className="font-display text-xl font-bold text-white">
-                    Afrinit Custom Software
+                    Azzmar Custom Software
                   </h3>
                   <span className="text-xs font-bold text-emerald-400 uppercase">100% Tailored</span>
                 </div>
