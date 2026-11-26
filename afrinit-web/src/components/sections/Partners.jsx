@@ -29,7 +29,7 @@ export const Partners = ({ onNavigate }) => {
       page: "solutions",
       pageLabel: "Explore technology solutions",
       description:
-        "Embed Afrinit as your dedicated engineering arm for mission-critical web platforms, custom ERP & CRM systems, resilient backend APIs, and cloud infrastructure.",
+        "Embed Azzmar as your dedicated engineering arm for mission-critical web platforms, custom ERP & CRM systems, resilient backend APIs, and cloud infrastructure.",
     },
     {
       number: "03",
@@ -159,7 +159,7 @@ export const Partners = ({ onNavigate }) => {
                 {/* Visual using existing SVG asset */}
                 <img
                   src="/hero/team.svg"
-                  alt="Afrinit Technology Studio Architecture"
+                  alt="Azzmar Technology Studio Architecture"
                   className="h-full w-full object-cover select-none transition-transform duration-700 ease-out hover:scale-105"
                   loading="eager"
                 />
@@ -263,12 +263,12 @@ export const Partners = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 4. Why Partner With Afrinit (Accent Band) */}
+      {/* 4. Why Partner With Azzmar (Accent Band) */}
       <section className="relative w-full bg-[#f5f5f5] border-y border-black/10 px-5 py-16 sm:px-8 sm:py-24 lg:px-14 lg:py-32 text-black">
         <div className="mx-auto grid max-w-[1330px] gap-12 lg:gap-14 lg:grid-cols-[0.75fr_1.25fr] items-center">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
-              Why Afrinit
+              Why Azzmar
             </p>
             <p className="mt-6 max-w-sm text-sm sm:text-base leading-relaxed text-[#454545]">
               We are an independent, founder-led software studio founded by five
@@ -295,7 +295,7 @@ export const Partners = ({ onNavigate }) => {
 
           <div className="border-l-0 lg:border-l border-black/15 lg:pl-12">
             <blockquote className="font-display text-[clamp(1.5rem,3.5vw,3.2rem)] font-extrabold leading-[1.08] tracking-tight text-black">
-              "Afrinit didn't just write code—they understood our operational
+              "Azzmar didn't just write code—they understood our operational
               realities on the ground and engineered software our team relies on
               every single day."
             </blockquote>
