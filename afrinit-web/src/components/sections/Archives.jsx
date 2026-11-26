@@ -69,11 +69,11 @@ export const Archives = ({ onNavigate }) => {
     return (
       <div
         key={entry.title + idx}
-        className="card-nerd group rounded-3xl border border-[#3d2d22]/15 bg-white/90 overflow-hidden shadow-sm flex flex-col justify-between"
+        className="card-nerd group rounded-3xl border border-black/10 bg-white overflow-hidden shadow-sm flex flex-col justify-between"
       >
         <div>
           {/* Cover Image: 16:9 ratio */}
-          <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#d7c4ae]/20">
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/[0.06]">
             {entry.image ? (
               <img
                 src={entry.image}
@@ -86,27 +86,27 @@ export const Archives = ({ onNavigate }) => {
                 label={entry.title}
                 hint={`16:9, add at public/archives/${slug}.jpg`}
                 aspect="aspect-[16/9]"
-                className="h-full w-full rounded-none border-0 border-b border-[#3d2d22]/10"
+                className="h-full w-full rounded-none border-0 border-b border-black/10"
               />
             )}
-            <div className="absolute top-3 right-3 rounded-full bg-[#231c17]/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#dcbf77] backdrop-blur-sm">
+            <div className="absolute top-3 right-3 rounded-full bg-black/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
               {entry.type}
             </div>
           </div>
 
           {/* Content */}
           <div className="p-7">
-            <div className="flex items-center justify-between gap-2 text-xs font-semibold text-[#79513a]">
+            <div className="flex items-center justify-between gap-2 text-xs font-semibold text-[#6d001a]">
               {entry.date ? <span>{entry.date}</span> : <span />}
               {entry.location && <span>{entry.location}</span>}
             </div>
 
-            <h3 className="font-display mt-2 text-2xl font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+            <h3 className="font-display mt-2 text-2xl font-bold text-black group-hover:text-[#6d001a] transition-colors">
               {entry.title}
             </h3>
 
             {entry.description && (
-              <p className="mt-3 text-sm leading-relaxed text-[#5f5249]">
+              <p className="mt-3 text-sm leading-relaxed text-[#454545]">
                 {entry.description}
               </p>
             )}
@@ -116,11 +116,11 @@ export const Archives = ({ onNavigate }) => {
         {/* Tags & Links */}
         <div className="px-7 pb-7 pt-2">
           {entry.tags && entry.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 border-t border-[#3d2d22]/10 pt-4">
+            <div className="flex flex-wrap gap-2 border-t border-black/10 pt-4">
               {entry.tags.map((tag, tIdx) => (
                 <span
                   key={tIdx}
-                  className="rounded-full bg-[#d7c4ae]/30 px-3 py-0.5 text-[11px] font-medium text-[#5f5249]"
+                  className="rounded-full bg-[#f5f5f5] px-3 py-0.5 text-[11px] font-medium text-[#454545]"
                 >
                   {tag}
                 </span>
@@ -134,7 +134,7 @@ export const Archives = ({ onNavigate }) => {
                 href={entry.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#9c6849] hover:underline"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#6d001a] hover:underline"
               >
                 {entry.linkLabel || "Learn more"} →
               </a>
@@ -150,27 +150,27 @@ export const Archives = ({ onNavigate }) => {
       {/* 1. Header & Highlight Stat */}
       <section className="relative min-h-[40vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
         <div className="w-full">
-          <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-            <span className="h-px w-9 bg-[#9c6849]" />
+          <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
+            <span className="h-px w-9 bg-[#6d001a]" />
             Running Record • Archives
           </div>
-          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-[#231c17] max-w-4xl">
+          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-black max-w-4xl">
             {siteConfig.archives.title}
           </h1>
-          <p className="viewport-animation delay-200 mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-[#5f5249]">
+          <p className="viewport-animation delay-200 mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-[#454545]">
             {siteConfig.archives.description}
           </p>
 
           {/* True Stat Callout Banner */}
-          <div className="viewport-animation delay-300 mt-10 inline-flex items-center gap-4 rounded-2xl border border-[#3d2d22]/15 bg-white/80 p-5 sm:p-6 shadow-sm">
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#dcbf77]/30 text-[#9c6849] font-display text-xl font-black">
+          <div className="viewport-animation delay-300 mt-10 inline-flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-5 sm:p-6 shadow-sm">
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#6d001a]/10 text-[#6d001a] font-display text-xl font-black">
               ★
             </span>
             <div>
-              <p className="font-display text-2xl sm:text-3xl font-extrabold text-[#231c17]">
+              <p className="font-display text-2xl sm:text-3xl font-extrabold text-black">
                 {statHeadline}
               </p>
-              <p className="text-xs text-[#5f5249] mt-0.5">
+              <p className="text-xs text-[#454545] mt-0.5">
                 Milestone record of production software built by our co-founders and team
               </p>
             </div>
@@ -181,7 +181,7 @@ export const Archives = ({ onNavigate }) => {
       {/* 2. Filter Tabs (All, Events, Products, Milestones with counts) */}
       <section className="relative w-full px-5 pb-8 sm:px-8 lg:px-14">
         <div className="w-full">
-          <div className="viewport-animation flex flex-wrap items-center gap-3 border-b border-[#3d2d22]/15 pb-6">
+          <div className="viewport-animation flex flex-wrap items-center gap-3 border-b border-black/15 pb-6">
             {Object.keys(TYPE_CONFIG).map((tabKey) => {
               const tab = TYPE_CONFIG[tabKey];
               const count = counts[tabKey] || 0;
@@ -193,14 +193,14 @@ export const Archives = ({ onNavigate }) => {
                   onClick={() => setSelectedTab(tabKey)}
                   className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold transition-all cursor-pointer ${
                     isActive
-                      ? "bg-[#231c17] text-white shadow-md scale-105"
-                      : "border border-[#3d2d22]/15 bg-white/70 text-[#5f5249] hover:bg-[#d7c4ae]/30 hover:text-[#231c17]"
+                      ? "bg-black text-white shadow-md scale-105"
+                      : "border border-black/15 bg-white text-[#454545] hover:bg-black/[0.05] hover:text-black"
                   }`}
                 >
                   <span>{tab.label}</span>
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] ${
-                      isActive ? "bg-white/20 text-[#dcbf77]" : "bg-[#d7c4ae]/40 text-[#5f5249]"
+                      isActive ? "bg-white/20 text-white" : "bg-black/[0.06] text-[#454545]"
                     }`}
                   >
                     {count}
@@ -217,13 +217,13 @@ export const Archives = ({ onNavigate }) => {
         <div className="w-full">
           {/* Empty state if no items for this tab */}
           {filteredItems.length === 0 ? (
-            <div className="viewport-animation rounded-3xl border border-dashed border-[#3d2d22]/20 bg-white/50 p-16 text-center">
-              <p className="font-display text-lg font-bold text-[#231c17]">
+            <div className="viewport-animation rounded-3xl border border-dashed border-black/20 bg-white p-16 text-center">
+              <p className="font-display text-lg font-bold text-black">
                 {TYPE_CONFIG[selectedTab]?.emptyMessage || "No archive entries found."}
               </p>
               <button
                 onClick={() => setSelectedTab("All")}
-                className="mt-4 text-xs font-bold text-[#9c6849] hover:underline cursor-pointer"
+                className="mt-4 text-xs font-bold text-[#6d001a] hover:underline cursor-pointer"
               >
                 View all archives →
               </button>
@@ -241,10 +241,10 @@ export const Archives = ({ onNavigate }) => {
               {groupedEntries.years.map(({ year, items: yearItems }) => (
                 <div key={year} className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <span className="font-display text-3xl sm:text-4xl font-extrabold text-[#9c6849]">
+                    <span className="font-display text-3xl sm:text-4xl font-extrabold text-[#6d001a]">
                       {year}
                     </span>
-                    <span className="h-px flex-1 bg-[#3d2d22]/15" />
+                    <span className="h-px flex-1 bg-black/15" />
                   </div>
                   <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {yearItems.map((entry, idx) => renderCard(entry, idx))}
