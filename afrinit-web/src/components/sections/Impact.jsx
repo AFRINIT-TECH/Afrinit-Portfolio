@@ -64,7 +64,7 @@ export const Impact = ({ onNavigate }) => {
 
       {/* 3. Milestone Timeline Drawn from Archives Data */}
       {milestones.length > 0 && (
-        <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-[#f7f7f7] mt-16">
+        <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-white mt-16">
           <div className="w-full">
             <div className="viewport-animation mb-14 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
@@ -129,7 +129,7 @@ export const Impact = ({ onNavigate }) => {
 
       {/* 4. Testimonials */}
       {testimonials.length > 0 && (
-        <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-[#f7f7f7]">
+        <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-white">
           <div className="w-full">
             <div className="viewport-animation mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
               <div>
