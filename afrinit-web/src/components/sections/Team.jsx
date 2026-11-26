@@ -38,7 +38,7 @@ export const Team = ({ onNavigate }) => {
       </section>
 
       {/* 3. Values Section: "How we work together" */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-[#f7f7f7] mt-16">
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-white mt-16">
         <div className="w-full">
           <div className="viewport-animation mb-12">
             <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
