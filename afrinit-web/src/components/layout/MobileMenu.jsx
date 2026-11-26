@@ -121,7 +121,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
               </button>
 
               {/* What we do (Collapsible Accordion) */}
-              <div className="rounded-xl border border-black/10 bg-[#f7f7f7] overflow-hidden">
+              <div className="rounded-xl border border-black/10 bg-white overflow-hidden">
                 <button
                   type="button"
                   onClick={() => toggleAccordion("solutions")}
