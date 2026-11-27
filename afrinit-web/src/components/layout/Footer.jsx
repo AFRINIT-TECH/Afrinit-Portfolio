@@ -1,5 +1,6 @@
 import { siteConfig } from "@/content/site";
 import { Logo } from "./Logo";
+import { SpiderButton } from "@/components/ui/SpiderButton";
 
 export const Footer = ({ onNavigate, currentPage }) => {
   return (
@@ -16,13 +17,14 @@ export const Footer = ({ onNavigate, currentPage }) => {
                 Let's explore how our team can help you build dependable software.
               </p>
             </div>
-            <button
+            <SpiderButton
               onClick={() => onNavigate && onNavigate("contact")}
-              className="group inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-bold text-black transition hover:bg-[#6d001a] hover:text-white cursor-pointer self-start md:self-auto"
+              className="self-start px-8 py-4 text-sm font-bold md:self-auto"
+              contentClassName="gap-3"
             >
               Get in touch
               <span className="transition group-hover:translate-x-1">→</span>
-            </button>
+            </SpiderButton>
           </div>
         </div>
       )}
@@ -160,12 +162,6 @@ export const Footer = ({ onNavigate, currentPage }) => {
               className="hover:text-white transition cursor-pointer"
             >
               Partnerships
-            </button>
-            <button
-              onClick={() => onNavigate && onNavigate("archives")}
-              className="hover:text-white transition cursor-pointer"
-            >
-              Archives
             </button>
             <button
               onClick={() => {

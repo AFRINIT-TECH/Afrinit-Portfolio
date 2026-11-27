@@ -76,16 +76,9 @@ export const Impact = ({ onNavigate }) => {
                   Key team milestones
                 </h2>
                 <p className="mt-4 max-w-2xl text-base text-[#454545]">
-                  Milestones drawn directly from our running records in the archives.
+                  Milestones in our engineering journey across East Africa.
                 </p>
               </div>
-              <button
-                onClick={() => onNavigate && onNavigate("archives")}
-                className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#6d001a] hover:text-black transition-colors cursor-pointer self-start sm:self-auto"
-              >
-                View full archives
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </button>
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

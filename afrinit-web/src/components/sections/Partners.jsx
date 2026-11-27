@@ -4,6 +4,7 @@ import { siteConfig } from "@/content/site";
 export const Partners = ({ onNavigate }) => {
   const [selectedTrack, setSelectedTrack] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,8 +45,8 @@ export const Partners = ({ onNavigate }) => {
       number: "04",
       title: "Ecosystem & Developer Initiatives",
       tag: "Community & Impact",
-      page: "archives",
-      pageLabel: "Explore community milestones",
+      page: "impact",
+      pageLabel: "Explore community initiatives",
       description:
         "Collaborate on open digital public infrastructure, regional developer summits, technical training workshops, and ecosystem research across Nairobi, Kisumu, and East Africa.",
     },
@@ -92,9 +93,16 @@ export const Partners = ({ onNavigate }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 400));
+      setFormSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -555,9 +563,10 @@ export const Partners = ({ onNavigate }) => {
 
                     <button
                       type="submit"
-                      className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#6d001a] px-8 py-3.5 text-xs font-bold text-white transition-all hover:bg-white hover:text-black hover:scale-102 cursor-pointer shadow-md w-full sm:w-auto shrink-0"
+                      disabled={isSubmitting}
+                      className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#6d001a] px-8 py-3.5 text-xs font-bold text-white transition-all hover:bg-white hover:text-black hover:scale-102 cursor-pointer shadow-md w-full sm:w-auto shrink-0 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Send inquiry
+                      {isSubmitting ? "Sending inquiry..." : "Send inquiry"}
                       <span className="transition-transform group-hover:translate-x-1">
                         →
                       </span>

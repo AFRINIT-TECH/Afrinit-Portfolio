@@ -10,11 +10,11 @@ import {
   Solutions,
   Impact,
   Team,
-  Archives,
   Contact,
   Projects,
   Faq,
   Partners,
+  Quote,
 } from "@/components/sections";
 
 const PAGE_COMPONENTS = {
@@ -23,11 +23,11 @@ const PAGE_COMPONENTS = {
   solutions: Solutions,
   impact: Impact,
   team: Team,
-  archives: Archives,
   contact: Contact,
   projects: Projects,
   faq: Faq,
   partners: Partners,
+  quote: Quote,
   admin: AdminPage,
   // Backwards compatibility alias
   people: Team,
@@ -38,6 +38,7 @@ const getInitialPage = () => {
   const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
   if (!path) return "home";
   if (path === "people") return "team";
+  if (path === "get-a-quote") return "quote";
   if (PAGE_COMPONENTS[path]) return path;
   return "home";
 };
@@ -119,7 +120,11 @@ function App() {
   return (
     <div className="min-h-screen bg-white font-body text-black antialiased flex flex-col selection:bg-[#6d001a] selection:text-white">
       <Header currentPage={currentPage} onNavigate={navigateTo} />
-      <div aria-hidden="true" className={`shrink-0 ${headerSpacerHeight}`} />
+      <div
+        aria-hidden="true"
+        className={`shrink-0 ${headerSpacerHeight}`}
+        style={{ height: "var(--header-height)" }}
+      />
       <div className="flex-1">
         <main className="overflow-hidden bg-white text-black">
           <div

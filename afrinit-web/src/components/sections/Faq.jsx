@@ -47,7 +47,7 @@ export const Faq = ({ onNavigate }) => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by keyword (e.g., code ownership, services, team)..."
-              className="w-full rounded-full border border-black/20 bg-white px-6 py-4 pl-12 text-base sm:text-sm text-black placeholder:text-black/40 shadow-sm transition-all focus:border-[#6d001a] focus:outline-none focus:ring-2 focus:ring-[#6d001a]/20"
+              className="w-full rounded-full border border-black/20 bg-white px-6 py-4 pl-12 text-base sm:text-sm text-black placeholder:text-black/60 shadow-sm transition-all focus:border-[#6d001a] focus:outline-none focus:ring-2 focus:ring-[#6d001a]/20"
             />
             <svg
               className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#6d001a]"

@@ -22,7 +22,6 @@ export const siteConfig = {
       { label: "Partners", page: "partners" },
       { label: "Impact", page: "impact" },
       { label: "Our Team", page: "team" },
-      { label: "Archives", page: "archives" },
       { label: "FAQ", page: "faq" },
     ],
     cta: {
@@ -329,90 +328,60 @@ export const siteConfig = {
   },
 
   projects: {
-    title: "Our work & products",
+    title: "Projects",
     description:
       "Explore the products and software platforms built by our team.",
     items: [
       {
-        title: "JengaOps Cloud Logistics Platform",
-        category: "Enterprise & Logistics",
-        image: "/projects/jengaops-cloud-logistics-platform.svg",
+        title: "Siwolo Law Advocates Website",
+        category: "Legal & Professional Services",
+        image: "/projects/siwolo-law-advocates.jpg",
         description:
-          "An automated inventory dispatch and multimodal freight tracking system designed for supply chain operators across Kenya and East Africa. Replaced fragmented paperwork with real-time waypoint logging, automated warehouse receipting, and instant customer SMS notifications.",
-        tags: ["React", "Go", "PostgreSQL", "Docker", "REST API"],
-        metric: "60% Faster Dispatch Turnaround",
-        status: "Active in Production",
-        client: "Rift Freight Logistics",
-        timeline: "10 Weeks",
-        deliverables: ["Dispatch Dashboard", "Mobile Driver Web App", "Automated SMS Tracking", "PostgreSQL Database"],
+          "Enables clients to explore specialized legal practice areas, review advocate credentials, and schedule confidential appointments online seamlessly.",
+        link: "https://www.siwoloadvocates.com/",
       },
       {
-        title: "AgriBora Produce Aggregation Portal",
+        title: "LedgerMate",
+        category: "Financial Systems & Inventory",
+        image: "/projects/ledgermate.png",
+        description:
+          "A digital ledger for businesses to track payments, streamline inventory management, and reconcile customer orders with real-time audit visibility.",
+        link: "https://ledgermate-sd5v.onrender.com/",
+      },
+      {
+        title: "Linda Safeguarding App",
+        category: "Safeguarding & Workplace Safety",
+        image: "/projects/linda.png",
+        description:
+          "An anonymous safeguarding and workplace compliance platform that enables employees to report safety concerns securely to designated administrators with transparent review and status tracking.",
+        link: "https://linda-app.onrender.com",
+      },
+      {
+        title: "Queue Management System",
+        category: "Queue Management & Operations",
+        image: "/projects/qms.jpg",
+        imageBg: "linear-gradient(to right, #f8f8f8, #dedede)",
+        description:
+          "A digital queue management and ticket dispatch system that enables organizations to streamline service counters, issue instant customer tokens, and provide real-time queue tracking.",
+        link: "",
+      },
+      {
+        title: "AgriBora Aggregation Portal",
         category: "Agriculture & Supply Chain",
         image: "/projects/agribora-produce-aggregation-portal.svg",
         description:
-          "Digital aggregation and mobile payment disbursement platform connecting smallholder farming cooperatives with regional food processors. Integrates digital weighing scale logs with automated M-Pesa bulk payout batching.",
-        tags: ["React", "Node.js", "M-Pesa Daraja", "PostGIS", "Tailwind CSS"],
-        metric: "KSh 45M+ Disbursed",
-        status: "Active in Production",
-        client: "Western Agro Cooperatives",
-        timeline: "12 Weeks",
-        deliverables: ["Collection Point Portal", "Daraja API Integration", "Farmer Ledger", "Offline Caching"],
+          "Digital aggregation and mobile payment disbursement platform connecting smallholder farming cooperatives with regional food processors.",
+        link: "",
       },
       {
         title: "AfyaCare Clinical EMR Suite",
-        category: "Healthcare",
+        category: "Healthcare & Operations",
         image: "/projects/afyacare-clinical-emr-suite.svg",
         description:
-          "Offline-resilient electronic medical records and outpatient clinic management suite engineered for community health centers. Provides smooth patient intake, clinical notes, pharmacy stock tracking, and local SQLite data caching that syncs automatically when online.",
-        tags: ["React", "FastAPI", "PostgreSQL", "Tailwind CSS", "Redis"],
-        metric: "12,000+ Visits Logged",
-        status: "Active in Production",
-        client: "CareLink Community Health",
-        timeline: "14 Weeks",
-        deliverables: ["Outpatient Triage System", "Pharmacy Inventory Sync", "Doctor Consultation Portal", "Automated Reports"],
-      },
-      {
-        title: "SomaHub Digital Learning & Assessment",
-        category: "EdTech",
-        image: "/projects/somahub-digital-learning-assessment.svg",
-        description:
-          "Interactive e-learning and continuous assessment portal built for technical colleges and vocational training institutes. Delivers modular coursework, interactive coding assignments, automated quiz grading, and downloadable completion certificates.",
-        tags: ["React", "Go", "WebSockets", "Docker", "Tailwind CSS"],
-        metric: "8,500+ Active Students",
-        status: "Active in Production",
-        client: "Technical Skills Alliance",
-        timeline: "8 Weeks",
-        deliverables: ["Interactive Learning Management System", "Automated Grading Engine", "Real-Time WebSocket Quizzes"],
-      },
-      {
-        title: "KodiSmart Commercial Property Portal",
-        category: "FinTech & Real Estate",
-        image: "/projects/kodismart-commercial-property-portal.svg",
-        description:
-          "Tenant billing, automated rent reconciliation, and maintenance request portal for commercial and multi-unit residential property managers. Automates rent invoices, sends M-Pesa STK push payment prompts, and generates automated landlord remittances.",
-        tags: ["React", "Node.js", "PostgreSQL", "M-Pesa Daraja", "Tailwind CSS"],
-        metric: "98% Rent Reconciliation Rate",
-        status: "Active in Production",
-        client: "Apex Commercial Realty",
-        timeline: "6 Weeks",
-        deliverables: ["Landlord Portfolio Dashboard", "Tenant Rent Portal", "M-Pesa Daraja STK Push Integration"],
-      },
-      {
-        title: "NexusPOS Multi-Branch Retail Engine",
-        category: "Retail & Commerce",
-        image: "/projects/nexuspos-multi-branch-retail-engine.svg",
-        description:
-          "High-throughput cloud point-of-sale and centralized stock inventory system for multi-branch retail stores and pharmacy chains. Features barcode scanning, local receipt printer drivers, reorder alerts, and consolidated margin reporting.",
-        tags: ["React", "Go", "PostgreSQL", "Redis", "Docker"],
-        metric: "35+ Store Outlets Supported",
-        status: "Active in Production",
-        client: "Nexus Retail Network",
-        timeline: "11 Weeks",
-        deliverables: ["Cloud POS Terminal", "Central Inventory Controller", "Multi-Branch Sync Engine"],
+          "Offline-resilient electronic medical records and outpatient clinic management suite engineered for community health centers.",
+        link: "",
       },
     ],
-    perPage: 6,
   },
 
   impact: {
@@ -588,12 +557,12 @@ export const siteConfig = {
       },
       {
         type: "milestone",
-        title: "Afrinit Founding Agreement & Studio Launch",
+        title: "Azzmar Founding Agreement & Studio Launch",
         date: "2025-03",
         location: "Nairobi, Kenya",
         image: "/archives/afrinit-founding-agreement-studio-launch.svg",
         description:
-          "Five specialized engineers and digital builders came together to establish Afrinit, dedicated to engineering dependable, bespoke software with direct co-founder collaboration and complete client IP ownership.",
+          "Five specialized engineers and digital builders came together to establish Azzmar, dedicated to engineering dependable, bespoke software with direct co-founder collaboration and complete client IP ownership.",
         tags: ["Milestone", "Foundation", "Co-Founders"],
         link: "",
         linkLabel: "",
@@ -657,7 +626,7 @@ export const siteConfig = {
         location: "Nairobi, Kenya",
         image: "/archives/nairobi-tech-week-engineering-summit.svg",
         description:
-          "Afrinit co-founders participated in roundtable sessions on resilient cloud architecture, distributed systems, and real-time payment gateway integration patterns.",
+          "Azzmar co-founders participated in roundtable sessions on resilient cloud architecture, distributed systems, and real-time payment gateway integration patterns.",
         tags: ["Event", "Conference", "Nairobi", "Ecosystem"],
         link: "",
         linkLabel: "",
@@ -794,8 +763,8 @@ export const siteConfig = {
       { label: "Partners", page: "partners" },
       { label: "Impact", page: "impact" },
       { label: "Our Team", page: "team" },
-      { label: "Archives", page: "archives" },
       { label: "Frequently Asked Questions", page: "faq" },
+      { label: "Request Quote", page: "quote" },
       { label: "Contact", page: "contact" },
     ],
     servicesList: [

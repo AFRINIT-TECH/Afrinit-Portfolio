@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { siteConfig } from "@/content/site";
+import { SpiderButton } from "@/components/ui/SpiderButton";
 
 export const MobileMenu = ({ currentPage, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [openAccordion, setOpenAccordion] = useState(null); // 'solutions' | null
   const triggerRef = useRef(null);
   const menuRef = useRef(null);
 
@@ -13,7 +13,6 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
 
   const closeMenu = () => {
     setIsOpen(false);
-    setOpenAccordion(null);
     triggerRef.current?.focus();
   };
 
@@ -50,10 +49,6 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
       document.removeEventListener("touchstart", handleClickOutside);
     };
   }, [isOpen]);
-
-  const toggleAccordion = (name) => {
-    setOpenAccordion((prev) => (prev === name ? null : name));
-  };
 
   return (
     <div className="lg:hidden relative">
@@ -120,62 +115,20 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 About
               </button>
 
-              {/* What we do (Collapsible Accordion) */}
-              <div className="rounded-xl border border-black/10 bg-white overflow-hidden">
-                <button
-                  type="button"
-                  onClick={() => toggleAccordion("solutions")}
-                  className="flex items-center justify-between w-full min-h-[42px] px-3.5 py-2 text-sm font-semibold text-black text-left cursor-pointer"
-                >
-                  <span>What We Do</span>
-                  <svg
-                    className={`h-4 w-4 transition-transform duration-200 ${
-                      openAccordion === "solutions" ? "rotate-180 text-[#6d001a]" : ""
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-
-                {openAccordion === "solutions" && (
-                  <div className="px-3.5 pb-3 pt-1 space-y-1.5 border-t border-black/10 bg-white">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#6d001a] pt-1">
-                      Services
-                    </p>
-                    {siteConfig.solutions.services.map((s, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => {
-                          onNavigate("solutions", { serviceIndex: idx });
-                          closeMenu();
-                        }}
-                        className="block w-full text-left py-1 text-xs text-[#454545] hover:text-[#6d001a] transition-colors"
-                      >
-                        • {s.title}
-                      </button>
-                    ))}
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#6d001a] pt-2">
-                      Focus Areas
-                    </p>
-                    {siteConfig.solutions.sectors.map((sec, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => {
-                          onNavigate("solutions", { scrollTo: "sectors" });
-                          closeMenu();
-                        }}
-                        className="block w-full text-left py-1 text-xs text-[#454545] hover:text-[#6d001a] transition-colors"
-                      >
-                        • {sec.title}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+              {/* What We Do */}
+              <button
+                onClick={() => {
+                  onNavigate("solutions");
+                  closeMenu();
+                }}
+                className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
+                  currentPage === "solutions"
+                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
+                    : "text-black hover:bg-black/[0.04]"
+                }`}
+              >
+                What We Do
+              </button>
 
               {/* Work */}
               <button
@@ -237,21 +190,6 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 Our Team
               </button>
 
-              {/* Archives */}
-              <button
-                onClick={() => {
-                  onNavigate("archives");
-                  closeMenu();
-                }}
-                className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
-                  currentPage === "archives"
-                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
-                    : "text-black hover:bg-black/[0.04]"
-                }`}
-              >
-                Archives
-              </button>
-
               {/* FAQ */}
               <button
                 onClick={() => {
@@ -270,15 +208,29 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
 
             {/* Bottom Actions */}
             <div className="mt-4 pt-3.5 border-t border-black/10 space-y-2.5">
+              <SpiderButton
+                onClick={() => {
+                  onNavigate("quote");
+                  closeMenu();
+                }}
+                className={`flex items-center justify-center min-h-[44px] w-full rounded-full border font-semibold text-xs uppercase tracking-wider transition-all text-center px-4 py-2.5 cursor-pointer ${
+                  currentPage === "quote"
+                    ? "border-[#6d001a] bg-[#6d001a] text-white"
+                    : "border-black/20 bg-white text-black hover:border-[#6d001a] hover:text-[#6d001a]"
+                }`}
+              >
+                Request Quote
+              </button>
               <button
                 onClick={() => {
                   onNavigate(siteConfig.navigation.cta.page || "partners");
                   closeMenu();
                 }}
-                className="flex items-center justify-center min-h-[46px] w-full rounded-full bg-black text-white font-semibold text-xs uppercase tracking-wider transition-all hover:bg-[#6d001a] text-center px-4 py-2.5 cursor-pointer shadow-md"
+                className="min-h-[46px] w-full px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider shadow-md"
+                contentClassName="gap-1"
               >
-                Partner with us →
-              </button>
+                Partner with us <span aria-hidden="true">→</span>
+              </SpiderButton>
 
               <div className="text-center text-[11px] text-[#525252]">
                 {siteConfig.contact.email ? (

@@ -1,6 +1,24 @@
+import { Component } from "react";
 import { siteConfig } from "@/content/site";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { FounderCarousel } from "@/components/ui/FounderCarousel";
+import { ParticleSwarm } from "@/components/ui/ParticleSwarm";
+import { SpiderButton } from "@/components/ui/SpiderButton";
+
+class ParticleSwarmBoundary extends Component {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error) {
+    console.error("ParticleSwarm could not initialize; continuing without it.", error);
+  }
+
+  render() {
+    return this.state.hasError ? null : this.props.children;
+  }
+}
 
 const toSlug = (name) =>
   name
@@ -9,7 +27,6 @@ const toSlug = (name) =>
     .replace(/(^-|-$)+/g, "");
 
 export const Hero = ({ onNavigate }) => {
-  const teamMembers = siteConfig.team?.members || [];
   const archiveEntries = siteConfig.archives?.items?.slice(0, 3) || [];
   const testimonials = siteConfig.impact?.testimonials || [];
   const partnerLogos = siteConfig.partnerLogos || [];
@@ -17,7 +34,10 @@ export const Hero = ({ onNavigate }) => {
   return (
     <div className="page-view w-full overflow-hidden">
       {/* 1. Flagship Hero Section */}
-      <section className="relative grid min-h-[calc(100vh-78px)] w-full items-center gap-12 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-14 lg:py-20">
+      <section className="relative isolate grid min-h-[calc(100vh-78px)] w-full items-center gap-12 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-14 lg:py-20">
+        <ParticleSwarmBoundary>
+          <ParticleSwarm />
+        </ParticleSwarmBoundary>
         {/* Left Column */}
         <div className="relative z-10 max-w-3xl">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
@@ -37,13 +57,13 @@ export const Hero = ({ onNavigate }) => {
           </p>
 
           {/* Key Facts Row */}
-          <div className="viewport-animation delay-300 mt-8 grid grid-cols-3 gap-2 sm:gap-4 border-y border-black/15 py-5 sm:py-6">
+          <div className="viewport-animation delay-300 mt-8 grid grid-cols-3 gap-3 sm:gap-6 border-y border-black/15 py-5 sm:py-6">
             {siteConfig.hero.stats.map((stat, idx) => (
-              <div key={idx}>
+              <div key={idx} className="min-w-0">
                 <p className="font-display text-xl sm:text-3xl font-extrabold text-black">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-[11px] sm:text-xs font-semibold text-[#6d001a] leading-tight">
+                <p className="mt-1 text-[11px] sm:text-xs font-semibold text-[#6d001a] leading-snug break-words">
                   {stat.label}
                 </p>
               </div>
@@ -51,9 +71,10 @@ export const Hero = ({ onNavigate }) => {
           </div>
 
           <div className="viewport-animation delay-400 mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-            <button
+            <SpiderButton
               onClick={() => onNavigate && onNavigate("projects")}
-              className="group inline-flex items-center justify-center gap-3 sm:gap-4 rounded-full bg-[#6d001a] px-6 sm:px-7 py-3.5 sm:py-4 text-sm font-semibold text-white shadow-lg shadow-[#6d001a]/20 transition-all hover:bg-[#4d0012] hover:shadow-xl cursor-pointer"
+              className="w-full px-6 py-3.5 text-sm font-semibold sm:w-auto sm:px-7 sm:py-4"
+              contentClassName="gap-3 sm:gap-4"
             >
               {siteConfig.hero.primaryCta.label}
               <span className="transition-transform duration-300 group-hover:translate-x-1.5">
@@ -67,7 +88,7 @@ export const Hero = ({ onNavigate }) => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </span>
-            </button>
+            </SpiderButton>
             <button
               onClick={() => onNavigate && onNavigate(siteConfig.hero.secondaryCta.page || "partners")}
               className="group inline-flex items-center justify-center gap-3 rounded-full border border-black/20 bg-white px-6 sm:px-7 py-3.5 sm:py-4 text-sm font-semibold text-black transition hover:bg-[#f5f5f5] hover:text-[#6d001a] cursor-pointer"
@@ -89,7 +110,7 @@ export const Hero = ({ onNavigate }) => {
         </div>
 
         {/* Right Column: Hero Visual Image (4:5 aspect ratio) */}
-        <div className="relative w-full flex justify-end">
+        <div className="relative z-10 w-full flex justify-end">
           <div className="viewport-animation delay-200 relative w-full aspect-[4/5] max-w-[700px] xl:max-w-[780px] overflow-hidden rounded-3xl bg-black/[0.06] shadow-2xl border border-black/10">
             {siteConfig.hero.image.src ? (
               <img
@@ -189,57 +210,19 @@ export const Hero = ({ onNavigate }) => {
         </section>
       )}
 
-      {/* 4. Co-Founders One Card Carousel */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
-        <div className="w-full">
-          <div className="viewport-animation mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <div>
-              <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
-                <span className="h-px w-9 bg-[#6d001a]" />
-                Our Team
-              </div>
-              <h2 className="font-display text-3xl font-bold tracking-tight text-black sm:text-5xl">
-                Five co-founders building together
-              </h2>
-              <p className="mt-3 max-w-xl text-base text-[#454545]">
-                Based in Nairobi and Kisumu, Kenya, and open to remote work.
-              </p>
-            </div>
-            <button
-              onClick={() => onNavigate && onNavigate("team")}
-              className="group inline-flex items-center gap-2.5 rounded-full border border-black/20 bg-white px-6 py-3 text-xs font-bold uppercase tracking-wider text-black transition hover:bg-black hover:text-white cursor-pointer"
-            >
-              Meet everyone
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </button>
-          </div>
-
-          <div className="viewport-animation delay-100">
-            <FounderCarousel members={teamMembers} onNavigate={onNavigate} isPreview={true} />
-          </div>
-        </div>
-      </section>
-
-      {/* 5. "From the Archives" Strip */}
+      {/* 4. "Team Highlights" Strip */}
       <section className="relative w-full border-t border-black/10 bg-white px-5 py-20 sm:px-8 lg:px-14">
         <div className="w-full">
           <div className="viewport-animation mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <div className="mb-2 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
                 <span className="h-px w-9 bg-[#6d001a]" />
-                From the Archives
+                Key Highlights
               </div>
               <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-black">
-                Milestones &amp; running record
+                Milestones &amp; track record
               </h2>
             </div>
-            <button
-              onClick={() => onNavigate && onNavigate("archives")}
-              className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#6d001a] hover:text-black transition-colors cursor-pointer"
-            >
-              View full archives
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </button>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
