@@ -38,6 +38,21 @@ export const Projects = ({ onNavigate }) => {
   return (
     <section className="page-view relative min-h-[calc(100vh-78px)] w-full bg-white px-6 py-16 sm:px-10 lg:px-20 lg:py-20">
       <div className="mx-auto max-w-7xl">
+        {/* Introductory Message Banner on top of the projects title */}
+        <div className="viewport-animation mb-8 sm:mb-10">
+          <div className="max-w-4xl rounded-2xl border border-[#3d2d22]/15 bg-[#fbf8f3] p-5 sm:p-6 shadow-sm">
+            <div className="flex items-center gap-2.5 mb-2.5">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#9c6849]" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#79513a]">
+                Capabilities &amp; Solutions
+              </span>
+            </div>
+            <p className="text-sm sm:text-base leading-relaxed text-[#5f5249]">
+              <strong className="font-semibold text-[#231c17]">Azzmar</strong> delivers dependable software tailored to modern enterprise demands—spanning high-converting consultancy platforms and e-commerce stores to custom POS systems, operational ERPs, and automated AI workflows. Review our key deployments below to see how our architectures solve real operational bottlenecks.
+            </p>
+          </div>
+        </div>
+
         {/* Minimalist Heading like the reference screenshot */}
         <div className="viewport-animation mb-12 sm:mb-16">
           <h1 className="font-display inline-block pb-2 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-[#231c17] border-b-2 border-[#231c17]">
