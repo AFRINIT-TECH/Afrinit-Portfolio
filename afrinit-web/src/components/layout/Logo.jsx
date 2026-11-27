@@ -5,22 +5,22 @@ export const Logo = ({ className = "", showWordmark = true, variant = "default" 
 
   return (
     <div
-      className={`group inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d001a] rounded-xl select-none ${className}`}
+      className={`inline-flex items-center select-none ${className}`}
       aria-label="Azzmar"
     >
       <div
         className={`relative flex ${
           showWordmark ? "h-11 w-32 sm:w-36" : "h-11 w-11"
-        } shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white transition-all duration-300 group-hover:scale-105 ${
+        } shrink-0 items-center justify-center overflow-hidden ${
           isWhite
-            ? "shadow-md shadow-black/40"
-            : "shadow-sm group-hover:shadow-md"
+            ? "rounded-xl bg-white shadow-md shadow-black/40"
+            : "bg-transparent"
         }`}
       >
         <img
           src={logoImg}
           alt="Azzmar"
-          className={`h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105 ${
+          className={`h-full w-full object-cover object-center ${
             isWhite ? "" : "mix-blend-multiply"
           }`}
         />
