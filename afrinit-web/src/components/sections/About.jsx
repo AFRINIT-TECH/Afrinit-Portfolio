@@ -1,6 +1,5 @@
 import { siteConfig } from "@/content/site";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { FounderCarousel } from "@/components/ui/FounderCarousel";
 
 const toSlug = (name) =>
   name
@@ -9,7 +8,6 @@ const toSlug = (name) =>
     .replace(/(^-|-$)+/g, "");
 
 export const About = ({ onNavigate }) => {
-  const teamMembers = siteConfig.team?.members || [];
   const { title, description, points, pillars, process, image, mission, vision } = siteConfig.about;
 
   return (
@@ -19,7 +17,7 @@ export const About = ({ onNavigate }) => {
         <div className="w-full">
           <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
             <span className="h-px w-9 bg-[#6d001a]" />
-            About us • Our Team
+            About us
           </div>
           <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-black max-w-5xl">
             {title}: Five co-founders building dependable software.
@@ -158,39 +156,8 @@ export const About = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 6. Co-Founders One Card Carousel */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-white">
-        <div className="w-full">
-          <div className="viewport-animation mb-14 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <div>
-              <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
-                <span className="h-px w-9 bg-[#6d001a]" />
-                Meet the Team
-              </div>
-              <h2 className="font-display text-3xl font-bold tracking-tight text-black sm:text-5xl">
-                The people behind the code
-              </h2>
-              <p className="mt-4 max-w-xl text-base text-[#454545]">
-                Five co-founders building custom web applications and business systems based in Nairobi and Kisumu, Kenya.
-              </p>
-            </div>
-            <button
-              onClick={() => onNavigate && onNavigate("team")}
-              className="group inline-flex items-center gap-2.5 rounded-full border border-black/20 bg-white px-6 py-3 text-xs font-bold uppercase tracking-wider text-black transition hover:bg-black hover:text-white cursor-pointer"
-            >
-              Meet everyone
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </button>
-          </div>
-
-          <div className="viewport-animation delay-100">
-            <FounderCarousel members={teamMembers} onNavigate={onNavigate} isPreview={true} />
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Mission & Vision */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
+      {/* 6. Mission & Vision */}
+      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10">
         <div className="viewport-animation w-full rounded-3xl bg-black p-10 text-white sm:p-16 shadow-2xl relative overflow-hidden">
           <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#6d001a]/15 blur-3xl" />
           <div className="relative z-10 grid gap-12 lg:grid-cols-2">
