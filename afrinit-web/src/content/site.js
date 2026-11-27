@@ -341,13 +341,12 @@ export const siteConfig = {
         link: "https://www.siwoloadvocates.com/",
       },
       {
-        title: "QMS",
-        category: "Queue Management & Operations",
-        image: "/projects/qms.jpg",
-        imageBg: "linear-gradient(to right, #f8f8f8, #dedede)",
+        title: "LedgerMate",
+        category: "Financial Systems & Inventory",
+        image: "/projects/ledgermate.png",
         description:
-          "A digital queue management and ticket dispatch system that enables organizations to streamline service counters, issue instant customer tokens, and provide real-time queue tracking.",
-        link: "",
+          "A digital ledger for businesses to track payments, streamline inventory management, and reconcile customer orders with real-time audit visibility.",
+        link: "https://ledgermate-sd5v.onrender.com/",
       },
       {
         title: "Linda Safeguarding App",
@@ -356,6 +355,15 @@ export const siteConfig = {
         description:
           "An anonymous safeguarding and workplace compliance platform that enables employees to report safety concerns securely to designated administrators with transparent review and status tracking.",
         link: "https://linda-app.onrender.com",
+      },
+      {
+        title: "Queue Management System",
+        category: "Queue Management & Operations",
+        image: "/projects/qms.jpg",
+        imageBg: "linear-gradient(to right, #f8f8f8, #dedede)",
+        description:
+          "A digital queue management and ticket dispatch system that enables organizations to streamline service counters, issue instant customer tokens, and provide real-time queue tracking.",
+        link: "",
       },
       {
         title: "AgriBora Aggregation Portal",
