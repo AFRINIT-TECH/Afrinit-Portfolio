@@ -3,6 +3,7 @@ import { siteConfig } from "@/content/site";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 import { MaintenanceBanner } from "./MaintenanceBanner";
+import { SpiderButton } from "@/components/ui/SpiderButton";
 
 export const Header = ({ currentPage, onNavigate }) => {
   const [activeDropdown, setActiveDropdown] = useState(null); // 'solutions' | null
@@ -45,7 +46,7 @@ export const Header = ({ currentPage, onNavigate }) => {
       <div className="flex h-[78px] w-full items-center justify-between px-5 sm:px-8 lg:px-14">
         {/* Brand Logo */}
         <button
-          className="flex items-center cursor-pointer transition-opacity hover:opacity-85"
+          className="flex items-center cursor-pointer transition-opacity hover:opacity-80 focus:outline-none"
           aria-label="Azzmar home"
           onClick={() => {
             closeDropdown();
@@ -287,12 +288,12 @@ export const Header = ({ currentPage, onNavigate }) => {
 
         {/* CTA & Mobile Menu */}
         <div className="flex items-center gap-3">
-          <button
+          <SpiderButton
             onClick={() => {
               closeDropdown();
               onNavigate(siteConfig.navigation.cta.page || "partners");
             }}
-            className="group m-0 hidden items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition sm:flex bg-black hover:bg-[#6d001a] cursor-pointer shadow-sm hover:shadow-md"
+            className="m-0 hidden px-5 py-2.5 text-sm font-semibold shadow-sm sm:inline-flex"
           >
             {siteConfig.navigation.cta.label}
             <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -311,7 +312,7 @@ export const Header = ({ currentPage, onNavigate }) => {
                 />
               </svg>
             </span>
-          </button>
+          </SpiderButton>
           <MobileMenu currentPage={currentPage} onNavigate={onNavigate} />
         </div>
       </div>

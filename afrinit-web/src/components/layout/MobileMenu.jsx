@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { siteConfig } from "@/content/site";
+import { SpiderButton } from "@/components/ui/SpiderButton";
 
 export const MobileMenu = ({ currentPage, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -270,15 +271,16 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
 
             {/* Bottom Actions */}
             <div className="mt-4 pt-3.5 border-t border-black/10 space-y-2.5">
-              <button
+              <SpiderButton
                 onClick={() => {
                   onNavigate(siteConfig.navigation.cta.page || "partners");
                   closeMenu();
                 }}
-                className="flex items-center justify-center min-h-[46px] w-full rounded-full bg-black text-white font-semibold text-xs uppercase tracking-wider transition-all hover:bg-[#6d001a] text-center px-4 py-2.5 cursor-pointer shadow-md"
+                className="min-h-[46px] w-full px-4 py-2.5 text-center text-xs font-semibold uppercase tracking-wider shadow-md"
+                contentClassName="gap-1"
               >
-                Partner with us →
-              </button>
+                Partner with us <span aria-hidden="true">→</span>
+              </SpiderButton>
 
               <div className="text-center text-[11px] text-[#525252]">
                 {siteConfig.contact.email ? (
