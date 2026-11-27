@@ -22,7 +22,6 @@ export const siteConfig = {
       { label: "Partners", page: "partners" },
       { label: "Impact", page: "impact" },
       { label: "Our Team", page: "team" },
-      { label: "Archives", page: "archives" },
       { label: "FAQ", page: "faq" },
     ],
     cta: {
@@ -756,7 +755,6 @@ export const siteConfig = {
       { label: "Partners", page: "partners" },
       { label: "Impact", page: "impact" },
       { label: "Our Team", page: "team" },
-      { label: "Archives", page: "archives" },
       { label: "Frequently Asked Questions", page: "faq" },
       { label: "Contact", page: "contact" },
     ],

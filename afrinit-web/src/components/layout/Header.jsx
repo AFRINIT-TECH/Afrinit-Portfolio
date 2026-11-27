@@ -255,21 +255,6 @@ export const Header = ({ currentPage, onNavigate }) => {
             Our Team
           </button>
 
-          {/* Archives */}
-          <button
-            onClick={() => {
-              closeDropdown();
-              onNavigate("archives");
-            }}
-            className={`cursor-pointer transition-colors hover:text-[#6d001a] ${
-              currentPage === "archives"
-                ? "text-[#6d001a] font-bold"
-                : "text-[#454545]"
-            }`}
-          >
-            Archives
-          </button>
-
           {/* FAQ */}
           <button
             onClick={() => {

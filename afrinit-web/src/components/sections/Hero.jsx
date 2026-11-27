@@ -210,26 +210,19 @@ export const Hero = ({ onNavigate }) => {
         </section>
       )}
 
-      {/* 4. "From the Archives" Strip */}
+      {/* 4. "Team Highlights" Strip */}
       <section className="relative w-full border-t border-black/10 bg-white px-5 py-20 sm:px-8 lg:px-14">
         <div className="w-full">
           <div className="viewport-animation mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <div className="mb-2 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
                 <span className="h-px w-9 bg-[#6d001a]" />
-                From the Archives
+                Key Highlights
               </div>
               <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-black">
-                Milestones &amp; running record
+                Milestones &amp; track record
               </h2>
             </div>
-            <button
-              onClick={() => onNavigate && onNavigate("archives")}
-              className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#6d001a] hover:text-black transition-colors cursor-pointer"
-            >
-              View full archives
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </button>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

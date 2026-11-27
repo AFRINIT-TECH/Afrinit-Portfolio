@@ -238,21 +238,6 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
                 Our Team
               </button>
 
-              {/* Archives */}
-              <button
-                onClick={() => {
-                  onNavigate("archives");
-                  closeMenu();
-                }}
-                className={`flex items-center min-h-[42px] px-3.5 py-2 text-sm font-semibold rounded-xl transition-all text-left cursor-pointer ${
-                  currentPage === "archives"
-                    ? "text-[#6d001a] bg-[#6d001a]/8 font-bold"
-                    : "text-black hover:bg-black/[0.04]"
-                }`}
-              >
-                Archives
-              </button>
-
               {/* FAQ */}
               <button
                 onClick={() => {

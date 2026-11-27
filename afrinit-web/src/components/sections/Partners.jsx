@@ -45,8 +45,8 @@ export const Partners = ({ onNavigate }) => {
       number: "04",
       title: "Ecosystem & Developer Initiatives",
       tag: "Community & Impact",
-      page: "archives",
-      pageLabel: "Explore community milestones",
+      page: "impact",
+      pageLabel: "Explore community initiatives",
       description:
         "Collaborate on open digital public infrastructure, regional developer summits, technical training workshops, and ecosystem research across Nairobi, Kisumu, and East Africa.",
     },

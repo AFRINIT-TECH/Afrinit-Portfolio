@@ -164,12 +164,6 @@ export const Footer = ({ onNavigate, currentPage }) => {
               Partnerships
             </button>
             <button
-              onClick={() => onNavigate && onNavigate("archives")}
-              className="hover:text-white transition cursor-pointer"
-            >
-              Archives
-            </button>
-            <button
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}

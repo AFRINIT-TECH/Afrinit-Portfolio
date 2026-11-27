@@ -3,7 +3,6 @@ export * from "./About";
 export * from "./Solutions";
 export * from "./Impact";
 export * from "./Team";
-export * from "./Archives";
 export * from "./Contact";
 export * from "./Projects";
 export * from "./Faq";
