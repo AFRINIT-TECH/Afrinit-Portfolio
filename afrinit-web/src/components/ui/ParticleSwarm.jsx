@@ -60,7 +60,7 @@ const ParticleCloud = ({ animate }) => {
   );
 };
 
-export const ParticleSwarm = () => {
+export const ParticleSwarm = ({ className = "" }) => {
   const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export const ParticleSwarm = () => {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-[0.14]"
+      className={`pointer-events-none absolute inset-y-0 left-0 z-0 overflow-hidden opacity-[0.14] w-full lg:w-1/2 ${className}`}
     >
       <Canvas
         camera={{ position: [0, 0, 31], fov: 46 }}
