@@ -6,7 +6,7 @@ export const Faq = ({ onNavigate }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "About Afrinit", "Services & IP", "Collaboration"];
+  const categories = ["All", "About Azzmar", "Services & IP", "Collaboration"];
 
   // Filter questions based on search and category
   const filteredQuestions = useMemo(() => {
@@ -17,7 +17,7 @@ export const Faq = ({ onNavigate }) => {
 
       if (!matchesSearch) return false;
       if (selectedCategory === "All") return true;
-      if (selectedCategory === "About Afrinit") return idx < 3;
+      if (selectedCategory === "About Azzmar") return idx < 3;
       if (selectedCategory === "Services & IP") return idx === 1 || idx === 3;
       return idx >= 4;
     });
@@ -28,15 +28,15 @@ export const Faq = ({ onNavigate }) => {
       {/* 1. FAQ Hero */}
       <section className="relative min-h-[45vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="viewport-animation mb-6 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-            <span className="h-px w-9 bg-[#9c6849]" />
+          <div className="viewport-animation mb-6 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
+            <span className="h-px w-9 bg-[#6d001a]" />
             Knowledge Base • Common Inquiries
-            <span className="h-px w-9 bg-[#9c6849]" />
+            <span className="h-px w-9 bg-[#6d001a]" />
           </div>
-          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-[#231c17]">
+          <h1 className="viewport-animation delay-100 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl text-black">
             {siteConfig.faq.title}
           </h1>
-          <p className="viewport-animation delay-200 mt-6 max-w-2xl mx-auto text-lg leading-relaxed text-[#5f5249]">
+          <p className="viewport-animation delay-200 mt-6 max-w-2xl mx-auto text-lg leading-relaxed text-[#454545]">
             {siteConfig.faq.description}
           </p>
 
@@ -47,10 +47,10 @@ export const Faq = ({ onNavigate }) => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by keyword (e.g., code ownership, services, team)..."
-              className="w-full rounded-full border border-[#3d2d22]/20 bg-white/90 px-6 py-4 pl-12 text-base sm:text-sm text-[#231c17] placeholder:text-[#5f5249]/50 shadow-sm transition-all focus:border-[#9c6849] focus:outline-none focus:ring-2 focus:ring-[#9c6849]/20"
+              className="w-full rounded-full border border-black/20 bg-white px-6 py-4 pl-12 text-base sm:text-sm text-black placeholder:text-black/40 shadow-sm transition-all focus:border-[#6d001a] focus:outline-none focus:ring-2 focus:ring-[#6d001a]/20"
             />
             <svg
-              className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#9c6849]"
+              className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#6d001a]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -61,7 +61,7 @@ export const Faq = ({ onNavigate }) => {
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-[#5f5249] hover:text-[#231c17]"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-[#454545] hover:text-black"
               >
                 Clear
               </button>
@@ -76,8 +76,8 @@ export const Faq = ({ onNavigate }) => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
                   selectedCategory === cat
-                    ? "bg-[#231c17] text-white shadow-xs scale-105"
-                    : "border border-[#3d2d22]/15 bg-white/70 text-[#5f5249] hover:bg-[#d7c4ae]/30"
+                    ? "bg-black text-white shadow-xs scale-105"
+                    : "border border-black/15 bg-white text-[#454545] hover:bg-black/[0.05]"
                 }`}
               >
                 {cat}
@@ -93,17 +93,17 @@ export const Faq = ({ onNavigate }) => {
           {filteredQuestions.map((item, index) => (
             <div
               key={index}
-              className={`viewport-animation delay-${((index % 4) + 1) * 75} card-nerd rounded-3xl border border-[#3d2d22]/15 bg-white/80 shadow-sm overflow-hidden`}
+              className={`viewport-animation delay-${((index % 4) + 1) * 75} card-nerd rounded-3xl border border-black/10 bg-white shadow-sm overflow-hidden`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full flex items-center justify-between p-5 sm:p-8 text-left cursor-pointer"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-display text-base sm:text-xl font-bold text-[#231c17] pr-4 sm:pr-6">
+                <span className="font-display text-base sm:text-xl font-bold text-black pr-4 sm:pr-6">
                   {item.question}
                 </span>
-                <span className="flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#9c6849]/15 text-[#9c6849]">
+                <span className="flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#6d001a]/10 text-[#6d001a]">
                   <svg
                     className={`h-4 w-4 transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
@@ -123,7 +123,7 @@ export const Faq = ({ onNavigate }) => {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-5 sm:px-8 pb-6 sm:pb-8 text-sm leading-relaxed text-[#5f5249] border-t border-[#3d2d22]/10 pt-4">
+                  <div className="px-5 sm:px-8 pb-6 sm:pb-8 text-sm leading-relaxed text-[#454545] border-t border-black/10 pt-4">
                     {item.answer}
                   </div>
                 </div>
@@ -132,14 +132,14 @@ export const Faq = ({ onNavigate }) => {
           ))}
 
           {filteredQuestions.length === 0 && (
-            <div className="py-16 text-center text-[#5f5249]">
+            <div className="py-16 text-center text-[#454545]">
               <p className="text-base font-semibold">No questions found matching "{searchQuery}"</p>
               <button
                 onClick={() => {
                   setSearchQuery("");
                   setSelectedCategory("All");
                 }}
-                className="mt-3 text-xs font-bold text-[#9c6849] hover:underline cursor-pointer"
+                className="mt-3 text-xs font-bold text-[#6d001a] hover:underline cursor-pointer"
               >
                 Reset search filters
               </button>

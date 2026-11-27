@@ -9,4 +9,5 @@ DROP INDEX IF EXISTS idx_gallery_published_order;
 DROP TABLE IF EXISTS contact_inquiries;
 DROP TABLE IF EXISTS success_stories;
 DROP TABLE IF EXISTS gallery_items;
+DROP TABLE IF EXISTS admin_sessions;
 DROP TABLE IF EXISTS admins;

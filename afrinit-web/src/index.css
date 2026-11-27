@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #f5efe4;
-  --color-dark: #231c17;
-  --color-accent: #9c6849;
-  --color-accent-hover: #825238;
-  --color-gold: #dcbf77;
-  --color-warm-gray: #5f5249;
-  --color-sand: #d7c4ae;
-  --color-eyebrow: #79513a;
-  --color-border: #3d2d22;
+  --color-cream: #ffffff;
+  --color-surface: #ffffff;
+  --color-dark: #000000;
+  --color-accent: #6d001a;
+  --color-accent-hover: #4d0012;
+  --color-gold: #ffffff;
+  --color-warm-gray: #454545;
+  --color-sand: #e5e5e5;
+  --color-eyebrow: #6d001a;
+  --color-border: #000000;
   --color-white: #ffffff;
 
   --font-display: "Manrope", sans-serif;
@@ -78,12 +79,20 @@
 
 .infinite-slider::before {
   left: 0;
-  background: linear-gradient(to right, #f5efe4 0%, transparent 100%);
+  background: linear-gradient(to right, #ffffff 0%, transparent 100%);
 }
 
 .infinite-slider::after {
   right: 0;
-  background: linear-gradient(to left, #f5efe4 0%, transparent 100%);
+  background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+}
+
+.infinite-slider-dark::before {
+  background: linear-gradient(to right, #000000 0%, transparent 100%);
+}
+
+.infinite-slider-dark::after {
+  background: linear-gradient(to left, #000000 0%, transparent 100%);
 }
 
 .infinite-wrapper {
@@ -136,7 +145,7 @@
 }
 .card-nerd:hover {
   transform: translate3d(0, -6px, 0);
-  box-shadow: 0 20px 40px -15px rgba(35, 28, 23, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
 }
 
 /* Page view entrance animation */
@@ -294,8 +303,8 @@
   }
 
   body {
-    background-color: #f5efe4;
-    color: #231c17;
+    background-color: #ffffff;
+    color: #000000;
     font-family: "DM Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -310,7 +319,7 @@
   }
 
   ::selection {
-    background-color: #9c6849;
+    background-color: #6d001a;
     color: #ffffff;
   }
 
@@ -320,20 +329,20 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #f5efe4;
+    background: #ffffff;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #d7c4ae;
+    background: #d4d4d4;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #9c6849;
+    background: #6d001a;
   }
 
   :focus-visible {
-    outline: 2px solid #9c6849;
+    outline: 2px solid #6d001a;
     outline-offset: 2px;
   }
 

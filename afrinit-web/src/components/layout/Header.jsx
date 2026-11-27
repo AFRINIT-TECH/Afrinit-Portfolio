@@ -24,14 +24,14 @@ export const Header = ({ currentPage, onNavigate }) => {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-[#3d2d22]/15 bg-[#f5efe4]/95 backdrop-blur-md transition-all"
+      className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-md transition-all"
     >
       <MaintenanceBanner />
       <div className="flex h-[78px] w-full items-center justify-between px-5 sm:px-8 lg:px-14">
         {/* Brand Logo */}
         <button
           className="flex items-center cursor-pointer transition-opacity hover:opacity-85"
-          aria-label="Afrinit home"
+          aria-label="Azzmar home"
           onClick={() => {
             closeDropdown();
             onNavigate("home");
@@ -43,7 +43,7 @@ export const Header = ({ currentPage, onNavigate }) => {
         {/* Desktop Navigation */}
         <nav
           aria-label="Main Navigation"
-          className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-[#231c17]"
+          className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-black"
         >
           {/* About us */}
           <button
@@ -51,10 +51,10 @@ export const Header = ({ currentPage, onNavigate }) => {
               closeDropdown();
               onNavigate("about");
             }}
-            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+            className={`cursor-pointer transition-colors hover:text-[#6d001a] ${
               currentPage === "about"
-                ? "text-[#9c6849] font-bold"
-                : "text-[#5f5249]"
+                ? "text-[#6d001a] font-bold"
+                : "text-[#454545]"
             }`}
           >
             About
@@ -72,17 +72,17 @@ export const Header = ({ currentPage, onNavigate }) => {
                 e.stopPropagation();
                 setActiveDropdown((prev) => (prev === "solutions" ? null : "solutions"));
               }}
-              className={`inline-flex items-center gap-1.5 cursor-pointer py-1 transition-colors hover:text-[#9c6849] ${
+              className={`inline-flex items-center gap-1.5 cursor-pointer py-1 transition-colors hover:text-[#6d001a] ${
                 currentPage === "solutions" || activeDropdown === "solutions"
-                  ? "text-[#9c6849] font-bold"
-                  : "text-[#5f5249]"
+                  ? "text-[#6d001a] font-bold"
+                  : "text-[#454545]"
               }`}
               aria-expanded={activeDropdown === "solutions"}
             >
               What We Do
               <svg
                 className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                  activeDropdown === "solutions" ? "rotate-180 text-[#9c6849]" : ""
+                  activeDropdown === "solutions" ? "rotate-180 text-[#6d001a]" : ""
                 }`}
                 fill="none"
                 viewBox="0 0 24 24"
@@ -96,12 +96,12 @@ export const Header = ({ currentPage, onNavigate }) => {
             {/* Megamenu: What We Do */}
             {activeDropdown === "solutions" && (
               <div className="absolute left-1/2 top-full -translate-x-1/2 pt-1 z-50">
-                <div className="w-[560px] rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4] p-6 shadow-2xl backdrop-blur-xl">
+                <div className="w-[560px] rounded-2xl border border-black/12 bg-white p-6 shadow-2xl backdrop-blur-xl">
                   <div className="grid gap-6 sm:grid-cols-2">
                     {/* Left: Software Services */}
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a] mb-3 flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#9c6849]" />
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-[#6d001a] mb-3 flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#6d001a]" />
                         Services
                       </p>
                       <ul className="space-y-1">
@@ -114,12 +114,12 @@ export const Header = ({ currentPage, onNavigate }) => {
                                 closeDropdown();
                                 onNavigate("solutions", { serviceIndex: idx });
                               }}
-                              className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 transition-colors block cursor-pointer group"
+                              className="w-full text-left rounded-lg p-2 hover:bg-black/[0.04] transition-colors block cursor-pointer group"
                             >
-                              <p className="text-xs font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+                              <p className="text-xs font-bold text-black group-hover:text-[#6d001a] transition-colors">
                                 {s.title}
                               </p>
-                              <p className="text-[11px] text-[#5f5249] line-clamp-1 mt-0.5">
+                              <p className="text-[11px] text-[#525252] line-clamp-1 mt-0.5">
                                 {s.description}
                               </p>
                             </button>
@@ -130,8 +130,8 @@ export const Header = ({ currentPage, onNavigate }) => {
 
                     {/* Right: Practice Focus / Sectors */}
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-wider text-[#79513a] mb-3 flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#9c6849]" />
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-[#6d001a] mb-3 flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#6d001a]" />
                         Focus Areas
                       </p>
                       <ul className="space-y-1">
@@ -144,12 +144,12 @@ export const Header = ({ currentPage, onNavigate }) => {
                                 closeDropdown();
                                 onNavigate("solutions", { scrollTo: "sectors" });
                               }}
-                              className="w-full text-left rounded-lg p-2 hover:bg-[#d7c4ae]/30 transition-colors block cursor-pointer group"
+                              className="w-full text-left rounded-lg p-2 hover:bg-black/[0.04] transition-colors block cursor-pointer group"
                             >
-                              <p className="text-xs font-bold text-[#231c17] group-hover:text-[#9c6849] transition-colors">
+                              <p className="text-xs font-bold text-black group-hover:text-[#6d001a] transition-colors">
                                 {sec.title}
                               </p>
-                              <span className="inline-block mt-0.5 text-[10px] text-[#79513a] font-semibold bg-[#9c6849]/10 px-2 py-0.5 rounded-full">
+                              <span className="inline-block mt-0.5 text-[10px] text-[#6d001a] font-semibold bg-[#6d001a]/10 px-2 py-0.5 rounded-full">
                                 {sec.badge}
                               </span>
                             </button>
@@ -159,8 +159,8 @@ export const Header = ({ currentPage, onNavigate }) => {
                     </div>
                   </div>
 
-                  <div className="mt-5 pt-4 border-t border-[#3d2d22]/10 flex items-center justify-between text-xs">
-                    <span className="text-[#5f5249]">Looking for all practice areas?</span>
+                  <div className="mt-5 pt-4 border-t border-black/10 flex items-center justify-between text-xs">
+                    <span className="text-[#525252]">Looking for all practice areas?</span>
                     <button
                       type="button"
                       onClick={(e) => {
@@ -168,7 +168,7 @@ export const Header = ({ currentPage, onNavigate }) => {
                         closeDropdown();
                         onNavigate("solutions");
                       }}
-                      className="font-bold text-[#9c6849] hover:underline cursor-pointer flex items-center gap-1.5 group"
+                      className="font-bold text-[#6d001a] hover:underline cursor-pointer flex items-center gap-1.5 group"
                     >
                       All solutions & sectors
                       <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -185,10 +185,10 @@ export const Header = ({ currentPage, onNavigate }) => {
               closeDropdown();
               onNavigate("projects");
             }}
-            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+            className={`cursor-pointer transition-colors hover:text-[#6d001a] ${
               currentPage === "projects"
-                ? "text-[#9c6849] font-bold"
-                : "text-[#5f5249]"
+                ? "text-[#6d001a] font-bold"
+                : "text-[#454545]"
             }`}
           >
             Work
@@ -200,10 +200,10 @@ export const Header = ({ currentPage, onNavigate }) => {
               closeDropdown();
               onNavigate("partners");
             }}
-            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+            className={`cursor-pointer transition-colors hover:text-[#6d001a] ${
               currentPage === "partners"
-                ? "text-[#9c6849] font-bold"
-                : "text-[#5f5249]"
+                ? "text-[#6d001a] font-bold"
+                : "text-[#454545]"
             }`}
           >
             Partners
@@ -215,10 +215,10 @@ export const Header = ({ currentPage, onNavigate }) => {
               closeDropdown();
               onNavigate("impact");
             }}
-            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+            className={`cursor-pointer transition-colors hover:text-[#6d001a] ${
               currentPage === "impact"
-                ? "text-[#9c6849] font-bold"
-                : "text-[#5f5249]"
+                ? "text-[#6d001a] font-bold"
+                : "text-[#454545]"
             }`}
           >
             Impact
@@ -230,10 +230,10 @@ export const Header = ({ currentPage, onNavigate }) => {
               closeDropdown();
               onNavigate("team");
             }}
-            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+            className={`cursor-pointer transition-colors hover:text-[#6d001a] ${
               currentPage === "team"
-                ? "text-[#9c6849] font-bold"
-                : "text-[#5f5249]"
+                ? "text-[#6d001a] font-bold"
+                : "text-[#454545]"
             }`}
           >
             Our Team
@@ -245,10 +245,10 @@ export const Header = ({ currentPage, onNavigate }) => {
               closeDropdown();
               onNavigate("archives");
             }}
-            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+            className={`cursor-pointer transition-colors hover:text-[#6d001a] ${
               currentPage === "archives"
-                ? "text-[#9c6849] font-bold"
-                : "text-[#5f5249]"
+                ? "text-[#6d001a] font-bold"
+                : "text-[#454545]"
             }`}
           >
             Archives
@@ -260,10 +260,10 @@ export const Header = ({ currentPage, onNavigate }) => {
               closeDropdown();
               onNavigate("faq");
             }}
-            className={`cursor-pointer transition-colors hover:text-[#9c6849] ${
+            className={`cursor-pointer transition-colors hover:text-[#6d001a] ${
               currentPage === "faq"
-                ? "text-[#9c6849] font-bold"
-                : "text-[#5f5249]"
+                ? "text-[#6d001a] font-bold"
+                : "text-[#454545]"
             }`}
           >
             FAQ
@@ -277,7 +277,7 @@ export const Header = ({ currentPage, onNavigate }) => {
               closeDropdown();
               onNavigate(siteConfig.navigation.cta.page || "partners");
             }}
-            className="group m-0 hidden items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition sm:flex bg-[#231c17] hover:bg-[#9c6849] cursor-pointer shadow-sm hover:shadow-md"
+            className="group m-0 hidden items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition sm:flex bg-black hover:bg-[#6d001a] cursor-pointer shadow-sm hover:shadow-md"
           >
             {siteConfig.navigation.cta.label}
             <span className="transition-transform duration-300 group-hover:translate-x-1">

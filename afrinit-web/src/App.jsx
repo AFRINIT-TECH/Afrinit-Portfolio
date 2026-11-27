@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { Header, Footer } from "@/components/layout";
+import { AdminSessionConsent } from "@/components/layout/AdminSessionConsent";
+import { CookieConsent } from "@/components/layout/CookieConsent";
+import { siteConfig } from "@/content/site";
+import { AdminPage } from "@/components/pages/AdminPage";
 import {
   Hero,
   About,
@@ -24,6 +28,7 @@ const PAGE_COMPONENTS = {
   projects: Projects,
   faq: Faq,
   partners: Partners,
+  admin: AdminPage,
   // Backwards compatibility alias
   people: Team,
 };
@@ -106,12 +111,17 @@ function App() {
   };
 
   const PageComponent = PAGE_COMPONENTS[currentPage] || Hero;
+  const isAdminPage = currentPage === "admin";
+  const headerSpacerHeight = siteConfig.maintenanceBanner?.enabled
+    ? "h-[116px] sm:h-[120px]"
+    : "h-[79px]";
 
   return (
-    <div className="min-h-screen bg-[#f5efe4] font-body text-[#231c17] antialiased flex flex-col selection:bg-[#9c6849] selection:text-white">
+    <div className="min-h-screen bg-white font-body text-black antialiased flex flex-col selection:bg-[#6d001a] selection:text-white">
       <Header currentPage={currentPage} onNavigate={navigateTo} />
+      <div aria-hidden="true" className={`shrink-0 ${headerSpacerHeight}`} />
       <div className="flex-1">
-        <main className="overflow-hidden bg-[#f5efe4] text-[#231c17]">
+        <main className="overflow-hidden bg-white text-black">
           <div
             className={`page-view transition-opacity duration-200 ${
               isAnimating ? "opacity-0" : "opacity-100"
@@ -122,6 +132,7 @@ function App() {
         </main>
       </div>
       <Footer onNavigate={navigateTo} currentPage={currentPage} />
+      {isAdminPage ? <AdminSessionConsent /> : <CookieConsent />}
     </div>
   );
 }

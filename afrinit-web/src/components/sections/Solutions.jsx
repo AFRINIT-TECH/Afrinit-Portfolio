@@ -53,14 +53,14 @@ export const Solutions = ({ onNavigate, navParams }) => {
       {/* 1. Header Section */}
       <section className="relative min-h-[45vh] w-full px-5 pt-16 pb-12 sm:px-8 lg:px-14 lg:pt-24 lg:pb-16">
         <div className="w-full">
-          <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-            <span className="h-px w-9 bg-[#9c6849]" />
+          <div className="viewport-animation mb-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
+            <span className="h-px w-9 bg-[#6d001a]" />
             What We Do • Software Services
           </div>
-          <h1 className="viewport-animation delay-100 font-display text-3xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl text-[#231c17] max-w-5xl break-words">
+          <h1 className="viewport-animation delay-100 font-display text-3xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl text-black max-w-5xl break-words">
             Software solutions built for clarity, speed, and reliability.
           </h1>
-          <p className="viewport-animation delay-200 mt-6 sm:mt-8 max-w-3xl text-base sm:text-xl leading-relaxed text-[#5f5249]">
+          <p className="viewport-animation delay-200 mt-6 sm:mt-8 max-w-3xl text-base sm:text-xl leading-relaxed text-[#454545]">
             {siteConfig.solutions.description}
           </p>
         </div>
@@ -68,30 +68,30 @@ export const Solutions = ({ onNavigate, navParams }) => {
 
       {/* 2. Custom Software vs Off-The-Shelf */}
       <section className="relative w-full px-5 py-8 sm:py-12 sm:px-8 lg:px-14">
-        <div className="viewport-animation w-full rounded-3xl border border-[#3d2d22]/15 bg-white/80 p-6 sm:p-12 shadow-lg">
+        <div className="viewport-animation w-full rounded-3xl border border-black/10 bg-white p-6 sm:p-12 shadow-lg">
           <div className="mb-8 sm:mb-10 text-center">
-            <span className="inline-block rounded-full bg-[#9c6849]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#9c6849]">
+            <span className="inline-block rounded-full bg-[#6d001a]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#6d001a]">
               The Strategic Choice
             </span>
-            <h2 className="font-display mt-4 text-2xl sm:text-4xl font-extrabold text-[#231c17] break-words">
+            <h2 className="font-display mt-4 text-2xl sm:text-4xl font-extrabold text-black break-words">
               Off-The-Shelf Tools vs. Custom Software
             </h2>
-            <p className="mt-3 max-w-xl mx-auto text-xs sm:text-sm text-[#5f5249]">
+            <p className="mt-3 max-w-xl mx-auto text-xs sm:text-sm text-[#454545]">
               Why teams choose custom software built specifically around their operations.
             </p>
           </div>
 
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             {/* Off-the-shelf */}
-            <div className="rounded-2xl border border-[#3d2d22]/15 bg-[#f5efe4]/60 p-5 sm:p-8 flex flex-col justify-between">
+            <div className="rounded-2xl border border-black/10 bg-[#f5f5f5] p-5 sm:p-8 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-4 border-b border-[#3d2d22]/10">
-                  <h3 className="font-display text-xl font-bold text-[#5f5249]">
+                <div className="flex items-center justify-between pb-4 border-b border-black/10">
+                  <h3 className="font-display text-xl font-bold text-[#454545]">
                     Off-The-Shelf Subscriptions
                   </h3>
                   <span className="text-xs font-bold text-red-500 uppercase">Generic</span>
                 </div>
-                <ul className="mt-6 space-y-3.5 text-xs sm:text-sm text-[#5f5249]">
+                <ul className="mt-6 space-y-3.5 text-xs sm:text-sm text-[#454545]">
                   <li className="flex items-start gap-2.5">
                     <span className="text-red-500 font-bold">✕</span>
                     Recurring per-seat monthly license fees that grow over time
@@ -112,17 +112,17 @@ export const Solutions = ({ onNavigate, navParams }) => {
               </div>
             </div>
 
-            {/* Afrinit Custom Software */}
-            <div className="rounded-2xl border-2 border-[#9c6849] bg-[#231c17] p-8 text-white shadow-xl flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-[#dcbf77]/10 blur-xl" />
+            {/* Azzmar Custom Software */}
+            <div className="rounded-2xl border-2 border-[#6d001a] bg-black p-8 text-white shadow-xl flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-[#6d001a]/15 blur-xl" />
               <div className="relative z-10">
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                  <h3 className="font-display text-xl font-bold text-[#dcbf77]">
-                    Afrinit Custom Software
+                  <h3 className="font-display text-xl font-bold text-white">
+                    Azzmar Custom Software
                   </h3>
                   <span className="text-xs font-bold text-emerald-400 uppercase">100% Tailored</span>
                 </div>
-                <ul className="mt-6 space-y-3.5 text-xs sm:text-sm text-[#d7c4ae]">
+                <ul className="mt-6 space-y-3.5 text-xs sm:text-sm text-white/80">
                   <li className="flex items-start gap-2.5">
                     <span className="text-emerald-400 font-bold">✓</span>
                     100% intellectual property ownership with zero ongoing license fees
@@ -150,14 +150,14 @@ export const Solutions = ({ onNavigate, navParams }) => {
       <section className="relative w-full px-5 py-20 sm:px-8 lg:px-14">
         <div className="w-full">
           <div className="viewport-animation mb-14">
-            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-              <span className="h-px w-9 bg-[#9c6849]" />
+            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
+              <span className="h-px w-9 bg-[#6d001a]" />
               Core Capabilities
             </div>
-            <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-[#231c17]">
+            <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-black">
               Our service areas
             </h2>
-            <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
+            <p className="mt-4 max-w-2xl text-base text-[#454545]">
               Explore our core technical specializations. Click each panel to inspect scope and deliverables.
             </p>
           </div>
@@ -167,14 +167,14 @@ export const Solutions = ({ onNavigate, navParams }) => {
               <div
                 key={index}
                 id={`service-panel-${index}`}
-                className={`viewport-animation delay-${((index % 4) + 1) * 75} card-nerd rounded-3xl border border-[#3d2d22]/15 bg-white/80 shadow-sm overflow-hidden scroll-mt-28`}
+                className={`viewport-animation delay-${((index % 4) + 1) * 75} card-nerd rounded-3xl border border-black/10 bg-white shadow-sm overflow-hidden scroll-mt-28`}
               >
                 <button
                   onClick={() => setOpenPanel(openPanel === index ? null : index)}
                   className="w-full flex items-start sm:items-center gap-4 sm:gap-5 p-5 sm:p-8 text-left cursor-pointer"
                   aria-expanded={openPanel === index}
                 >
-                  <div className="flex h-11 w-11 sm:h-14 sm:w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#9c6849]/15 text-[#9c6849]">
+                  <div className="flex h-11 w-11 sm:h-14 sm:w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#6d001a]/10 text-[#6d001a]">
                     <svg
                       className="h-6 w-6 sm:h-7 sm:w-7"
                       fill="none"
@@ -190,13 +190,13 @@ export const Solutions = ({ onNavigate, navParams }) => {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-display text-lg sm:text-xl font-bold text-[#231c17]">
+                    <h3 className="font-display text-lg sm:text-xl font-bold text-black">
                       {service.title}
                     </h3>
-                    <p className="mt-1 text-xs sm:text-sm text-[#5f5249]">{service.description}</p>
+                    <p className="mt-1 text-xs sm:text-sm text-[#454545]">{service.description}</p>
                   </div>
                   <svg
-                    className={`h-5 w-5 flex-shrink-0 text-[#9c6849] transition-transform duration-300 mt-1 sm:mt-0 ${
+                    className={`h-5 w-5 flex-shrink-0 text-[#6d001a] transition-transform duration-300 mt-1 sm:mt-0 ${
                       openPanel === index ? "rotate-180" : ""
                     }`}
                     fill="none"
@@ -213,13 +213,13 @@ export const Solutions = ({ onNavigate, navParams }) => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-5 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pl-[90px] text-sm leading-relaxed text-[#5f5249] border-t border-[#3d2d22]/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div className="px-5 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pl-[90px] text-sm leading-relaxed text-[#454545] border-t border-black/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <p className="max-w-2xl">{service.details}</p>
                       {index === 0 && (
                         <button
                           type="button"
                           onClick={() => onNavigate && onNavigate("projects")}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#6d001a] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#4d0012] transition cursor-pointer shrink-0 self-start sm:self-auto"
                         >
                           View web projects →
                         </button>
@@ -228,7 +228,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
                         <button
                           type="button"
                           onClick={() => onNavigate && onNavigate("impact")}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#6d001a] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#4d0012] transition cursor-pointer shrink-0 self-start sm:self-auto"
                         >
                           View operational impact →
                         </button>
@@ -237,7 +237,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
                         <button
                           type="button"
                           onClick={() => onNavigate && onNavigate("partners")}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#6d001a] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#4d0012] transition cursor-pointer shrink-0 self-start sm:self-auto"
                         >
                           Explore tech partnerships →
                         </button>
@@ -246,7 +246,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
                         <button
                           type="button"
                           onClick={() => onNavigate && onNavigate("projects")}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#6d001a] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#4d0012] transition cursor-pointer shrink-0 self-start sm:self-auto"
                         >
                           View designed platforms →
                         </button>
@@ -255,7 +255,7 @@ export const Solutions = ({ onNavigate, navParams }) => {
                         <button
                           type="button"
                           onClick={() => onNavigate && onNavigate("team")}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#9c6849] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#825238] transition cursor-pointer shrink-0 self-start sm:self-auto"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#6d001a] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#4d0012] transition cursor-pointer shrink-0 self-start sm:self-auto"
                         >
                           Meet our engineers →
                         </button>
@@ -271,17 +271,17 @@ export const Solutions = ({ onNavigate, navParams }) => {
 
       {/* 4. Disciplines: Research, Design, Development */}
       {siteConfig.capabilities && (
-        <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40">
+        <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-white">
           <div className="w-full">
             <div className="viewport-animation mb-14">
-              <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-                <span className="h-px w-9 bg-[#9c6849]" />
-                Disciplines & Services
+              <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
+                <span className="h-px w-9 bg-[#6d001a]" />
+                Disciplines &amp; Services
               </div>
-              <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-[#231c17]">
+              <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-black">
                 {siteConfig.capabilities.title}
               </h2>
-              <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
+              <p className="mt-4 max-w-2xl text-base text-[#454545]">
                 {siteConfig.capabilities.description}
               </p>
             </div>
@@ -290,27 +290,27 @@ export const Solutions = ({ onNavigate, navParams }) => {
               {siteConfig.capabilities.groups.map((group, gIdx) => (
                 <div
                   key={gIdx}
-                  className={`viewport-animation delay-${(gIdx + 1) * 150} card-nerd rounded-3xl border border-[#3d2d22]/15 bg-white/90 p-8 shadow-sm flex flex-col justify-between`}
+                  className={`viewport-animation delay-${(gIdx + 1) * 150} card-nerd rounded-3xl border border-black/10 bg-white p-8 shadow-sm flex flex-col justify-between`}
                 >
                   <div>
-                    <div className="flex items-center justify-between pb-4 border-b border-[#3d2d22]/10 mb-6">
-                      <h3 className="font-display text-2xl font-bold text-[#231c17]">
+                    <div className="flex items-center justify-between pb-4 border-b border-black/10 mb-6">
+                      <h3 className="font-display text-2xl font-bold text-black">
                         {group.name}
                       </h3>
-                      <span className="text-xs font-bold uppercase text-[#9c6849]">
+                      <span className="text-xs font-bold uppercase text-[#6d001a]">
                         {group.badge}
                       </span>
                     </div>
-                    <p className="text-xs text-[#5f5249] mb-6">
+                    <p className="text-xs text-[#454545] mb-6">
                       {group.description}
                     </p>
                     <ul className="space-y-4">
                       {group.items.map((item, iIdx) => (
                         <li key={iIdx}>
-                          <p className="font-display text-sm font-bold text-[#231c17]">
+                          <p className="font-display text-sm font-bold text-black">
                             {item.name}
                           </p>
-                          <p className="text-xs text-[#5f5249]/80 mt-0.5">
+                          <p className="text-xs text-[#454545]/80 mt-0.5">
                             {item.desc}
                           </p>
                         </li>
@@ -328,14 +328,14 @@ export const Solutions = ({ onNavigate, navParams }) => {
       <section id="industry-sectors" className="relative w-full px-5 py-24 sm:px-8 lg:px-14 scroll-mt-28">
         <div className="w-full">
           <div className="viewport-animation mb-14">
-            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-              <span className="h-px w-9 bg-[#9c6849]" />
+            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
+              <span className="h-px w-9 bg-[#6d001a]" />
               Focus Areas
             </div>
-            <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-[#231c17]">
+            <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-black">
               Sectors where custom software helps
             </h2>
-            <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
+            <p className="mt-4 max-w-2xl text-base text-[#454545]">
               We build tools for businesses and organizations looking to simplify operations and serve customers better.
             </p>
           </div>
@@ -344,16 +344,16 @@ export const Solutions = ({ onNavigate, navParams }) => {
             {siteConfig.solutions.sectors.map((sector, index) => (
               <div
                 key={index}
-                className={`viewport-animation delay-${((index % 4) + 1) * 100} card-nerd group rounded-3xl border border-[#3d2d22]/15 bg-white/70 p-8 shadow-sm flex flex-col justify-between hover:bg-white`}
+                className={`viewport-animation delay-${((index % 4) + 1) * 100} card-nerd group rounded-3xl border border-black/10 bg-white p-8 shadow-sm flex flex-col justify-between hover:bg-[#f5f5f5]`}
               >
                 <div>
-                  <span className="inline-block rounded-full bg-[#dcbf77]/25 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#79513a]">
+                  <span className="inline-block rounded-full bg-[#6d001a]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#6d001a]">
                     {sector.badge}
                   </span>
-                  <h3 className="font-display mt-5 text-xl font-bold text-[#231c17]">
+                  <h3 className="font-display mt-5 text-xl font-bold text-black">
                     {sector.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[#5f5249]">
+                  <p className="mt-3 text-sm leading-relaxed text-[#454545]">
                     {sector.description}
                   </p>
                 </div>
@@ -364,17 +364,17 @@ export const Solutions = ({ onNavigate, navParams }) => {
       </section>
 
       {/* 6. Technical Tooling */}
-      <section id="tech-stack-section" className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-[#3d2d22]/10 bg-white/40 scroll-mt-28">
+      <section id="tech-stack-section" className="relative w-full px-5 py-24 sm:px-8 lg:px-14 border-t border-black/10 bg-white scroll-mt-28">
         <div className="w-full">
           <div className="viewport-animation mb-14">
-            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#79513a]">
-              <span className="h-px w-9 bg-[#9c6849]" />
+            <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
+              <span className="h-px w-9 bg-[#6d001a]" />
               Technical competencies
             </div>
-            <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-[#231c17]">
+            <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-5xl text-black">
               Tools we work with
             </h2>
-            <p className="mt-4 max-w-2xl text-base text-[#5f5249]">
+            <p className="mt-4 max-w-2xl text-base text-[#454545]">
               Modern, proven languages, relational databases, and maintainable web stacks.
             </p>
           </div>
@@ -383,16 +383,16 @@ export const Solutions = ({ onNavigate, navParams }) => {
             {siteConfig.solutions.techStack.map((stack, index) => (
               <div
                 key={index}
-                className={`viewport-animation delay-${((index % 4) + 1) * 100} card-nerd rounded-3xl border border-[#3d2d22]/15 bg-[#231c17] p-8 text-white shadow-sm`}
+                className={`viewport-animation delay-${((index % 4) + 1) * 100} card-nerd rounded-3xl border border-black/10 bg-black p-8 text-white shadow-sm`}
               >
-                <h3 className="font-display text-lg font-bold text-[#dcbf77]">
+                <h3 className="font-display text-lg font-bold text-white">
                   {stack.category}
                 </h3>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {stack.technologies.map((tech, techIdx) => (
                     <span
                       key={techIdx}
-                      className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-medium text-[#d7c4ae]"
+                      className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-medium text-white/80"
                     >
                       {tech}
                     </span>
@@ -408,10 +408,10 @@ export const Solutions = ({ onNavigate, navParams }) => {
       <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
         <div className="mx-auto max-w-4xl">
           <div className="viewport-animation mb-12 text-center">
-            <span className="inline-block rounded-full bg-[#9c6849]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#9c6849]">
+            <span className="inline-block rounded-full bg-[#6d001a]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#6d001a]">
               Frequently Asked Questions
             </span>
-            <h2 className="font-display mt-3 text-3xl sm:text-4xl font-extrabold text-[#231c17]">
+            <h2 className="font-display mt-3 text-3xl sm:text-4xl font-extrabold text-black">
               Questions about custom software delivery
             </h2>
           </div>
@@ -420,20 +420,20 @@ export const Solutions = ({ onNavigate, navParams }) => {
             {solutionFaqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="viewport-animation card-nerd rounded-2xl border border-[#3d2d22]/15 bg-white/80 p-6 shadow-sm overflow-hidden"
+                className="viewport-animation card-nerd rounded-2xl border border-black/10 bg-white p-6 shadow-sm overflow-hidden"
               >
                 <button
                   type="button"
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full flex items-center justify-between gap-4 text-left font-display font-bold text-base sm:text-lg text-[#231c17] cursor-pointer"
+                  className="w-full flex items-center justify-between gap-4 text-left font-display font-bold text-base sm:text-lg text-black cursor-pointer"
                 >
                   {faq.q}
-                  <span className={`text-[#9c6849] transition-transform duration-200 ${openFaq === idx ? "rotate-180" : ""}`}>
+                  <span className={`text-[#6d001a] transition-transform duration-200 ${openFaq === idx ? "rotate-180" : ""}`}>
                     ▼
                   </span>
                 </button>
                 {openFaq === idx && (
-                  <p className="mt-4 pt-4 border-t border-[#3d2d22]/10 text-sm leading-relaxed text-[#5f5249]">
+                  <p className="mt-4 pt-4 border-t border-black/10 text-sm leading-relaxed text-[#454545]">
                     {faq.a}
                   </p>
                 )}

@@ -6,15 +6,15 @@ export const siteConfig = {
       "Platform is currently under maintenance — Please do not mind the placeholders while updates are underway",
   },
   meta: {
-    name: "Afrinit",
-    title: "Afrinit | Software Team",
+    name: "Azzmar",
+    title: "Azzmar | Software Team",
     description:
-      "Afrinit is a software team founded by five co-founders based in Nairobi and Kisumu, Kenya, open to remote work. We build custom web applications, business systems, backend APIs, and UI/UX design.",
+      "Azzmar is a software team founded by five co-founders based in Nairobi and Kisumu, Kenya, open to remote work. We build custom web applications, business systems, backend APIs, and UI/UX design.",
     locale: "en_US",
   },
 
   navigation: {
-    brand: "afrinit",
+    brand: "azzmar",
     links: [
       { label: "About", page: "about" },
       { label: "What We Do", page: "solutions" },
@@ -36,7 +36,7 @@ export const siteConfig = {
     titleLine1: "Five co-founders building software",
     titleLine2: "crafted for real-world impact",
     paragraph:
-      "Afrinit is a software team founded by five co-founders based in Nairobi and Kisumu, Kenya, and open to remote work. We build custom web applications, business systems, and backend infrastructure.",
+      "Azzmar is a software team founded by five co-founders based in Nairobi and Kisumu, Kenya, and open to remote work. We build custom web applications, business systems, and backend infrastructure.",
     primaryCta: {
       label: "Check our work",
       page: "projects",
@@ -47,7 +47,7 @@ export const siteConfig = {
     },
     image: {
       src: "/hero/team.svg",
-      alt: "Afrinit Software Studio Architecture and Engineering",
+      alt: "Azzmar Software Studio Architecture and Engineering",
     },
     stats: [
       { value: "20+", label: "Products shipped by our team" },
@@ -113,10 +113,10 @@ export const siteConfig = {
   about: {
     title: "Who we are",
     description:
-      "Afrinit is a software team founded by five co-founders: Michael Clay, Mercy Moraa, Valentine Awili, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and we are open to remote work. Collectively, our team has shipped more than 20 products.",
+      "Azzmar is a software team founded by five co-founders: Michael Clay, Mercy Moraa, Valentine Awili, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and we are open to remote work. Collectively, our team has shipped more than 20 products.",
     image: {
       src: "/about/workspace.svg",
-      alt: "Afrinit workspace environment in Nairobi and Kisumu",
+      alt: "Azzmar workspace environment in Nairobi and Kisumu",
     },
     points: [
       {
@@ -127,7 +127,7 @@ export const siteConfig = {
       {
         title: "Direct co-founder collaboration",
         description:
-          "When you partner with Afrinit, you collaborate directly with the five co-founders building your product—no layers of middlemen or bureaucracy.",
+          "When you partner with Azzmar, you collaborate directly with the five co-founders building your product—no layers of middlemen or bureaucracy.",
       },
       {
         title: "Long-term ownership & clean code",
@@ -427,7 +427,7 @@ export const siteConfig = {
     testimonials: [
       {
         quote:
-          "Afrinit transformed our chaotic spreadsheet dispatches into a rock-solid logistics system in under 10 weeks. Working directly with their co-founders in Nairobi and Kisumu made communication effortless and decisions immediate.",
+          "Azzmar transformed our chaotic spreadsheet dispatches into a rock-solid logistics system in under 10 weeks. Working directly with their co-founders in Nairobi and Kisumu made communication effortless and decisions immediate.",
         author: "David Kimani",
         role: "Operations Director",
         organization: "Rift Freight Logistics",
@@ -435,7 +435,7 @@ export const siteConfig = {
       },
       {
         quote:
-          "The engineering craft and direct transparency from Afrinit was exceptional. They didn't hide behind account managers—we worked directly with developers who delivered working features every two weeks and handed over complete IP ownership.",
+          "The engineering craft and direct transparency from Azzmar was exceptional. They didn't hide behind account managers—we worked directly with developers who delivered working features every two weeks and handed over complete IP ownership.",
         author: "Florence Otieno",
         role: "Managing Director",
         organization: "Western Agro Cooperatives",
@@ -455,7 +455,7 @@ export const siteConfig = {
   team: {
     title: "Our Team",
     description:
-      "Afrinit is a software team founded by five co-founders based in Nairobi and Kisumu, Kenya, and open to remote work.",
+      "Azzmar is a software team founded by five co-founders based in Nairobi and Kisumu, Kenya, and open to remote work.",
     members: [
       {
         name: "Michael Clay",
@@ -465,7 +465,7 @@ export const siteConfig = {
         title: "Full-Stack Engineer and DevOps Engineer",
         companyRole: "Backend systems and DevOps",
         skills: ["Go", "JavaScript", "DevOps", "Backend Systems"],
-        bio: "Michael is a full-stack engineer and DevOps engineer at Afrinit who specializes in backend systems. He builds dependable server architectures using Go and JavaScript while managing automated deployment and infrastructure pipelines through DevOps. His focus on resilient backend systems ensures client platforms run smoothly and scale reliably in production.",
+        bio: "Michael is a full-stack engineer and DevOps engineer at Azzmar who specializes in backend systems. He builds dependable server architectures using Go and JavaScript while managing automated deployment and infrastructure pipelines through DevOps. His focus on resilient backend systems ensures client platforms run smoothly and scale reliably in production.",
         links: {
           github: "https://github.com/AFRINIT-TECH",
           linkedin: "",
@@ -479,7 +479,7 @@ export const siteConfig = {
         title: "Full-Stack Developer and QA Engineer",
         companyRole: "Full-stack development and quality assurance",
         skills: ["Full-Stack Development", "Quality Assurance"],
-        bio: "Mercy is a full-stack software developer and quality assurance engineer at Afrinit. She builds end-to-end application features and conducts thorough quality assurance to verify that every release meets rigorous functional standards. Her dual focus on development and quality assurance guarantees that clients receive robust, dependable software that performs reliably in production.",
+        bio: "Mercy is a full-stack software developer and quality assurance engineer at Azzmar. She builds end-to-end application features and conducts thorough quality assurance to verify that every release meets rigorous functional standards. Her dual focus on development and quality assurance guarantees that clients receive robust, dependable software that performs reliably in production.",
         links: {
           github: "https://github.com/AFRINIT-TECH",
           linkedin: "",
@@ -492,9 +492,9 @@ export const siteConfig = {
         // Expected path: public/team/valentine-awili.jpg (4:3 aspect ratio)
         image: "",
         title: "Full-Stack Software Engineer",
-        companyRole: "JavaScript, authentication, Ruby, AI and machine learning",
-        skills: ["JavaScript", "Authentication", "Ruby", "Go", "AI & Machine Learning"],
-        bio: "Valentine is a full-stack software engineer at Afrinit who specializes in JavaScript, authentication systems, and Ruby, alongside technical proficiency in Go. He incorporates technical skills in AI and machine learning to build intelligent application features with secure user access workflows. His engineering ensures clients receive modern, dependable web applications with robust access control.",
+        companyRole: "JavaScript, authentication, Ruby, and Go",
+        skills: ["JavaScript", "Authentication", "Ruby", "Go"],
+        bio: "Valentine is a full-stack software engineer at Azzmar specializing in JavaScript, authentication systems, and Ruby, with technical proficiency in Go. He builds secure, dependable web applications and user-access workflows that give clients robust access control.",
         links: {
           github: "https://github.com/AFRINIT-TECH",
           linkedin: "",
@@ -508,7 +508,7 @@ export const siteConfig = {
         title: "Software Developer, Business Analyst and Project Manager",
         companyRole: "Business analysis, project management, marketing and branding",
         skills: ["Software Development", "Business Analysis", "Project Management", "Marketing & Branding"],
-        bio: "Millie is a software developer at Afrinit who leads the company's business analysis, project management, marketing, and branding. Alongside her development work, she translates client goals into clear project scope and keeps delivery milestones organized and transparent from concept to launch. Her leadership in business analysis and branding ensures clients achieve well-positioned products that directly solve their operational needs.",
+        bio: "Millie is a software developer at Azzmar who leads the company's business analysis, project management, marketing, and branding. Alongside her development work, she translates client goals into clear project scope and keeps delivery milestones organized and transparent from concept to launch. Her leadership in business analysis and branding ensures clients achieve well-positioned products that directly solve their operational needs.",
         links: {
           github: "https://github.com/AFRINIT-TECH",
           linkedin: "",
@@ -523,7 +523,7 @@ export const siteConfig = {
         title: "Software Developer and Frontend Lead",
         companyRole: "Frontend development and design",
         skills: ["Frontend Development", "Design", "Software Development", "Frontend Leadership"],
-        bio: "Grace is a software developer focused on design and serves as the frontend lead developer at Afrinit. She directs the team's frontend architecture, translating interface design into responsive, accessible, and intuitive user experiences. Her design-led frontend leadership enables clients to provide polished, user-friendly digital products that engage their audiences effectively.",
+        bio: "Grace is a software developer focused on design and serves as the frontend lead developer at Azzmar. She directs the team's frontend architecture, translating interface design into responsive, accessible, and intuitive user experiences. Her design-led frontend leadership enables clients to provide polished, user-friendly digital products that engage their audiences effectively.",
         links: {
           github: "https://github.com/AFRINIT-TECH",
           linkedin: "",
@@ -695,9 +695,9 @@ export const siteConfig = {
       "Clear answers to common questions about who we are, what we build, and how we work.",
     questions: [
       {
-        question: "Who is Afrinit?",
+        question: "Who is Azzmar?",
         answer:
-          "Afrinit is a software team founded by five co-founders: Michael Clay, Mercy Moraa, Valentine Awili, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and are open to remote work.",
+          "Azzmar is a software team founded by five co-founders: Michael Clay, Mercy Moraa, Valentine Awili, Millicent Adhiambo, and Grace Nyaboke. We are based in Nairobi and Kisumu, Kenya, and are open to remote work.",
       },
       {
         question: "What kinds of software do you build?",
@@ -784,11 +784,11 @@ export const siteConfig = {
   },
 
   footer: {
-    brand: "afrinit",
+    brand: "azzmar",
     tagline: "Software engineered by five co-founders in Kenya.",
     email: "contact@afrinit.com",
     quickLinks: [
-      { label: "About Afrinit", page: "about" },
+      { label: "About Azzmar", page: "about" },
       { label: "What We Do", page: "solutions" },
       { label: "Work", page: "projects" },
       { label: "Partners", page: "partners" },
@@ -808,6 +808,6 @@ export const siteConfig = {
     socialLinks: [
       { label: "GitHub", href: "https://github.com/AFRINIT-TECH" },
     ],
-    copyright: "© 2026 Afrinit. All rights reserved.",
+    copyright: "© 2026 Azzmar. All rights reserved.",
   },
 };
