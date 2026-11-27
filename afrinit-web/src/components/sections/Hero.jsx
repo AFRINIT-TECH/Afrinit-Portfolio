@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { siteConfig } from "@/content/site";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { FounderCarousel } from "@/components/ui/FounderCarousel";
 import { ParticleSwarm } from "@/components/ui/ParticleSwarm";
 import { SpiderButton } from "@/components/ui/SpiderButton";
 
@@ -28,7 +27,6 @@ const toSlug = (name) =>
     .replace(/(^-|-$)+/g, "");
 
 export const Hero = ({ onNavigate }) => {
-  const teamMembers = siteConfig.team?.members || [];
   const archiveEntries = siteConfig.archives?.items?.slice(0, 3) || [];
   const testimonials = siteConfig.impact?.testimonials || [];
   const partnerLogos = siteConfig.partnerLogos || [];
@@ -212,38 +210,7 @@ export const Hero = ({ onNavigate }) => {
         </section>
       )}
 
-      {/* 4. Co-Founders One Card Carousel */}
-      <section className="relative w-full px-5 py-24 sm:px-8 lg:px-14">
-        <div className="w-full">
-          <div className="viewport-animation mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-            <div>
-              <div className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#6d001a]">
-                <span className="h-px w-9 bg-[#6d001a]" />
-                Our Team
-              </div>
-              <h2 className="font-display text-3xl font-bold tracking-tight text-black sm:text-5xl">
-                Five co-founders building together
-              </h2>
-              <p className="mt-3 max-w-xl text-base text-[#454545]">
-                Based in Nairobi and Kisumu, Kenya, and open to remote work.
-              </p>
-            </div>
-            <button
-              onClick={() => onNavigate && onNavigate("team")}
-              className="group inline-flex items-center gap-2.5 rounded-full border border-black/20 bg-white px-6 py-3 text-xs font-bold uppercase tracking-wider text-black transition hover:bg-black hover:text-white cursor-pointer"
-            >
-              Meet everyone
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </button>
-          </div>
-
-          <div className="viewport-animation delay-100">
-            <FounderCarousel members={teamMembers} onNavigate={onNavigate} isPreview={true} />
-          </div>
-        </div>
-      </section>
-
-      {/* 5. "From the Archives" Strip */}
+      {/* 4. "From the Archives" Strip */}
       <section className="relative w-full border-t border-black/10 bg-white px-5 py-20 sm:px-8 lg:px-14">
         <div className="w-full">
           <div className="viewport-animation mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
