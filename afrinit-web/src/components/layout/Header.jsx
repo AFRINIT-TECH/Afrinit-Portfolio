@@ -31,7 +31,7 @@ export const Header = ({ currentPage, onNavigate }) => {
       <div className="flex h-[78px] w-full items-center justify-between px-5 sm:px-8 lg:px-14">
         {/* Brand Logo */}
         <button
-          className="flex items-center cursor-pointer transition-opacity hover:opacity-85"
+          className="flex items-center cursor-pointer transition-opacity hover:opacity-80 focus:outline-none"
           aria-label="Azzmar home"
           onClick={() => {
             closeDropdown();
