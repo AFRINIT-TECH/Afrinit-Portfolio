@@ -8,3 +8,4 @@ export * from "./Contact";
 export * from "./Projects";
 export * from "./Faq";
 export * from "./Partners";
+export * from "./Quote";

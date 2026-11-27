@@ -272,6 +272,19 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
             <div className="mt-4 pt-3.5 border-t border-black/10 space-y-2.5">
               <button
                 onClick={() => {
+                  onNavigate("quote");
+                  closeMenu();
+                }}
+                className={`flex items-center justify-center min-h-[44px] w-full rounded-full border font-semibold text-xs uppercase tracking-wider transition-all text-center px-4 py-2.5 cursor-pointer ${
+                  currentPage === "quote"
+                    ? "border-[#6d001a] bg-[#6d001a] text-white"
+                    : "border-black/20 bg-white text-black hover:border-[#6d001a] hover:text-[#6d001a]"
+                }`}
+              >
+                Request Quote
+              </button>
+              <button
+                onClick={() => {
                   onNavigate(siteConfig.navigation.cta.page || "partners");
                   closeMenu();
                 }}

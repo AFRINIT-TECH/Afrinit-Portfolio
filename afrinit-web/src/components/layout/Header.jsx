@@ -275,6 +275,19 @@ export const Header = ({ currentPage, onNavigate }) => {
           <button
             onClick={() => {
               closeDropdown();
+              onNavigate("quote");
+            }}
+            className={`m-0 hidden items-center rounded-full border px-4 py-2.5 text-sm font-semibold transition sm:flex cursor-pointer ${
+              currentPage === "quote"
+                ? "border-[#6d001a] bg-[#6d001a] text-white"
+                : "border-black/20 bg-white text-black hover:border-[#6d001a] hover:text-[#6d001a]"
+            }`}
+          >
+            Request Quote
+          </button>
+          <button
+            onClick={() => {
+              closeDropdown();
               onNavigate(siteConfig.navigation.cta.page || "partners");
             }}
             className="group m-0 hidden items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition sm:flex bg-black hover:bg-[#6d001a] cursor-pointer shadow-sm hover:shadow-md"

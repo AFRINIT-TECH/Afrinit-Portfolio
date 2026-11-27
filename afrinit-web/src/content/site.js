@@ -796,6 +796,7 @@ export const siteConfig = {
       { label: "Our Team", page: "team" },
       { label: "Archives", page: "archives" },
       { label: "Frequently Asked Questions", page: "faq" },
+      { label: "Request Quote", page: "quote" },
       { label: "Contact", page: "contact" },
     ],
     servicesList: [
