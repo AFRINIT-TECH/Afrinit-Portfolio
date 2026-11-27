@@ -208,7 +208,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
 
             {/* Bottom Actions */}
             <div className="mt-4 pt-3.5 border-t border-black/10 space-y-2.5">
-              <SpiderButton
+              <button
                 onClick={() => {
                   onNavigate("quote");
                   closeMenu();
@@ -221,7 +221,7 @@ export const MobileMenu = ({ currentPage, onNavigate }) => {
               >
                 Request Quote
               </button>
-              <button
+              <SpiderButton
                 onClick={() => {
                   onNavigate(siteConfig.navigation.cta.page || "partners");
                   closeMenu();

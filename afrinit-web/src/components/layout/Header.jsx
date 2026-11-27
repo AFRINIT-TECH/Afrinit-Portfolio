@@ -157,7 +157,7 @@ export const Header = ({ currentPage, onNavigate }) => {
 
         {/* CTA & Mobile Menu */}
         <div className="flex items-center gap-3">
-          <SpiderButton
+          <button
             onClick={() => {
               closeDropdown();
               onNavigate("quote");
@@ -170,7 +170,7 @@ export const Header = ({ currentPage, onNavigate }) => {
           >
             Request Quote
           </button>
-          <button
+          <SpiderButton
             onClick={() => {
               closeDropdown();
               onNavigate(siteConfig.navigation.cta.page || "partners");
