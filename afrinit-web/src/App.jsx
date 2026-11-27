@@ -14,6 +14,7 @@ import {
   Projects,
   Faq,
   Partners,
+  Quote,
 } from "@/components/sections";
 
 const PAGE_COMPONENTS = {
@@ -26,6 +27,7 @@ const PAGE_COMPONENTS = {
   projects: Projects,
   faq: Faq,
   partners: Partners,
+  quote: Quote,
   admin: AdminPage,
   // Backwards compatibility alias
   people: Team,
@@ -36,6 +38,7 @@ const getInitialPage = () => {
   const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
   if (!path) return "home";
   if (path === "people") return "team";
+  if (path === "get-a-quote") return "quote";
   if (PAGE_COMPONENTS[path]) return path;
   return "home";
 };

@@ -160,6 +160,19 @@ export const Header = ({ currentPage, onNavigate }) => {
           <SpiderButton
             onClick={() => {
               closeDropdown();
+              onNavigate("quote");
+            }}
+            className={`m-0 hidden items-center rounded-full border px-4 py-2.5 text-sm font-semibold transition sm:flex cursor-pointer ${
+              currentPage === "quote"
+                ? "border-[#6d001a] bg-[#6d001a] text-white"
+                : "border-black/20 bg-white text-black hover:border-[#6d001a] hover:text-[#6d001a]"
+            }`}
+          >
+            Request Quote
+          </button>
+          <button
+            onClick={() => {
+              closeDropdown();
               onNavigate(siteConfig.navigation.cta.page || "partners");
             }}
             className="m-0 hidden px-5 py-2.5 text-sm font-semibold shadow-sm sm:inline-flex"
