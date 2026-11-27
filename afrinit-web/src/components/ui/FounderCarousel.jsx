@@ -48,6 +48,7 @@ export const FounderCarousel = ({ members = [], onNavigate, isPreview = false })
     if (isHovered || total <= 1) return;
 
     const interval = setInterval(() => {
+      if (typeof document !== "undefined" && document.hidden) return;
       const next = (activeIndex + 1) % total;
       setIsFading(true);
       setTimeout(() => {

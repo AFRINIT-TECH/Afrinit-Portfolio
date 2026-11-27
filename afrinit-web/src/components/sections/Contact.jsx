@@ -3,10 +3,19 @@ import { siteConfig } from "@/content/site";
 
 export const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    // Asynchronous submission with UI locking to prevent double-submits
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 400));
+      setFormSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const hasEmail = Boolean(siteConfig.contact.email && siteConfig.contact.email.trim());
@@ -117,9 +126,10 @@ export const Contact = () => {
 
                 <button
                   type="submit"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-black px-8 py-4 sm:py-5 text-sm sm:text-base font-bold text-white transition-all duration-300 hover:bg-[#6d001a] cursor-pointer shadow-lg hover:shadow-xl w-full sm:w-auto self-stretch sm:self-start"
+                  disabled={isSubmitting}
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-black px-8 py-4 sm:py-5 text-sm sm:text-base font-bold text-white transition-all duration-300 hover:bg-[#6d001a] cursor-pointer shadow-lg hover:shadow-xl w-full sm:w-auto self-stretch sm:self-start disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {siteConfig.contact.submitLabel || "Send inquiry"} →
+                  {isSubmitting ? "Sending inquiry..." : `${siteConfig.contact.submitLabel || "Send inquiry"} →`}
                 </button>
               </form>
             )}

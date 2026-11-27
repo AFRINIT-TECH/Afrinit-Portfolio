@@ -119,7 +119,11 @@ function App() {
   return (
     <div className="min-h-screen bg-white font-body text-black antialiased flex flex-col selection:bg-[#6d001a] selection:text-white">
       <Header currentPage={currentPage} onNavigate={navigateTo} />
-      <div aria-hidden="true" className={`shrink-0 ${headerSpacerHeight}`} />
+      <div
+        aria-hidden="true"
+        className={`shrink-0 ${headerSpacerHeight}`}
+        style={{ height: "var(--header-height)" }}
+      />
       <div className="flex-1">
         <main className="overflow-hidden bg-white text-black">
           <div

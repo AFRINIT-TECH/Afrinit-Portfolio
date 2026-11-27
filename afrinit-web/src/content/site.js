@@ -338,7 +338,7 @@ export const siteConfig = {
         category: "Legal & Professional Services",
         image: "/projects/siwolo-law-advocates.jpg",
         description:
-          "Helps clients book appointments and allows the customer to know all about the law firm before actually booking an appointment and being a client.",
+          "Enables clients to explore specialized legal practice areas, review advocate credentials, and schedule confidential appointments online seamlessly.",
         link: "https://www.siwoloadvocates.com/",
       },
       {
@@ -347,7 +347,7 @@ export const siteConfig = {
         image: "/projects/qms.jpg",
         imageBg: "linear-gradient(to right, #f8f8f8, #dedede)",
         description:
-          "A queue management system that helps organisations manage queues and allows the clients to get tickets and track queue status.",
+          "A digital queue management and ticket dispatch system that enables organizations to streamline service counters, issue instant customer tokens, and provide real-time queue tracking.",
         link: "",
       },
       {
@@ -355,7 +355,7 @@ export const siteConfig = {
         category: "Safeguarding & Workplace Safety",
         image: "/projects/linda.png",
         description:
-          "A safeguarding app where you can anonymously report safeguarding issues in your organisation to your admin and it can then be acted upon. You can also follow up on your report and get a valid response. Safeguarding is a very important issue in the workplace and everywhere all around the world.",
+          "An anonymous safeguarding and workplace compliance platform that enables employees to report safety concerns securely to designated administrators with transparent review and status tracking.",
         link: "https://linda-app.onrender.com",
       },
       {
@@ -550,12 +550,12 @@ export const siteConfig = {
       },
       {
         type: "milestone",
-        title: "Afrinit Founding Agreement & Studio Launch",
+        title: "Azzmar Founding Agreement & Studio Launch",
         date: "2025-03",
         location: "Nairobi, Kenya",
         image: "/archives/afrinit-founding-agreement-studio-launch.svg",
         description:
-          "Five specialized engineers and digital builders came together to establish Afrinit, dedicated to engineering dependable, bespoke software with direct co-founder collaboration and complete client IP ownership.",
+          "Five specialized engineers and digital builders came together to establish Azzmar, dedicated to engineering dependable, bespoke software with direct co-founder collaboration and complete client IP ownership.",
         tags: ["Milestone", "Foundation", "Co-Founders"],
         link: "",
         linkLabel: "",
@@ -619,7 +619,7 @@ export const siteConfig = {
         location: "Nairobi, Kenya",
         image: "/archives/nairobi-tech-week-engineering-summit.svg",
         description:
-          "Afrinit co-founders participated in roundtable sessions on resilient cloud architecture, distributed systems, and real-time payment gateway integration patterns.",
+          "Azzmar co-founders participated in roundtable sessions on resilient cloud architecture, distributed systems, and real-time payment gateway integration patterns.",
         tags: ["Event", "Conference", "Nairobi", "Ecosystem"],
         link: "",
         linkLabel: "",

@@ -37,13 +37,13 @@ export const Hero = ({ onNavigate }) => {
           </p>
 
           {/* Key Facts Row */}
-          <div className="viewport-animation delay-300 mt-8 grid grid-cols-3 gap-2 sm:gap-4 border-y border-black/15 py-5 sm:py-6">
+          <div className="viewport-animation delay-300 mt-8 grid grid-cols-3 gap-3 sm:gap-6 border-y border-black/15 py-5 sm:py-6">
             {siteConfig.hero.stats.map((stat, idx) => (
-              <div key={idx}>
+              <div key={idx} className="min-w-0">
                 <p className="font-display text-xl sm:text-3xl font-extrabold text-black">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-[11px] sm:text-xs font-semibold text-[#6d001a] leading-tight">
+                <p className="mt-1 text-[11px] sm:text-xs font-semibold text-[#6d001a] leading-snug break-words">
                   {stat.label}
                 </p>
               </div>

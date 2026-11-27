@@ -19,6 +19,21 @@ export const Header = ({ currentPage, onNavigate }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Sync actual header height to document root for seamless padding across viewports
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        document.documentElement.style.setProperty(
+          "--header-height",
+          `${headerRef.current.offsetHeight}px`
+        );
+      }
+    };
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => window.removeEventListener("resize", updateHeaderHeight);
+  }, []);
+
   const closeDropdown = () => setActiveDropdown(null);
 
   return (
@@ -96,7 +111,7 @@ export const Header = ({ currentPage, onNavigate }) => {
             {/* Megamenu: What We Do */}
             {activeDropdown === "solutions" && (
               <div className="absolute left-1/2 top-full -translate-x-1/2 pt-1 z-50">
-                <div className="w-[560px] rounded-2xl border border-black/12 bg-white p-6 shadow-2xl backdrop-blur-xl">
+                <div className="w-[560px] max-w-[calc(100vw-32px)] rounded-2xl border border-black/12 bg-white p-6 shadow-2xl backdrop-blur-xl">
                   <div className="grid gap-6 sm:grid-cols-2">
                     {/* Left: Software Services */}
                     <div>

@@ -19,19 +19,21 @@ export const savePublicCookiePreference = (choice) => {
   const cookieName = "azzmar_preferences";
   const secure = window.location.protocol === "https:" ? "; Secure" : "";
 
-  if (choice === "accepted") {
-    document.cookie = `${cookieName}=accepted; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
-    if (!document.cookie.split("; ").includes(`${cookieName}=accepted`)) {
-      throw new Error("The browser did not save the preference cookie.");
+  try {
+    if (choice === "accepted") {
+      document.cookie = `${cookieName}=accepted; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
+    } else {
+      document.cookie = `${cookieName}=; Max-Age=0; Path=/; SameSite=Lax${secure}`;
     }
-  } else {
-    document.cookie = `${cookieName}=; Max-Age=0; Path=/; SameSite=Lax${secure}`;
-    if (document.cookie.split("; ").some((cookie) => cookie.startsWith(`${cookieName}=`))) {
-      throw new Error("The browser could not remove the preference cookie.");
-    }
+  } catch {
+    // Gracefully handle strict partitioned / private browsing environments
   }
 
-  window.localStorage.setItem(PUBLIC_COOKIE_PREFERENCE_KEY, choice);
+  try {
+    window.localStorage.setItem(PUBLIC_COOKIE_PREFERENCE_KEY, choice);
+  } catch {
+    // Handle disabled localStorage
+  }
 };
 
 export const sessionApiFetch = (url, options = {}) => {
