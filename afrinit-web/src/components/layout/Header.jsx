@@ -3,6 +3,7 @@ import { siteConfig } from "@/content/site";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 import { MaintenanceBanner } from "./MaintenanceBanner";
+import { SpiderButton } from "@/components/ui/SpiderButton";
 
 export const Header = ({ currentPage, onNavigate }) => {
   const [activeDropdown, setActiveDropdown] = useState(null); // 'solutions' | null
@@ -272,12 +273,12 @@ export const Header = ({ currentPage, onNavigate }) => {
 
         {/* CTA & Mobile Menu */}
         <div className="flex items-center gap-3">
-          <button
+          <SpiderButton
             onClick={() => {
               closeDropdown();
               onNavigate(siteConfig.navigation.cta.page || "partners");
             }}
-            className="group m-0 hidden items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition sm:flex bg-black hover:bg-[#6d001a] cursor-pointer shadow-sm hover:shadow-md"
+            className="m-0 hidden px-5 py-2.5 text-sm font-semibold shadow-sm sm:inline-flex"
           >
             {siteConfig.navigation.cta.label}
             <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -296,7 +297,7 @@ export const Header = ({ currentPage, onNavigate }) => {
                 />
               </svg>
             </span>
-          </button>
+          </SpiderButton>
           <MobileMenu currentPage={currentPage} onNavigate={onNavigate} />
         </div>
       </div>
